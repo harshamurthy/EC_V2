@@ -1,6 +1,10 @@
 $head-text-size: 30px;
 $text-input-size: 24px;
 
+input[type=submit] {
+  -webkit-appearance: none;
+}
+
 %header-text-style {
   font-size: $head-text-size;
   font-weight: bold;
@@ -10,3 +14,4 @@ $text-input-size: 24px;
   width: 1030px;
   margin: 0 auto;
 }
+

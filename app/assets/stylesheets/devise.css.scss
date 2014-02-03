@@ -1,5 +1,6 @@
 @import 'dry';
 @import 'global_tags';
+
 .sign-in-page {
   height: 100%;
   .sign-in-header-span {
@@ -46,7 +47,6 @@
       color: white;
       margin-top: 5%;
       margin-bottom: 1%;
-      -webkit-appearance: none;
 
 
       .sign-up-link {
