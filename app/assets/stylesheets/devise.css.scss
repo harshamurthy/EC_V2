@@ -58,6 +58,7 @@
 
   .password-reset-request-header {
     @extend %header-text-style;
+    margin-bottom: 25px;
   }
 
   .password-reset-request-labels {
