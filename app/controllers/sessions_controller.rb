@@ -33,14 +33,16 @@ class SessionsController < ApplicationController
   # POST /sessions.json
   def create
     @session = Session.new(session_params)
+
     if @session.routine.nil?
       @session.routine = Routine.find_or_initialize_by_exercise_ids(routine_params[:exercise_ids])
       @session.routine.description = routine_params[:description]
       @session.routine.save!
     end
+
     respond_to do |format|
       if @session.save
-        format.html { redirect_to workout_session(@session.id), notice: 'Session was successfully created.' }
+        format.html { redirect_to workout_session_url(@session), notice: 'Session was successfully created.' }
         format.json { render action: 'show', status: :created, location: @session }
       else
         format.html { render action: 'new' }
@@ -54,7 +56,7 @@ class SessionsController < ApplicationController
   def update
     respond_to do |format|
       if @session.update(session_params)
-        format.html { redirect_to workout_session(@session), notice: 'Session was successfully updated.' }
+        format.html { redirect_to workout_session_url(@session), notice: 'Session was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
