@@ -16,7 +16,7 @@
     }
 
     .sign-in-labels {
-      display: none;
+      @extend %labels;
     }
 
     .sign-in-inputs {
@@ -46,5 +46,35 @@
     //     font-size: 16px;
     //     padding-top: 30px;
     //   }
+  }
+}
+
+.password-reset-request-page {
+  @extend %container;
+
+  .password-reset-request-form {
+    @extend %devise-form;
+  }
+
+  .password-reset-request-header {
+    @extend %header-text-style;
+  }
+
+  .password-reset-request-labels {
+    @extend %labels;
+  }
+
+  .password-reset-request-inputs {
+    @extend %inputs;
+    font-size: $text-input-size;
+    width: 60%;
+    margin: 10px 10px 10px 0px;
+  }
+
+  .password-reset-request-button {
+    @extend %buttons;
+    width: 60%;
+    margin-top: 30px;
+    margin-bottom: 1%;
   }
 }
