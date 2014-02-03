@@ -27,15 +27,16 @@
       color: #f26d1c;
       outline-width: 0;
       width: 60%;
-      margin: 10px;
+      margin: 10px 10px 10px 0px;
       border-radius: 0;
     }
 
     .sign-in-help {
-      font-size: 12px;
+      font-size: 14px;
       max-width: 60%;
       margin-left: 20%;
       margin-right: 20%;
+      margin-top: 20px;
     }
 
     .sign-in-button {
@@ -45,13 +46,13 @@
       padding: 10px;
       border-radius: 5px;
       color: white;
-      margin-top: 5%;
+      margin-top: 30px;
       margin-bottom: 1%;
-
-
-      .sign-up-link {
-        font-size: 8px;
-      }
     }
+
+    .sign-up-link {
+        font-size: 16px;
+        padding-top: 30px;
+      }
   }
 }
