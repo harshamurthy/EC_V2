@@ -1,0 +1,41 @@
+<h1>Listing exercise_executions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Weight</th>
+      <th>Percentage</th>
+      <th>Reps</th>
+      <th>Time</th>
+      <th>Seat</th>
+      <th>Foot</th>
+      <th>Degrees</th>
+      <th>Back</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exercise_executions.each do |exercise_execution| %>
+      <tr>
+        <td><%= exercise_execution.weight %></td>
+        <td><%= exercise_execution.percentage %></td>
+        <td><%= exercise_execution.reps %></td>
+        <td><%= exercise_execution.time %></td>
+        <td><%= exercise_execution.seat %></td>
+        <td><%= exercise_execution.foot %></td>
+        <td><%= exercise_execution.degrees %></td>
+        <td><%= exercise_execution.back %></td>
+        <td><%= link_to 'Show', exercise_execution %></td>
+        <td><%= link_to 'Edit', edit_exercise_execution_path(exercise_execution) %></td>
+        <td><%= link_to 'Destroy', exercise_execution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Exercise execution', new_exercise_execution_path %>

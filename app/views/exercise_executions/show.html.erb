@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @exercise_execution.weight %>
+</p>
+
+<p>
+  <strong>Percentage:</strong>
+  <%= @exercise_execution.percentage %>
+</p>
+
+<p>
+  <strong>Reps:</strong>
+  <%= @exercise_execution.reps %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @exercise_execution.time %>
+</p>
+
+<p>
+  <strong>Seat:</strong>
+  <%= @exercise_execution.seat %>
+</p>
+
+<p>
+  <strong>Foot:</strong>
+  <%= @exercise_execution.foot %>
+</p>
+
+<p>
+  <strong>Degrees:</strong>
+  <%= @exercise_execution.degrees %>
+</p>
+
+<p>
+  <strong>Back:</strong>
+  <%= @exercise_execution.back %>
+</p>
+
+<%= link_to 'Edit', edit_exercise_execution_path(@exercise_execution) %> |
+<%= link_to 'Back', exercise_executions_path %>

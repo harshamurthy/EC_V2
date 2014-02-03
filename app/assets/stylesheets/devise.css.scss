@@ -1,0 +1,55 @@
+@import 'dry';
+@import 'global_tags';
+.sign-in-page {
+  height: 100%;
+  .sign-in-header-span {
+   color: $orange;
+  }
+  .sign-in-form {
+    max-width: 50%;
+    margin: 0 auto;
+    font-family: 'Duru Sans';
+    margin-top: 15%;
+    text-align: center;
+
+    .sign-in-header {
+      @extend %header-text-style;
+    }
+
+    .sign-in-labels {
+      display: none;
+    }
+
+    .sign-in-inputs {
+      border-bottom: solid 1px black;
+      font-size: $text-input-size;
+      color: #f26d1c;
+      outline-width: 0;
+      width: 60%;
+      margin: 10px;
+      border-radius: 0;
+    }
+
+    .sign-in-help {
+      font-size: 12px;
+      max-width: 60%;
+      margin-left: 20%;
+      margin-right: 20%;
+    }
+
+    .sign-in-button {
+      background-color: #f26d1c;
+      outline-width: 0;
+      width: 60%;
+      padding: 10px;
+      border-radius: 5px;
+      color: white;
+      margin-top: 5%;
+      margin-bottom: 1%;
+
+      .sign-up-link {
+        font-size: 8px;
+      }
+    }
+  }
+}

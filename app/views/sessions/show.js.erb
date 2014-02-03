@@ -1,0 +1,4 @@
+$('form').remove();
+$('.execution-data').append("<%= j render('exercise_execution_form', exercise: @exercise, exercise_execution: @exercise_execution, session: @session) %>");
+$('.save-exercise-execution-alert').hide();
+// alert("yo");

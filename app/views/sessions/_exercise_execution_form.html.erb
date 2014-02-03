@@ -1,0 +1,65 @@
+<%= form_for(exercise_execution, remote: true) do |f| %>
+  <p class='save-exercise-execution-alert hide'>Successfully saved!</p>
+  <% if exercise.weight? %>
+    <div class="field">
+      <%= f.label :weight %><br>
+      <%= f.text_field :weight, placeholder: "Weight" %>
+    </div>
+  <% end %>
+
+  <% if exercise.percentage? %>
+    <div class="field">
+      <%= f.label :percentage %><br>
+      <%= f.text_field :percentage, placeholder: "Percentage" %>
+    </div>
+  <% end %>
+
+  <% if exercise.reps? %>
+    <div class="field">
+      <%= f.label :reps %><br>
+      <%= f.text_field :reps, placeholder: "Reps" %>
+    </div>
+  <% end %>
+
+  <% if exercise.time? %>
+    <div class="field">
+      <%= f.label :time %><br>
+      <%= f.text_field :time, placeholder: "Time" %>
+    </div>
+  <% end %>
+
+  <% if exercise.seat? %>
+    <div class="field">
+      <%= f.label :seat %><br>
+      <%= f.text_field :seat, placeholder: "Seat" %>
+    </div>
+  <% end %>
+
+  <% if exercise.foot? %>
+    <div class="field">
+      <%= f.label :foot %><br>
+      <%= f.text_field :foot, placeholder: "Foot" %>
+    </div>
+  <% end %>
+
+  <% if exercise.degrees? %>
+    <div class="field">
+      <%= f.label :degrees %><br>
+      <%= f.text_field :degrees, placeholder: "Degrees" %>
+    </div>
+  <% end %>
+
+  <% if exercise.back? %>
+    <div class="field">
+      <%= f.label :back %><br>
+      <%= f.text_field :back, placeholder: "Back" %>
+    </div>
+  <% end %>
+
+  <%= exercise.name %>
+  <%= f.hidden_field :exercise_id, value: exercise.id %>
+  <%= f.hidden_field :session_id, value: session.id %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+$head-text-size: 30px;
+$text-input-size: 24px;
+
+%header-text-style {
+  font-size: $head-text-size;
+  font-weight: bold;
+}
+
+%container {
+  width: 1030px;
+  margin: 0 auto;
+}

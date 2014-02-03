@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="client-search-bar">
+    <%= form_tag clients_url, method: 'get' do %>
+      <%= text_field_tag :search, nil, placeholder: "Search for your clients...", :class => 'search-input' %>
+      <%= submit_tag "Search", :class => 'search-submit' %>
+    <% end %>
+  </div>
+
+  <section class='client-list-section'>
+    <ul class='ul-client-list'>
+      <% @clients.each do |client| %>
+        <li class='client'>
+          <%= client.name %>
+          <aside class='client-buttons'>
+            <%= link_to "Start workout", "#", :class => 'client-start-workout' %>
+            <%= link_to "Manage account", "#", :class => 'client-manage-account' %>
+          </aside>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+  <%#= link_to 'New Client', new_client_path %>
+</div>
+
+<script type="text/javascript">
+$(function() {
+    var availableTags =  <%= @clients.collect{ |c| c.name }.to_json.html_safe %>;
+    $( "#search" ).autocomplete({
+      source: availableTags
+    });
+  });
+</script>

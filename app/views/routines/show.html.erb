@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @routine.description %>
+</p>
+
+<p>
+  <strong>Gym:</strong>
+  <%= @routine.gym_id %>
+</p>
+
+<h4>Exercises</h4>
+<ul>
+  <% @routine.exercises.each do |exercise| %>
+    <li><%= exercise.name %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_routine_path(@routine) %> |
+<%= link_to 'Back', routines_path %>

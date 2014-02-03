@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<div class="fullscreen-container workout-session">
+  <nav class='workout-session-client-info'>
+    <h1 class='user-session-title'><%= @session.client.name %> workout routine <span class='user-session-date'><%= @session.date %></span></h1>
+  </nav>
+
+  <aside class="exercise-list">
+    <ul>
+      <% @session.exercises.each do |exercise| %>
+      <% if @session.exercises.first.id == exercise.id %>
+        <li class='onclick session-exercise'><%= link_to exercise.name, workout_session_url(@session.id, exercise_id: exercise.id), :class=> 'session-exercise-link', remote: true %></li>
+        <% else %>
+        <li class='session-exercise'><%= link_to exercise.name, workout_session_url(@session.id, exercise_id: exercise.id), :class=> 'session-exercise-link', remote: true %></li>
+        <% end %>
+      <% end %>
+    </ul>
+
+    <div class='bottom-nav'>
+      <h3><%= link_to "Back to my clients", clients_url, :class => 'session-back-to-clients' %></h3>
+    </div>
+  </aside>
+
+  <div class="execution-data">
+      <%= render 'exercise_execution_form', exercise: @session.exercises.first, exercise_execution: @exercise_execution, session: @session %>
+  </div>
+</div>

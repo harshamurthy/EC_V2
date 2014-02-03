@@ -1,0 +1,52 @@
+// Place all the styles related to the clients controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'dry';
+@import 'global_tags';
+
+.container {
+  @extend %container;
+  margin-top: 50px;
+  .client-search-bar {
+    text-align: center;
+    .search-input {
+      width: 50%;
+      border-bottom: 1px solid black;
+      padding: 5px;
+      outline-width: 0;
+      border-radius: 0;
+      margin-right: 15px;
+    }
+    .search-submit {
+      color: white;
+      background-color: $orange;
+      padding: 10px;
+      width: 10%;
+      border-radius: 5px;
+    }
+  }
+  .client-list-section {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 50px;
+    .ul-client-list {
+      .client {
+        font-size: $h3;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+        padding: 15px;
+        margin-top: 30px;
+        .client-buttons {
+          display: inline-block;
+          float: right;
+          .client-start-workout {
+            margin-right: 5px;
+          }
+          .client-manage-account {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+}

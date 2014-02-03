@@ -1,0 +1,33 @@
+<%= form_for(@routine) do |f| %>
+  <% if @routine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@routine.errors.count, "error") %> prohibited this routine from being saved:</h2>
+
+      <ul>
+      <% @routine.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+
+  <ul>
+    <% @exercises.each do |exercise| %>
+      <li>
+        <%= label_tag exercise.name %>
+        <%= check_box_tag "routine[exercise_ids][]" , exercise.id, @routine.exercise_ids.include?(exercise.id) %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= f.hidden_field :gym_id, value: current_gym.id %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

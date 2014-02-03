@@ -1,0 +1,31 @@
+<h1>Listing sessions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Client</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sessions.each do |session| %>
+      <tr>
+        <td><%= session.name %></td>
+        <td><%= session.date %></td>
+        <td><%= session.client_id %></td>
+        <td><%= link_to 'Show', workout_session_url(session.id) %></td>
+        <td><%= link_to 'Edit', edit_workout_session_path(session) %></td>
+        <td><%= link_to "Delete", workout_session_path(session.id), method: 'delete' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Session', new_workout_session_path %>

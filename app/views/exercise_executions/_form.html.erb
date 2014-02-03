@@ -1,0 +1,49 @@
+<%= form_for(@exercise_execution) do |f| %>
+  <% if @exercise_execution.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exercise_execution.errors.count, "error") %> prohibited this exercise_execution from being saved:</h2>
+
+      <ul>
+      <% @exercise_execution.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :percentage %><br>
+    <%= f.text_field :percentage %>
+  </div>
+  <div class="field">
+    <%= f.label :reps %><br>
+    <%= f.text_field :reps %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.text_field :time %>
+  </div>
+  <div class="field">
+    <%= f.label :seat %><br>
+    <%= f.text_field :seat %>
+  </div>
+  <div class="field">
+    <%= f.label :foot %><br>
+    <%= f.text_field :foot %>
+  </div>
+  <div class="field">
+    <%= f.label :degrees %><br>
+    <%= f.text_field :degrees %>
+  </div>
+  <div class="field">
+    <%= f.label :back %><br>
+    <%= f.text_field :back %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

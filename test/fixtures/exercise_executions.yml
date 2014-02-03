@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weight: MyString
+  percentage: MyString
+  reps: MyString
+  time: MyString
+  seat: MyString
+  foot: MyString
+  degrees: MyString
+  back: MyString
+
+two:
+  weight: MyString
+  percentage: MyString
+  reps: MyString
+  time: MyString
+  seat: MyString
+  foot: MyString
+  degrees: MyString
+  back: MyString
