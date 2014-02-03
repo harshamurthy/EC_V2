@@ -2,16 +2,14 @@
 @import 'global_tags';
 
 .sign-in-page {
-  height: 100%;
+  @extend %container;
+
   .sign-in-header-span {
    color: $orange;
   }
+
   .sign-in-form {
-    max-width: 50%;
-    margin: 0 auto;
-    font-family: 'Duru Sans';
-    margin-top: 15%;
-    text-align: center;
+    @extend %devise-form;
 
     .sign-in-header {
       @extend %header-text-style;
@@ -22,37 +20,31 @@
     }
 
     .sign-in-inputs {
-      border-bottom: solid 1px black;
+      @extend %inputs;
       font-size: $text-input-size;
-      color: #f26d1c;
-      outline-width: 0;
+      color: $orange;
       width: 60%;
       margin: 10px 10px 10px 0px;
-      border-radius: 0;
     }
 
     .sign-in-help {
       font-size: 14px;
-      max-width: 60%;
+      max-width: 65%;
       margin-left: 20%;
       margin-right: 20%;
       margin-top: 20px;
     }
 
     .sign-in-button {
-      background-color: #f26d1c;
-      outline-width: 0;
+      @extend %buttons;
       width: 60%;
-      padding: 10px;
-      border-radius: 5px;
-      color: white;
       margin-top: 30px;
       margin-bottom: 1%;
     }
 
-    .sign-up-link {
-        font-size: 16px;
-        padding-top: 30px;
-      }
+    // .sign-up-link {
+    //     font-size: 16px;
+    //     padding-top: 30px;
+    //   }
   }
 }
