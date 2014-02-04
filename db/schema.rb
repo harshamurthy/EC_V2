@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140202175001) do
+ActiveRecord::Schema.define(version: 20140204185645) do
 
   create_table "clients", force: true do |t|
     t.integer  "gym_id"
@@ -50,6 +50,16 @@ ActiveRecord::Schema.define(version: 20140202175001) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.boolean  "foot_stool", default: false
+    t.boolean  "pin",        default: false
+    t.boolean  "arm",        default: false
+    t.boolean  "seatbelt",   default: false
+    t.boolean  "backpad",    default: false
+    t.boolean  "knee",       default: false
+    t.boolean  "seatpad",    default: false
+    t.boolean  "chestpad",   default: false
+    t.boolean  "hips",       default: false
+    t.boolean  "leg",        default: false
   end
 
   create_table "exercises_routines", id: false, force: true do |t|
@@ -79,13 +89,6 @@ ActiveRecord::Schema.define(version: 20140202175001) do
   create_table "routines", force: true do |t|
     t.text     "description"
     t.integer  "gym_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "session_routines", force: true do |t|
-    t.integer  "routine_id"
-    t.integer  "session_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
