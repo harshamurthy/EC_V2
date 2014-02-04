@@ -20,7 +20,7 @@ $(document).ready(function() {
   $('.hide').hide()
 
   var setupClientsList = function(){
-    var $el = $(".client-list");
+    var $el = $('.client-list');
 
     centerSearchBar = function() {
       mainHeight = $(window).height();
@@ -30,11 +30,11 @@ $(document).ready(function() {
   };
 
   var setupWorkoutSession = function(){
-    $('.exercise-list .session-exercise-link').on("click", function() {
-      $(this).parent().siblings().removeClass("onclick");
-      $(".execution-data > div").hide();
-      $($(this).data("target")).show();
-      $(this).parent().addClass("onclick");
+    $('.workout-session-exercise-list .session-exercise-link').on('click', function() {
+      $(this).parent().siblings().removeClass('onclick');
+      $('.execution-data > div').hide();
+      $($(this).data('target')).show();
+      $(this).parent().addClass('onclick');
     });
   };
 

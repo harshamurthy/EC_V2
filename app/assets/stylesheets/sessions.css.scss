@@ -2,67 +2,77 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "global_tags";
+@import 'dry';
 
-.container {
-  @extend %container;
-}
+// Workout Session Page
+.workout-session-page {
 
-.workout-session-client-info {
-  padding: 15px;
-  height: 58px;
-  border-bottom: 1px solid black;
-  .user-session-title {
-    font-size: $h1;
-    text-align: left;
-    .user-session-date {
-      float: right;
-      font-style: italic;
-      font-size: 30px;
-      vertical-align: bottom;
-      color: #f26d1c;
+  .workout-session-client-info {
+    padding: 15px;
+    height: 58px;
+    border-bottom: 1px solid black;
+
+    .client-session-title {
+      font-size: $h1;
+      text-align: left;
+
+      .client-session-date {
+        float: right;
+        font-style: italic;
+        font-size: 30px;
+        color: $orange;
+      }
+    }
+  }
+
+  .workout-session-exercise-list {
+    width: 30%;
+    float: left;
+
+    .session-exercise {
+      border-right: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      text-align: left;
+
+      &.onclick {
+        border-right: 0px;
+        border-left: 5px solid $orange;
+
+        .session-exercise-link {
+          color: $orange;
+        }
+      }
+
+      .session-exercise-link {
+        display: block;
+        text-decoration: none;
+        font-size: 22px;
+        padding: $height/2.75;
+        width: 100%;
+        color: black;
+      }
+    }
+  }
+
+  .save-exercise-execution-alert {
+    color: green;
+  }
+
+  .workout-session-execution-data {
+    width: 70%;
+    background-color: lightgreen;
+    float: left;
+
+    .workout-session-execution-form {
+      width: 50%;
+      margin: 0 auto;
     }
   }
 }
 
-.exercise-list {
-  width: 30%;
-  float: left;
-  .session-exercise {
-    border-right: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    text-align: left;
-    font-size: 20px;
-
-    &.onclick {
-      border-right: 0px;
-      border-left: 1px solid black;
-      font-size: 25px;
-      background: white;
-    }
-
-    .session-exercise-link {
-      display: block;
-      padding: $height/2.75;
-      width: 100%;
-      color: black;
-    }
-  }
-}
-
-.bottom-nav {
-  padding: 13px;
-  font-size: $h3;
-  text-decoration: underline;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
-  padding: $height/2.75;
-
-  .session-back-to-clients {
-    color: darkgray;
-  }
-}
-
-.save-exercise-execution-alert {
-  color: green;
+// Workout Session Execution Form
+.field {
+  width: 50%;
+  display: inline;
 }
 

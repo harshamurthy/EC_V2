@@ -1,11 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<div class="fullscreen-container workout-session">
+<!-- <p id='notice'><%= notice %></p> -->
+<div class='workout-session-page'>
   <nav class='workout-session-client-info'>
-    <h1 class='user-session-title'><%= @session.client.name %> workout routine <span class='user-session-date'><%= @session.date %></span></h1>
+    <h1 class='client-session-title'><%= @session.client.name %> workout routine <span class='client-session-date'><%= @session.date %></span></h1>
   </nav>
 
-  <aside class="exercise-list">
+  <aside class='workout-session-exercise-list'>
     <ul>
       <% @session.exercises.each do |exercise| %>
       <% if @session.exercises.first.id == exercise.id %>
@@ -15,13 +14,9 @@
         <% end %>
       <% end %>
     </ul>
-
-    <div class='bottom-nav'>
-      <h3><%= link_to "Back to my clients", clients_url, :class => 'session-back-to-clients' %></h3>
-    </div>
   </aside>
 
-  <div class="execution-data">
-      <%= render 'exercise_execution_form', exercise: @session.exercises.first, exercise_execution: @exercise_execution, session: @session %>
+  <div class='workout-session-execution-data'>
+    <%= render 'exercise_execution_form', exercise: @session.exercises.first, exercise_execution: @exercise_execution, session: @session %>
   </div>
 </div>
