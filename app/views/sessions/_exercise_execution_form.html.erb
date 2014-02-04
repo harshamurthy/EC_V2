@@ -56,7 +56,77 @@
     </div>
   <% end %>
 
-  <%= exercise.name %>
+  <% if exercise.foot_stool? %>
+    <div class="field">
+      <%= f.label :foot_stool %><br>
+      <%= f.text_field :foot_stool, placeholder: "Foot stool" %>
+    </div>
+  <% end %>
+
+  <% if exercise.pin? %>
+    <div class="field">
+      <%= f.label :pin %><br>
+      <%= f.text_field :pin, placeholder: "Pin" %>
+    </div>
+  <% end %>
+
+  <% if exercise.arm? %>
+    <div class="field">
+      <%= f.label :arm %><br>
+      <%= f.text_field :arm, placeholder: "Arm" %>
+    </div>
+  <% end %>
+
+  <% if exercise.seatbelt? %>
+    <div class="field">
+      <%= f.label :seatbelt %><br>
+      <%= f.text_field :seatbelt, placeholder: "Seatbelt" %>
+    </div>
+  <% end %>
+
+  <% if exercise.backpad? %>
+    <div class="field">
+      <%= f.label :backpad %><br>
+      <%= f.text_field :backpad, placeholder: "Backpad" %>
+    </div>
+  <% end %>
+
+  <% if exercise.knee? %>
+    <div class="field">
+      <%= f.label :knee %><br>
+      <%= f.text_field :knee, placeholder: "Knee" %>
+    </div>
+  <% end %>
+
+  <% if exercise.seatpad? %>
+    <div class="field">
+      <%= f.label :seatpad %><br>
+      <%= f.text_field :seatpad, placeholder: "Seatpad" %>
+    </div>
+  <% end %>
+
+  <% if exercise.chestpad? %>
+    <div class="field">
+      <%= f.label :chestpad %><br>
+      <%= f.text_field :chestpad, placeholder: "Chestpad" %>
+    </div>
+  <% end %>
+
+  <% if exercise.hips? %>
+    <div class="field">
+      <%= f.label :hips %><br>
+      <%= f.text_field :hips, placeholder: "Hips" %>
+    </div>
+  <% end %>
+
+  <% if exercise.leg? %>
+    <div class="field">
+      <%= f.label :leg %><br>
+      <%= f.text_field :leg, placeholder: "Leg" %>
+    </div>
+  <% end %>
+
+  <%#= exercise.name %>
   <%= f.hidden_field :exercise_id, value: exercise.id %>
   <%= f.hidden_field :session_id, value: session.id %>
   <div class="actions">
