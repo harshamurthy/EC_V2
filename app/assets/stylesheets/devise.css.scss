@@ -1,6 +1,7 @@
 @import 'dry';
 @import 'global_tags';
 
+// Sign In Page
 .sign-in-page {
   @extend %container;
 
@@ -49,6 +50,39 @@
   }
 }
 
+// Sign Up Page
+.sign-up-page {
+  @extend %container;
+
+  .sign-up-form {
+    @extend %devise-form;
+  }
+
+  .sign-up-header {
+    @extend %header-text-style;
+    margin-bottom: 25px;
+  }
+
+  .sign-up-labels {
+    @extend %labels;
+  }
+
+  .sign-up-inputs {
+    @extend %inputs;
+    font-size: $text-input-size;
+    width: 60%;
+    margin: 10px 10px 10px 0px;
+  }
+
+  .sign-up-button {
+    @extend %buttons;
+    width: 60%;
+    margin-top: 30px;
+    margin-bottom: 1%;
+  }
+}
+
+// Password Reset Request Page
 .password-reset-request-page {
   @extend %container;
 
