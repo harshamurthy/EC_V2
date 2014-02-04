@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140204185645) do
+ActiveRecord::Schema.define(version: 20140204190901) do
 
   create_table "clients", force: true do |t|
     t.integer  "gym_id"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 20140204185645) do
     t.datetime "updated_at"
     t.integer  "session_id"
     t.integer  "exercise_id"
+    t.string   "foot_stool"
+    t.string   "pin"
+    t.string   "arm"
+    t.string   "seatbelt"
+    t.string   "backpad"
+    t.string   "knee"
+    t.string   "seatpad"
+    t.string   "chestpad"
+    t.string   "hips"
+    t.string   "leg"
   end
 
   create_table "exercises", force: true do |t|
