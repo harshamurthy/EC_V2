@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+#FontAwesome
+gem 'font-awesome-rails'
 #jQuery-UI
 gem 'jquery-ui-rails'
 #Devise

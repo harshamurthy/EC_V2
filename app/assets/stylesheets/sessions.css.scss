@@ -54,10 +54,6 @@
     }
   }
 
-  .save-exercise-execution-alert {
-    color: green;
-  }
-
   .workout-session-execution-data {
     width: 70%;
     float: left;
@@ -105,7 +101,7 @@
 
   .field {
     text-align: center;
-    padding-top: 75px;
+    padding-top: 35px;
     .exercise-execution-setting-text[type=text] {
       height: 30px;
       background-color: transparent;
@@ -181,9 +177,16 @@
     margin-top: 25%;
     .exercise-execution-save-button {
       @extend %buttons;
+      background-color: $orange;
       width: 70%;
-      padding: 20px;
       font-size: 30px;
+      &:hover {
+        background-color: darken($orange, 10%);
+      }
+    }
+    .save-exercise-execution-alert {
+      font-size: 35px;
+      color: #5da423;
     }
   }
 }

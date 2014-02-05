@@ -1,4 +1,12 @@
 $('form').remove();
 $('.workout-session-execution-data').append("<%= j render('exercise_execution_form', exercise: @exercise, exercise_execution: @exercise_execution, session: @session) %>");
 $('.save-exercise-execution-alert').hide();
+
+$('.exercise-execution-save-button').hide();
+$('.save-exercise-execution-alert').show();
+
+$('.workout-session-execution-form input[type=text]').keyup(function () {
+     $('.exercise-execution-save-button').show();
+     $('.save-exercise-execution-alert').hide();
+   });
 // alert("yo");

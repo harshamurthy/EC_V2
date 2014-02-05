@@ -139,11 +139,22 @@
       <%= f.hidden_field :exercise_id, value: exercise.id %>
       <%= f.hidden_field :session_id, value: session.id %>
       <div class="actions">
-        <%= f.submit 'Save Exercise', :class => 'exercise-execution-save-button hide' %>
-        <p class='save-exercise-execution-alert'>Your exercise is saved </p>
+        <%= f.submit 'Click me to save your exercise!', :class => 'exercise-execution-save-button hide' %>
+        <p class='save-exercise-execution-alert'>Your exercise is up to date <i class="fa fa-thumbs-up"></i></p>
     </div>
   <% end %>
 </div>
+
+
+
+
+
+
+
+
+
+
+
 
 <script type="text/javascript">
   $(document).ready(function(){
@@ -168,6 +179,9 @@
       $('#stop-stop-watch').hide();
       $('#reset-stop-watch').show();
       $('#start-stop-watch').show();
+
+      $('.exercise-execution-save-button').show();
+      $('.save-exercise-execution-alert').hide();
 
       var time = $('#stop-watch').text();
 
