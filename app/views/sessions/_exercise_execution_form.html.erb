@@ -24,8 +24,12 @@
 
       <% if exercise.time? %>
         <div class="field">
-          <%= f.text_field :time, placeholder: "Time" %><br>
-          <%= f.label :time %>
+          <%= f.text_field :time, placeholder: "Time", id: "time-input" %><br>
+          <%= f.label :time %> <br>
+          <span id="stop-watch"></span>
+          <%= link_to "Start", "#", id: "start-stop-watch" %>
+          <%= link_to "Stop", "#", id: "stop-stop-watch" %>
+          <%= link_to "Reset", "#", id: "reset-stop-watch" %>
         </div>
       <% end %>
 
@@ -134,4 +138,41 @@
         <%= f.submit 'Save Workout Session', class: '' %>
     </div>
   <% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  $('#stop-stop-watch').hide();
+  $('#reset-stop-watch').hide();
+
+  $('#stop-watch').runner();
+
+  $('#start-stop-watch').click(function() {
+    $('#stop-watch').runner('start');
+
+    $(this).hide();
+
+    $('#stop-stop-watch').show();
+    $('#reset-stop-watch').show();
+  });
+
+  $('#stop-stop-watch').click(function() {
+    $('#stop-watch').runner('stop');
+
+    $('#stop-stop-watch').hide();
+    $('#start-stop-watch').show();
+
+    var time = $('#stop-watch').text();
+    $("#time-input").val(time);
+  });
+
+  $("#reset-stop-watch").click(function() {
+    $("#stop-watch").runner("reset");
+
+    $('#stop-stop-watch').hide();
+    $('#reset-stop-watch').hide();
+    $('#start-stop-watch').show();
+  });
+});
+</script>
+
 </div>

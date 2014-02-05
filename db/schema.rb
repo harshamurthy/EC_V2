@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140204190901) do
+ActiveRecord::Schema.define(version: 20140205142011) do
 
   create_table "clients", force: true do |t|
     t.integer  "gym_id"
@@ -103,20 +103,13 @@ ActiveRecord::Schema.define(version: 20140204190901) do
     t.datetime "updated_at"
   end
 
-  create_table "session_routines", force: true do |t|
-    t.integer  "routine_id"
-    t.integer  "session_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "sessions", force: true do |t|
     t.string   "name"
-    t.string   "date"
     t.string   "client_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "routine_id"
+    t.datetime "date"
   end
 
 end
