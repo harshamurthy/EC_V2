@@ -139,22 +139,11 @@
       <%= f.hidden_field :exercise_id, value: exercise.id %>
       <%= f.hidden_field :session_id, value: session.id %>
       <div class="actions">
-        <%= f.submit 'Click me to save your exercise!', :class => 'exercise-execution-save-button hide' %>
-        <p class='save-exercise-execution-alert'>Your exercise is up to date <i class="fa fa-thumbs-up"></i></p>
+        <%= f.submit 'Save Exercise Performance', :class => 'exercise-execution-save-button hide' %>
+        <p class='save-exercise-execution-alert'>Your exercise is up to date <span class='session-exercise-saved-thumbs-up'><i class="fa fa-thumbs-up"></i></span></p>
     </div>
   <% end %>
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 <script type="text/javascript">
   $(document).ready(function(){
