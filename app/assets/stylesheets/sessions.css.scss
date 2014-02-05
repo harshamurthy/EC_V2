@@ -36,7 +36,7 @@
 
       &.onclick {
         border-right: 0px;
-        border-left: 5px solid $orange;
+        border-left: 10px solid $orange;
 
         .session-exercise-link {
           color: $orange;
@@ -138,9 +138,52 @@
       font-weight: bold;
       font-size: 20px;
     }
+  }
 
+  .stop-watch-continer {
     .session-stop-watch {
       display: block;
+      // margin-bottom: 5px;
+      font-size: 40px;
+    }
+
+    .start-session-stop-watch, .stop-session-stop-watch, .reset-session-stop-watch {
+      @extend %buttons;
+      margin-top: 10px;
+      text-decoration: none;
+      display: inline-block;
+      width: 45%;
+      margin-right: 10px;
+      padding: 15px;
+      font-size: 20px;
+    }
+    .start-session-stop-watch {
+      background-color: lighten(#5da423, 10%);
+      &:hover {
+        background-color: lighten(#5da423, 5%);
+      }
+    }
+    .stop-session-stop-watch {
+      background-color: lighten(#c60f13, 10%);
+      &:hover {
+        background-color: lighten(#c60f13, 5%);
+      }
+    }
+    .reset-session-stop-watch {
+      background-color: #222222;
+      &:hover {
+        background-color: lighten(#222222, 5%);
+      }
+    }
+  }
+  .actions {
+    text-align: center;
+    margin-top: 25%;
+    .exercise-execution-save-button {
+      @extend %buttons;
+      width: 70%;
+      padding: 20px;
+      font-size: 30px;
     }
   }
 }

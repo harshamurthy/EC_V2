@@ -1,6 +1,5 @@
 <div class="workout-session-execution-form">
   <%= form_for(exercise_execution, remote: true, :html => { :class => 'session-exercise-execution-form' }) do |f| %>
-    <p class='save-exercise-execution-alert hide'>Successfully saved!</p>
     <fieldset class="fieldset">
       <section class='exercise-execution-setting-container'>
         <% if exercise.seat? %>
@@ -129,18 +128,19 @@
           <%= f.label :time %>
         </div>
       <% end %>
-      <div class="field stop-watch-continer ">
+      <div class="field stop-watch-continer">
         <span id="stop-watch" class='session-stop-watch'></span>
         <%= link_to "Start", "#", id: "start-stop-watch", :class => 'start-session-stop-watch' %>
-        <%= link_to "Stop", "#", id: "stop-stop-watch", :class => 'start-session-stop-watch' %>
-        <%= link_to "Reset", "#", id: "reset-stop-watch", :class => 'start-session-stop-watch' %>
+        <%= link_to "Stop", "#", id: "stop-stop-watch", :class => 'stop-session-stop-watch' %>
+        <%= link_to "Reset", "#", id: "reset-stop-watch", :class => 'reset-session-stop-watch' %>
       </div>
     </fieldset> <!-- fieldset closing -->
 
       <%= f.hidden_field :exercise_id, value: exercise.id %>
       <%= f.hidden_field :session_id, value: session.id %>
       <div class="actions">
-        <%= f.submit 'Save Exercise', class: '' %>
+        <%= f.submit 'Save Exercise', :class => 'exercise-execution-save-button' %>
+        <p class='save-exercise-execution-alert hide'>Exercise saved!</p>
     </div>
   <% end %>
 </div>
@@ -155,17 +155,18 @@
 
     $('#start-stop-watch').click(function() {
       $('#stop-watch').runner('start');
+      $('#reset-stop-watch').hide();
 
       $(this).hide();
 
       $('#stop-stop-watch').show();
-      $('#reset-stop-watch').show();
     });
 
     $('#stop-stop-watch').click(function() {
       $('#stop-watch').runner('stop');
 
       $('#stop-stop-watch').hide();
+      $('#reset-stop-watch').show();
       $('#start-stop-watch').show();
 
       var time = $('#stop-watch').text();
