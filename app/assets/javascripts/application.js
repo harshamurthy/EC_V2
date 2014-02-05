@@ -38,6 +38,13 @@ $(document).ready(function() {
     });
   };
 
+  var sessionSaveButton = function(){
+    $('.exercise-execution-performance-text').keyup(function () {
+     $('.exercise-execution-save-button').show();
+   });
+  };
+
+  sessionSaveButton();
   setupWorkoutSession();
   setupClientsList();
 });
