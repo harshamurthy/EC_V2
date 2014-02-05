@@ -60,19 +60,87 @@
 
   .workout-session-execution-data {
     width: 70%;
-    background-color: lightgreen;
     float: left;
 
     .workout-session-execution-form {
-      width: 50%;
+      width: 70%;
       margin: 0 auto;
+
+      &:after {
+        display: table;
+        clear: both;
+        content: "";
+      }
     }
   }
 }
 
 // Workout Session Execution Form
-.field {
-  width: 50%;
-  // display: inline;
-}
+.session-exercise-execution-form {
+  .field-container {
+    &:after {
+      @extend %group:after;
+    }
+  }
 
+  .exercise-execution-setting-container {
+    &:after {
+      @extend %group:after;
+    }
+  }
+
+  .field {
+    float: left;
+    width: 50%;
+  }
+
+  .exercise-execution-setting {
+    float: left;
+    width: 20%;
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-bottom: 50px;
+  }
+
+  .field {
+    text-align: center;
+    padding-top: 75px;
+    .exercise-execution-setting-text[type=text] {
+      height: 30px;
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid $orange;
+      color: black;
+      font-size: 18px;
+      outline-width: 0;
+      text-align: center;
+      border-radius: 0;
+      width: 75%;
+    }
+
+    .exercise-execution-performance-text[type=text] {
+      height: 50px;
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid black;
+      color: black;
+      font-size: 25px;
+      outline-width: 0;
+      text-align: center;
+      border-radius: 0;
+      width: 75%;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .session-stop-watch {
+      display: block;
+    }
+  }
+}

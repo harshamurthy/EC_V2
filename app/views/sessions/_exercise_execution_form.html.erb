@@ -1,178 +1,191 @@
 <div class="workout-session-execution-form">
-  <%= form_for(exercise_execution, remote: true) do |f| %>
+  <%= form_for(exercise_execution, remote: true, :html => { :class => 'session-exercise-execution-form' }) do |f| %>
     <p class='save-exercise-execution-alert hide'>Successfully saved!</p>
+    <fieldset class="fieldset">
+      <section class='exercise-execution-setting-container'>
+        <% if exercise.seat? %>
+          <div class="field exercise-execution-setting">
+            <%= f.text_field :seat, placeholder: "Seat", :class => 'exercise-execution-setting-text' %>
+            <%= f.label :seat %>
+          </div>
+        <% end %>
+
+        <% if exercise.foot? %>
+          <div class="field exercise-execution-setting">
+            <%= f.text_field :foot, placeholder: "Foot", :class => 'exercise-execution-setting-text' %>
+            <%= f.label :foot %>
+          </div>
+        <% end %>
+
+        <% if exercise.degrees? %>
+          <div class="field exercise-execution-setting">
+            <%= f.text_field :degrees, placeholder: "Degrees", :class => 'exercise-execution-setting-text' %>
+            <%= f.label :degrees %>
+          </div>
+        <% end %>
+
+        <% if exercise.back? %>
+          <div class="field exercise-execution-setting">
+            <%= f.text_field :back, placeholder: "Back", :class => 'exercise-execution-setting-text' %>
+            <%= f.label :back %>
+          </div>
+        <% end %>
+
+        <% if exercise.foot_stool? %>
+          <div class="field exercise-execution-setting">
+            <%= f.text_field :foot_stool, placeholder: "Foot stool", :class => 'exercise-execution-setting-text' %>
+            <%= f.label :foot_stool %>
+          </div>
+        <% end %>
+
+        <% if exercise.pin? %>
+          <div class="field exercise-execution-setting">
+            <%= f.text_field :pin, placeholder: "Pin", :class => 'exercise-execution-setting-text' %>
+            <%= f.label :pin %>
+          </div>
+        <% end %>
+
+        <% if exercise.arm? %>
+          <div class="field exercise-execution-setting">
+            <%= f.text_field :arm, placeholder: "Arm", :class => 'exercise-execution-setting-text' %>
+            <%= f.label :arm %>
+          </div>
+        <% end %>
+
+        <% if exercise.seatbelt? %>
+          <div class="field exercise-execution-setting">
+            <%= f.text_field :seatbelt, placeholder: "Seatbelt", :class => 'exercise-execution-setting-text' %>
+            <%= f.label :seatbelt %>
+          </div>
+        <% end %>
+
+        <% if exercise.backpad? %>
+          <div class="field exercise-execution-setting">
+            <%= f.text_field :backpad, placeholder: "Backpad", :class => 'exercise-execution-setting-text' %>
+            <%= f.label :backpad %>
+          </div>
+        <% end %>
+
+        <% if exercise.knee? %>
+          <div class="field exercise-execution-setting">
+            <%= f.text_field :knee, placeholder: "Knee", :class => 'exercise-execution-setting-text' %>
+            <%= f.label :knee %>
+          </div>
+        <% end %>
+
+        <% if exercise.seatpad? %>
+          <div class="field exercise-execution-setting">
+            <%= f.text_field :seatpad, placeholder: "Seatpad", :class => 'exercise-execution-setting-text' %>
+            <%= f.label :seatpad %>
+          </div>
+        <% end %>
+
+        <% if exercise.chestpad? %>
+          <div class="field exercise-execution-setting">
+            <%= f.text_field :chestpad, placeholder: "Chestpad", :class => 'exercise-execution-setting-text' %>
+            <%= f.label :chestpad %>
+          </div>
+        <% end %>
+
+        <% if exercise.hips? %>
+          <div class="field exercise-execution-setting">
+            <%= f.text_field :hips, placeholder: "Hips", :class => 'exercise-execution-setting-text' %>
+            <%= f.label :hips %>
+          </div>
+        <% end %>
+
+        <% if exercise.leg? %>
+          <div class="field exercise-execution-setting">
+            <%= f.text_field :leg, placeholder: "Leg", :class => 'exercise-execution-setting-text' %>
+            <%= f.label :leg %>
+          </div>
+        <% end %>
+      </section>
+
       <% if exercise.weight? %>
         <div class="field">
-          <%= f.text_field :weight, placeholder: "Weight" %><br>
+          <%= f.text_field :weight, placeholder: "Weight", :class => 'exercise-execution-performance-text' %>
           <%= f.label :weight %>
         </div>
       <% end %>
 
       <% if exercise.percentage? %>
         <div class="field">
-          <%= f.text_field :percentage, placeholder: "Percentage" %><br>
+          <%= f.text_field :percentage, placeholder: "Percentage", :class => 'exercise-execution-performance-text' %>
           <%= f.label :percentage %>
         </div>
       <% end %>
 
       <% if exercise.reps? %>
         <div class="field">
-          <%= f.text_field :reps, placeholder: "Reps" %><br>
+          <%= f.text_field :reps, placeholder: "Reps", :class => 'exercise-execution-performance-text' %>
           <%= f.label :reps %>
         </div>
       <% end %>
 
       <% if exercise.time? %>
         <div class="field">
-          <%= f.text_field :time, placeholder: "Time", id: "time-input" %><br>
-          <%= f.label :time %> <br>
-          <span id="stop-watch"></span>
-          <%= link_to "Start", "#", id: "start-stop-watch" %>
-          <%= link_to "Stop", "#", id: "stop-stop-watch" %>
-          <%= link_to "Reset", "#", id: "reset-stop-watch" %>
+          <%= f.text_field :time, placeholder: "Time", :class => "time-input exercise-execution-performance-text" %>
+          <%= f.label :time %>
         </div>
       <% end %>
+      <div class="field stop-watch-continer ">
+        <span id="stop-watch" class='session-stop-watch'></span>
+        <%= link_to "Start", "#", id: "start-stop-watch", :class => 'start-session-stop-watch' %>
+        <%= link_to "Stop", "#", id: "stop-stop-watch", :class => 'start-session-stop-watch' %>
+        <%= link_to "Reset", "#", id: "reset-stop-watch", :class => 'start-session-stop-watch' %>
+      </div>
+    </fieldset> <!-- fieldset closing -->
 
-      <% if exercise.seat? %>
-        <div class="field">
-          <%= f.text_field :seat, placeholder: "Seat" %><br>
-          <%= f.label :seat %>
-        </div>
-      <% end %>
-
-      <% if exercise.foot? %>
-        <div class="field">
-          <%= f.text_field :foot, placeholder: "Foot" %><br>
-          <%= f.label :foot %>
-        </div>
-      <% end %>
-
-      <% if exercise.degrees? %>
-        <div class="field">
-          <%= f.text_field :degrees, placeholder: "Degrees" %><br>
-          <%= f.label :degrees %>
-        </div>
-      <% end %>
-
-      <% if exercise.back? %>
-        <div class="field">
-          <%= f.text_field :back, placeholder: "Back" %><br>
-          <%= f.label :back %>
-        </div>
-      <% end %>
-
-      <% if exercise.foot_stool? %>
-        <div class="field">
-          <%= f.text_field :foot_stool, placeholder: "Foot stool" %><br>
-          <%= f.label :foot_stool %>
-        </div>
-      <% end %>
-
-      <% if exercise.pin? %>
-        <div class="field">
-          <%= f.text_field :pin, placeholder: "Pin" %><br>
-          <%= f.label :pin %>
-        </div>
-      <% end %>
-
-      <% if exercise.arm? %>
-        <div class="field">
-          <%= f.text_field :arm, placeholder: "Arm" %><br>
-          <%= f.label :arm %>
-        </div>
-      <% end %>
-
-      <% if exercise.seatbelt? %>
-        <div class="field">
-          <%= f.text_field :seatbelt, placeholder: "Seatbelt" %><br>
-          <%= f.label :seatbelt %>
-        </div>
-      <% end %>
-
-      <% if exercise.backpad? %>
-        <div class="field">
-          <%= f.text_field :backpad, placeholder: "Backpad" %><br>
-          <%= f.label :backpad %>
-        </div>
-      <% end %>
-
-      <% if exercise.knee? %>
-        <div class="field">
-          <%= f.text_field :knee, placeholder: "Knee" %><br>
-          <%= f.label :knee %>
-        </div>
-      <% end %>
-
-      <% if exercise.seatpad? %>
-        <div class="field">
-          <%= f.text_field :seatpad, placeholder: "Seatpad" %><br>
-          <%= f.label :seatpad %>
-        </div>
-      <% end %>
-
-      <% if exercise.chestpad? %>
-        <div class="field">
-          <%= f.text_field :chestpad, placeholder: "Chestpad" %><br>
-          <%= f.label :chestpad %>
-        </div>
-      <% end %>
-
-      <% if exercise.hips? %>
-        <div class="field">
-          <%= f.text_field :hips, placeholder: "Hips" %><br>
-          <%= f.label :hips %>
-        </div>
-      <% end %>
-
-      <% if exercise.leg? %>
-        <div class="field">
-          <%= f.text_field :leg, placeholder: "Leg" %><br>
-          <%= f.label :leg %>
-        </div>
-      <% end %>
-
-      <%#= exercise.name %>
       <%= f.hidden_field :exercise_id, value: exercise.id %>
       <%= f.hidden_field :session_id, value: session.id %>
       <div class="actions">
-        <%= f.submit 'Save Workout Session', class: '' %>
+        <%= f.submit 'Save Exercise', class: '' %>
     </div>
   <% end %>
+</div>
 
 <script type="text/javascript">
   $(document).ready(function(){
-  $('#stop-stop-watch').hide();
-  $('#reset-stop-watch').hide();
-
-  $('#stop-watch').runner();
-
-  $('#start-stop-watch').click(function() {
-    $('#stop-watch').runner('start');
-
-    $(this).hide();
-
-    $('#stop-stop-watch').show();
-    $('#reset-stop-watch').show();
-  });
-
-  $('#stop-stop-watch').click(function() {
-    $('#stop-watch').runner('stop');
-
-    $('#stop-stop-watch').hide();
-    $('#start-stop-watch').show();
-
-    var time = $('#stop-watch').text();
-    $("#time-input").val(time);
-  });
-
-  $("#reset-stop-watch").click(function() {
-    $("#stop-watch").runner("reset");
 
     $('#stop-stop-watch').hide();
     $('#reset-stop-watch').hide();
-    $('#start-stop-watch').show();
-  });
-});
-</script>
 
-</div>
+    $('#stop-watch').runner();
+
+    $('#start-stop-watch').click(function() {
+      $('#stop-watch').runner('start');
+
+      $(this).hide();
+
+      $('#stop-stop-watch').show();
+      $('#reset-stop-watch').show();
+    });
+
+    $('#stop-stop-watch').click(function() {
+      $('#stop-watch').runner('stop');
+
+      $('#stop-stop-watch').hide();
+      $('#start-stop-watch').show();
+
+      var time = $('#stop-watch').text();
+
+      if (time.length < 6)
+      {
+        $(".time-input").val("00:" + time);
+      }
+      else
+      {
+       $(".time-input").val(time);
+      }
+    });
+
+    $("#reset-stop-watch").click(function() {
+      $("#stop-watch").runner("reset");
+
+      $('#stop-stop-watch').hide();
+      $('#reset-stop-watch').hide();
+      $('#start-stop-watch').show();
+    });
+  });
+</script>
