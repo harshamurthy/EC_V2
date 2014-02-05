@@ -112,3 +112,35 @@
     margin-bottom: 1%;
   }
 }
+
+// Password Reset Page
+.password-reset-page {
+  @extend %container;
+
+  .password-reset-form {
+    @extend %devise-form;
+  }
+
+  .password-reset-header {
+    @extend %header-text-style;
+    margin-bottom: 25px;
+  }
+
+  .password-reset-labels {
+    @extend %labels;
+  }
+
+  .password-reset-inputs {
+    @extend %inputs;
+    font-size: $text-input-size;
+    width: 60%;
+    margin: 10px 10px 10px 0px;
+  }
+
+  .password-reset-button {
+    @extend %buttons;
+    width: 60%;
+    margin-top: 30px;
+    margin-bottom: 1%;
+  }
+}
