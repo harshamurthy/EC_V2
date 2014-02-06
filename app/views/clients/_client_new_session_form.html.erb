@@ -1,0 +1,58 @@
+<%= form_for(session, url: workout_sessions_url, method: 'post') do |f| %>
+  <% if session.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(session.errors.count, "error") %> prohibited this session from being saved:</h2>
+
+      <ul>
+      <% session.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </div>
+  <% if params[:client_id].nil? %>
+    <div class="field">
+      <%= f.label :client_id %><br>
+      <%= f.select :client_id, options_for_select(Client.all.collect{ |u| [u.name, u.id] }), inlcude_blank: true %>
+    </div>
+  <% else %>
+    <%= f.hidden_field :client_id, value: Client.find(params[:client_id]) %>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :routine_id %><br>
+    <%= f.select :routine_id, options_for_select(Routine.all.collect{ |u| [u.description, u.id] }), include_blank: true %>
+  </div>
+  <h3>Or craete a rouitne</h3>
+  <div class='field'>
+    <%= f.fields_for Routine.new do |r| %>
+       <div class="field">
+        <%= r.label :description %><br>
+        <%= r.text_field :description %>
+      </div>
+
+      <ul>
+        <% Exercise.all.each do |exercise| %>
+          <li>
+            <%= check_box_tag "session[routine[exercise_ids]][]" , exercise.id %>
+            <%= label_tag exercise.name %>
+          </li>
+        <% end %>
+      </ul>
+
+      <% end %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

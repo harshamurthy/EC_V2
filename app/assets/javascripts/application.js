@@ -14,10 +14,13 @@
 //= require jquery_ujs
 //= require jquery.ui.autocomplete
 //= require jquery.ui.datepicker
+//= require raphael
+//= require morris
 //= require_tree .
 
 $(document).ready(function() {
   $('.hide').hide()
+  var mainHeight = $(window).height();
 
   var setupClientsList = function() {
     var $el = $('.client-list');

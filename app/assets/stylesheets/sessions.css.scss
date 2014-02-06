@@ -2,7 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'dry';
+// New Session
+.create-new-session-page {
+  @extend %container;
+}
 
+.create-new-session-form {
+  width: 50%;
+  margin: 0 auto;
+  form {
+    input {
+      @extend %inputs;
+      width: 100%;
+    }
+  }
+}
 // Workout Session Page
 .workout-session-page {
 
