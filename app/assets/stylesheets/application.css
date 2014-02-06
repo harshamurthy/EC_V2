@@ -12,6 +12,7 @@
  *= require jquery.ui.autocomplete
  *= require jquery.ui.datepicker
  *= require font-awesome
+ *= require morris
  *= require_tree .
  */
 
