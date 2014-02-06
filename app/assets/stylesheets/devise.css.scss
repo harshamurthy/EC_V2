@@ -22,9 +22,6 @@
 
   .sign-up-inputs {
     @extend %inputs;
-    font-size: $text-input-size;
-    width: 60%;
-    margin: 10px 10px 10px 0px;
   }
 
   .sign-up-button {
@@ -56,10 +53,7 @@
 
     .sign-in-inputs {
       @extend %inputs;
-      font-size: $text-input-size;
       color: $orange;
-      width: 60%;
-      margin: 10px 10px 10px 0px;
     }
 
     .sign-in-help {
@@ -82,6 +76,39 @@
 }
 
 // Gym Edit Form
+// Sign In Page
+.gym-edit-page {
+  @extend %container;
+
+  .gym-edit-form {
+    @extend %form;
+
+    .gym-edit-header {
+      @extend %header-text-style;
+    }
+
+    .gym-edit-labels {
+      @extend %labels;
+    }
+
+    .gym-edit-inputs {
+      @extend %inputs;
+    }
+
+    .gym-edit-button {
+      @extend %buttons;
+    }
+
+    .gym-delete-button {
+      @extend %buttons;
+      background-color: $red;
+
+      &:hover {
+        background-color: lighten($red, 5%);
+      }
+    }
+  }
+}
 
 // Password Reset Request Page
 .password-reset-request-page {
@@ -102,9 +129,6 @@
 
   .password-reset-request-inputs {
     @extend %inputs;
-    font-size: $text-input-size;
-    width: 60%;
-    margin: 10px 10px 10px 0px;
   }
 
   .password-reset-request-button {
@@ -131,9 +155,6 @@
 
   .password-reset-inputs {
     @extend %inputs;
-    font-size: $text-input-size;
-    width: 60%;
-    margin: 10px 10px 10px 0px;
   }
 
   .password-reset-button {

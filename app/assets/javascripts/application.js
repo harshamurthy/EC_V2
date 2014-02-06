@@ -44,6 +44,8 @@ $(document).ready(function() {
     });
   };
 
+  // Input Field Tool Tips
+
   autoSaveSessionForm();
   setupWorkoutSession();
   setupClientsList();
