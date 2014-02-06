@@ -16,15 +16,13 @@
       <% end %>
 
       <div><%= f.label :password, class: 'gym-edit-labels' %><br />
-      <%= f.password_field :password, autocomplete: 'off', placeholder: 'Password', class: 'gym-edit-inputs' %></div>
-       <i class='input-field-tool-tips'>(leave blank if you don't want to change it)</i>
+      <%= f.password_field :password, autocomplete: 'off', placeholder: 'Password', title: "(Leave blank if you don't want to change it)",  class: 'gym-edit-inputs have-tooltip'%></div>
 
       <div><%= f.label :password_confirmation, class: 'gym-edit-labels' %><br />
       <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation', class: 'gym-edit-inputs' %></div>
 
       <div><%= f.label :current_password, class: 'gym-edit-labels' %><br />
-      <%= f.password_field :current_password, placeholder: 'Current Password', class: 'gym-edit-inputs' %></div>
-       <i class='input-field-tool-tips'>(Enter current password to confirm changes)</i>
+      <%= f.password_field :current_password, placeholder: 'Current Password', title: '(Enter current password to confirm changes)', class: 'gym-edit-inputs have-tooltip' %></div>
 
       <div><%= f.submit 'Update Gym', class: 'gym-edit-button' %></div>
     <% end %>

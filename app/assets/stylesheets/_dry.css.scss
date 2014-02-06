@@ -5,14 +5,13 @@ input[type=submit] {
 }
 
 a {
-  color: #5099fb;
+  color: $blue;
   font-size: 14px;
 }
 
 .input-field-tool-tips {
   font-size: 14px;
-  margin-top: 50px;
-
+  color: $orange;
 }
 
 %group:after {
