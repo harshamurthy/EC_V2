@@ -38,6 +38,9 @@ a {
   font-family: $main-font;
   margin-top: 15%;
   text-align: center;
+  // background-color: lighten($grey, 80%);
+  // padding: 25px;
+  // border-radius: 10px;
 }
 
 %inputs {
@@ -47,6 +50,8 @@ a {
   font-size: $text-input-size;
   width: 60%;
   margin: 10px 10px 10px 0px;
+  // padding: 10px;
+  // border-radius: 5px;
 }
 
 %labels {
