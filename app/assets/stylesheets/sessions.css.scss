@@ -73,13 +73,16 @@
 
 // Workout Session Execution Form
 .session-exercise-execution-form {
+
   .field-container {
+
     &:after {
       @extend %group:after;
     }
   }
 
   .exercise-execution-setting-container {
+
     &:after {
       @extend %group:after;
     }
@@ -102,6 +105,7 @@
   .field {
     text-align: center;
     padding-top: 35px;
+
     .exercise-execution-setting-text[type=text] {
       height: 30px;
       background-color: transparent;
@@ -137,6 +141,7 @@
   }
 
   .stop-watch-continer {
+
     .session-stop-watch {
       display: block;
       // margin-bottom: 5px;
@@ -154,19 +159,22 @@
       font-size: 20px;
     }
     .start-session-stop-watch {
-      background-color: lighten(#5da423, 10%);
+      background-color: $green;
       &:hover {
-        background-color: lighten(#5da423, 5%);
+        background-color: lighten($green, 5%);
       }
     }
+
     .stop-session-stop-watch {
-      background-color: lighten(#c60f13, 10%);
+      background-color: $red;
       &:hover {
-        background-color: lighten(#c60f13, 5%);
+        background-color: lighten($red, 5%);
       }
     }
+
     .reset-session-stop-watch {
-      background-color: #222222;
+      background-color: $grey;
+
       &:hover {
         background-color: lighten(#222222, 5%);
       }

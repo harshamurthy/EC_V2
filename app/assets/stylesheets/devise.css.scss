@@ -8,7 +8,7 @@
   @extend %container;
 
   .sign-up-form {
-    @extend %devise-form;
+    @extend %form;
   }
 
   .sign-up-header {
@@ -44,7 +44,7 @@
   }
 
   .sign-in-form {
-    @extend %devise-form;
+    @extend %form;
 
     .sign-in-header {
       @extend %header-text-style;
@@ -72,9 +72,6 @@
 
     .sign-in-button {
       @extend %buttons;
-      width: 60%;
-      margin-top: 30px;
-      margin-bottom: 1%;
     }
 
     // .sign-up-link {
@@ -84,12 +81,14 @@
   }
 }
 
+// Gym Edit Form
+
 // Password Reset Request Page
 .password-reset-request-page {
   @extend %container;
 
   .password-reset-request-form {
-    @extend %devise-form;
+    @extend %form;
   }
 
   .password-reset-request-header {
@@ -110,9 +109,6 @@
 
   .password-reset-request-button {
     @extend %buttons;
-    width: 60%;
-    margin-top: 30px;
-    margin-bottom: 1%;
   }
 }
 
@@ -121,7 +117,7 @@
   @extend %container;
 
   .password-reset-form {
-    @extend %devise-form;
+    @extend %form;
   }
 
   .password-reset-header {
@@ -142,8 +138,5 @@
 
   .password-reset-button {
     @extend %buttons;
-    width: 60%;
-    margin-top: 30px;
-    margin-bottom: 1%;
   }
 }
