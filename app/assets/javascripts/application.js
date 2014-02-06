@@ -17,14 +17,14 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $('.hide').hide()
+  $('.hide').hide();
 
   var setupClientsList = function() {
     var $el = $('.client-list');
 
     centerSearchBar = function() {
       mainHeight = $(window).height();
-    }
+    };
 
     if ($el.length > 0) { centerSearchBar(); }
   };
