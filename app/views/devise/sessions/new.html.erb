@@ -1,7 +1,7 @@
 <div class='sign-in-page'>
   <div class='sign-in-form'>
     <h2 class='sign-in-header'>The <span class='sign-in-header-span'>Exercise</span> Coach</h2>
-    <%= form_for(resource, :as => resource_name, :url => new_gym_session_url) do |f| %>
+    <%= form_for(resource, as: resource_name, url: new_gym_session_url) do |f| %>
       <div><%= f.label :location, class: 'sign-in-labels' %><br />
       <%= f.text_field :location, autofocus: true, placeholder: 'Location', class: 'sign-in-inputs' %></div>
 

@@ -1,4 +1,39 @@
+// Place all the styles related to the devise controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'dry';
+
+// Sign Up Page
+.sign-up-page {
+  @extend %container;
+
+  .sign-up-form {
+    @extend %devise-form;
+  }
+
+  .sign-up-header {
+    @extend %header-text-style;
+    margin-bottom: 25px;
+  }
+
+  .sign-up-labels {
+    @extend %labels;
+  }
+
+  .sign-up-inputs {
+    @extend %inputs;
+    font-size: $text-input-size;
+    width: 60%;
+    margin: 10px 10px 10px 0px;
+  }
+
+  .sign-up-button {
+    @extend %buttons;
+    width: 60%;
+    margin-top: 30px;
+    margin-bottom: 1%;
+  }
+}
 
 // Sign In Page
 .sign-in-page {
@@ -46,38 +81,6 @@
     //     font-size: 16px;
     //     padding-top: 30px;
     //   }
-  }
-}
-
-// Sign Up Page
-.sign-up-page {
-  @extend %container;
-
-  .sign-up-form {
-    @extend %devise-form;
-  }
-
-  .sign-up-header {
-    @extend %header-text-style;
-    margin-bottom: 25px;
-  }
-
-  .sign-up-labels {
-    @extend %labels;
-  }
-
-  .sign-up-inputs {
-    @extend %inputs;
-    font-size: $text-input-size;
-    width: 60%;
-    margin: 10px 10px 10px 0px;
-  }
-
-  .sign-up-button {
-    @extend %buttons;
-    width: 60%;
-    margin-top: 30px;
-    margin-bottom: 1%;
   }
 }
 

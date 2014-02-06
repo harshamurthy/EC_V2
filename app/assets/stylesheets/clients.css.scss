@@ -4,11 +4,14 @@
 @import 'dry';
 @import 'global_tags';
 
-.container {
+// Client Index Page
+.client-index-page {
   @extend %container;
   margin-top: 50px;
+
   .client-search-bar {
     text-align: center;
+
     .search-input {
       width: 50%;
       border-bottom: 1px solid black;
@@ -17,6 +20,7 @@
       border-radius: 0;
       margin-right: 15px;
     }
+
     .search-submit {
       color: white;
       background-color: $orange;
@@ -25,11 +29,13 @@
       border-radius: 5px;
     }
   }
-  .client-list-section {
+  .client-list {
     width: 70%;
     margin: 0 auto;
     padding-top: 50px;
+
     .ul-client-list {
+
       .client {
         font-size: $h3;
         text-align: left;
@@ -39,9 +45,11 @@
         .client-buttons {
           display: inline-block;
           float: right;
+
           .client-start-workout {
             margin-right: 5px;
           }
+
           .client-manage-account {
             margin-left: 5px;
           }
