@@ -1,11 +1,4 @@
-$head-text-size: 30px;
-$text-input-size: 24px;
-
-$orange: #f26d1c;
-$green: lighten(#5da423, 0%);
-$red: lighten(#c60f13, 0%);;
-$grey: lighten(#222222, 0%);
-$main-font: 'Duru Sans';
+@import 'variables';
 
 input[type=submit] {
   -webkit-appearance: none;
@@ -19,7 +12,7 @@ a {
 %group:after {
     display: table;
     clear: both;
-    content: "";
+    content: '';
 }
 
 %header-text-style {
