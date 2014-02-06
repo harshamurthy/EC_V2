@@ -1,4 +1,5 @@
 <div class="workout-session-execution-form">
+  <!-- <p class='ajax-session-saved-alert'>Exercise saved.</p> -->
   <%= form_for(exercise_execution, remote: true, :html => { :class => 'session-exercise-execution-form' }) do |f| %>
     <fieldset class="fieldset">
       <section class='exercise-execution-setting-container'>
@@ -140,7 +141,6 @@
       <%= f.hidden_field :session_id, value: session.id %>
       <div class="actions">
         <%= f.submit 'Save Exercise Performance', :class => 'exercise-execution-save-button hide' %>
-        <p class='save-exercise-execution-alert'>Your exercise is up to date <span class='session-exercise-saved-thumbs-up'><i class="fa fa-thumbs-up"></i></span></p>
     </div>
   <% end %>
 </div>
@@ -169,11 +169,7 @@
       $('#reset-stop-watch').show();
       $('#start-stop-watch').show();
 
-      $('.exercise-execution-save-button').show();
-      $('.save-exercise-execution-alert').hide();
-
       var time = $('#stop-watch').text();
-
       if (time.length < 6)
       {
         $(".time-input").val("00:" + time);
@@ -182,6 +178,8 @@
       {
        $(".time-input").val(time);
       }
+
+      $('.session-exercise-execution-form').submit();
     });
 
     $("#reset-stop-watch").click(function() {
@@ -190,6 +188,11 @@
       $('#stop-stop-watch').hide();
       $('#reset-stop-watch').hide();
       $('#start-stop-watch').show();
+      console.log(<%= exercise.id %>);
+    });
+
+    $('.workout-session-execution-form input[type=text]').focusout(function(){
+      $('.session-exercise-execution-form').submit();
     });
   });
 </script>

@@ -38,14 +38,6 @@ $(document).ready(function() {
     });
   };
 
-  var sessionSaveButton = function(){
-    $('.workout-session-execution-form input[type=text]').keyup(function () {
-     $('.exercise-execution-save-button').show();
-     $('.save-exercise-execution-alert').hide();
-   });
-  };
-
-  sessionSaveButton();
   setupWorkoutSession();
   setupClientsList();
 });
