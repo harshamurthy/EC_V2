@@ -19,9 +19,9 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $('.hide').hide()
-  var mainHeight = $(window).height();
+  $('.hide').hide();
 
+  var mainHeight = $(window).height();
 
   var setupClientsList = function() {
     var $el = $('.client-list');
