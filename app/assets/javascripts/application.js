@@ -38,6 +38,13 @@ $(document).ready(function() {
     });
   };
 
+  var autoSaveSessionForm = function(){
+    $('.workout-session-execution-form input[type=text]').focusout(function(){
+      $('.session-exercise-execution-form').submit();
+    });
+  };
+
+  autoSaveSessionForm();
   setupWorkoutSession();
   setupClientsList();
 });
