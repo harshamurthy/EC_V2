@@ -1,0 +1,57 @@
+<h1>Listing setting_executions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Seat</th>
+      <th>Foot</th>
+      <th>Degrees</th>
+      <th>Back</th>
+      <th>User</th>
+      <th>Exercise</th>
+      <th>Foot stool</th>
+      <th>Pin</th>
+      <th>Arm</th>
+      <th>Seatbelt</th>
+      <th>Backpad</th>
+      <th>Knee</th>
+      <th>Seatpad</th>
+      <th>Chestpad</th>
+      <th>Hips</th>
+      <th>Leg</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @setting_executions.each do |setting_execution| %>
+      <tr>
+        <td><%= setting_execution.seat %></td>
+        <td><%= setting_execution.foot %></td>
+        <td><%= setting_execution.degrees %></td>
+        <td><%= setting_execution.back %></td>
+        <td><%= setting_execution.client_id %></td>
+        <td><%= setting_execution.exercise_id %></td>
+        <td><%= setting_execution.foot_stool %></td>
+        <td><%= setting_execution.pin %></td>
+        <td><%= setting_execution.arm %></td>
+        <td><%= setting_execution.seatbelt %></td>
+        <td><%= setting_execution.backpad %></td>
+        <td><%= setting_execution.knee %></td>
+        <td><%= setting_execution.seatpad %></td>
+        <td><%= setting_execution.chestpad %></td>
+        <td><%= setting_execution.hips %></td>
+        <td><%= setting_execution.leg %></td>
+        <td><%= link_to 'Show', setting_execution %></td>
+        <td><%= link_to 'Edit', edit_setting_execution_path(setting_execution) %></td>
+        <td><%= link_to 'Destroy', setting_execution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Setting execution', new_setting_execution_path %>

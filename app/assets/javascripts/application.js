@@ -48,6 +48,9 @@ $(document).ready(function() {
     $('.workout-session-execution-form input[type=text]').focusout(function() {
       $('.session-exercise-execution-form').submit();
     });
+    $('.workout-session-setting-form input[type=text]').focusout(function() {
+      $('.session-setting-execution-form').submit();
+    });
   };
 
   // Input Field Tool Tips
@@ -102,28 +105,28 @@ $(document).ready(function() {
     });
   };
 
-  var clientGraph = function() {
-    new Morris.Line({
+  // var clientGraph = function() {
+  //   new Morris.Line({
 
-      element: 'client_chart',
-      data: [
-        // $("#client_chart").data('exercises')
-        { year: '2008', value: 20 },
-        { year: '2009', value: 10 },
-        { year: '2010', value: 5 },
-        { year: '2011', value: 5 },
-        { year: '2012', value: 20 }
-      ],
+  //     element: 'client_chart',
+  //     data: [
+  //       // $("#client_chart").data('exercises')
+  //       { year: '2008', value: 20 },
+  //       { year: '2009', value: 10 },
+  //       { year: '2010', value: 5 },
+  //       { year: '2011', value: 5 },
+  //       { year: '2012', value: 20 }
+  //     ],
 
-      // xkey: 'updated_at',
-      xkey: 'year',
+  //     // xkey: 'updated_at',
+  //     xkey: 'year',
 
-      // ykeys: ['time, reps, weight'],
-      ykeys: ['value'],
+  //     // ykeys: ['time, reps, weight'],
+  //     ykeys: ['value'],
 
-      labels: ['Time', 'Reps', 'Weight']
-    });
-  };
+  //     labels: ['Time', 'Reps', 'Weight']
+  //   });
+  // };
 
   //Calling functions
   autoSaveSessionForm();
@@ -131,5 +134,5 @@ $(document).ready(function() {
   setupClientsList();
   inputFieldToolTips();
   sessionTimer();
-  clientGraph();
+  // clientGraph();
 });

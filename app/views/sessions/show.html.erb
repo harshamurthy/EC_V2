@@ -1,22 +1,26 @@
-
 <div class='workout-session-page'>
   <nav class='workout-session-client-info'>
-    <h1 class='client-session-title'><%= @session.client.name %> workout routine <span class='client-session-date'><%= @session.date.strftime("%B %d, %Y") %></span></h1>
+    <h1 class='client-session-title'><%#= @session.client.name %> <!-- workout routine --> <span class='client-session-date'><%= @session.date.strftime("%B %d, %Y") %></span></h1>
   </nav>
 
   <aside class='workout-session-exercise-list'>
     <ul>
       <% @session.exercises.each do |exercise| %>
       <% if @session.exercises.first.id == exercise.id %>
-        <li class='onclick session-exercise'><%= link_to exercise.name, workout_session_url(@session.id, exercise_id: exercise.id), :class=> 'session-exercise-link', remote: true %></li>
+        <li class='onclick session-exercise'>
+          <%= link_to exercise.name, workout_session_url(@session.id, exercise_id: exercise.id), :class=> 'session-exercise-link', remote: true %>
+        </li>
         <% else %>
-        <li class='session-exercise'><%= link_to exercise.name, workout_session_url(@session.id, exercise_id: exercise.id), :class=> 'session-exercise-link', remote: true %></li>
+        <li class='session-exercise'>
+          <%= link_to exercise.name, workout_session_url(@session.id, exercise_id: exercise.id), :class=> 'session-exercise-link', remote: true %>
+        </li>
         <% end %>
       <% end %>
     </ul>
   </aside>
 
   <div class='workout-session-execution-data'>
+    <%= render 'setting_execution_form', exercise: @session.exercises.first, setting_execution: @setting_execution, client: @session.client %>
     <%= render 'exercise_execution_form', exercise: @session.exercises.first, exercise_execution: @exercise_execution, session: @session %>
   </div>
 </div>

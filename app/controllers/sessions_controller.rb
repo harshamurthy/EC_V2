@@ -11,13 +11,14 @@ class SessionsController < ApplicationController
   # GET /sessions/1.json
   def show
     if params[:exercise_id].present?
+      @setting_execution = SettingExecution.where(exercise_id: params[:exercise_id], client_id: @session.client.id).first || SettingExecution.new
       @exercise_execution = ExerciseExecution.where(exercise_id: params[:exercise_id], session_id: params[:id]).first || ExerciseExecution.new
       @exercise = Exercise.find(params[:exercise_id])
     else
-      @exercise = @session.exercises.first.id
       @exercise_execution = ExerciseExecution.where(exercise_id: @exercise = @session.exercises.first.id, session_id: @session.id).first || ExerciseExecution.new
+      @setting_execution = SettingExecution.where(exercise_id: @exercise = @session.exercises.first.id, client_id: @session.client.id).first || SettingExecution.new
+      @exercise = @session.exercises.first.id
     end
-
   end
 
   # GET /sessions/new

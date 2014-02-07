@@ -1,107 +1,6 @@
 <div class="workout-session-execution-form">
-  <!-- <p class='ajax-session-saved-alert'>Exercise saved.</p> -->
   <%= form_for(exercise_execution, remote: true, :html => { :class => 'session-exercise-execution-form' }) do |f| %>
     <fieldset class="fieldset">
-      <section class='exercise-execution-setting-container'>
-        <% if exercise.seat? %>
-          <div class="field exercise-execution-setting">
-            <%= f.text_field :seat, placeholder: "Seat", :class => 'exercise-execution-setting-text' %>
-            <%= f.label :seat %>
-          </div>
-        <% end %>
-
-        <% if exercise.foot? %>
-          <div class="field exercise-execution-setting">
-            <%= f.text_field :foot, placeholder: "Foot", :class => 'exercise-execution-setting-text' %>
-            <%= f.label :foot %>
-          </div>
-        <% end %>
-
-        <% if exercise.degrees? %>
-          <div class="field exercise-execution-setting">
-            <%= f.text_field :degrees, placeholder: "Degrees", :class => 'exercise-execution-setting-text' %>
-            <%= f.label :degrees %>
-          </div>
-        <% end %>
-
-        <% if exercise.back? %>
-          <div class="field exercise-execution-setting">
-            <%= f.text_field :back, placeholder: "Back", :class => 'exercise-execution-setting-text' %>
-            <%= f.label :back %>
-          </div>
-        <% end %>
-
-        <% if exercise.foot_stool? %>
-          <div class="field exercise-execution-setting">
-            <%= f.text_field :foot_stool, placeholder: "Foot stool", :class => 'exercise-execution-setting-text' %>
-            <%= f.label :foot_stool %>
-          </div>
-        <% end %>
-
-        <% if exercise.pin? %>
-          <div class="field exercise-execution-setting">
-            <%= f.text_field :pin, placeholder: "Pin", :class => 'exercise-execution-setting-text' %>
-            <%= f.label :pin %>
-          </div>
-        <% end %>
-
-        <% if exercise.arm? %>
-          <div class="field exercise-execution-setting">
-            <%= f.text_field :arm, placeholder: "Arm", :class => 'exercise-execution-setting-text' %>
-            <%= f.label :arm %>
-          </div>
-        <% end %>
-
-        <% if exercise.seatbelt? %>
-          <div class="field exercise-execution-setting">
-            <%= f.text_field :seatbelt, placeholder: "Seatbelt", :class => 'exercise-execution-setting-text' %>
-            <%= f.label :seatbelt %>
-          </div>
-        <% end %>
-
-        <% if exercise.backpad? %>
-          <div class="field exercise-execution-setting">
-            <%= f.text_field :backpad, placeholder: "Backpad", :class => 'exercise-execution-setting-text' %>
-            <%= f.label :backpad %>
-          </div>
-        <% end %>
-
-        <% if exercise.knee? %>
-          <div class="field exercise-execution-setting">
-            <%= f.text_field :knee, placeholder: "Knee", :class => 'exercise-execution-setting-text' %>
-            <%= f.label :knee %>
-          </div>
-        <% end %>
-
-        <% if exercise.seatpad? %>
-          <div class="field exercise-execution-setting">
-            <%= f.text_field :seatpad, placeholder: "Seatpad", :class => 'exercise-execution-setting-text' %>
-            <%= f.label :seatpad %>
-          </div>
-        <% end %>
-
-        <% if exercise.chestpad? %>
-          <div class="field exercise-execution-setting">
-            <%= f.text_field :chestpad, placeholder: "Chestpad", :class => 'exercise-execution-setting-text' %>
-            <%= f.label :chestpad %>
-          </div>
-        <% end %>
-
-        <% if exercise.hips? %>
-          <div class="field exercise-execution-setting">
-            <%= f.text_field :hips, placeholder: "Hips", :class => 'exercise-execution-setting-text' %>
-            <%= f.label :hips %>
-          </div>
-        <% end %>
-
-        <% if exercise.leg? %>
-          <div class="field exercise-execution-setting">
-            <%= f.text_field :leg, placeholder: "Leg", :class => 'exercise-execution-setting-text' %>
-            <%= f.label :leg %>
-          </div>
-        <% end %>
-      </section>
-
       <% if exercise.weight? %>
         <div class="field">
           <%= f.text_field :weight, placeholder: "Weight", :class => 'exercise-execution-performance-text' %>
@@ -135,16 +34,11 @@
         <%= link_to "Stop", "#", id: "stop-stop-watch", :class => 'stop-session-stop-watch' %>
         <%= link_to "Reset", "#", id: "reset-stop-watch", :class => 'reset-session-stop-watch' %>
       </div>
-    </fieldset> <!-- fieldset closing -->
+    </fieldset>
 
       <%= f.hidden_field :exercise_id, value: exercise.id %>
       <%= f.hidden_field :session_id, value: session.id %>
       <div class="actions">
-        <%#= f.submit 'Save Exercise Performance', :class => 'exercise-execution-save-button hide' %>
-    </div>
+      </div>
   <% end %>
 </div>
-
-<script type="text/javascript">
-
-</script>

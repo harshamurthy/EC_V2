@@ -1,0 +1,1 @@
+json.extract! @setting_execution, :id, :seat, :foot, :degrees, :back, :user_id, :exercise_id, :foot_stool, :pin, :arm, :seatbelt, :backpad, :knee, :seatpad, :chestpad, :hips, :leg, :created_at, :updated_at

@@ -1,4 +1,6 @@
 ECV2::Application.routes.draw do
+  resources :setting_executions
+
   devise_for :gyms
   root to: "clients#index"
   resources :exercise_executions

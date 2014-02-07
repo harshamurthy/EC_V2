@@ -1,0 +1,105 @@
+<%= form_for(@setting_execution) do |f| %>
+  <% if @setting_execution.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@setting_execution.errors.count, "error") %> prohibited this setting_execution from being saved:</h2>
+
+      <ul>
+      <% @setting_execution.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if @exercise.seat? %>
+    <div class="field">
+      <%= f.label :seat %><br>
+      <%= f.text_field :seat %>
+    </div>
+  <% end %>
+
+  <% if @exercise.foot? %>
+    <div class="field">
+      <%= f.label :foot %><br>
+      <%= f.text_field :foot %>
+    </div>
+  <% end %>
+
+  <% if @exercise.degrees? %>
+    <div class="field">
+      <%= f.label :degrees %><br>
+      <%= f.text_field :degrees %>
+    </div>
+  <% end %>
+  <% if @exercise.back? %>
+    <div class="field">
+      <%= f.label :back %><br>
+      <%= f.text_field :back %>
+    </div>
+  <% end %>
+  <% if @exercise.foot_stool? %>
+    <div class="field">
+      <%= f.label :foot_stool %><br>
+      <%= f.text_field :foot_stool %>
+    </div>
+  <% end %>
+  <% if @exercise.pin? %>
+    <div class="field">
+      <%= f.label :pin %><br>
+      <%= f.text_field :pin %>
+    </div>
+  <% end %>
+  <% if @exercise.arm? %>
+    <div class="field">
+      <%= f.label :arm %><br>
+      <%= f.text_field :arm %>
+    </div>
+  <% end %>
+  <% if @exercise.seatbelt? %>
+    <div class="field">
+      <%= f.label :seatbelt %><br>
+      <%= f.text_field :seatbelt %>
+    </div>
+  <% end %>
+  <% if @exercise.backpad? %>
+    <div class="field">
+      <%= f.label :backpad %><br>
+      <%= f.text_field :backpad %>
+    </div>
+  <% end %>
+  <% if @exercise.knee? %>
+    <div class="field">
+      <%= f.label :knee %><br>
+      <%= f.text_field :knee %>
+    </div>
+  <% end %>
+  <% if @exercise.seatpad? %>
+    <div class="field">
+      <%= f.label :seatpad %><br>
+      <%= f.text_field :seatpad %>
+    </div>
+  <% end %>
+  <% if @exercise.chestpad? %>
+    <div class="field">
+      <%= f.label :chestpad %><br>
+      <%= f.text_field :chestpad %>
+    </div>
+  <% end %>
+  <% if @exercise.hips? %>
+    <div class="field">
+      <%= f.label :hips %><br>
+      <%= f.text_field :hips %>
+    </div>
+  <% end %>
+  <% if @exercise.leg? %>
+    <div class="field">
+      <%= f.label :leg %><br>
+      <%= f.text_field :leg %>
+    </div>
+  <% end %>
+  <%= f.hidden_field :client_id, value: params[:client_id] %>
+  <%= f.hidden_field :exercise_id, value: params[:exercise_id] %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
