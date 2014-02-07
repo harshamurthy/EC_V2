@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 20140207202918) do
     t.string   "chestpad"
     t.string   "hips"
     t.string   "leg"
-    t.integer  "client_id"
   end
 
   create_table "exercises", force: true do |t|

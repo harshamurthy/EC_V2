@@ -153,7 +153,7 @@
     }
   }
 
-  .stop-watch-continer {
+  .stop-watch-container {
 
     .session-stop-watch {
       display: block;
@@ -171,6 +171,7 @@
       padding: 15px;
       font-size: 20px;
     }
+
     .start-session-stop-watch {
       background-color: $green;
       &:hover {
