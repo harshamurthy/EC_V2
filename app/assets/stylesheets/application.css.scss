@@ -1,21 +1,28 @@
+@import 'jquery.ui.autocomplete';
+@import 'jquery.ui.datepicker';
+@import 'font-awesome';
+@import 'morris';
+
 @import 'reset';
 @import 'dry';
 @import 'variables';
 
 @import 'bourbon';
-@import 'clients';
 @import 'devise';
 @import 'exercise_executions';
 @import 'exercises';
 @import 'routines';
 @import 'sessions';
+@import 'clients';
 
 * {
   box-sizing: border-box;
 }
 
 html, body { min-height: 100%; }
-a { text-decoration: none; }
+.navigation-link, .open-menu, .close-menu {
+  text-decoration: none;
+}
 
 .main-header {
   background: linear-gradient(#3F94BF, #246485);
@@ -27,6 +34,7 @@ a { text-decoration: none; }
   width: 100%;
   left: 0;
   transition: all 0.3s ease;
+  display: block;
   a {
     position: absolute;
     left: 20px;
@@ -47,15 +55,16 @@ a { text-decoration: none; }
   top: 0;
   width: 0;
   height: 100%;
+  border-right: 1px solid black;
   background: #3B3B3B;
   overflow-y: auto;
   transition: width 0.3s ease;
-  a {
+  .navigation-link {
     display: block;
     background: linear-gradient(#3E3E3E, #383838);
     border-top: 1px solid #484848;
     border-bottom: 1px solid #2E2E2E;
-    color: white;
+    color: $orange;
     padding: 15px;
     &:hover, &:focus {
       background: linear-gradient(#484848, #383838);
@@ -72,10 +81,6 @@ a { text-decoration: none; }
   }
 }
 
-.content {
-  padding: 100px 20px 20px 20px;
-}
-
 .close-menu {
   display: none;
 }
@@ -83,16 +88,20 @@ a { text-decoration: none; }
 #main-nav:target {
   width: 20%;
 }
+
 #main-nav:target + .page-wrap {
   width: 80%;
   .open-menu {
-     display: block;
+     display: none;
   }
+
   .close-menu {
      display: block;
   }
+
   .main-header {
     width: 80%;
     left: 20%;
   }
 }
+
