@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+#Bourbon
+gem 'bourbon'
 #FontAwesome
 gem 'font-awesome-rails'
 #jQuery-UI

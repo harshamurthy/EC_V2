@@ -11,11 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require raphael
+//= require morris
+//= require jquery.runner-min
 //= require jquery_ujs
 //= require jquery.ui.autocomplete
 //= require jquery.ui.datepicker
-//= require raphael
-//= require morris
+//= foundation.min
 //= require_tree .
 
 $(document).ready(function() {
@@ -59,8 +61,74 @@ $(document).ready(function() {
     });
   };
 
+  var sessionTimer = function() {
+
+    $('#stop-stop-watch').hide();
+    $('#reset-stop-watch').hide();
+    $('#stop-watch').runner();
+
+    $('#start-stop-watch').click(function() {
+      $('#stop-watch').runner('start');
+      $('#reset-stop-watch').hide();
+      $(this).hide();
+      $('#stop-stop-watch').show();
+    });
+
+    $('#stop-stop-watch').click(function() {
+      $('#stop-watch').runner('stop');
+      $('#stop-stop-watch').hide();
+      $('#reset-stop-watch').show();
+      $('#start-stop-watch').show();
+
+      var time = $('#stop-watch').text();
+      if (time.length < 6)
+      {
+        $(".time-input").val("00:" + time);
+      }
+      else
+      {
+       $(".time-input").val(time);
+      }
+      $('.session-exercise-execution-form').submit();
+    });
+
+    $("#reset-stop-watch").click(function() {
+      $("#stop-watch").runner("reset");
+
+      $('#stop-stop-watch').hide();
+      $('#reset-stop-watch').hide();
+      $('#start-stop-watch').show();
+    });
+  };
+
+  var clientGraph = function() {
+    new Morris.Line({
+
+      element: 'client_chart',
+      data: [
+        // $("#client_chart").data('exercises')
+        { year: '2008', value: 20 },
+        { year: '2009', value: 10 },
+        { year: '2010', value: 5 },
+        { year: '2011', value: 5 },
+        { year: '2012', value: 20 }
+      ],
+
+      // xkey: 'updated_at',
+      xkey: 'year',
+
+      // ykeys: ['time, reps, weight'],
+      ykeys: ['value'],
+
+      labels: ['Time', 'Reps', 'Weight']
+    });
+  };
+
+  //Calling functions
   autoSaveSessionForm();
   setupWorkoutSession();
   setupClientsList();
   inputFieldToolTips();
+  sessionTimer();
+  clientGraph();
 });

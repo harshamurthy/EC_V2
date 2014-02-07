@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-<div id="myfirstchart" style="height: 250px;"></div>
+
+<%#= content_tag :div, "", id: "client_chart", data: { exercises: @client.sessions.last.exercise_executions.first } %>
+
 <p>
   <strong>Gym:</strong>
   <%= @client.gym_id %>

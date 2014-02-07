@@ -140,55 +140,11 @@
       <%= f.hidden_field :exercise_id, value: exercise.id %>
       <%= f.hidden_field :session_id, value: session.id %>
       <div class="actions">
-        <%= f.submit 'Save Exercise Performance', :class => 'exercise-execution-save-button hide' %>
+        <%#= f.submit 'Save Exercise Performance', :class => 'exercise-execution-save-button hide' %>
     </div>
   <% end %>
 </div>
 
 <script type="text/javascript">
-  $(document).ready(function(){
 
-    $('#stop-stop-watch').hide();
-    $('#reset-stop-watch').hide();
-
-    $('#stop-watch').runner();
-
-    $('#start-stop-watch').click(function() {
-      $('#stop-watch').runner('start');
-      $('#reset-stop-watch').hide();
-
-      $(this).hide();
-
-      $('#stop-stop-watch').show();
-    });
-
-    $('#stop-stop-watch').click(function() {
-      $('#stop-watch').runner('stop');
-
-      $('#stop-stop-watch').hide();
-      $('#reset-stop-watch').show();
-      $('#start-stop-watch').show();
-
-      var time = $('#stop-watch').text();
-      if (time.length < 6)
-      {
-        $(".time-input").val("00:" + time);
-      }
-      else
-      {
-       $(".time-input").val(time);
-      }
-
-      $('.session-exercise-execution-form').submit();
-    });
-
-    $("#reset-stop-watch").click(function() {
-      $("#stop-watch").runner("reset");
-
-      $('#stop-stop-watch').hide();
-      $('#reset-stop-watch').hide();
-      $('#start-stop-watch').show();
-      console.log(<%= exercise.id %>);
-    });
-  });
 </script>
