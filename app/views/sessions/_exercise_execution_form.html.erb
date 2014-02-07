@@ -1,44 +1,44 @@
-<div class="workout-session-execution-form">
-  <%= form_for(exercise_execution, remote: true, :html => { :class => 'session-exercise-execution-form' }) do |f| %>
-    <fieldset class="fieldset">
+<div class='workout-session-execution-form'>
+  <%= form_for(exercise_execution, remote: true, :html => { class: 'session-exercise-execution-form' }) do |f| %>
+    <fieldset class='fieldset'>
       <% if exercise.weight? %>
-        <div class="field">
-          <%= f.text_field :weight, placeholder: "Weight", :class => 'exercise-execution-performance-text' %>
+        <div class='field'>
+          <%= f.text_field :weight, placeholder: 'Weight', class: 'exercise-execution-performance-text' %>
           <%= f.label :weight %>
         </div>
       <% end %>
 
       <% if exercise.percentage? %>
-        <div class="field">
-          <%= f.text_field :percentage, placeholder: "Percentage", :class => 'exercise-execution-performance-text' %>
+        <div class='field'>
+          <%= f.text_field :percentage, placeholder: 'Percentage', class: 'exercise-execution-performance-text' %>
           <%= f.label :percentage %>
         </div>
       <% end %>
 
       <% if exercise.reps? %>
-        <div class="field">
-          <%= f.text_field :reps, placeholder: "Reps", :class => 'exercise-execution-performance-text' %>
+        <div class='field'>
+          <%= f.text_field :reps, placeholder: 'Reps', class: 'exercise-execution-performance-text' %>
           <%= f.label :reps %>
         </div>
       <% end %>
 
       <% if exercise.time? %>
-        <div class="field">
-          <%= f.text_field :time, placeholder: "Time", :class => "time-input exercise-execution-performance-text" %>
+        <div class='field'>
+          <%= f.text_field :time, placeholder: 'Time', class: 'time-input exercise-execution-performance-text' %>
           <%= f.label :time %>
         </div>
       <% end %>
-      <div class="field stop-watch-container">
-        <span id="stop-watch" class='session-stop-watch'></span>
-        <%= link_to "Start", "#", id: "start-stop-watch", :class => 'start-session-stop-watch' %>
-        <%= link_to "Stop", "#", id: "stop-stop-watch", :class => 'stop-session-stop-watch' %>
-        <%= link_to "Reset", "#", id: "reset-stop-watch", :class => 'reset-session-stop-watch' %>
+      <div class='field stop-watch-container'>
+        <span id='stop-watch' class='session-stop-watch'></span>
+        <%= link_to 'Start', '#', id: 'start-stop-watch', class: 'start-session-stop-watch' %>
+        <%= link_to 'Stop', '#', id: 'stop-stop-watch', class: 'stop-session-stop-watch' %>
+        <%= link_to 'Reset', '#', id: 'reset-stop-watch', class: 'reset-session-stop-watch' %>
       </div>
     </fieldset>
 
       <%= f.hidden_field :exercise_id, value: exercise.id %>
       <%= f.hidden_field :session_id, value: session.id %>
-      <div class="actions">
+      <div class='actions'>
       </div>
   <% end %>
 </div>
