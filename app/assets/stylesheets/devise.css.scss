@@ -26,9 +26,6 @@
 
   .sign-up-button {
     @extend %buttons;
-    width: 60%;
-    margin-top: 30px;
-    margin-bottom: 1%;
   }
 }
 
@@ -76,7 +73,6 @@
 }
 
 // Gym Edit Form
-// Sign In Page
 .gym-edit-page {
   @extend %container;
 

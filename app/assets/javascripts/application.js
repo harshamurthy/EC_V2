@@ -21,7 +21,8 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $('.hide').hide()
+  $('.hide').hide();
+
   var mainHeight = $(window).height();
 
   var setupClientsList = function() {
@@ -29,7 +30,7 @@ $(document).ready(function() {
 
     centerSearchBar = function() {
       mainHeight = $(window).height();
-    }
+    };
 
     if ($el.length > 0) { centerSearchBar(); }
   };
