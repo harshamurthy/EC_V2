@@ -1,7 +1,7 @@
 <%= form_for(@exercise) do |f| %>
   <% if @exercise.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
+    <div id='error_explanation'>
+      <h2><%= pluralize(@exercise.errors.count, 'error') %> prohibited this exercise from being saved:</h2>
 
       <ul>
       <% @exercise.errors.full_messages.each do |msg| %>
@@ -11,44 +11,44 @@
     </div>
   <% end %>
 
- <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+ <div class='exercise-option'>
+    <%= f.label :name, class: 'exercise-label' %>
+    <%= f.text_field :name, placeholder: 'Name', class: 'exercise-input' %>
   </div>
 
-  <span class="field">
-    <%= f.label :weight %>
-    <%= f.check_box :weight %> |
+  <span class='exercise-option'>
+    <%= f.check_box :weight %>
+    <%= f.label :weight%>
   </span>
-  <span class="field">
+  <span class='exercise-option'>
+    <%= f.check_box :percentage %>
     <%= f.label :percentage %>
-    <%= f.check_box :percentage %>|
   </span>
-  <span class="field">
+  <span class='exercise-option'>
+    <%= f.check_box :reps %>
     <%= f.label :reps %>
-    <%= f.check_box :reps %> |
   </span>
-  <span class="field">
+  <span class='exercise-option'>
+    <%= f.check_box :time %>
     <%= f.label :time %>
-    <%= f.check_box :time %> |
   </span>
-  <span class="field">
+  <span class='exercise-option'>
+    <%= f.check_box :seat %>
     <%= f.label :seat %>
-    <%= f.check_box :seat %> |
   </span>
-  <span class="field">
+  <span class='exercise-option'>
+    <%= f.check_box :foot %>
     <%= f.label :foot %>
-    <%= f.check_box :foot %> |
   </span>
-  <span class="field">
+  <span class='exercise-option'>
+    <%= f.check_box :degrees %>
     <%= f.label :degrees %>
-    <%= f.check_box :degrees %> |
   </span>
-  <span class="field">
+  <span class='exercise-option'>
+    <%= f.check_box :back %>
     <%= f.label :back %>
-    <%= f.check_box :back %> |
   </span>
-  <div class="actions">
-    <%= f.submit %>
+  <div class='actions'>
+    <%= f.submit 'Submit Exercise', class: 'exercise-form-button' %>
   </div>
 <% end %>
