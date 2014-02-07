@@ -194,31 +194,4 @@
       }
     }
   }
-  // .actions {
-  //   text-align: center;
-  //   margin-top: 25%;
-  //   .exercise-execution-save-button {
-  //     @extend %buttons;
-  //     background-color: $orange;
-  //     width: 80%;
-  //     font-size: 25px;
-  //     &:hover {
-  //       background-color: darken($orange, 10%);
-  //     }
-  //   }
-  //   .save-exercise-execution-alert {
-  //     font-size: 30px;
-  //     color: $orange;
-
-  //     .session-exercise-saved-thumbs-up {
-  //       color: $orange;
-  //     }
-  //   }
-  // }
-}
-
-.ajax-session-saved-alert {
-  color: #ccc;
-  text-align: center;
-  margin-top: 10px;
 }
