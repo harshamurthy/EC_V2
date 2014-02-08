@@ -35,7 +35,11 @@
     padding-top: 50px;
 
     .ul-client-list {
-
+      .search-results-stats {
+        margin-top: 25px;
+        text-align: center;
+        color: #ccc;
+      }
       .client {
         font-size: $h3;
         text-align: left;

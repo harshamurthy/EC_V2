@@ -1,7 +1,7 @@
 <div class='client-index-page'>
   <div class='client-search-bar'>
     <%= form_tag clients_url, method: 'get', remote: true do %>
-      <%= text_field_tag :search, nil, placeholder: 'Search for your clients...', class: 'search-input' %>
+      <%= text_field_tag :search, nil, placeholder: "Search for one of your #{@clients.count} clients...", class: 'search-input' %>
       <%= submit_tag 'Search', class: 'search-submit' %>
     <% end %>
   </div>
@@ -9,8 +9,6 @@
   <section class='client-list'>
     <%= render 'client_search_results', clients: @clients %>
   </section>
-
-  <%= link_to 'Sign Out', destroy_gym_session_path, method: 'delete' %>
 </div>
 
 <script type='text/javascript'>
