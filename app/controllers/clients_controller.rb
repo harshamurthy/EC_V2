@@ -5,8 +5,7 @@ class ClientsController < ApplicationController
   # GET /clients.json
   def index
     if params[:search]
-      @clients = Client.where("first_name || ' ' || last_name || ' ' ||  email || ' ' || machine_code LIKE :search",
-                              :search => "%#{params[:search].downcase}%" )
+      @clients = Client.where("first_name || ' ' || last_name || ' ' ||  email || ' ' || machine_code LIKE :search",                       :search => "%#{params[:search].downcase}%" )
     else
       @clients = Client.all
     end
