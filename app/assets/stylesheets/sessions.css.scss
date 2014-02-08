@@ -1,7 +1,7 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import 'dry';
+
 // New Session
 .create-new-session-page {
   @extend %container;
@@ -179,6 +179,7 @@
       }
     }
 
+    // Stop Watch
     .stop-session-stop-watch {
       background-color: $red;
       &:hover {
@@ -195,3 +196,20 @@
     }
   }
 }
+
+ //Settings
+.workout-session-setting-form {
+  width: 75%;
+  margin: 100px auto 0;
+  ul {
+    li {
+      padding: 10px;
+      display: inline-block;
+      label {
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
+  }
+}
+

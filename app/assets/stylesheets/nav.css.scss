@@ -73,7 +73,7 @@ html, body { min-height: 100%; }
 }
 
 #main-nav:target + .page-wrap {
-  width: 70%;
+  width: 80%;
   .open-menu {
      display: none;
   }
@@ -83,7 +83,7 @@ html, body { min-height: 100%; }
   }
 
   .main-header {
-    width: 70%;
+    width: 80%;
     left: 20%;
   }
 }

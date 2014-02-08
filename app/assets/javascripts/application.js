@@ -105,6 +105,21 @@ $(document).ready(function() {
     });
   };
 
+  var automaticClientSearchBar = function() {
+    $('.client-search-bar form input').keyup(function(){
+      $(this).parent('form').submit();
+    });
+  };
+
+  //Calling functions
+  automaticClientSearchBar();
+  autoSaveSessionForm();
+  setupWorkoutSession();
+  setupClientsList();
+  inputFieldToolTips();
+  sessionTimer();
+  // clientGraph();
+});
   // var clientGraph = function() {
   //   new Morris.Line({
 
@@ -127,12 +142,3 @@ $(document).ready(function() {
   //     labels: ['Time', 'Reps', 'Weight']
   //   });
   // };
-
-  //Calling functions
-  autoSaveSessionForm();
-  setupWorkoutSession();
-  setupClientsList();
-  inputFieldToolTips();
-  sessionTimer();
-  // clientGraph();
-});

@@ -11,93 +11,94 @@
         </ul>
       </div>
     <% end %>
+    <ul class='exercise-settings-list'>
+      <% if exercise.seat? %>
+        <li class="field">
+          <%= f.label :seat %>
+          <%= f.text_field :seat %>
+        </li>
+      <% end %>
 
-    <% if exercise.seat? %>
-      <div class="field">
-        <%= f.label :seat %>
-        <%= f.text_field :seat %>
-      </div>
-    <% end %>
+      <% if exercise.foot? %>
+        <li class="field">
+          <%= f.label :foot %>
+          <%= f.text_field :foot %>
+        </li>
+      <% end %>
 
-    <% if exercise.foot? %>
-      <div class="field">
-        <%= f.label :foot %>
-        <%= f.text_field :foot %>
-      </div>
-    <% end %>
-
-    <% if exercise.degrees? %>
-      <div class="field">
-        <%= f.label :degrees %>
-        <%= f.text_field :degrees %>
-      </div>
-    <% end %>
-    <% if exercise.back? %>
-      <div class="field">
-        <%= f.label :back %>
-        <%= f.text_field :back %>
-      </div>
-    <% end %>
-    <% if exercise.foot_stool? %>
-      <div class="field">
-        <%= f.label :foot_stool %>
-        <%= f.text_field :foot_stool %>
-      </div>
-    <% end %>
-    <% if exercise.pin? %>
-      <div class="field">
-        <%= f.label :pin %>
-        <%= f.text_field :pin %>
-      </div>
-    <% end %>
-    <% if exercise.arm? %>
-      <div class="field">
-        <%= f.label :arm %>
-        <%= f.text_field :arm %>
-      </div>
-    <% end %>
-    <% if exercise.seatbelt? %>
-      <div class="field">
-        <%= f.label :seatbelt %>
-        <%= f.text_field :seatbelt %>
-      </div>
-    <% end %>
-    <% if exercise.backpad? %>
-      <div class="field">
-        <%= f.label :backpad %>
-        <%= f.text_field :backpad %>
-      </div>
-    <% end %>
-    <% if exercise.knee? %>
-      <div class="field">
-        <%= f.label :knee %>
-        <%= f.text_field :knee %>
-      </div>
-    <% end %>
-    <% if exercise.seatpad? %>
-      <div class="field">
-        <%= f.label :seatpad %>
-        <%= f.text_field :seatpad %>
-      </div>
-    <% end %>
-    <% if exercise.chestpad? %>
-      <div class="field">
-        <%= f.label :chestpad %>
-        <%= f.text_field :chestpad %>
-      </div>
-    <% end %>
-    <% if exercise.hips? %>
-      <div class="field">
-        <%= f.label :hips %>
-        <%= f.text_field :hips %>
-      </div>
-    <% end %>
-    <% if exercise.leg? %>
-      <div class="field">
-        <%= f.label :leg %>
-        <%= f.text_field :leg %>
-      </div>
-    <% end %>
+      <% if exercise.degrees? %>
+        <li class="field">
+          <%= f.label :degrees %>
+          <%= f.text_field :degrees %>
+        </li>
+      <% end %>
+      <% if exercise.back? %>
+        <li class="field">
+          <%= f.label :back %>
+          <%= f.text_field :back %>
+        </li>
+      <% end %>
+      <% if exercise.foot_stool? %>
+        <li class="field">
+          <%= f.label :foot_stool %>
+          <%= f.text_field :foot_stool %>
+        </li>
+      <% end %>
+      <% if exercise.pin? %>
+        <li class="field">
+          <%= f.label :pin %>
+          <%= f.text_field :pin %>
+        </li>
+      <% end %>
+      <% if exercise.arm? %>
+        <li class="field">
+          <%= f.label :arm %>
+          <%= f.text_field :arm %>
+        </li>
+      <% end %>
+      <% if exercise.seatbelt? %>
+        <li class="field">
+          <%= f.label :seatbelt %>
+          <%= f.text_field :seatbelt %>
+        </li>
+      <% end %>
+      <% if exercise.backpad? %>
+        <li class="field">
+          <%= f.label :backpad %>
+          <%= f.text_field :backpad %>
+        </li>
+      <% end %>
+      <% if exercise.knee? %>
+        <li class="field">
+          <%= f.label :knee %>
+          <%= f.text_field :knee %>
+        </li>
+      <% end %>
+      <% if exercise.seatpad? %>
+        <li class="field">
+          <%= f.label :seatpad %>
+          <%= f.text_field :seatpad %>
+        </li>
+      <% end %>
+      <% if exercise.chestpad? %>
+        <li class="field">
+          <%= f.label :chestpad %>
+          <%= f.text_field :chestpad %>
+        </li>
+      <% end %>
+      <% if exercise.hips? %>
+        <li class="field">
+          <%= f.label :hips %>
+          <%= f.text_field :hips %>
+        </li>
+      <% end %>
+      <% if exercise.leg? %>
+        <li class="field">
+          <%= f.label :leg %>
+          <%= f.text_field :leg %>
+        </li>
+      <% end %>
+    </ul>
     <%= f.hidden_field :client_id, value: client.id %>
     <%= f.hidden_field :exercise_id, value: exercise.id %>
     <div class="actions">
