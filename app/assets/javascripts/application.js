@@ -104,7 +104,6 @@ $(document).ready(function() {
       $('#start-stop-watch').show();
     });
   };
-
   // var clientGraph = function() {
   //   new Morris.Line({
 

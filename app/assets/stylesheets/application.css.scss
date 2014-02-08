@@ -1,11 +1,11 @@
+@import 'reset';
+@import 'variables';
+@import 'dry';
+
 @import 'jquery.ui.autocomplete';
 @import 'jquery.ui.datepicker';
 @import 'font-awesome';
 @import 'morris';
-
-@import 'reset';
-@import 'dry';
-@import 'variables';
 
 @import 'bourbon';
 @import 'devise';
@@ -14,94 +14,4 @@
 @import 'routines';
 @import 'sessions';
 @import 'clients';
-
-* {
-  box-sizing: border-box;
-}
-
-html, body { min-height: 100%; }
-.navigation-link, .open-menu, .close-menu {
-  text-decoration: none;
-}
-
-.main-header {
-  background: linear-gradient(#3F94BF, #246485);
-  padding: 5px;
-  text-align: center;
-  color: white;
-  text-shadow: #222 0px -1px 1px;
-  position: fixed;
-  width: 100%;
-  left: 0;
-  transition: all 0.3s ease;
-  display: block;
-  a {
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    font-size: 32px;
-    color: $orange;
-  }
-}
-
-.page-wrap {
-  float: right;
-  width: 100%;
-  transition: width 0.3s ease;
-}
-
-.main-nav {
-  position: fixed;
-  top: 0;
-  width: 0;
-  height: 100%;
-  border-right: 1px solid black;
-  background: #3B3B3B;
-  overflow-y: auto;
-  transition: width 0.3s ease;
-  .navigation-link {
-    display: block;
-    background: linear-gradient(#3E3E3E, #383838);
-    border-top: 1px solid #484848;
-    border-bottom: 1px solid #2E2E2E;
-    color: $orange;
-    padding: 15px;
-    &:hover, &:focus {
-      background: linear-gradient(#484848, #383838);
-    }
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 34px;
-    background: linear-gradient(left, rgba(black, 0), rgba(black, 0.4));
-  }
-}
-
-.close-menu {
-  display: none;
-}
-
-#main-nav:target {
-  width: 30%;
-}
-
-#main-nav:target + .page-wrap {
-  width: 70%;
-  .open-menu {
-     display: none;
-  }
-
-  .close-menu {
-     display: block;
-  }
-
-  .main-header {
-    width: 70%;
-    left: 30%;
-  }
-}
-
+@import 'nav';
