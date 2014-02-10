@@ -14,6 +14,7 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.json
   def show
+    @client_chart = @client.sessions.group_by { |t| t.created_at }
   end
 
   # GET /clients/new
