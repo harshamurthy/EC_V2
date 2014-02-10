@@ -26,7 +26,7 @@
         <%= f.select :client_id, options_for_select(Client.all.collect{ |u| [u.name, u.id] }), inlcude_blank: true %>
       </div>
     <% else %>
-      <%= f.hidden_field :client_id, value: Client.find(params[:client_id]) %>
+      <%= f.hidden_field :client_id, value: Client.find(params[:client_id]).id %>
     <% end %>
 
     <div class="field">

@@ -1,10 +1,52 @@
-// $('.ajax-session-saved-alert').remove();
-// $('.workout-session-execution-form').prepend("<p class='ajax-session-saved-alert'>Exercise saved.</p>");
+$('.workout-session-execution-form').remove();
+$('.workout-session-setting-form').remove();
+$('form').remove();
+
+
+$('.workout-session-execution-data').append("<%= j render('sessions/exercise_execution_form', exercise: @exercise, exercise_execution: @exercise_execution, session: @session) %>");
+$('.workout-session-execution-data').append("<%= j render('sessions/setting_execution_form', exercise: @exercise, setting_execution: @setting_execution, client: @session.client) %>");
 
 $('.workout-session-execution-form input[type=text]').focusout(function(){
   $('.session-exercise-execution-form').submit();
 });
 
+$('.workout-session-setting-form input[type=text]').focusout(function() {
+  $('.session-setting-execution-form').submit();
+});
+// Setting Timer
+$('#stop-stop-watch').hide();
+    $('#reset-stop-watch').hide();
+    $('#stop-watch').runner();
 
+    $('#start-stop-watch').click(function() {
+      $('#stop-watch').runner('start');
+      $('#reset-stop-watch').hide();
+      $(this).hide();
+      $('#stop-stop-watch').show();
+    });
 
+    $('#stop-stop-watch').click(function() {
+      $('#stop-watch').runner('stop');
+      $('#stop-stop-watch').hide();
+      $('#reset-stop-watch').show();
+      $('#start-stop-watch').show();
 
+      var time = $('#stop-watch').text();
+      if (time.length < 6)
+      {
+        $(".time-input").val("00:" + time);
+      }
+      else
+      {
+       $(".time-input").val(time);
+      }
+      $('.session-exercise-execution-form').submit();
+    });
+
+    $("#reset-stop-watch").click(function() {
+      $("#stop-watch").runner("reset");
+
+      $('#stop-stop-watch').hide();
+      $('#reset-stop-watch').hide();
+      $('#start-stop-watch').show();
+    });

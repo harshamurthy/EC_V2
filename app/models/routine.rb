@@ -3,7 +3,6 @@ class Routine < ActiveRecord::Base
   has_many :sessions
   belongs_to :gym
 
-  validates :description, presence: true
   validate :uniqueness_of_exercises
 
   def uniqueness_of_exercises

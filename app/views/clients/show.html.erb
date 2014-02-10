@@ -1,5 +1,15 @@
 <p id="notice"><%= notice %></p>
-<%#= content_tag :div, "", id: "client_chart", data: { exercises: @client.sessions.last.exercise_executions.first } %>
+
+<%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
+<%#= line_chart @client.sessions.last.exercises.map{|exercise|
+    {:name => exercise.name, :data => exercise.exercise_executions.group_by_day(:updated_at).count }
+
+} %>
+<%= line_chart @client.sessions.last.exercises.map{|exercise|
+    {:name => exercise.name, :data => exercise.exercise_executions.group_by_day(:updated_at).count }
+
+} %>
+<%#= @client.sessions.last.exercises.count %>
 <p>
   <strong>Gym:</strong>
   <%= @client.gym_id %>

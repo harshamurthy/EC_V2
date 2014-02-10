@@ -11,11 +11,11 @@
   </section>
 </div>
 
-<script type='text/javascript'>
-  $(function() {
-      var availableTags = <%= @clients.collect{ |client| client.name }.to_json.html_safe %>;
-      $( '#search' ).autocomplete({
-        source: availableTags
-      });
-    });
-</script>
+  <script type='text/javascript'>
+//   $(function() {
+//       var availableTags = <%= @clients.collect{ |client| client.name }.to_json.html_safe %>;
+//       $( '#search' ).autocomplete({
+//         source: availableTags
+//       });
+//     });
+// </script>

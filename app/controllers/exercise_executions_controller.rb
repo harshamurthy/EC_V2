@@ -28,6 +28,10 @@ class ExerciseExecutionsController < ApplicationController
 
     respond_to do |format|
       if @exercise_execution.save
+         @exercise = @exercise_execution.exercise
+         @session = @exercise_execution.session
+         @setting_execution = SettingExecution.where(exercise_id: @exercise_execution.exercise.id, client_id: @session.client.id).first || SettingExecution.new
+
         format.html { redirect_to @exercise_execution, notice: 'Exercise execution was successfully created.' }
         format.js
         format.json { render action: 'show', status: :created, location: @exercise_execution }
@@ -71,6 +75,6 @@ class ExerciseExecutionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exercise_execution_params
-      params.require(:exercise_execution).permit(:weight, :percentage, :reps, :time, :seat, :foot, :degrees, :back, :session_id, :exercise_id, :foot_stool, :pin, :arm, :seatbelt, :backpad, :knee, :seatpad, :chestpad, :hips, :leg)
+      params.require(:exercise_execution).permit(:weight, :percentage, :reps, :time, :exercise_id, :session_id)
     end
 end

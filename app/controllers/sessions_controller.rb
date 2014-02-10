@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     if params[:exercise_id].present?
       @setting_execution = SettingExecution.where(exercise_id: params[:exercise_id], client_id: @session.client.id).first || SettingExecution.new
       @exercise_execution = ExerciseExecution.where(exercise_id: params[:exercise_id], session_id: params[:id]).first || ExerciseExecution.new
-      @exercise = Exercise.find(params[:exercise_id])
+      @exercise = Exercise.find_by_id(params[:exercise_id])
     else
       @exercise_execution = ExerciseExecution.where(exercise_id: @exercise = @session.exercises.first.id, session_id: @session.id).first || ExerciseExecution.new
       @setting_execution = SettingExecution.where(exercise_id: @exercise = @session.exercises.first.id, client_id: @session.client.id).first || SettingExecution.new

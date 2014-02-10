@@ -118,27 +118,4 @@ $(document).ready(function() {
   setupClientsList();
   inputFieldToolTips();
   sessionTimer();
-  // clientGraph();
 });
-  // var clientGraph = function() {
-  //   new Morris.Line({
-
-  //     element: 'client_chart',
-  //     data: [
-  //       // $("#client_chart").data('exercises')
-  //       { year: '2008', value: 20 },
-  //       { year: '2009', value: 10 },
-  //       { year: '2010', value: 5 },
-  //       { year: '2011', value: 5 },
-  //       { year: '2012', value: 20 }
-  //     ],
-
-  //     // xkey: 'updated_at',
-  //     xkey: 'year',
-
-  //     // ykeys: ['time, reps, weight'],
-  //     ykeys: ['value'],
-
-  //     labels: ['Time', 'Reps', 'Weight']
-  //   });
-  // };
