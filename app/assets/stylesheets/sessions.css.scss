@@ -7,7 +7,7 @@
   @extend %container;
 }
 
-.create-new-session-form {
+.new-session-form {
   width: 50%;
   margin: 0 auto;
   form {
@@ -15,6 +15,16 @@
       @extend %inputs;
       width: 100%;
     }
+
+    .new-session-checkbox {
+      @extend %checkboxes;
+    }
+
+    .new-session-checkbox-labels {
+      @extend %checkbox-labels
+    }
+
+
   }
 }
 // Workout Session Page

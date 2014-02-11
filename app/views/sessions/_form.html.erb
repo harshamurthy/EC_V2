@@ -1,4 +1,4 @@
-<div class="create-new-session-form">
+<div class="new-session-form">
   <%= form_for(@session, url: workout_sessions_url, method: 'post') do |f| %>
     <% if @session.errors.any? %>
       <div id="error_explanation">
@@ -44,9 +44,9 @@
         <ul>
           <% Exercise.all.each do |exercise| %>
             <li>
-              <input id="<%= exercise.id %>", name="session[routine[exercise_ids]][]", value="<%= exercise.id %>", type='checkbox'>
+              <input id="<%= exercise.id %>", name="session[routine[exercise_ids]][]", value="<%= exercise.id %>", type='checkbox',  class='new-session-checkbox'>
               <%#= check_box_tag "session[routine[exercise_ids]][]", exercise.id %>
-              <%= label_tag "#{exercise.id}", exercise.name %>
+              <%= label_tag "#{exercise.id}", exercise.name, class: 'new-session-checkbox-labels' %>
             </li>
           <% end %>
         </ul>

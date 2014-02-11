@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 20140211014932) do
     t.string   "chestpad"
     t.string   "hips"
     t.string   "leg"
-    t.integer  "client_id"
   end
 
   create_table "exercises", force: true do |t|
@@ -100,6 +99,13 @@ ActiveRecord::Schema.define(version: 20140211014932) do
   create_table "routines", force: true do |t|
     t.text     "description"
     t.integer  "gym_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "session_routines", force: true do |t|
+    t.integer  "routine_id"
+    t.integer  "session_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
