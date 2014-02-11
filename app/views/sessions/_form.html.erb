@@ -45,7 +45,7 @@
           <% Exercise.all.each do |exercise| %>
             <li>
               <%= check_box_tag "session[routine[exercise_ids]][]" , exercise.id %>
-              <%= label_tag exercise.name %>
+              <%= label_tag "session[routine[exercise_ids]][]", exercise.name %>
             </li>
           <% end %>
         </ul>
@@ -54,7 +54,7 @@
       </div>
 
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit 'Create Session'%>
     </div>
   <% end %>
 </div>
