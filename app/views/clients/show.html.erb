@@ -1,11 +1,5 @@
 <p id="notice"><%= notice %></p>
-<% if @client.sessions.present? %>
-  <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
-    <%= line_chart @client.sessions.map{|session|
-      {:name => session.name, :data => session.exercise_executions.group_by_day(:updated_at).count }
-    } %>
-<%#= @client.sessions.count %>
-<% end %>
+<div id="myFirstChart"></div>
 <p>
   <strong>Gym:</strong>
   <%= @client.gym_id %>

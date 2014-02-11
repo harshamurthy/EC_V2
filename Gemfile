@@ -1,6 +1,4 @@
 source 'https://rubygems.org'
-#Chart
-gem "chartkick"
 #Groupdate
 gem 'groupdate', github: 'mieko/groupdate', branch: 'sqlite3'
 #Bourbon
