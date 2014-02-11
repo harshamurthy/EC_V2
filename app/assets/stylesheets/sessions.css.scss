@@ -2,6 +2,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// Session Form
+.session-form {
+  @extend %forms;
+  margin-top: 0px;
+
+  input {
+    @extend %inputs;
+    width: 100%;
+  }
+
+  .session-form-labels {
+    @extend %labels;
+  }
+
+  .session-form-inputs {
+    @extend %inputs;
+  }
+
+  .session-form-routine-select-dropdown {
+    // @extend %inputs;
+    font-size: $text-input-size;
+    margin-right: 5%;
+    border-bottom: none;
+  }
+
+  .session-form-exercise-selection-header {
+    font-size: $h2;
+    text-align: left;
+    margin-left: 20%;
+    padding-top: 25px;
+    font-weight: bold;
+  }
+
+  .session-form-checkbox {
+    @extend %checkboxes;
+  }
+
+  .session-form-checkbox-labels {
+    @extend %checkbox-labels;
+  }
+
+  .session-form-submit-button {
+    @extend %buttons;
+  }
+}
+
 // New Session
 .new-session-page {
   @extend %containers;
@@ -11,31 +58,6 @@
   @extend %header-text-styles;
   text-align: center;
   padding-top: 150px;
-}
-
-.new-session-form {
-  @extend %forms;
-  margin-top: 0px;
-    input {
-      @extend %inputs;
-      width: 100%;
-    }
-
-    .new-session-checkbox {
-      @extend %checkboxes;
-    }
-
-    .new-session-checkbox-labels {
-      @extend %checkbox-labels;
-    }
-  }
-
-.new-session-labels {
-  @extend %labels;
-}
-
-.new-session-inputs {
-  @extend %inputs;
 }
 
 // Show Session Page

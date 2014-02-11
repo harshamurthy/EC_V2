@@ -1,12 +1,17 @@
 <div class='sign-in-page'>
   <div class='sign-in-form'>
     <h2 class='sign-in-header'>The <span class='sign-in-header-span'>Exercise</span> Coach</h2>
-    <%= form_for(resource, as: resource_name, url: new_gym_session_url) do |f| %>
-      <div><%= f.label :location, class: 'sign-in-labels' %><br />
-      <%= f.text_field :location, autofocus: true, placeholder: 'Location', class: 'sign-in-inputs' %></div>
 
-      <div><%= f.label :password, class: 'sign-in-labels' %><br />
-      <%= f.password_field :password, placeholder: 'Password', class: 'sign-in-inputs' %></div>
+    <%= form_for(resource, as: resource_name, url: new_gym_session_url) do |f| %>
+      <div>
+        <%= f.label :location, class: 'sign-in-labels' %><br />
+        <%= f.text_field :location, autofocus: true, placeholder: 'Location', class: 'sign-in-inputs' %>
+      </div>
+
+      <div>
+        <%= f.label :password, class: 'sign-in-labels' %><br />
+        <%= f.password_field :password, placeholder: 'Password', class: 'sign-in-inputs' %>
+      </div>
 
       <% if devise_mapping.rememberable? -%>
         <div class='sign-in-help'>
@@ -14,8 +19,11 @@
           <%= link_to "Forgot password?", new_password_path(resource_name) %>
         </div>
       <% end %>
-      <div><%= f.submit 'Sign In', class: 'sign-in-button' %></div>
+
+      <div>
+        <%= f.submit 'Sign In', class: 'sign-in-button' %>
+      </div>
     <% end %>
-    <%#= link_to "Sign up", new_registration_path(resource_name), class: 'sign-up-link' %>
+    <%#= link_to 'Sign up', new_registration_path(resource_name), class: 'sign-up-link' %>
   </div>
 </div>

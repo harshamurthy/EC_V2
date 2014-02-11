@@ -1,4 +1,4 @@
-<div class='new-session-form'>
+<div class='session-form'>
   <%= form_for(@session, url: workout_sessions_url, method: 'post') do |f| %>
     <% if @session.errors.any? %>
       <div id='error_explanation'>
@@ -12,51 +12,54 @@
       </div>
     <% end %>
 
-    <div class='field'>
-      <%= f.label :name, class: 'new-session-labels' %><br>
-      <%= f.text_field :name, placeholder: 'Title of Workout Session', class: 'new-session-inputs' %>
+    <div>
+      <%= f.label :name, class: 'session-form-labels' %><br>
+      <%= f.text_field :name, placeholder: 'Title of Workout Session', class: 'session-form-inputs' %>
     </div>
-    <div class='field'>
-      <%= f.label :date, class: 'new-session-labels' %><br>
-      <%= f.text_field :date, placeholder: 'Date', class: 'new-session-inputs' %>
+    <div>
+      <%= f.label :date, class: 'session-form-labels' %><br>
+      <%= f.text_field :date, placeholder: 'Date', class: 'session-form-inputs' %>
     </div>
 
     <% if params[:client_id].nil? %>
-      <div class='field'>
-        <%= f.label :client_id, class: 'new-session-labels' %><br>
+      <div>
+        <%= f.label :client_id %><br>
         <%= f.select :client_id, options_for_select(Client.all.collect{ |u| [u.name, u.id] }), inlcude_blank: true %>
       </div>
     <% else %>
       <%= f.hidden_field :client_id, value: Client.find(params[:client_id]).id %>
     <% end %>
 
-    <div class='field'>
-      <%= f.label :routine_id, class: 'new-session-labels' %><br>
+    <div class='session-form-routine-select-dropdown'>
+      <%= f.label :routine_id, class: 'session-form-labels' %><br>
       <%= f.select :routine_id, options_for_select(Routine.all.collect{ |u| [u.description, u.id] }), include_blank: true %>
     </div>
 
-    <div class='field'>
+    <div>
       <%= f.fields_for Routine.new do |r| %>
-         <div class='field'>
-          <%= r.label :description, class: 'new-session-labels' %><br>
-          <%= r.text_field :description, placeholder: 'Describe the Routine', class: 'new-session-inputs' %>
+         <div>
+          <%= r.label :description, class: 'session-form-labels' %><br>
+          <%= r.text_field :description, placeholder: 'Describe the Routine', class: 'session-form-inputs' %>
         </div>
 
-        <ul>
-          <% Exercise.all.each do |exercise| %>
-            <li>
-              <input id="<%= exercise.id %>", name='session[routine[exercise_ids]][]', value="<%= exercise.id %>", type='checkbox',  class='new-session-checkbox'>
-              <%#= check_box_tag 'session[routine[exercise_ids]][]', exercise.id %>
-              <%= label_tag "#{exercise.id}", exercise.name, class: 'new-session-checkbox-labels' %>
-            </li>
-          <% end %>
-        </ul>
+        <div class='session-form-exercise-selection-table'>
+          <h2 class='session-form-exercise-selection-header'>Exercises</h2>
+          <ul>
+            <% Exercise.all.each do |exercise| %>
+              <li>
+                <input id="<%= exercise.id %>", name='session[routine[exercise_ids]][]', value="<%= exercise.id %>", type='checkbox',  class='session-form-checkbox'>
+                <%#= check_box_tag 'session[routine[exercise_ids]][]', exercise.id %>
+                <%= label_tag "#{exercise.id}", exercise.name, class: 'session-form-checkbox-labels' %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
 
         <% end %>
       </div>
 
-    <div class='actions'>
-      <%= f.submit 'Create Session'%>
+    <div>
+      <%= f.submit 'Submit', class: 'session-form-submit-button'%>
     </div>
   <% end %>
 </div>
