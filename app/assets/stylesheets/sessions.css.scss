@@ -22,7 +22,9 @@
   }
 
   .session-form-routine-select-dropdown {
-    @extend %inputs;
+    // @extend %inputs;
+    font-size: $text-input-size;
+    margin-right: 5%;
     border-bottom: none;
   }
 
