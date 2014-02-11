@@ -77,27 +77,22 @@ a {
 
   &:checked + label {
     background-color: $orange;
-    outline-width: 0;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
+    border: 1px solid white;
     color: white;
-    width: 60%;
-    margin-top: 30px;
-    margin-bottom: 1%;
   }
 }
 
 %checkbox-labels {
   margin-left: 20%;
+  outline-width: 0;
   text-align: center;
-  display: inline-block;
-  border: 1px solid black;
+  // display: inline-block;
+  border: 1px dashed black;
   border-radius: 5px;
-  font-size: $text-input-size;
+  font-size: $h3;
   padding: 10px;
-  width: 60%;
-  margin-top: 30px;
-  margin-bottom: 1%;
+  width: 30%;
+  float: left;
+  margin-top: 10px;
 }
 
