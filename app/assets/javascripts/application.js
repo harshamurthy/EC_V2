@@ -17,7 +17,6 @@
 //= require jquery_ujs
 //= require jquery.ui.autocomplete
 //= require jquery.ui.datepicker
-//= foundation.min
 //= require_tree .
 
 $(document).ready(function() {
@@ -111,6 +110,23 @@ $(document).ready(function() {
     });
   };
 
+  var clientGraph = function() {
+    new Morris.Line({
+      // ID of the element in which to draw the chart.
+      element: 'client_chart',
+      // Chart data records -- each entry in this array corresponds to a point on
+      // the chart.
+      data: $("#client_chart").data('exercises'),
+      // The name of the data record attribute that contains x-values.
+      xkey: 'updated_at',
+      // A list of names of data record attributes that contain y-values.
+      ykeys: ['weight'],
+      // Labels for the ykeys -- will be displayed when you hover over the
+      // chart.
+      labels: ['Weight']
+    });
+  };
+
   //Calling functions
   automaticClientSearchBar();
   autoSaveSessionForm();
@@ -118,4 +134,5 @@ $(document).ready(function() {
   setupClientsList();
   inputFieldToolTips();
   sessionTimer();
+  clientGraph();
 });

@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
-<div id="myFirstChart"></div>
+<!-- <div id="client_chart"></div> -->
+<% if @client.sessions.present? %>
+  <%= content_tag :div, "", id: "client_chart", data: {exercises: @client.sessions.last.exercise_executions} %>
+<% end %>
 <p>
   <strong>Gym:</strong>
   <%= @client.gym_id %>
