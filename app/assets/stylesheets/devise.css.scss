@@ -5,15 +5,14 @@
 
 // Sign Up Page
 .sign-up-page {
-  @extend %container;
+  @extend %containers;
 
   .sign-up-form {
-    @extend %form;
+    @extend %forms;
   }
 
   .sign-up-header {
-    @extend %header-text-style;
-    margin-bottom: 25px;
+    @extend %header-text-styles;
   }
 
   .sign-up-labels {
@@ -31,17 +30,17 @@
 
 // Sign In Page
 .sign-in-page {
-  @extend %container;
+  @extend %containers;
 
   .sign-in-header-span {
    color: $orange;
   }
 
   .sign-in-form {
-    @extend %form;
+    @extend %forms;
 
     .sign-in-header {
-      @extend %header-text-style;
+      @extend %header-text-styles;
     }
 
     .sign-in-labels {
@@ -74,13 +73,13 @@
 
 // Gym Edit Form
 .gym-edit-page {
-  @extend %container;
+  @extend %containers;
 
   .gym-edit-form {
-    @extend %form;
+    @extend %forms;
 
     .gym-edit-header {
-      @extend %header-text-style;
+      @extend %header-text-styles;
     }
 
     .gym-edit-labels {
@@ -108,15 +107,14 @@
 
 // Password Reset Request Page
 .password-reset-request-page {
-  @extend %container;
+  @extend %containers;
 
   .password-reset-request-form {
-    @extend %form;
+    @extend %forms;
   }
 
   .password-reset-request-header {
-    @extend %header-text-style;
-    margin-bottom: 25px;
+    @extend %header-text-styles;
   }
 
   .password-reset-request-labels {
@@ -134,15 +132,14 @@
 
 // Password Reset Page
 .password-reset-page {
-  @extend %container;
+  @extend %containers;
 
   .password-reset-form {
-    @extend %form;
+    @extend %forms;
   }
 
   .password-reset-header {
-    @extend %header-text-style;
-    margin-bottom: 25px;
+    @extend %header-text-styles;
   }
 
   .password-reset-labels {

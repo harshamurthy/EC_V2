@@ -3,14 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // New Session
-.create-new-session-page {
-  @extend %container;
+.new-session-page {
+  @extend %containers;
+}
+
+.new-session-header {
+  @extend %header-text-styles;
+  text-align: center;
+  padding-top: 150px;
 }
 
 .new-session-form {
-  width: 50%;
-  margin: 0 auto;
-  form {
+  @extend %forms;
+  margin-top: 0px;
     input {
       @extend %inputs;
       width: 100%;
@@ -21,13 +26,19 @@
     }
 
     .new-session-checkbox-labels {
-      @extend %checkbox-labels
+      @extend %checkbox-labels;
     }
-
-
   }
+
+.new-session-labels {
+  @extend %labels;
 }
-// Workout Session Page
+
+.new-session-inputs {
+  @extend %inputs;
+}
+
+// Show Session Page
 .workout-session-page {
 
   .workout-session-client-info {

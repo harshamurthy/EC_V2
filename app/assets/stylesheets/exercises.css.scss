@@ -28,14 +28,13 @@
 
 // New Exercise Page
 .new-exercise-page {
-  @extend %container;
+  @extend %containers;
 
   .new-exercise-form {
-    @extend %form;
+    @extend %forms;
   }
 
   .new-exercise-header {
-    @extend %header-text-style;
-    margin-bottom: 25px;
+    @extend %header-text-styles;
   }
 }
