@@ -1,8 +1,5 @@
 $('.workout-session-execution-form').remove();
 
-
-
-
 $('.workout-session-execution-data').prepend("<%= j render('sessions/exercise_execution_form', exercise: @exercise, exercise_execution: @exercise_execution, session: @session) %>");
 
 
@@ -13,6 +10,7 @@ $('.workout-session-execution-form input[type=text]').focusout(function(){
 $('.workout-session-setting-form input[type=text]').focusout(function() {
   $('.session-setting-execution-form').submit();
 });
+// autoSaveSessionForm();
 // Setting Timer
 $('#stop-stop-watch').hide();
     $('#reset-stop-watch').hide();
