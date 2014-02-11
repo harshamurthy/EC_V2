@@ -1,15 +1,11 @@
 <p id="notice"><%= notice %></p>
-
-<%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
-<%#= line_chart @client.sessions.last.exercises.map{|exercise|
-    {:name => exercise.name, :data => exercise.exercise_executions.group_by_day(:updated_at).count }
-
-} %>
-<%= line_chart @client.sessions.last.exercises.map{|exercise|
-    {:name => exercise.name, :data => exercise.exercise_executions.group_by_day(:updated_at).count }
-
-} %>
-<%#= @client.sessions.last.exercises.count %>
+<% if @client.sessions.present? %>
+  <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
+    <%= line_chart @client.sessions.map{|session|
+      {:name => session.name, :data => session.exercise_executions.group_by_day(:updated_at).count }
+    } %>
+<%#= @client.sessions.count %>
+<% end %>
 <p>
   <strong>Gym:</strong>
   <%= @client.gym_id %>
