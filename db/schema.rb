@@ -28,24 +28,10 @@ ActiveRecord::Schema.define(version: 20140211180001) do
     t.datetime "updated_at"
     t.integer  "session_id"
     t.integer  "exercise_id"
-<<<<<<< HEAD
-    t.integer  "client_id"
     t.integer  "weight"
     t.integer  "percentage"
     t.integer  "reps"
     t.string   "time"
-=======
-    t.string   "foot_stool"
-    t.string   "pin"
-    t.string   "arm"
-    t.string   "seatbelt"
-    t.string   "backpad"
-    t.string   "knee"
-    t.string   "seatpad"
-    t.string   "chestpad"
-    t.string   "hips"
-    t.string   "leg"
->>>>>>> 61ab76616d3989dde9ada564c783a3b2ec4b5399
   end
 
   create_table "exercises", force: true do |t|

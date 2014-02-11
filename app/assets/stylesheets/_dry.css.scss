@@ -18,19 +18,20 @@ a {
     content: '';
 }
 
-%header-text-style {
+%header-text-styles {
   font-size: $head-text-size;
   font-weight: bold;
+  margin-bottom: 25px;
 }
 
-%container {
+%containers {
   width: 1030px;
   margin: 0 auto;
   height: 100%;
   font-family: $main-font;
 }
 
-%form {
+%forms {
   max-width: 60%;
   margin: 0 auto;
   font-family: $main-font;
