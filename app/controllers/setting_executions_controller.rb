@@ -25,12 +25,17 @@ class SettingExecutionsController < ApplicationController
   # POST /setting_executions
   # POST /setting_executions.json
   def create
+
     @setting_execution = SettingExecution.new(setting_execution_params)
 
     respond_to do |format|
       if @setting_execution.save
+         @exercise = @setting_execution.exercise
+         @session = Session.find_by_id(@setting_execution.session_id)
+
         format.html { redirect_to @setting_execution, notice: 'Setting execution was successfully created.' }
         format.json { render action: 'show', status: :created, location: @setting_execution }
+        format.js
       else
         format.html { render action: 'new' }
         format.json { render json: @setting_execution.errors, status: :unprocessable_entity }
@@ -70,6 +75,6 @@ class SettingExecutionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def setting_execution_params
-      params.require(:setting_execution).permit(:seat, :foot, :degrees, :back, :client_id, :exercise_id, :foot_stool, :pin, :arm, :seatbelt, :backpad, :knee, :seatpad, :chestpad, :hips, :leg)
+      params.require(:setting_execution).permit(:seat, :foot, :degrees, :back, :client_id, :exercise_id, :foot_stool, :pin, :arm, :seatbelt, :backpad, :knee, :seatpad, :chestpad, :hips, :leg, :session_id)
     end
 end

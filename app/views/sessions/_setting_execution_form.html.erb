@@ -101,8 +101,9 @@
     </ul>
     <%= f.hidden_field :client_id, value: client.id %>
     <%= f.hidden_field :exercise_id, value: exercise.id %>
+    <%= f.hidden_field :session_id, value: session.id %>
     <div class="actions">
-      <%#= f.submit %>
+      <%= f.submit %>
     </div>
   <% end %>
 </div>
