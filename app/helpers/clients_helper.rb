@@ -1,6 +1,7 @@
 module ClientsHelper
   def session_graph_data(client)
-    (4.weeks.ago.to_date..Date.today).map do |date|
+    dates = client.exercise_executions.map{ |ee| ee.session.date.to_date }
+    (dates).map do |date|
       {
         updated_at: date,
         triceps: client.get_weight_for_exercise_and_day('Triceps', date),
