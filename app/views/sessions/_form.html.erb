@@ -44,8 +44,9 @@
         <ul>
           <% Exercise.all.each do |exercise| %>
             <li>
-              <%= check_box_tag "session[routine[exercise_ids]][]" , exercise.id %>
-              <%= label_tag "session[routine[exercise_ids]][]", exercise.name %>
+              <input id="<%= exercise.id %>", name="session[routine[exercise_ids]][]", value="<%= exercise.id %>", type='checkbox'>
+              <%#= check_box_tag "session[routine[exercise_ids]][]", exercise.id %>
+              <%= label_tag "#{exercise.id}", exercise.name %>
             </li>
           <% end %>
         </ul>
