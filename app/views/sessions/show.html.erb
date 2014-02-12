@@ -1,6 +1,6 @@
 <div class='workout-session-page'>
   <nav class='workout-session-client-info'>
-    <h1 class='client-session-title'><%#= @session.client.name %> <!-- workout routine --> <span class='client-session-date'><%= @session.date.strftime("%B %d, %Y") %></span></h1>
+    <h1 class='client-session-title'><%#= @session.client.name %> <!-- workout routine --> <span class='client-session-date'><%= @session.date.strftime("%B %d, %Y") %><%= flash[:notice] %></span></h1>
   </nav>
 
   <aside class='workout-session-exercise-list'>

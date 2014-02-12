@@ -29,12 +29,12 @@
     <% else %>
       <%= f.hidden_field :client_id, value: Client.find(params[:client_id]).id %>
     <% end %>
-
+    <h2>Choose a routine made by a trainer</h2>
     <div class='session-form-routine-select-dropdown'>
       <%= f.label :routine_id, class: 'session-form-labels' %><br>
       <%= f.select :routine_id, options_for_select(Routine.all.collect{ |u| [u.description, u.id] }), include_blank: true %>
     </div>
-
+    <h2>Or create your own!</h2>
     <div>
       <%= f.fields_for Routine.new do |r| %>
          <div>
