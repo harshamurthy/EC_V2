@@ -48,7 +48,7 @@
       </div>
   <% end %>
   <p class='previous-stats'>
-      <% unless client.sessions.count == 0 || session.client.get_previous_exercise_result(exercise.id).nil? %>
+      <% unless session.client.get_previous_exercise_result(exercise.id).nil? %>
         Last time <%= session.client.first_name %> did <%= exercise.name.downcase %>:
       <% end %>
 

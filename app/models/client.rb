@@ -20,6 +20,10 @@ class Client < ActiveRecord::Base
 
   def get_previous_exercise_result(exercise_id)
     session = self.sessions.select{|x| x.exercise_ids.include?(exercise_id)}[-2]
-    ee = session.exercise_executions.select{|x| x.exercise_id == exercise_id}.first
+    if session
+      ee = session.exercise_executions.select{|x| x.exercise_id == exercise_id}.first
+    else
+      return nil
+    end
   end
 end
