@@ -17,4 +17,9 @@ class Client < ActiveRecord::Base
       # self.exercise_executions.where(exercise_id: exercise.id).where("DATE(exercise_executions.updated_at) = ?", date)
     end
   end
+
+  def get_previous_exercise_result(exercise_id)
+    session = self.sessions.select{|x| x.exercise_ids.include?(exercise_id)}[-2]
+    ee = session.exercise_executions.select{|x| x.exercise_id == exercise_id}.first
+  end
 end

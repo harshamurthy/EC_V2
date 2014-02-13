@@ -3,21 +3,26 @@
     <fieldset class='fieldset'>
       <% if exercise.weight? %>
         <div class='field'>
-          <%= f.text_field :weight, placeholder: 'Weight', class: 'exercise-execution-performance-text' %>
+          <%= f.number_field :weight, placeholder: "Weight", class: 'exercise-execution-performance-text' %>
           <%= f.label :weight %>
         </div>
       <% end %>
 
       <% if exercise.percentage? %>
         <div class='field'>
-          <%= f.text_field :percentage, placeholder: 'Percentage', class: 'exercise-execution-performance-text' %>
+          <%= f.number_field :percentage, placeholder: 'Percentage', class: 'exercise-execution-performance-text' %>
           <%= f.label :percentage %>
         </div>
       <% end %>
 
-      <% if exercise.reps? %>
+      <% if exercise.reps? && exercise.percentage? %>
         <div class='field'>
-          <%= f.text_field :reps, placeholder: 'Reps', class: 'exercise-execution-performance-text' %>
+          <%= f.number_field :reps, placeholder: 'Reps', class: 'exercise-execution-performance-text', value: "8" %>
+          <%= f.label :reps %>
+        </div>
+        <% elsif exercise.reps? %>
+         <div class='field'>
+          <%= f.number_field :reps, placeholder: 'Reps', class: 'exercise-execution-performance-text' %>
           <%= f.label :reps %>
         </div>
       <% end %>
@@ -42,4 +47,22 @@
         <%#= f.submit %>
       </div>
   <% end %>
+  <p class='previous-stats'>
+      Last time <%= session.client.first_name %> did <%= exercise.name.downcase %>:
+      <% if exercise.weight? && session.client.get_previous_exercise_result(exercise.id).weight %>
+        Weight: <span class='previous-stats-number'><%= session.client.get_previous_exercise_result(exercise.id).weight %> lbs.</span>
+      <% end %>
+
+      <% if exercise.percentage? && session.client.get_previous_exercise_result(exercise.id).percentage %>
+        Percentage: <span class='previous-stats-number'><%= session.client.get_previous_exercise_result(exercise.id).percentage %>%</span>
+      <% end %>
+
+      <% if exercise.reps? && session.client.get_previous_exercise_result(exercise.id).reps %>
+        Reps: <span class='previous-stats-number'><%= session.client.get_previous_exercise_result(exercise.id).reps %></span>
+      <% end %>
+
+      <% if exercise.time? && session.client.get_previous_exercise_result(exercise.id).time.length > 0 %>
+        Time: <span class='previous-stats-number'><%= session.client.get_previous_exercise_result(exercise.id).time %></span>
+      <% end %>
+    </p>
 </div>

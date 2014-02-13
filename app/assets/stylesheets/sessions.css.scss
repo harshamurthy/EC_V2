@@ -57,7 +57,7 @@
 .new-session-header {
   @extend %header-text-styles;
   text-align: center;
-  padding-top: 150px;
+  padding-top: 50px;
 }
 
 // Show Session Page
@@ -67,10 +67,19 @@
     padding: 15px;
     height: 58px;
     border-bottom: 1px solid black;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    // z-index: -1;
+
 
     .client-session-title {
       font-size: $h1;
       text-align: left;
+
+      .session-client-name {
+        // margin-left: 50px;
+      }
 
       .client-session-date {
         float: right;
@@ -84,6 +93,7 @@
   .workout-session-exercise-list {
     width: 30%;
     float: left;
+    margin-top: 58px;
 
     .session-exercise {
       border-right: 1px solid #ccc;
@@ -113,10 +123,25 @@
   .workout-session-execution-data {
     width: 70%;
     float: left;
+    position: fixed;
+    top: 15%;
+    right: 0;
 
     .workout-session-execution-form {
       width: 70%;
       margin: 0 auto;
+      border: 1px solid #ccc;
+      padding: 30px;
+      border-radius: 5px;
+
+      .previous-stats {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 18px;
+        .previous-stats-number {
+          color: $orange;
+        }
+      }
 
       &:after {
         display: table;
@@ -162,17 +187,17 @@
     text-align: center;
     padding-top: 35px;
 
-    .exercise-execution-setting-text[type=text] {
-      height: 30px;
+    .exercise-execution-performance-text[type=number] {
+      height: 50px;
       background-color: transparent;
       border: none;
-      border-bottom: 2px solid $orange;
+      border-bottom: 2px solid black;
       color: black;
-      font-size: 18px;
+      font-size: 25px;
       outline-width: 0;
       text-align: center;
       border-radius: 0;
-      width: 65%;
+      width: 75%;
     }
 
     .exercise-execution-performance-text[type=text] {
@@ -243,7 +268,15 @@
  //Settings
 .workout-session-setting-form {
   width: 75%;
-  margin: 100px auto 0;
+  margin: 75px auto 0;
+  border-radius: 5px;
+  // border: 1px solid black;
+
+
+.workout-session-settings-header {
+  font-size: 22px;
+  font-weight: bold;
+}
   ul {
     li {
       padding: 10px;

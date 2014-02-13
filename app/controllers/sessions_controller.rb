@@ -24,6 +24,7 @@ class SessionsController < ApplicationController
   # GET /sessions/new
   def new
     @session = Session.new
+    @client = Client.find(params[:client_id])
   end
 
   # GET /sessions/1/edit

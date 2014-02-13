@@ -1,7 +1,10 @@
 <div class='workout-session-page'>
-  <nav class='workout-session-client-info'>
-    <h1 class='client-session-title'><%#= @session.client.name %> <!-- workout routine --> <span class='client-session-date'><%= @session.date.strftime("%B %d, %Y") %><%= flash[:notice] %></span></h1>
-  </nav>
+  <div class="nav-wrap">
+    <nav class='workout-session-client-info'>
+      <div class="nav-space"></div>
+      <h1 class='client-session-title'><span class='session-client-name'><%= @session.client.name %> (Pin: <%= @session.client.machine_code %>)</span><span class='client-session-date'><%= @session.date.strftime("%B %d, %Y") %></span></h1>
+    </nav>
+  </div>
 
   <aside class='workout-session-exercise-list'>
     <ul>

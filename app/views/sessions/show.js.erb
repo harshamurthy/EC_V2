@@ -7,7 +7,7 @@ $('.workout-session-execution-data').append("<%= j render('exercise_execution_fo
 $('.workout-session-execution-data').append("<%= j render('setting_execution_form', exercise: @exercise, setting_execution: @setting_execution, client: @session.client, session: @session) %>");
 //---------------------------------------------
 
-$('.workout-session-execution-form input[type=text]').focusout(function(){
+$('.workout-session-execution-form input[type=number]').focusout(function(){
   $('.session-exercise-execution-form').submit();
 });
 
