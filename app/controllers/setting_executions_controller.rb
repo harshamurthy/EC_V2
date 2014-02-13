@@ -1,4 +1,4 @@
-class SettingExecutionsController < ApplicationController
+  class SettingExecutionsController < ApplicationController
   before_action :set_setting_execution, only: [:show, :edit, :update, :destroy]
 
   # GET /setting_executions
