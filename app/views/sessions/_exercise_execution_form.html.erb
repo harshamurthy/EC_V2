@@ -49,7 +49,7 @@
   <% end %>
   <p class='previous-stats'>
       <% unless session.client.get_previous_exercise_result(exercise.id).nil? %>
-        Last time <%= session.client.first_name %> did:
+        Last time <%= session.client.first_name %> did  :
       <% end %>
 
       <% if exercise.weight? && session.client.get_previous_exercise_result(exercise.id) %>
