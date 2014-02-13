@@ -137,7 +137,7 @@
       .previous-stats {
         text-align: center;
         margin-top: 40px;
-        font-size: 20px;
+        font-size: 22px;
         .previous-stats-number {
           color: $orange;
           font-weight: bold;
@@ -288,6 +288,7 @@
       label {
         display: block;
         font-size: 15px;
+        padding: 5px;
       }
       input {
         font-size: 30px;
