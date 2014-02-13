@@ -137,9 +137,10 @@
       .previous-stats {
         text-align: center;
         margin-top: 40px;
-        font-size: 18px;
+        font-size: 20px;
         .previous-stats-number {
           color: $orange;
+          font-weight: bold;
         }
       }
 
@@ -267,23 +268,35 @@
 
  //Settings
 .workout-session-setting-form {
-  width: 75%;
-  margin: 75px auto 0;
+  width: 100%;
+  margin: 0 auto 20px;
   border-radius: 5px;
-  // border: 1px solid black;
-
+  font-family: 'Roboto', sans-serif;
 
 .workout-session-settings-header {
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 10px;
+  text-align: center;
 }
-  ul {
-    li {
+
+  .exercise-settings-list {
+    text-align: center;
+    .field {
       padding: 10px;
       display: inline-block;
+      width: 30%;
       label {
+        display: block;
+        font-size: 15px;
+      }
+      input {
+        font-size: 30px;
         font-weight: bold;
-        font-size: 20px;
+        color: $orange;
+        width: 30%;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 900;
       }
     }
   }

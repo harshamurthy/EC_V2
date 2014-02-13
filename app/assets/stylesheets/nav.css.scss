@@ -8,6 +8,14 @@ html, body { min-height: 100%; }
   // z-index: 1;
 }
 
+.open-menu {
+  color: $orange;
+}
+
+.close-menu {
+  color: white;
+}
+
 .main-header {
   background: linear-gradient(#3F94BF, #246485);
   padding: 5px;
@@ -22,9 +30,8 @@ html, body { min-height: 100%; }
   a {
     position: absolute;
     left: 20px;
-    top: 20px;
-    font-size: 32px;
-    color: $orange;
+    top: 10px;
+    font-size: 35px;
   }
 }
 
@@ -39,17 +46,20 @@ html, body { min-height: 100%; }
   top: 0;
   width: 0;
   height: 100%;
-  border-right: 1px solid black;
-  background: #3B3B3B;
+  border-right: 1px solid white;
+  background: $orange;
   overflow-y: auto;
   transition: width 0.3s ease;
   .navigation-link {
     display: block;
-    background: linear-gradient(#3E3E3E, #383838);
-    border-top: 1px solid #484848;
-    border-bottom: 1px solid #2E2E2E;
-    color: $orange;
+    background: linear-gradient(#FF5D00, #FF6D19);
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    color: white;
     padding: 15px;
+    font-size: 30px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
     &:hover, &:focus {
       background: linear-gradient(#484848, #383838);
     }
@@ -70,12 +80,12 @@ html, body { min-height: 100%; }
 }
 
 #main-nav:target {
-  width: 30%;
+  width: 25%;
 
 }
 
 #main-nav:target + .page-wrap {
-  width: 70%;
+  width: 75%;
   .open-menu {
      display: none;
       // z-index: 10;
@@ -86,8 +96,8 @@ html, body { min-height: 100%; }
   }
 
   .main-header {
-    width: 70%;
-    left: 30%;
+    width: 75%;
+    left: 20%;
   }
 }
 
