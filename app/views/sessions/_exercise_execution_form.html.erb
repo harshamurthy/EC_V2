@@ -49,15 +49,15 @@
   <% end %>
   <p class='previous-stats'>
       Last time <%= session.client.first_name %> did <%= exercise.name.downcase %>:
-      <% if exercise.weight? && session.client.get_previous_exercise_result(exercise.id).weight %>
+      <% if exercise.weight? && !session.client.get_previous_exercise_result(exercise.id).weight.nil? %>
         Weight: <span class='previous-stats-number'><%= session.client.get_previous_exercise_result(exercise.id).weight %> lbs.</span>
       <% end %>
 
-      <% if exercise.percentage? && session.client.get_previous_exercise_result(exercise.id).percentage %>
+      <% if exercise.percentage? && !session.client.get_previous_exercise_result(exercise.id).percentage.nil? %>
         Percentage: <span class='previous-stats-number'><%= session.client.get_previous_exercise_result(exercise.id).percentage %>%</span>
       <% end %>
 
-      <% if exercise.reps? && session.client.get_previous_exercise_result(exercise.id).reps %>
+      <% if exercise.reps? && !session.client.get_previous_exercise_result(exercise.id).reps.nil? %>
         Reps: <span class='previous-stats-number'><%= session.client.get_previous_exercise_result(exercise.id).reps %></span>
       <% end %>
 
