@@ -17,7 +17,7 @@
 
       <% if exercise.reps? && exercise.percentage? %>
         <div class='field'>
-          <%= f.number_field :reps, placeholder: 'Reps', class: 'exercise-execution-performance-text', value: "8" %>
+          <%= f.number_field :reps, placeholder: 'Reps', class: 'exercise-execution-performance-text' %>
           <%= f.label :reps %>
         </div>
         <% elsif exercise.reps? %>

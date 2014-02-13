@@ -3,11 +3,11 @@ $('.workout-session-execution-form').remove();
 $('.workout-session-execution-data').append("<%= j render('sessions/exercise_execution_form', exercise: @exercise, exercise_execution: @exercise_execution, session: @session) %>");
 
 
-$('.workout-session-execution-form input[type=number]').focusout(function(){
+$('.workout-session-execution-form input').focusout(function(){
   $('.session-exercise-execution-form').submit();
 });
 
-$('.workout-session-setting-form input[type=number]').focusout(function() {
+$('.workout-session-setting-form input[type=text]').focusout(function() {
   $('.session-setting-execution-form').submit();
 });
 // autoSaveSessionForm();
