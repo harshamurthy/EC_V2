@@ -1,9 +1,9 @@
 <ul class='ul-client-list'>
   <% unless params[:search].nil? || params[:search] == "" %>
-    <p class='search-results-stats'>Showing <%= clients.count %> results for "<%= params[:search] %>"</p>
+    <p class='search-results-stats'>Showing <%= pluralize(clients.count, 'result') %> for "<%= params[:search] %>"</p>
   <% end %>
 
-  <% clients.each do |client| %>
+  <% clients.reverse.each do |client| %>
     <li class='client'>
       <%= client.name %>
       <aside class='client-buttons'>
