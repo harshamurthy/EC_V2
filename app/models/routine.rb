@@ -3,7 +3,7 @@ class Routine < ActiveRecord::Base
   has_many :sessions
   belongs_to :gym
 
-  # validate :uniqueness_of_exercises
+  validates_presence_of :description
 
   # def uniqueness_of_exercises
   #   if Routine.all.collect{|r| r.exercise_ids}.include?(exercise_ids)

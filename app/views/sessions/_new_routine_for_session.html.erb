@@ -1,0 +1,20 @@
+<%= f.fields_for Routine.new do |r| %>
+  <div>
+    <%= r.label :description, class: 'session-form-labels' %><br>
+    <%= r.text_field :description, placeholder: 'Describe the Routine', class: 'session-form-inputs' %>
+  </div>
+
+  <div class='session-form-exercise-selection-table'>
+    <h2 class='session-form-exercise-selection-header'>Exercises</h2>
+
+    <ul>
+      <% Exercise.all.each do |exercise| %>
+    <li>
+      <input id="<%= exercise.id %>", name='session[routine[exercise_ids]][]', value="<%= exercise.id %>", type='checkbox',  class='session-form-checkbox'>
+      <%= label_tag "#{exercise.id}", exercise.name, class: 'session-form-checkbox-labels' %>
+    </li>
+    <% end %>
+
+    </ul>
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+<ul>
+  <% if routine.present? %>
+    <% routine.exercises.each do |exercise| %>
+      <li><%= exercise.name %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+
+
+

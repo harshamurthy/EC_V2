@@ -5,8 +5,7 @@
 
 // Session Form
 .session-form {
-  @extend %forms;
-  margin-top: 0px;
+  // @extend %forms;
 
   input {
     @extend %inputs;
@@ -40,6 +39,34 @@
     @extend %checkboxes;
   }
 
+  .session-form-radio-button {
+    @extend %checkboxes;
+    &:checked + label {
+      background-color: $blue;
+    }
+  }
+.date-parent {
+  text-align: center;
+  .session-form-radio-button-label {
+    padding: 20px;
+    margin: 0 30px;
+    // margin-bottom: 50px;
+    width: 20%;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  .date-or {
+    font-size: $h3;
+  }
+}
+
+  .label-routine {
+  @extend %checkbox-labels;
+  margin-bottom: 10px;
+}
+
   .session-form-checkbox-labels {
     @extend %checkbox-labels;
   }
@@ -58,6 +85,38 @@
   @extend %header-text-styles;
   text-align: center;
   padding-top: 50px;
+}
+.routine-parent {
+  &:after {
+    @extend %group:after;
+  }
+  .routines {
+    width: 50%;
+    float: left;
+    max-height: 500px;
+    overflow: scroll;
+    text-align: center;
+    .routine {
+      display: block;
+      &:after {
+        @extend %group:after;
+      }
+    }
+    .exercises-or-new-routine {
+
+    }
+  }
+}
+
+.submit-session {
+  text-align: center;
+}
+
+.exercises-or-new-routine {
+
+  .create-session-instructions {
+
+  }
 }
 
 // Show Session Page
@@ -138,6 +197,7 @@
         text-align: center;
         margin-top: 40px;
         font-size: 22px;
+        line-height: 1.5;
         .previous-stats-number {
           color: $orange;
           font-weight: bold;

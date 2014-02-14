@@ -83,11 +83,11 @@ a {
 }
 
 %checkbox-labels {
-  margin-left: 20%;
+  margin: 10%;
   outline-width: 0;
   text-align: center;
   // display: inline-block;
-  border: 1px dashed black;
+  border: 1px solid black;
   border-radius: 5px;
   font-size: $h3;
   padding: 10px;

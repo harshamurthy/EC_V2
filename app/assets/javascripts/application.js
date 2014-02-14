@@ -111,22 +111,49 @@ $(document).ready(function() {
   };
 
   var clientGraph = function() {
-    new Morris.Line({
-      // ID of the element in which to draw the chart.
-      element: 'client_chart',
-      // Chart data records -- each entry in this array corresponds to a point on
-      // the chart.
-      data: $("#client_chart").data('exercises'),
-      // The name of the data record attribute that contains x-values.
-      xkey: 'updated_at',
-      // A list of names of data record attributes that contain y-values.
-      ykeys: ['triceps', 'biceps', 'overhead_press', 'leg_curl', 'leg_press', 'abs', 'rotations', 'adduction', 'power_tower_abs', 'ab_core', 'precore_pullover', 'narrow_grip_pulldown', 'arm_cross', 'leg_extension', 'neck_extension', 'lower_back', 'rowing_torso', 'abduction', 'power_tower_leg_press'],
-      // Labels for the ykeys -- will be displayed when you hover over the
-      // chart.
-      labels: ['triceps', 'biceps', 'overhead_press', 'leg_curl', 'leg_press', 'abs', 'rotations', 'adduction', 'power_tower_abs', 'ab_core', 'precore_pullover', 'narrow_grip_pulldown', 'arm_cross', 'leg_extension', 'neck_extension', 'lower_back', 'rowing_torso', 'abduction', 'power_tower_leg_press'],
-      // Hide hover
+    // new Morris.Line({
+    //   // ID of the element in which to draw the chart.
+    //   element: 'client_chart',
+    //   // Chart data records -- each entry in this array corresponds to a point on
+    //   // the chart.
+    //   data: $("#client_chart").data('exercises'),
+    //   // The name of the data record attribute that contains x-values.
+    //   xkey: 'updated_at',
+    //   // A list of names of data record attributes that contain y-values.
+    //   ykeys: ['triceps', 'biceps', 'overhead_press', 'leg_curl', 'leg_press', 'abs', 'rotations', 'adduction', 'power_tower_abs', 'ab_core', 'precore_pullover', 'narrow_grip_pulldown', 'arm_cross', 'leg_extension', 'neck_extension', 'lower_back', 'rowing_torso', 'abduction', 'power_tower_leg_press'],
+    //   // Labels for the ykeys -- will be displayed when you hover over the
+    //   // chart.
+    //   labels: ['triceps', 'biceps', 'overhead_press', 'leg_curl', 'leg_press', 'abs', 'rotations', 'adduction', 'power_tower_abs', 'ab_core', 'precore_pullover', 'narrow_grip_pulldown', 'arm_cross', 'leg_extension', 'neck_extension', 'lower_back', 'rowing_torso', 'abduction', 'power_tower_leg_press'],
+    //   // Hide hover
+    // });
+      new Morris.Line({
+        element: 'line-example',
+        data: [
+          { y: '2006', a: 100, b: 90 },
+          { y: '2007', a: 75,  b: 65 },
+          { y: '2008', a: 50,  b: 40 },
+          { y: '2009', a: 75,  b: 65 },
+          { y: '2010', a: 50,  b: 40 },
+          { y: '2011', a: 75,  b: 65 },
+          { y: '2012', a: 100, b: 90 }
+        ],
+        xkey: 'y',
+        ykeys: ['a', 'b'],
+        labels: ['Series A', 'Series B']
+      });
+  };
+
+  var newSession = function() {
+    $(".label-routine").click(function(){
+      $('.submit-session').show();
+      $.ajax({
+        type: "GET",
+        url: "http://localhost:3000/sessions/new?routine_id=" + $(this).data("id") + "&client_id=" + $(this).data("client"),
+        dataType: "script"
+      });
     });
   };
+
 
   //Calling functions
   automaticClientSearchBar();
@@ -135,5 +162,6 @@ $(document).ready(function() {
   setupClientsList();
   inputFieldToolTips();
   sessionTimer();
+  newSession();
   clientGraph();
 });

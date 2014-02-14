@@ -25,6 +25,7 @@ class SessionsController < ApplicationController
   def new
     @session = Session.new
     @client = Client.find(params[:client_id])
+    @routine = Routine.find(params[:routine_id]) if params[:routine_id]
   end
 
   # GET /sessions/1/edit
