@@ -65,6 +65,7 @@
   .label-routine {
   @extend %checkbox-labels;
   margin-bottom: 10px;
+  width: auto;
 }
 
   .session-form-checkbox-labels {
@@ -91,11 +92,20 @@
     @extend %group:after;
   }
   .routines {
-    width: 50%;
+    width: 25%;
     float: left;
+    height: 350px;
     max-height: 500px;
     overflow: scroll;
     text-align: center;
+    .create-routine-link {
+      text-align: left;
+      margin: 5px 10%;
+      width: auto;
+      a {
+        color: $red;
+      }
+    }
     .routine {
       display: block;
       &:after {
@@ -113,7 +123,28 @@
 }
 
 .exercises-or-new-routine {
+  text-align: left;
+  margin-left: 20px;
+  .routine-exercises {
+    margin-top: 20px;
+    h2 {
+      font-weight: bold;
+    }
+    li {
+      margin: 20px;
+      font-size: 22px;
+    }
+  }
+  .new_routine_for_session_form {
+    float: left;
+    width: 50%;
 
+    &:after {
+      @extend %group:after;
+    }
+
+
+  }
   .create-session-instructions {
 
   }

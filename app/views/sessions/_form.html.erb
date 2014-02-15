@@ -27,9 +27,10 @@
 
     <div class="routine-parent">
       <ul class="routines">
+        <li class='create-routine-link routine'><a href="#">Create a new workout</a></li>
         <% Routine.all.each do |routine| %>
           <li class='routine'>
-            <input type='radio' name='session[routine_id]' value=<%= routine.id %> class='session-form-radio-button' id="routine_<%= routine.id %>">
+            <input type='radio' name='session[routine_id]' value=<%= routine.id %> class='session-form-radio-button routine-input' id="routine_<%= routine.id %>">
 
             <label class='session-form-radio-button-label label-routine' for="routine_<%= routine.id %>" data-id="<%= routine.id %>" data-client="<%= @client.id %>">
               <%= routine.description %>
@@ -39,8 +40,29 @@
       </ul>
 
       <div class='exercises-or-new-routine'>
-      </div>
+        <div class="new_routine_for_session_form hide">
+          <%= f.fields_for Routine.new do |r| %>
+            <div>
+              <%= r.label :description, class: 'session-form-labels' %><br>
+              <%= r.text_field :description, placeholder: 'Describe the Routine', class: 'session-form-inputs' %>
+            </div>
 
+            <div class='session-form-exercise-selection-table'>
+              <h2 class='session-form-exercise-selection-header'>Exercises</h2>
+
+              <ul>
+                <% Exercise.all.each do |exercise| %>
+              <li>
+                <input id="<%= exercise.id %>", name='session[routine[exercise_ids]][]', value="<%= exercise.id %>", type='checkbox',  class='session-form-checkbox'>
+                <%= label_tag "#{exercise.id}", exercise.name, class: 'session-form-checkbox-labels' %>
+              </li>
+              <% end %>
+              </ul>
+
+          <% end %>
+          </div>
+        </div>
+      </div>
     </div>
       <%= f.hidden_field :name, value: "#{@client.name} ##{@client.sessions.count + 1}" %>
       <%= f.hidden_field :client_id, value: @client.id %>
@@ -50,4 +72,13 @@
       </div>
   <% end %>
 </div>
+
+<script>
+  $('.create-routine-link a').on("click", function(){
+    $(".exercises-or-new-routine .routine-exercises").remove();
+    $('.routine-input').prop('checked', false);
+    $('.new_routine_for_session_form').show();
+    $('.submit-session').show();
+  });
+</script>
 

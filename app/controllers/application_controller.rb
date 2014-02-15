@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_gym!
 
   protected
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << [:location, :email]
     devise_parameter_sanitizer.for(:sign_in) << :location

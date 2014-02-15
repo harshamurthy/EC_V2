@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Exercise.destroy_all
+Client.destroy_all
 
 Exercise.create( name: "Triceps", weight: true, percentage: false, reps: true, time: true, seat: false, foot: false, degrees: false, back: false)
 Exercise.create( name: "Precore Pull Over", weight: true, percentage: false, reps: true, time: true, seat: false, foot: false, degrees: false, back: false)
@@ -26,12 +28,12 @@ Exercise.create( name: "Power Tower Abs", weight: true, percentage: false, reps:
 Exercise.create( name: "Power Tower Leg Press", weight: true, percentage: false, reps: true, time: true, seat: false, foot: false, degrees: true, back: false)
 Exercise.create( name: "Ab Core", weight: true, percentage: false, reps: true, time: true, seat: true, foot: false, degrees: false, back: false)
 
-
-Client.create(gym_id: 1, first_name: "Zach", last_name: "Zuber", email: "example@example.com", machine_code: 474093)
-Client.create(gym_id: 1, first_name: "Harsha", last_name: "Murthy", email: "example@example.com", machine_code: 474093)
-Client.create(gym_id: 1, first_name: "Neal", last_name: "Sales-Griffin", email: "example@example.com", machine_code: 474093)
-Client.create(gym_id: 1, first_name: "Mike", last_name: "Mcgee", email: "example@example.com", machine_code: 474093)
-Client.create(gym_id: 1, first_name: "Jason", last_name: "Fried", email: "example@example.com", machine_code: 474093)
-Client.create(gym_id: 1, first_name: "Kobe", last_name: "Bryant", email: "example@example.com", machine_code: 474093)
-
+10.times do
+  Client.create(gym_id: 1, first_name: "Zach", last_name: "Zuber", email: "example@example.com", machine_code: 474093)
+  Client.create(gym_id: 1, first_name: "Harsha", last_name: "Murthy", email: "example@example.com", machine_code: 474093)
+  Client.create(gym_id: 1, first_name: "Neal", last_name: "Sales-Griffin", email: "example@example.com", machine_code: 474093)
+  Client.create(gym_id: 1, first_name: "Mike", last_name: "Mcgee", email: "example@example.com", machine_code: 474093)
+  Client.create(gym_id: 1, first_name: "Jason", last_name: "Fried", email: "example@example.com", machine_code: 474093)
+  Client.create(gym_id: 1, first_name: "Kobe", last_name: "Bryant", email: "example@example.com", machine_code: 474093)
+end
 

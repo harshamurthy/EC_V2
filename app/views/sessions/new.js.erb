@@ -1,4 +1,4 @@
-alert("yo");
-$(".exercises-or-new-routine ul").remove();
+$(".exercises-or-new-routine .routine-exercises").remove();
+$('.new_routine_for_session_form').hide();
 $(".exercises-or-new-routine").append("<%= j render('routines_exercises', routine: @routine) %>");
 

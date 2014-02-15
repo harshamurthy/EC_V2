@@ -25,6 +25,7 @@ class SessionsController < ApplicationController
   def new
     @session = Session.new
     @client = Client.find(params[:client_id])
+    @routines = Routine.where(gym_id: current_gym.id)
     @routine = Routine.find(params[:routine_id]) if params[:routine_id]
   end
 
