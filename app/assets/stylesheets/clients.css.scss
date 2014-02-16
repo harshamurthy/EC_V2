@@ -62,3 +62,33 @@
     }
   }
 }
+
+//Cllient Show
+.client-container {
+  @extend %containers;
+
+  .client-name {
+    font-size: $h1;
+  }
+
+  .client-email {
+    margin-top: 10px;
+    color: #aaa;
+  }
+
+  .client-workout-sessions {
+    text-align: center;
+    margin-bottom: 50px;
+    line-height: 2;
+    h2 {
+      font-size: $h2;
+      margin-top: 3%;
+      margin-bottom: 1%;
+    }
+
+    li {
+      padding: 0px 15px;
+      display: inline-block;
+    }
+  }
+}

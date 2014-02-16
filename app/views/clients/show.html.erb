@@ -1,33 +1,17 @@
-<p id="notice"><%= notice %></p>
-<!-- <div id="client_chart"></div> -->
-<% if @client.sessions.present? %>
-  <%#= content_tag :div, "", id: "line_example", data: {exercises: session_graph_data(@client)} %>
-  <div id="line-example"></div>
-<% end %>
-<p>
-  <strong>Gym:</strong>
-  <%= @client.gym_id %>
-</p>
+<div class="client-container">
+  <p id="notice"><%= notice %></p>
+  <h1 class='client-name'><%= @client.name %></h1>
+  <p class='client-email'><%= @client.email %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @client.first_name %>
-</p>
+  <ul class='client-workout-sessions'>
+    <h2>Sessions</h2>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @client.last_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @client.email %>
-</p>
-
-<p>
-  <strong>Machine code:</strong>
-  <%= @client.machine_code %>
-</p>
-
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+    <% @client.sessions.each do |session| %>
+      <li><%= link_to session.name, workout_session_url(session.id) %></li>
+    <% end %>
+  </ul>
+  <% if @client.sessions.present? %>
+    <%#= content_tag :div, "", id: "line_example", data: {exercises: session_graph_data(@client)} %>
+    <div id="line-example"></div>
+  <% end %>
+</div>

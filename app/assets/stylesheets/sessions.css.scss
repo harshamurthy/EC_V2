@@ -70,6 +70,7 @@
 
   .session-form-checkbox-labels {
     @extend %checkbox-labels;
+    margin: 0;
   }
 
   .session-form-submit-button {
@@ -138,6 +139,11 @@
   .new_routine_for_session_form {
     float: left;
     width: 50%;
+    text-align: center;
+
+    h2 {
+      margin-bottom: 10%;
+    }
 
     &:after {
       @extend %group:after;
