@@ -1,5 +1,6 @@
 <div class='session-form'>
   <%= form_for(@session, url: workout_sessions_url, method: 'post') do |f| %>
+
     <% if @session.errors.any? %>
       <div id='error_explanation'>
         <h2><%= pluralize(@session.errors.count, 'error') %> prohibited this session from being saved:</h2>
@@ -11,7 +12,8 @@
         </ul>
       </div>
     <% end %>
-    <div class="date-parent">
+
+    <div class="new-session-date-parent">
       <input type='radio' name='session[date]' value=<%= Date.today %> checked="checked" class='session-form-radio-button' id="today">
       <label class='session-form-radio-button-label' for="today">
         Today
@@ -25,9 +27,10 @@
       </label>
     </div>
 
-    <div class="routine-parent">
+    <div class="new-session-routine-parent">
       <ul class="routines">
         <li class='create-routine-link routine'><a href="#">Create a new workout</a></li>
+        <!-- <small>Scroll for more routines</small> -->
         <% Routine.all.each do |routine| %>
           <li class='routine'>
             <input type='radio' name='session[routine_id]' value=<%= routine.id %> class='session-form-radio-button routine-input' id="routine_<%= routine.id %>">
@@ -42,13 +45,12 @@
       <div class='exercises-or-new-routine'>
         <div class="new_routine_for_session_form hide">
           <%= f.fields_for Routine.new do |r| %>
-            <div>
+
               <%= r.label :description, class: 'session-form-labels' %><br>
-              <%= r.text_field :description, placeholder: 'Describe the Routine', class: 'session-form-inputs' %>
-            </div>
+              <%= r.text_field :description, placeholder: 'Name the routine', class: 'session-form-inputs' %>
 
             <div class='session-form-exercise-selection-table'>
-              <h2 class='session-form-exercise-selection-header'>Exercises</h2>
+              <!-- <h2 class='session-form-exercise-selection-header'>Exercises</h2> -->
 
               <ul>
                 <% Exercise.all.each do |exercise| %>
@@ -68,17 +70,10 @@
       <%= f.hidden_field :client_id, value: @client.id %>
       <%= f.hidden_field :gym_id, value: current_gym.id %>
       <div class="submit-session hide">
-        <%= f.submit 'Submit', class: 'session-form-submit-button'%>
+        <%= f.submit 'Start workout', class: 'session-form-submit-button'%>
       </div>
   <% end %>
 </div>
 
-<script>
-  $('.create-routine-link a').on("click", function(){
-    $(".exercises-or-new-routine .routine-exercises").remove();
-    $('.routine-input').prop('checked', false);
-    $('.new_routine_for_session_form').show();
-    $('.submit-session').show();
-  });
-</script>
+
 

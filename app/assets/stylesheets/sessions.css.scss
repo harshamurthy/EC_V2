@@ -45,22 +45,6 @@
       background-color: $blue;
     }
   }
-.date-parent {
-  text-align: center;
-  .session-form-radio-button-label {
-    padding: 20px;
-    margin: 0 30px;
-    // margin-bottom: 50px;
-    width: 20%;
-    text-align: center;
-    border: 1px solid black;
-    border-radius: 5px;
-    display: inline-block;
-  }
-  .date-or {
-    font-size: $h3;
-  }
-}
 
   .label-routine {
   @extend %checkbox-labels;
@@ -79,16 +63,34 @@
 }
 
 // New Session
-.new-session-page {
+.session-form {
   @extend %containers;
 }
-
 .new-session-header {
-  @extend %header-text-styles;
   text-align: center;
-  padding-top: 50px;
+  font-size: $h1;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 5%;
+  padding-top: 5%;
 }
-.routine-parent {
+.new-session-date-parent {
+  text-align: center;
+  .session-form-radio-button-label {
+    padding: 20px;
+    margin: 0 30px;
+    width: 20%;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  .date-or {
+    font-size: $h3;
+  }
+}
+
+.new-session-routine-parent {
+  margin-top: 5%;
   &:after {
     @extend %group:after;
   }
@@ -99,13 +101,22 @@
     max-height: 500px;
     overflow: scroll;
     text-align: center;
+
     .create-routine-link {
       text-align: left;
       margin: 5px 10%;
       width: auto;
+      margin-bottom: 5%;
       a {
         color: $red;
+        font-size: 20px;
       }
+    }
+    small {
+      float: left;
+      margin-bottom: 10%;
+      margin-left: 10%;
+      color: #ccc;
     }
     .routine {
       display: block;
@@ -113,48 +124,47 @@
         @extend %group:after;
       }
     }
-    .exercises-or-new-routine {
+  }
+}
 
+.exercises-or-new-routine {
+  text-align: left;
+  float: left;
+  width: 60%;
+  .routine-exercises {
+    text-align: center;
+    margin-right: 15%;
+    .routine-exercises-header {
+      font-size: $h3;
+      font-weight: bold;
+      margin-bottom: 5%;
+    }
+    .rouitne-exercise {
+      padding: 10px;
+      font-size: 20px;
+    }
+  }
+  .new_routine_for_session_form {
+    float: left;
+    width: 100%;
+    text-align: center;
+
+    h2 {
+      margin-bottom: 10%;
     }
   }
 }
 
 .submit-session {
   text-align: center;
+  .session-form-submit-button {
+    background-color: $green;
+    &:hover {
+      background-color: lighten($green, 5%);
+    }
+  }
 }
 
-.exercises-or-new-routine {
-  text-align: left;
-  margin-left: 20px;
-  .routine-exercises {
-    margin-top: 20px;
-    h2 {
-      font-weight: bold;
-    }
-    li {
-      margin: 20px;
-      font-size: 22px;
-    }
-  }
-  .new_routine_for_session_form {
-    float: left;
-    width: 50%;
-    text-align: center;
-
-    h2 {
-      margin-bottom: 10%;
-    }
-
-    &:after {
-      @extend %group:after;
-    }
-
-
-  }
-  .create-session-instructions {
-
-  }
-}
 
 // Show Session Page
 .workout-session-page {
