@@ -152,13 +152,15 @@ $(document).ready(function() {
 
   var createNewRoutine = function(){
     $('.create-routine-link').on("click", function(e){
+      $("#session_routine_id").val("");
+      $('.choose-existing ul').remove();
       $('.choose-existing').hide();
       $('.routine-input').prop('checked', false);
       $('.create-new').show();
       $('.submit-session').show();
        $('.create-routine-link').addClass('tab');
       $('.choose-existing-link').removeClass('tab');
-      e.preventDefault();
+      return false;
     });
   };
 
@@ -168,7 +170,7 @@ $(document).ready(function() {
       $('.choose-existing').show();
       $('.create-routine-link').removeClass('tab');
       $('.choose-existing-link').addClass('tab');
-      e.preventDefault();
+      return false;
     });
   };
 

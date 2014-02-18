@@ -96,6 +96,23 @@
       }
       .h2-and-labels {
         margin: 40px 0;
+        .datepicker-label {
+          // display: block;
+          &.onclick {
+            background-color: $blue;
+            border: 1px solid black;
+            color: white;
+          }
+        }
+        .session-datepicker-text-field {
+          width: auto;
+          display: block;
+          background: transparent;
+          font-size: 12px;
+          margin: 0px;
+          border-bottom: none;
+
+        }
       }
     }
   }
@@ -229,7 +246,7 @@
     right: 0;
 
     .workout-session-execution-form {
-      width: 70%;
+      width: 85%;
       margin: 0 auto;
       border: 1px solid #ccc;
       padding: 30px;

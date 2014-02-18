@@ -11,7 +11,7 @@
     <% end %>
   </ul>
   <% if @client.sessions.present? %>
-    <%= content_tag :div, "", id: "client_chart", data: {exercises: session_graph_data(@client)} %>
-    <!-- <div id="client_chart"></div> -->
+    <h2>Weight chart</h2>
+    <%= content_tag :div, "", id: "client_chart", data: {exercises: weight_session_graph_data(@client)} %>
   <% end %>
 </div>

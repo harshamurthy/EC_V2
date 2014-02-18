@@ -1,5 +1,5 @@
 module ClientsHelper
-  def session_graph_data(client)
+  def weight_session_graph_data(client)
     dates = client.exercise_executions.map{ |ee| ee.session.date.to_date }.uniq
     (dates).map do |date|
       {

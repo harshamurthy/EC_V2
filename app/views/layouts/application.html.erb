@@ -12,6 +12,10 @@
 </head>
 <body>
   <% if gym_signed_in? %>
+    <!-- <nav>
+      <%#= link_to "<i class=\"fa fa-home\"></i>".html_safe, root_url, class: 'nav-home' %>
+      <%#= link_to "<i class=\"fa fa-power-off\"></i>".html_safe, destroy_gym_session_url, method: 'delete', class: 'nav-sign-out' %>
+    </nav> -->
   <% end %>
   <%= yield %>
 </body>

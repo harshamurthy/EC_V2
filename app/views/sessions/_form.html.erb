@@ -15,21 +15,26 @@
 
       <div class="datepicker-container">
         <section class="session-datepicker">
-          <h2>Is this for?</h2>
+          <h2>This is for...</h2>
           <div class="h2-and-labels">
+
+
+            <%= f.label :date, "Other date", class: "datepicker-label session-form-radio-button-label" %>
+
+            <span class='date-or'><i class="fa fa-minus-circle"></i></span>
 
             <input type='radio' name='session[date]' value=<%= Date.today %> checked="checked" class='session-form-radio-button' id="today">
             <label class='session-form-radio-button-label' for="today">
             Today
             </label>
 
-            <span class='date-or'>or</span>
+            <span class='date-or'><i class="fa fa-minus-circle"></i></span>
 
             <input type='radio' name='session[date]' value=<%= Date.tomorrow %> class='session-form-radio-button' id="tomorrow">
             <label class='session-form-radio-button-label' for="tomorrow" >
             Tomorrow
             </label>
-
+            <%= f.text_field :date, class: "session-datepicker-text-field" %>
           </div>
         </section>
       </div>
@@ -78,5 +83,22 @@
   <% end %>
 </div>
 
+<script type="text/javascript">
+  $('.h2-and-labels label').on("click", function(){
+    $('.session-datepicker-text-field').val("");
+    $('.datepicker-label').text("Other date");
+    $('.datepicker-label').removeClass("onclick");
+  });
+  $('.datepicker-label').on("click", function(){
+    $('.session-datepicker-text-field').show();
+    $(this).addClass('onclick');
+    $('.h2-and-labels input[type=radio]').prop('checked', false);
+  });
 
+  $('.session-datepicker-text-field').change(function(){
+    var date = $(this).val();
+    $('.datepicker-label').text(date);
+    $(this).hide();
+  });
+</script>
 
