@@ -1,6 +1,6 @@
 module ClientsHelper
   def session_graph_data(client)
-    dates = client.exercise_executions.map{ |ee| ee.session.date.to_date }
+    dates = client.exercise_executions.map{ |ee| ee.session.date.to_date }.uniq
     (dates).map do |date|
       {
         updated_at: date,

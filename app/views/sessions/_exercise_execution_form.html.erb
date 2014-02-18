@@ -48,24 +48,25 @@
       </div>
   <% end %>
   <p class='previous-stats'>
-      <% unless session.client.get_previous_exercise_result(exercise.id).nil? %>
-        Last time <%= session.client.first_name %> did <%= exercise.name.downcase %>: </br>
-      <% end %>
+      <% last_exercise_result = session.client.get_previous_exercise_result(exercise.id) %>
+      <% unless last_exercise_result.nil? %>
+          Last time <%= session.client.first_name %> did <%= exercise.name.downcase %>: </br>
 
-      <% if exercise.weight? && session.client.get_previous_exercise_result(exercise.id) %>
-        Weight: <span class='previous-stats-number'><%= session.client.get_previous_exercise_result(exercise.id).weight %> lbs.</span>
-      <% end %>
+        <% if exercise.weight? %>
+          Weight: <span class='previous-stats-number'><%= last_exercise_result.weight %> lbs.</span>
+        <% end %>
 
-      <% if exercise.percentage? && session.client.get_previous_exercise_result(exercise.id) %>
-        Percentage: <span class='previous-stats-number'><%= session.client.get_previous_exercise_result(exercise.id).percentage %>%</span>
-      <% end %>
+        <% if exercise.percentage? %>
+          Percentage: <span class='previous-stats-number'><%= last_exercise_result.percentage %>%</span>
+        <% end %>
 
-      <% if exercise.reps? && session.client.get_previous_exercise_result(exercise.id) %>
-        Reps: <span class='previous-stats-number'><%= session.client.get_previous_exercise_result(exercise.id).reps %></span>
-      <% end %>
+        <% if exercise.reps? %>
+          Reps: <span class='previous-stats-number'><%= last_exercise_result.reps %></span>
+        <% end %>
 
-      <% if exercise.time? && session.client.get_previous_exercise_result(exercise.id) %>
-        Time: <span class='previous-stats-number'><%= session.client.get_previous_exercise_result(exercise.id).time %></span>
+        <% if exercise.time?   %>
+          Time: <span class='previous-stats-number'><%= last_exercise_result.time %></span>
+        <% end %>
       <% end %>
-    </p>
+  </p>
 </div>

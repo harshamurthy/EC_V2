@@ -2,6 +2,10 @@ input[type=submit] {
   -webkit-appearance: none;
 }
 
+body {
+  color: $dark_gray;
+}
+
 a {
   color: $blue;
   font-size: 14px;
@@ -76,7 +80,7 @@ a {
   display: none;
 
   &:checked + label {
-    background-color: $orange;
+    background-color: $light_blue;
     border: 1px solid white;
     color: white;
   }

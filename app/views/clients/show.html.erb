@@ -11,7 +11,7 @@
     <% end %>
   </ul>
   <% if @client.sessions.present? %>
-    <%#= content_tag :div, "", id: "line_example", data: {exercises: session_graph_data(@client)} %>
-    <div id="line-example"></div>
+    <%= content_tag :div, "", id: "client_chart", data: {exercises: session_graph_data(@client)} %>
+    <!-- <div id="client_chart"></div> -->
   <% end %>
 </div>

@@ -13,62 +13,65 @@
       </div>
     <% end %>
 
-    <div class="new-session-date-parent">
-      <input type='radio' name='session[date]' value=<%= Date.today %> checked="checked" class='session-form-radio-button' id="today">
-      <label class='session-form-radio-button-label' for="today">
-        Today
-      </label>
+      <div class="datepicker-container">
+        <section class="session-datepicker">
+          <h2>Is this for?</h2>
+          <div class="h2-and-labels">
 
-      <span class='date-or'>or</span>
-
-      <input type='radio' name='session[date]' value=<%= Date.tomorrow %> class='session-form-radio-button' id="tomorrow">
-      <label class='session-form-radio-button-label' for="tomorrow" >
-        Tomorrow
-      </label>
-    </div>
-
-    <div class="new-session-routine-parent">
-      <ul class="routines">
-        <li class='create-routine-link routine'><a href="#">Create a new workout</a></li>
-        <!-- <small>Scroll for more routines</small> -->
-        <% Routine.all.each do |routine| %>
-          <li class='routine'>
-            <input type='radio' name='session[routine_id]' value=<%= routine.id %> class='session-form-radio-button routine-input' id="routine_<%= routine.id %>">
-
-            <label class='session-form-radio-button-label label-routine' for="routine_<%= routine.id %>" data-id="<%= routine.id %>" data-client="<%= @client.id %>">
-              <%= routine.description %>
+            <input type='radio' name='session[date]' value=<%= Date.today %> checked="checked" class='session-form-radio-button' id="today">
+            <label class='session-form-radio-button-label' for="today">
+            Today
             </label>
-          </li>
-        <% end %>
-      </ul>
 
-      <div class='exercises-or-new-routine'>
-        <div class="new_routine_for_session_form hide">
-          <%= f.fields_for Routine.new do |r| %>
+            <span class='date-or'>or</span>
 
-              <%= r.label :description, class: 'session-form-labels' %><br>
-              <%= r.text_field :description, placeholder: 'Name the routine', class: 'session-form-inputs' %>
+            <input type='radio' name='session[date]' value=<%= Date.tomorrow %> class='session-form-radio-button' id="tomorrow">
+            <label class='session-form-radio-button-label' for="tomorrow" >
+            Tomorrow
+            </label>
 
-            <div class='session-form-exercise-selection-table'>
-              <!-- <h2 class='session-form-exercise-selection-header'>Exercises</h2> -->
-
-              <ul class='new-routine-exercises'>
-                <% Exercise.all.each do |exercise| %>
-              <li>
-                <input id="<%= exercise.id %>", name='session[routine[exercise_ids]][]', value="<%= exercise.id %>", type='checkbox',  class='session-form-checkbox'>
-                <%= label_tag "#{exercise.id}", exercise.name, class: 'session-form-checkbox-labels' %>
-              </li>
-              <% end %>
-              </ul>
-
-          <% end %>
           </div>
-        </div>
+        </section>
       </div>
-      <div class="submit-session hide">
-        <%= f.submit 'Start workout', class: 'session-form-submit-button'%>
-      </div>
-    </div>
+
+        <section class='session-workouts'>
+          <div class="actual-content">
+            <a href="#" class="create-routine-link tab">Create a new workout</a>
+            <a href="#" class="choose-existing-link">Choose existing workout</a>
+
+            <div class="create-new">
+              <div class="new_routine_for_session_form">
+                <%= f.fields_for Routine.new do |r| %>
+
+                <%= r.label :description, class: 'session-form-labels' %><br>
+                <%= r.text_field :description, placeholder: 'Name the routine', class: 'session-form-inputs' %>
+
+                <ul class='new-routine-exercises'>
+                  <% Exercise.all.each do |exercise| %>
+                  <li>
+                    <input id="<%= exercise.id %>", name='session[routine[exercise_ids]][]', value="<%= exercise.id %>", type='checkbox',  class='session-form-checkbox'>
+                    <%= label_tag "#{exercise.id}", exercise.name, class: 'session-form-checkbox-labels' %>
+                  </li>
+                <% end %>
+                </ul>
+
+              <% end %>
+              </div>
+            </div> <!-- create-new -->
+
+            <div class="choose-existing hide">
+              <h2>Choose pre-existing workout:</h2>
+              <%= f.label :routine_id, :class => 'hide', data: {client: @client.id} %>
+              <%= f.select :routine_id, options_for_select(Routine.all.collect{ |u| [u.description, u.id] }), include_blank: true %>
+            </div> <!-- choose-exisiting -->
+
+
+            <div class="submit-session">
+              <%= f.submit 'Start workout', class: 'session-form-submit-button'%>
+            </div>
+          </div> <!-- actual-content -->
+        </section> <!-- session-workouts -->
+
       <%= f.hidden_field :name, value: "#{@client.name} ##{@client.sessions.count + 1}" %>
       <%= f.hidden_field :client_id, value: @client.id %>
       <%= f.hidden_field :gym_id, value: current_gym.id %>

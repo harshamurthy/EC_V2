@@ -1,7 +1,5 @@
 <ul class='routine-exercises'>
   <% if routine.present? %>
-    <h2 class='routine-exercises-header'>Exercises in "<%= routine.description %>"</h2>
-
     <% routine.exercises.each do |exercise| %>
       <li class='rouitne-exercise'><%= exercise.name %></li>
     <% end %>

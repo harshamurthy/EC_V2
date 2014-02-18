@@ -7,7 +7,7 @@
     <li class='client'>
       <%= client.name %>
       <aside class='client-buttons'>
-        <%= link_to 'Start workout', new_workout_session_url(client_id: client.id), class: 'client-start-workout' %>
+        <%= link_to 'Create workout', new_workout_session_url(client_id: client.id), class: 'client-start-workout' %>
         <%= link_to 'Manage account', client_url(client.id), class: 'client-manage-account' %>
       </aside>
     </li>
