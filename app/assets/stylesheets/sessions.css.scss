@@ -95,12 +95,13 @@
     @extend %group:after;
   }
   .routines {
-    width: 25%;
+    width: 30%;
     float: left;
     height: 350px;
     max-height: 500px;
     overflow: scroll;
     text-align: center;
+    border-right: 1px solid #ccc;
 
     .create-routine-link {
       text-align: left;
@@ -109,7 +110,7 @@
       margin-bottom: 5%;
       a {
         color: $red;
-        font-size: 20px;
+        font-size: 18px;
       }
     }
     small {
@@ -148,7 +149,14 @@
     float: left;
     width: 100%;
     text-align: center;
-
+    .new-routine-exercises {
+      li {
+        vertical-align: top;
+        label {
+        margin: 5px;
+        }
+      }
+    }
     h2 {
       margin-bottom: 10%;
     }
@@ -345,13 +353,13 @@
       width: 40%;
       margin-right: 10px;
       padding: 15px;
-      font-size: 20px;
+      font-size: 15px;
     }
 
     .start-session-stop-watch {
-      background-color: $green;
-      &:hover {
         background-color: lighten($green, 5%);
+      &:hover {
+        background-color: lighten($green, 15%);
       }
     }
 
@@ -401,7 +409,7 @@
         font-size: 30px;
         font-weight: bold;
         color: $orange;
-        width: 30%;
+        width: 50%;
         text-align: center;
         font-family: 'Roboto', sans-serif;
         font-weight: 900;

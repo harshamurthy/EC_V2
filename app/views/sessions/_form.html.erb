@@ -52,7 +52,7 @@
             <div class='session-form-exercise-selection-table'>
               <!-- <h2 class='session-form-exercise-selection-header'>Exercises</h2> -->
 
-              <ul>
+              <ul class='new-routine-exercises'>
                 <% Exercise.all.each do |exercise| %>
               <li>
                 <input id="<%= exercise.id %>", name='session[routine[exercise_ids]][]', value="<%= exercise.id %>", type='checkbox',  class='session-form-checkbox'>
@@ -65,13 +65,13 @@
           </div>
         </div>
       </div>
+      <div class="submit-session hide">
+        <%= f.submit 'Start workout', class: 'session-form-submit-button'%>
+      </div>
     </div>
       <%= f.hidden_field :name, value: "#{@client.name} ##{@client.sessions.count + 1}" %>
       <%= f.hidden_field :client_id, value: @client.id %>
       <%= f.hidden_field :gym_id, value: current_gym.id %>
-      <div class="submit-session hide">
-        <%= f.submit 'Start workout', class: 'session-form-submit-button'%>
-      </div>
   <% end %>
 </div>
 
