@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140211180001) do
+ActiveRecord::Schema.define(version: 20140219230144) do
 
   create_table "clients", force: true do |t|
     t.integer  "gym_id"
@@ -56,6 +56,11 @@ ActiveRecord::Schema.define(version: 20140211180001) do
     t.boolean  "chestpad",   default: false
     t.boolean  "hips",       default: false
     t.boolean  "leg",        default: false
+  end
+
+  create_table "exercises_gyms", id: false, force: true do |t|
+    t.integer "exercise_id", null: false
+    t.integer "gym_id",      null: false
   end
 
   create_table "exercises_routines", id: false, force: true do |t|

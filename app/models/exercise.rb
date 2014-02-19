@@ -2,6 +2,7 @@ class Exercise < ActiveRecord::Base
   has_many :exercise_executions
   has_many :setting_executions
   has_and_belongs_to_many :routines
+  has_and_belongs_to_many :gyms
 
   def settings?
     array = []
