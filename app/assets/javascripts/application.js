@@ -160,6 +160,7 @@ $(document).ready(function() {
       $('.submit-session').show();
        $('.create-routine-link').addClass('tab');
       $('.choose-existing-link').removeClass('tab');
+      $("#session_routine_description").focus();
       return false;
     });
   };
@@ -194,6 +195,20 @@ $(document).ready(function() {
     });
   };
 
+  var ensureNameForRoutine = function() {
+    $('.submit-session input').on("click", function(e){
+      var description = $('#session_routine_description').val();
+
+    if (description == "") {
+      e.preventDefault();
+      alert("You need to add a name to your routine!");
+      $('.add-routine-name').show();
+      $('#session_routine_description').focus();
+    }
+
+    });
+  };
+
 
   //Calling functions
   automaticClientSearchBar();
@@ -206,5 +221,6 @@ $(document).ready(function() {
   createNewRoutine();
   chooseExistingRoutine();
   newSessionDate();
+  ensureNameForRoutine();
   clientGraph();
 });

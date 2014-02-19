@@ -7,6 +7,12 @@ $('form').remove();
 $('.workout-session-execution-data').append("<%= j render('setting_execution_form', exercise: @exercise, setting_execution: @setting_execution, client: @session.client, session: @session) %>");
 $('.workout-session-execution-data').append("<%= j render('exercise_execution_form', exercise: @exercise, exercise_execution: @exercise_execution, session: @session) %>");
 $('.workout-session-execution-data').append("<%= j render('previous_stats', exercise: @exercise, session: @session) %>");
+
+$('.session-saved').remove();
+$("<p class='session-saved'> Saved. </p>").hide().prependTo('.workout-session-execution-form').fadeIn("fast", function(){
+  $(this).delay(500).fadeOut("slow");
+});
+
 //---------------------------------------------
 
 $('.workout-session-execution-form input').focusout(function(){

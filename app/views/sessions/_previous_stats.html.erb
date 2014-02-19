@@ -15,8 +15,8 @@
     Reps: <span class='previous-stats-number'><%= last_exercise_result.reps || "N/A" %></span>
     <% end %>
 
-    <% if exercise.time? %>
-      Time: <span class='previous-stats-number'><%= last_exercise_result.time || "N/A" %></span>
+    <% if exercise.time? && last_exercise_result.time.present? %>
+      Time: <span class='previous-stats-number'><%= last_exercise_result.time %></span>
     <% end %>
   <% end %>
 </p>

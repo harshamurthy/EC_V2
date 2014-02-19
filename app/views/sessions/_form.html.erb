@@ -15,7 +15,7 @@
 
       <div class="datepicker-container">
         <section class="session-datepicker">
-          <h2>This is for...</h2>
+          <h2>This workout is for...</h2>
           <div class="h2-and-labels">
 
 
@@ -41,15 +41,16 @@
 
         <section class='session-workouts'>
           <div class="actual-content">
-            <a href="#" class="create-routine-link tab">Create a new workout</a>
-            <a href="#" class="choose-existing-link">Choose existing workout</a>
+            <a href="#" class="create-routine-link tab">Create a new routine</a>
+            <a href="#" class="choose-existing-link">Choose existing routine</a>
 
             <div class="create-new">
               <div class="new_routine_for_session_form">
                 <%= f.fields_for Routine.new do |r| %>
 
                 <%= r.label :description, class: 'session-form-labels' %><br>
-                <%= r.text_field :description, placeholder: 'Name the routine', class: 'session-form-inputs' %>
+                <%= r.text_field :description, placeholder: 'Name the routine', class: 'session-form-inputs', autofocus: true %>
+                <span class="hide add-routine-name"><i class="fa fa-arrow-circle-o-left"></i> Add a name</span>
 
                 <ul class='new-routine-exercises'>
                   <% Exercise.all.each do |exercise| %>
@@ -82,5 +83,6 @@
       <%= f.hidden_field :gym_id, value: current_gym.id %>
   <% end %>
 </div>
+
 
 

@@ -10,7 +10,8 @@ $('.workout-session-setting-form input[type=text]').focusout(function() {
   $('.session-setting-execution-form').submit();
 });
 
-$("<p class='session-saved'> Saved. </p>").hide().appendTo('.workout-session-execution-data').fadeIn("fast", function(){
-  $(this).delay(1000).fadeOut("slow");
+$('.session-saved').remove();
+$("<p class='session-saved'> Saved. </p>").hide().prependTo('.workout-session-setting-form').fadeIn("fast", function(){
+  $(this).delay(500).fadeOut("slow");
 });
 // autoSaveSessionForm();

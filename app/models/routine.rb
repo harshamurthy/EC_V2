@@ -5,11 +5,6 @@ class Routine < ActiveRecord::Base
 
   validates_presence_of :description
 
-  # def uniqueness_of_exercises
-  #   if Routine.all.collect{|r| r.exercise_ids}.include?(exercise_ids)
-  #     routine = Routine.all.select{|r| r.exercise_ids == x}
-  # end
-
   def self.find_or_initialize_by_exercise_ids(exercise_ids)
     Routine.all.select{|r| r == exercise_ids}.first || Routine.new(exercise_ids: exercise_ids)
   end

@@ -144,7 +144,10 @@
       .create-new {
         input[type=text] {
           margin-bottom: 40px;
-          width: 100%;
+          width: 80%;
+        }
+        .add-routine-name {
+          color: $red;
         }
         li {
           display: inline-block;
@@ -170,6 +173,9 @@
       }
       .submit-session {
         text-align: center;
+        input {
+          background-color: lighten($green, 5%);
+        }
       }
     }
   }
@@ -248,8 +254,8 @@
     .session-saved {
       position: absolute;
       top: 0px;
-      right: 10px;
-      text-align: center;
+      right: 40px;
+      // text-align: center;
       color: #666;
       font-size: 18px;
       font-family: "Roboto", sans-serif;
