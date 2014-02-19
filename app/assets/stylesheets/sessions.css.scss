@@ -106,7 +106,7 @@
         }
         .session-datepicker-text-field {
           width: auto;
-          display: block;
+          display: inline-block;
           background: transparent;
           font-size: 12px;
           margin: 0px;
@@ -245,22 +245,22 @@
     top: 15%;
     right: 0;
 
+    .session-saved {
+      position: absolute;
+      top: 0px;
+      right: 10px;
+      text-align: center;
+      color: #666;
+      font-size: 18px;
+      font-family: "Roboto", sans-serif;
+    }
+
     .workout-session-execution-form {
       width: 85%;
       margin: 0 auto;
       border: 1px solid #ccc;
       padding: 30px;
       border-radius: 5px;
-
-      .previous-stats {
-        text-align: center;
-        margin-top: 40px;
-        font-size: 22px;
-        line-height: 1.5;
-        .previous-stats-number {
-          color: $orange;
-          font-weight: bold;
-        }
       }
 
       &:after {
@@ -268,6 +268,16 @@
         clear: both;
         content: "";
       }
+      .previous-stats {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 22px;
+        line-height: 1.5;
+      .previous-stats-number {
+        color: $orange;
+        font-weight: bold;
+      }
+
     }
   }
 }

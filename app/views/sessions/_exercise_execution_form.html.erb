@@ -43,30 +43,8 @@
 
       <%= f.hidden_field :exercise_id, value: exercise.id %>
       <%= f.hidden_field :session_id, value: session.id %>
-      <div class='actions'>
-        <%#= f.submit %>
-      </div>
   <% end %>
-  <p class='previous-stats'>
-      <% last_exercise_result = session.client.get_previous_exercise_result(exercise.id) %>
-      <% unless last_exercise_result.nil? %>
-          Last time <%= session.client.first_name %> did <%= exercise.name.downcase %>: </br>
+  <section class='previous-stats-container'>
 
-        <% if exercise.weight? %>
-          Weight: <span class='previous-stats-number'><%= last_exercise_result.weight %> lbs.</span>
-        <% end %>
-
-        <% if exercise.percentage? %>
-          Percentage: <span class='previous-stats-number'><%= last_exercise_result.percentage %>%</span>
-        <% end %>
-
-        <% if exercise.reps? %>
-          Reps: <span class='previous-stats-number'><%= last_exercise_result.reps %></span>
-        <% end %>
-
-        <% if exercise.time?   %>
-          Time: <span class='previous-stats-number'><%= last_exercise_result.time %></span>
-        <% end %>
-      <% end %>
-  </p>
+  </section>
 </div>

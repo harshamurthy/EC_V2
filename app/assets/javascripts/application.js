@@ -174,6 +174,26 @@ $(document).ready(function() {
     });
   };
 
+  var newSessionDate = function() {
+    $('.h2-and-labels label').on("click", function(){
+      $('.session-datepicker-text-field').val("");
+      $('.datepicker-label').text("Other date");
+      $('.datepicker-label').removeClass("onclick");
+    });
+
+    $('.datepicker-label').on("click", function(){
+      $('.session-datepicker-text-field').show();
+      $(this).addClass('onclick');
+      $('.h2-and-labels input[type=radio]').prop('checked', false);
+    });
+
+    $('.session-datepicker-text-field').change(function(){
+      var date = $(this).val();
+      $('.datepicker-label').text(date);
+      $(this).hide();
+    });
+  };
+
 
   //Calling functions
   automaticClientSearchBar();
@@ -185,5 +205,6 @@ $(document).ready(function() {
   newSession();
   createNewRoutine();
   chooseExistingRoutine();
+  newSessionDate();
   clientGraph();
 });

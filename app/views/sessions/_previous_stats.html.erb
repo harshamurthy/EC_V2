@@ -1,0 +1,22 @@
+<p class='previous-stats'>
+  <% last_exercise_result = session.client.get_previous_exercise_result(exercise.id) %>
+    <% unless last_exercise_result.nil? %>
+    Last time <%= session.client.first_name %> did <%= exercise.name.downcase %>: </br>
+
+    <% if exercise.weight? %>
+      Weight: <span class='previous-stats-number'><%= last_exercise_result.weight || "N/A" %> lbs.</span>
+    <% end %>
+
+    <% if exercise.percentage? %>
+      Percentage: <span class='previous-stats-number'><%= last_exercise_result.percentage || "N/A" %>%</span>
+    <% end %>
+
+    <% if exercise.reps? %>
+    Reps: <span class='previous-stats-number'><%= last_exercise_result.reps || "N/A" %></span>
+    <% end %>
+
+    <% if exercise.time? %>
+      Time: <span class='previous-stats-number'><%= last_exercise_result.time || "N/A" %></span>
+    <% end %>
+  <% end %>
+</p>

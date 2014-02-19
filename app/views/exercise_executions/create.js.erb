@@ -1,7 +1,9 @@
 $('.workout-session-execution-form').remove();
 
 $('.workout-session-execution-data').append("<%= j render('sessions/exercise_execution_form', exercise: @exercise, exercise_execution: @exercise_execution, session: @session) %>");
-
+$("<p class='session-saved'> Saved. </p>").hide().appendTo('.workout-session-execution-data').fadeIn("fast", function(){
+  $(this).delay(1000).fadeOut("slow");
+});
 
 $('.workout-session-execution-form input').focusout(function(){
   $('.session-exercise-execution-form').submit();
