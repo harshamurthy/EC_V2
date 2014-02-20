@@ -5,6 +5,8 @@ class SessionsController < ApplicationController
   # GET /sessions.json
   def index
     @sessions = Session.all
+    @sessions_by_date = @sessions.group_by(&:date)
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
   # GET /sessions/1
@@ -51,7 +53,7 @@ class SessionsController < ApplicationController
         if @session.date.to_date == Date.today
           format.html { redirect_to workout_session_url(@session) }
         else
-          format.html { redirect_to root_url }
+          format.html { redirect_to workout_sessions_url }
         end
         format.json { render action: 'show', status: :created, location: @session }
       else
