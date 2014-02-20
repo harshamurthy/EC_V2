@@ -124,6 +124,8 @@ $(document).ready(function() {
       // Labels for the ykeys -- will be displayed when you hover over the
       // chart.
       labels: ['triceps', 'biceps', 'overhead_press', 'leg_curl', 'leg_press', 'abs', 'rotations', 'adduction', 'power_tower_abs', 'ab_core', 'precore_pullover', 'narrow_grip_pulldown', 'arm_cross', 'leg_extension', 'neck_extension', 'lower_back', 'rowing_torso', 'abduction', 'power_tower_leg_press'],
+
+      hideHover: true,
       // Hide hover
     });
   };
