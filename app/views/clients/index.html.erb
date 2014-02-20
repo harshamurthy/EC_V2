@@ -1,8 +1,8 @@
 <div class='client-index-page'>
   <div class='client-search-bar'>
     <%= form_tag clients_url, method: 'get', remote: true do %>
-      <%= text_field_tag :search, nil, placeholder: "Search for one of your #{@clients.count} clients...", class: 'search-input' %>
-      <%= submit_tag 'Search', class: 'search-submit' %>
+      <%= text_field_tag :search, nil, placeholder: "Search for one of your #{@clients.count} clients...", class: 'search-input' -%>
+      <span class='add-client-container'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Add a client".html_safe, new_client_url, class: 'client-add-link' %></span>
     <% end %>
   </div>
 
@@ -11,11 +11,3 @@
   </section>
 </div>
 
-  <script type='text/javascript'>
-//   $(function() {
-//       var availableTags = <%= @clients.collect{ |client| client.name }.to_json.html_safe %>;
-//       $( '#search' ).autocomplete({
-//         source: availableTags
-//       });
-//     });
-// </script>

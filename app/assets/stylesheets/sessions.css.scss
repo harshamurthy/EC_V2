@@ -175,6 +175,7 @@
         text-align: center;
         input {
           background-color: lighten($green, 5%);
+          border-bottom: none;
         }
       }
     }
