@@ -102,6 +102,20 @@
   }
 }
 
+.client-note-container {
+  form {
+    input[type=text] {
+      @extend %inputs;
+    }
+    input[type=submit] {
+      background-color: lighten($green, 5%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+  }
+}
+
 // New Client
 .new-client-container {
   text-align: center;

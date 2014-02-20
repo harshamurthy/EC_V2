@@ -66,6 +66,15 @@ class ClientsController < ApplicationController
     end
   end
 
+  def note
+    n = Note.new
+    n.content = params[:content]
+    n.client_id = params[:client_id]
+    n.save
+
+    redirect_to client_url(params[:client_id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_client
@@ -75,5 +84,6 @@ class ClientsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
       params.require(:client).permit(:gym_id, :first_name, :last_name, :email, :machine_code)
+      params.permit(:client_id, :content)
     end
 end

@@ -14,4 +14,17 @@
     <h2>Weight chart</h2>
     <%= content_tag :div, "", id: "client_chart", data: {exercises: weight_session_graph_data(@client)} %>
   <% end %>
+
+  <div class="client-note-container">
+    <%= form_tag note_client_url, method: 'post' do %>
+      <%= text_field_tag :content, nil, placeholder: "Write a note about #{@client.name}" %>
+      <%= hidden_field_tag :client_id, @client.id %>
+      <%= submit_tag :submit %>
+    <% end %>
+    <ul>
+      <% @client.notes.each do |note| %>
+        <li><%= note.content %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>

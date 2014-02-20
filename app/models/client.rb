@@ -1,6 +1,7 @@
 class Client < ActiveRecord::Base
   belongs_to :gym
   has_many :sessions
+  has_many :notes
   has_many :setting_executions
   has_many :exercise_executions, through: :sessions
 

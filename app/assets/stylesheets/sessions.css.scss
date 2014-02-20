@@ -199,7 +199,11 @@
 
 
     .client-session-title {
-      font-size: $h1;
+      .session-client-name {
+        a {
+          font-size: $h1;
+        }
+      }
       text-align: left;
 
       .session-client-name {
@@ -251,6 +255,12 @@
     position: fixed;
     top: 15%;
     right: 0;
+
+    .settings-and-executions {
+      &:after {
+        @extend %group:after;
+      }
+    }
 
     .session-saved {
       position: absolute;

@@ -198,8 +198,9 @@ $(document).ready(function() {
   var ensureNameForRoutine = function() {
     $('.submit-session input').on("click", function(e){
       var description = $('#session_routine_description').val();
+      var otherEx = $("#session_routine_id").val();
 
-    if (description == "") {
+    if (otherEx == "" && description == "") {
       e.preventDefault();
       alert("You need to add a name to your routine!");
       $('.add-routine-name').show();

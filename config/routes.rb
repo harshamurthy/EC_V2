@@ -7,7 +7,9 @@ ECV2::Application.routes.draw do
   resources :exercises
   resources :sessions, :as => 'workout_sessions'
   resources :routines
-  resources :clients
+  resources :clients do
+    member { post :note }
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
