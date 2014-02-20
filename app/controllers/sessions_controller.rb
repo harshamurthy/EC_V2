@@ -41,17 +41,18 @@ class SessionsController < ApplicationController
 
     if @session.routine.nil?
       @session.routine = Routine.find_or_initialize_by_exercise_ids(routine_params[:exercise_ids])
-      if @session.routine.description.nil?
-        @session.routine.description = routine_params[:description]
-      else
-        flash[:notice] << "Hey! There was already a routine that had the exercises you wanted called #{@session.routine.description}, so we just set you up with that one!"
-      end
-      @session.routine.save!
+      @session.routine.description = routine_params[:description]
     end
+      @session.routine.save!
+
 
     respond_to do |format|
       if @session.save
-        format.html { redirect_to workout_session_url(@session) }
+        if @session.date.to_date == Date.today
+          format.html { redirect_to workout_session_url(@session) }
+        else
+          format.html { redirect_to root_url }
+        end
         format.json { render action: 'show', status: :created, location: @session }
       else
         format.html { render action: 'new' }
