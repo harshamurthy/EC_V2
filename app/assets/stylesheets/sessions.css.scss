@@ -521,12 +521,14 @@
   margin: 0;
   padding: 20px 0;
   text-align: center;
+  color: $dark_gray;
   font-size: $h1;
   font-family: "Roboto", sans-serif;
+  // background-color: lightgray;
   a {
     text-decoration: none;
     padding: 0 10px;
-    color: #999;
+    color: $dark_gray;
     font-size: $h2;
   }
 }
