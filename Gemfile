@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+#Pry
+gem 'pry'
+gem 'pry-rails'
 #Groupdate
 gem 'groupdate', github: 'mieko/groupdate', branch: 'sqlite3'
 #Bourbon

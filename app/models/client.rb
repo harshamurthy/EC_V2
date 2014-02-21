@@ -17,6 +17,7 @@ class Client < ActiveRecord::Base
       self.exercise_executions.where(exercise_id: exercise.id).select {|ee| ee.created_at.to_date == date}.first.weight
       # self.exercise_executions.where(exercise_id: exercise.id).where("DATE(exercise_executions.updated_at) = ?", date)
     end
+    # binding.pry
   end
 
   def get_previous_exercise_result(exercise_id)
