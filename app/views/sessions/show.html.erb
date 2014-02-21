@@ -1,4 +1,5 @@
 <div class='workout-session-page'>
+  <h1 class='workout-session-client-name'><%#= link_to @session.client.name, client_url(@session.client.id) %></h1>
   <aside class='workout-session-exercise-list'>
     <ul>
       <% @session.exercises.each do |exercise| %>
@@ -12,6 +13,7 @@
         </li>
         <% end %>
       <% end %>
+      <li class='session-exercise notebook'><%= link_to "Notes", workout_session_url(notes: true), :class => "session-exercise-link notes", remote: true %></li>
     </ul>
   </aside>
 

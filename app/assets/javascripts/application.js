@@ -199,15 +199,23 @@ $(document).ready(function() {
 
   var ensureNameForRoutine = function() {
     $('.submit-session input').on("click", function(e){
+
+      var length = $('.new-routine-exercises li input:checked');
+      // alert(length.count == undefined);
+      if (length.count == undefined) {
+        e.preventDefault();
+        alert("You need exercises to work out!");
+      }
+
       var description = $('#session_routine_description').val();
       var otherEx = $("#session_routine_id").val();
 
-    if (otherEx == "" && description == "") {
-      e.preventDefault();
-      alert("You need to add a name to your routine!");
-      $('.add-routine-name').show();
-      $('#session_routine_description').focus();
-    }
+      if (otherEx == "" && description == "") {
+        e.preventDefault();
+        alert("You need to add a name to your routine!");
+        $('.add-routine-name').show();
+        $('#session_routine_description').focus();
+      }
 
     });
   };

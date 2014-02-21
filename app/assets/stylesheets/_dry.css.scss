@@ -4,6 +4,7 @@ input[type=submit] {
 
 body {
   color: $dark_gray;
+  font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -62,7 +63,7 @@ a {
 }
 
 %buttons {
-  background-color: $orange;
+  background-color: $logo;
   outline-width: 0;
   padding: 10px;
   border-radius: 5px;
@@ -72,7 +73,7 @@ a {
   margin-bottom: 1%;
 
   &:hover {
-    background-color: lighten($orange, 5%);
+    background-color: lighten($logo, 5%);
   }
 }
 

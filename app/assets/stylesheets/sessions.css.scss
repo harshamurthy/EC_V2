@@ -199,6 +199,13 @@
 // Show Session Page
 .workout-session-page {
 
+  .workout-session-client-name {
+    position: absolute; right: 40%; padding-top: 20px;
+    a {
+      font-size: 24px;
+    }
+  }
+
   .workout-session-client-info {
     padding: 15px;
     height: 58px;
@@ -235,6 +242,8 @@
     // float: left;
     // margin-top: 58px;
     overflow-y: scroll;
+    position: fixed;
+    padding-bottom: 40px;
 
     .session-exercise {
       border-right: 1px solid #ccc;
@@ -257,6 +266,18 @@
         padding: $height/2.75;
         width: 100%;
         color: black;
+      }
+    }
+    .notebook {
+      .notes {
+        color: $green;
+      }
+      &.onclick {
+        border-right: 0px;
+        border-left: 10px solid $dark_gray;
+        .notes {
+          color: $green;
+        }
       }
     }
   }
@@ -299,7 +320,7 @@
       }
       .previous-stats {
         text-align: center;
-        margin-top: 40px;
+        margin-top: 10px;
         font-size: 22px;
         line-height: 1.5;
       .previous-stats-number {
@@ -433,7 +454,6 @@
 
 .workout-session-settings-header {
   font-size: 25px;
-  margin-bottom: 10px;
   text-align: center;
 }
 
@@ -456,6 +476,51 @@
         text-align: center;
         font-family: 'Roboto', sans-serif;
         font-weight: 900;
+      }
+    }
+  }
+}
+
+.session-notes {
+  @extend %containers;
+  h1 {
+    text-align: center;
+    font-size: $h1;
+    margin-bottom: 50px;
+  }
+
+  ul {
+    width: 50%;
+    margin: 0 auto;
+    li {
+      font-size: 20px;
+      color: $dark_gray;
+      border-bottom: 1px solid #ccc;
+      padding: 20px;
+      span {
+        font-size: 12px;
+        color: #ccc;
+        margin-left: 15px;
+        // float: right;
+      }
+    }
+  }
+  .session-note-form {
+    &:after {
+      @extend %group:after;
+    }
+    margin-top: 100px;
+    text-align: center;
+    input {
+      @extend %inputs;
+    }
+
+    input[type=submit] {
+      @extend %buttons;
+      background-color: $green;
+      border-bottom: none;
+      &:hover {
+        background-color: lighten($green, 10%);
       }
     }
   }

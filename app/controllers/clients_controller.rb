@@ -67,12 +67,16 @@ class ClientsController < ApplicationController
   end
 
   def note
-    n = Note.new
-    n.content = params[:content]
-    n.client_id = params[:client_id]
-    n.save
+    @n = Note.new
+    @n.content = params[:content]
+    @n.client_id = params[:client_id]
+    @n.save
 
-    redirect_to client_url(params[:client_id])
+    respond_to do |format|
+      format.html { redirect_to client_url(params[:client_id]) }
+      format.js
+      format.json { head :no_content }
+    end
   end
 
   private

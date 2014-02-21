@@ -1,0 +1,16 @@
+<div class="session-notes">
+  <h1><%= @session.client.name %> Notes.</h1>
+  <ul>
+    <% client.notes.each do |note| %>
+      <li><%= note.content %><span><%= note.created_at.to_date.strftime("%B %d, %Y") %></span></li>
+    <% end %>
+  </ul>
+  <div class="session-note-form">
+    <%= form_tag note_client_url, method: 'post', remote: true do %>
+      <%= text_field_tag :content, nil, placeholder: "Write a note about #{@client.name}" %>
+      <%= hidden_field_tag :client_id, @client.id %>
+      <%#= hidden_field_tag :session, value: true %>
+      <%= submit_tag "Submit" %>
+    <% end %>
+  </div>
+</div>
