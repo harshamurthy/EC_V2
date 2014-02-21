@@ -15,6 +15,7 @@ class ExercisesController < ApplicationController
   # GET /exercises/new
   def new
     @exercise = Exercise.new
+    @client = Client.find(params[:client_id])
   end
 
   # GET /exercises/1/edit
@@ -28,7 +29,8 @@ class ExercisesController < ApplicationController
 
     respond_to do |format|
       if @exercise.save
-        format.html { redirect_to @exercise, notice: 'Exercise was successfully created.' }
+        @exercise.gyms << current_gym
+        format.html { redirect_to new_workout_session_url(client_id: params[:client_id]), notice: 'Exercise was successfully created.' }
         format.json { render action: 'show', status: :created, location: @exercise }
       else
         format.html { render action: 'new' }
@@ -69,6 +71,6 @@ class ExercisesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exercise_params
-      params.require(:exercise).permit(:weight, :percentage, :reps, :time, :seat, :foot, :degrees, :back, :name)
+      params.require(:exercise).permit(:weight, :percentage, :reps, :time, :seat, :foot, :degrees, :back, :name, :gym_id)
     end
 end

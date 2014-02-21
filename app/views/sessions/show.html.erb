@@ -1,11 +1,4 @@
 <div class='workout-session-page'>
-  <div class="nav-wrap">
-    <nav class='workout-session-client-info'>
-      <div class="nav-space"></div>
-      <h1 class='client-session-title'><span class='session-client-name'><%= link_to @session.client.name, client_url(@session.client.id) %></span><!-- <span class='client-session-date'><%#= @session.date.strftime("%B %d, %Y") if @session.date %></span> --></h1>
-    </nav>
-  </div>
-
   <aside class='workout-session-exercise-list'>
     <ul>
       <% @session.exercises.each do |exercise| %>
@@ -29,5 +22,7 @@
       <%= render 'exercise_execution_form', exercise: @session.exercises.first, exercise_execution: @exercise_execution, session: @session %>
     </section>
     <%= render 'previous_stats', session: @session, exercise: @session.exercises.first %>
+    <h1><%#= link_to @session.client.name, client_url(@session.client.id) %></h1>
   </div>
 </div>
+

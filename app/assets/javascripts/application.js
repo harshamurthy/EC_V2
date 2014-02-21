@@ -212,6 +212,29 @@ $(document).ready(function() {
     });
   };
 
+  var sessionExercisesHeight = function() {
+    var mainHeight = $(window).height();
+    $('.workout-session-exercise-list').css("height", mainHeight);
+  };
+
+  var seeMoreOrLessCal = function() {
+    $('.see-more-or-less').on("click", '.cal-see-all a', function(e){
+      e.preventDefault();
+      $('.cal-hidden').fadeIn("fast");
+      $(this).text("See less");
+      $(this).parent('span').removeClass('cal-see-all');
+      $(this).parent('span').addClass('cal-see-less');
+   });
+
+    $('.see-more-or-less').on("click", '.cal-see-less a', function(e){
+      $('.cal-hidden').fadeOut("fast");
+      $(this).text("See all");
+      $(this).parent('span').removeClass('cal-see-less');
+      $(this).parent('span').addClass('cal-see-all');
+   });
+
+  };
+
 
   //Calling functions
   automaticClientSearchBar();
@@ -225,5 +248,7 @@ $(document).ready(function() {
   chooseExistingRoutine();
   newSessionDate();
   ensureNameForRoutine();
+  sessionExercisesHeight();
+  seeMoreOrLessCal();
   clientGraph();
 });

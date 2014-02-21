@@ -13,41 +13,48 @@
 
  <div class='exercise-option'>
     <%= f.label :name, class: 'exercise-label' %>
-    <%= f.text_field :name, placeholder: 'Name', class: 'exercise-input' %>
+    <%= f.text_field :name, placeholder: 'Name of exercise', class: 'exercise-input' %>
   </div>
+  <ul>
+    <h3>Check all the executions you'd like to track.</h3>
+    <li class='exercise-option'>
+      <%= f.check_box :weight %>
+      <%= f.label :weight%>
+    </li>
+    <li class='exercise-option'>
+      <%= f.check_box :percentage %>
+      <%= f.label :percentage %>
+    </li>
+    <li class='exercise-option'>
+      <%= f.check_box :reps %>
+      <%= f.label :reps %>
+    </li>
+    <li class='exercise-option'>
+      <%= f.check_box :time %>
+      <%= f.label :time %>
+    </li>
+  </br>
+  <h3>Check all the settings you'd like to track.</h3>
+    <li class='exercise-option'>
+      <%= f.check_box :seat %>
+      <%= f.label :seat %>
+    </li>
+    <li class='exercise-option'>
+      <%= f.check_box :foot %>
+      <%= f.label :foot %>
+    </li>
+    <li class='exercise-option'>
+      <%= f.check_box :degrees %>
+      <%= f.label :degrees %>
+    </li>
+    <li class='exercise-option'>
+      <%= f.check_box :back %>
+      <%= f.label :back %>
+    </li>
+  </ul>
 
-  <span class='exercise-option'>
-    <%= f.check_box :weight %>
-    <%= f.label :weight%>
-  </span>
-  <span class='exercise-option'>
-    <%= f.check_box :percentage %>
-    <%= f.label :percentage %>
-  </span>
-  <span class='exercise-option'>
-    <%= f.check_box :reps %>
-    <%= f.label :reps %>
-  </span>
-  <span class='exercise-option'>
-    <%= f.check_box :time %>
-    <%= f.label :time %>
-  </span>
-  <span class='exercise-option'>
-    <%= f.check_box :seat %>
-    <%= f.label :seat %>
-  </span>
-  <span class='exercise-option'>
-    <%= f.check_box :foot %>
-    <%= f.label :foot %>
-  </span>
-  <span class='exercise-option'>
-    <%= f.check_box :degrees %>
-    <%= f.label :degrees %>
-  </span>
-  <span class='exercise-option'>
-    <%= f.check_box :back %>
-    <%= f.label :back %>
-  </span>
+  <%= hidden_field_tag :client_id, params[:client_id] %>
+
   <div class='actions'>
     <%= f.submit 'Submit Exercise', class: 'exercise-form-button' %>
   </div>

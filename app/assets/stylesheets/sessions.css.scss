@@ -72,7 +72,8 @@
     text-align: center;
     font-family: "Roboto", sans-serif;
     font-size: $h1;
-    padding: 40px;
+    padding-bottom: 40px;
+    padding-top: 60px;
   }
   .datepicker-container {
     background-color: #eee;
@@ -149,9 +150,19 @@
         .add-routine-name {
           color: $red;
         }
+        .add-exercise-li {
+          float: right;
+        }
         li {
           display: inline-block;
           margin: 20px 10px;
+          a {
+            color: $green;
+            font-size: 16px;
+            i {
+              text-decoration: underline;
+            }
+          }
           label {
             width: auto;
             float: none;
@@ -221,8 +232,9 @@
 
   .workout-session-exercise-list {
     width: 30%;
-    float: left;
-    margin-top: 58px;
+    // float: left;
+    // margin-top: 58px;
+    overflow-y: scroll;
 
     .session-exercise {
       border-right: 1px solid #ccc;
@@ -471,24 +483,51 @@
   td {
     background: #FFF;
     color: #777;
-    height: 80px;
+    height: 140px;
     vertical-align: top;
     font-size: 16px;
+    .cal-session-count {
+      float: right;
+      padding: 4px;
+      background-color: $orange;
+      color: white;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+    ul {
+      margin-top: 15px;
+      li {
+        padding-bottom: 25px;
+      }
+    }
+    .cal-see-all, .cal-see-less {
+      float: right;
+      a {
+        // color: $dark_gray;
+      }
+    }
   }
 
   .notmonth, .notmonth a { color: #CCC; }
-  .today { background-color: #D7F2FF; }
+  .today {
+    background-color: #eee;
+    a {
+      // color: $dark_gray;
+    }
+  }
 }
 
 #sessions #month {
   margin: 0;
-  padding-bottom: 10px;
+  padding: 20px 0;
   text-align: center;
-  font-size: 22px;
+  font-size: $h1;
+  font-family: "Roboto", sans-serif;
   a {
     text-decoration: none;
     padding: 0 10px;
     color: #999;
+    font-size: $h2;
   }
 }
 

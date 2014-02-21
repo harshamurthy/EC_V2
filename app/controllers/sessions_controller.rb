@@ -7,6 +7,8 @@ class SessionsController < ApplicationController
     @sessions = Session.all
     @sessions_by_date = @sessions.group_by(&:date)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @specific_date = params[:specific_date].to_date if params[:specific_date]
+    @specific_sessions = Session.where(date: @specific_date)
   end
 
   # GET /sessions/1

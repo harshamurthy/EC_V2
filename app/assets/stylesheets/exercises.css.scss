@@ -1,7 +1,6 @@
 // Place all the styles related to the Exercises controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import 'dry';
 
 // Exercise Form
 .exercise-label {
@@ -10,31 +9,42 @@
 
 .exercise-input {
   @extend %inputs;
+  width: 100%;
 }
 
 .exercise-option {
-  display: block;
-  width: 65%;
-  margin-left: 20%;
-  margin-left: 20%;
-  margin-top: 20px;
-  padding: 5px;
-
+  display: inline-block;
+  padding: 20px;
 }
+
 
 .exercise-form-button {
   @extend %buttons;
+  border-bottom: none;
+  background-color: $green;
+  &:hover {
+    background-color: lighten($green, 10%);
+  }
 }
 
 // New Exercise Page
 .new-exercise-page {
   @extend %containers;
+  text-align: center;
 
   .new-exercise-form {
-    @extend %forms;
+    // @extend %forms;
+  }
+
+  h3 {
+    margin-top: 60px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
   }
 
   .new-exercise-header {
     @extend %header-text-styles;
+    padding-top: 70px;
   }
 }

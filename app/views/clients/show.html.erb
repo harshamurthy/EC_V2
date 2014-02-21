@@ -4,6 +4,7 @@
   <p class='client-email'><%= @client.email %></p>
 
   <ul class='client-workout-sessions'>
+
     <h2>Sessions</h2>
 
     <% @client.sessions.each do |session| %>
@@ -17,7 +18,7 @@
 
   <div class="client-note-container">
     <%= form_tag note_client_url, method: 'post' do %>
-      <%= text_field_tag :content, nil, placeholder: "Write a note about #{@client.name}" %>
+      <%= text_field_tag :content, nil, placeholder: "Write a note #{@client.name}" %>
       <%= hidden_field_tag :client_id, @client.id %>
       <%= submit_tag :submit %>
     <% end %>
