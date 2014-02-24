@@ -59,7 +59,8 @@
                     <%= label_tag "#{exercise.id}", exercise.name, class: 'session-form-checkbox-labels' %>
                   </li>
                 <% end %>
-                <li class='add-exercise-li'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Add a new exercise".html_safe, new_exercise_url(client_id: @client.id) %></li>
+                <li class='add-exercise-li'><%= link_to "<i class=\"fa fa-book\"></i> Add an exercise from our library".html_safe, library_exercise_url(current_gym.id, client_id: @client.id) %></li>
+                <li class='add-exercise-li'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Create a new exercise".html_safe, new_exercise_url(client_id: @client.id) %></li>
                 </ul>
 
               <% end %>

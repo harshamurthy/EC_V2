@@ -126,6 +126,7 @@ $(document).ready(function() {
       labels: ['triceps', 'biceps', 'overhead_press', 'leg_curl', 'leg_press', 'abs', 'rotations', 'adduction', 'power_tower_abs', 'ab_core', 'precore_pullover', 'narrow_grip_pulldown', 'arm_cross', 'leg_extension', 'neck_extension', 'lower_back', 'rowing_torso', 'abduction', 'power_tower_leg_press'],
 
       hideHover: true,
+      xLabels: "day"
       // Hide hover
     });
   };
@@ -199,14 +200,6 @@ $(document).ready(function() {
 
   var ensureNameForRoutine = function() {
     $('.submit-session input').on("click", function(e){
-
-      var length = $('.new-routine-exercises li input:checked');
-      // alert(length.count == undefined);
-      if (length.count == undefined) {
-        e.preventDefault();
-        alert("You need exercises to work out!");
-      }
-
       var description = $('#session_routine_description').val();
       var otherEx = $("#session_routine_id").val();
 

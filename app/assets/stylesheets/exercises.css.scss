@@ -48,3 +48,27 @@
     padding-top: 70px;
   }
 }
+
+//Library
+.library-container {
+  .library-title {
+    font-size: $h2;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  @extend %containers;
+  padding-top: 60px;
+  .library-form-checkbox {
+    @extend %checkboxes;
+  }
+
+  .library-form-checkbox-labels {
+    @extend %checkbox-labels;
+    margin: 0;
+  }
+  .submit {
+    .library-submit {
+      @extend %buttons;
+    }
+  }
+}

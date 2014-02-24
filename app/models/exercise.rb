@@ -4,6 +4,8 @@ class Exercise < ActiveRecord::Base
   has_and_belongs_to_many :routines
   has_and_belongs_to_many :gyms
 
+  validates_uniqueness_of :name
+
   def settings?
     array = []
     array << self.seat

@@ -1,0 +1,17 @@
+<div class="library-container">
+  <h1 class='library-title'>Choose any of these exercises to add to your gym.</h1>
+  <%= form_tag add_to_library_exercise_url, method: 'post' do %>
+
+    <% @exercises.each do |exercise| %>
+      <input id="<%= exercise.id %>", name='exercise_id', value="<%= exercise.id %>", type='checkbox',  class='library-form-checkbox'>
+      <%= label_tag "#{exercise.id}", exercise.name, class: 'library-form-checkbox-labels' %>
+      <ul>
+    <% end %>
+
+    <%= hidden_field_tag :client_id, params[:client_id] %>
+    <div class="submit">
+      <%= submit_tag "Add these exercises to my gym", class: "library-submit" %>
+      <%= link_to "<i class=\"fa fa-reply\"></i> Back".html_safe, :back %>
+    </div>
+  <% end %>
+</div>

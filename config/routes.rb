@@ -4,7 +4,10 @@ ECV2::Application.routes.draw do
   devise_for :gyms
   root to: "clients#index"
   resources :exercise_executions
-  resources :exercises
+  resources :exercises do
+    # member { get :library }
+    # member { post :add_to_library }
+  end
   resources :sessions, :as => 'workout_sessions'
   resources :routines
   resources :clients do

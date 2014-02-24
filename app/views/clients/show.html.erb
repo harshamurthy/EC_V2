@@ -24,7 +24,7 @@
     <% end %>
     <ul>
       <% @client.notes.each do |note| %>
-        <li><%= note.content %></li>
+        <li><%= note.content %><span><%= note.created_at.strftime("%B %d, %Y") %></span></li>
       <% end %>
     </ul>
   </div>

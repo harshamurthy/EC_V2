@@ -63,6 +63,18 @@ class ExercisesController < ApplicationController
     end
   end
 
+  def library
+    @exercises = Exercise.select { |e| e.gyms.exclude?(current_gym) }
+  end
+
+  def add_to_library
+    @c = Client.find(params[:client_id])
+    @e = Exercise.find(params[:exercise_id])
+    @e.gyms << current_gym
+
+    redirect_to new_workout_session_url(client_id: @c.id)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_exercise

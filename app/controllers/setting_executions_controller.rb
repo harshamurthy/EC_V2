@@ -25,7 +25,6 @@
   # POST /setting_executions
   # POST /setting_executions.json
   def create
-
     @setting_execution = SettingExecution.new(setting_execution_params)
 
     respond_to do |format|
@@ -50,6 +49,7 @@
       if @setting_execution.update(setting_execution_params)
         format.html { redirect_to @setting_execution, notice: 'Setting execution was successfully updated.' }
         format.json { head :no_content }
+        format.js
       else
         format.html { render action: 'edit' }
         format.json { render json: @setting_execution.errors, status: :unprocessable_entity }
