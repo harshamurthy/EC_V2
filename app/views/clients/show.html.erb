@@ -1,20 +1,14 @@
 <div class="client-container">
-
   <h1 class='client-name'><%= @client.name %></h1>
   <p class='client-email'><%= @client.email %></p>
 
-  <ul class='client-workout-sessions'>
-
-    <h2>Sessions</h2>
-
-    <% @client.sessions.each do |session| %>
-      <li><%= link_to session.name, workout_session_url(session.id) %></li>
+  <div class="graph-container">
+    <% if @client.sessions.present? %>
+      <%= render 'client_graph', client: @client, exercise: @exercise %>
+    <% else %>
+      <h3>Get your lazy ass up and workout so my cool ass graph can work.</h3>
     <% end %>
-  </ul>
-  <% if @client.sessions.present? %>
-    <h2>Weight chart</h2>
-    <%= content_tag :div, "", id: "client_chart", data: {exercises: weight_session_graph_data(@client)} %>
-  <% end %>
+  </div>
 
   <div class="client-note-container">
     <%= form_tag note_client_url, method: 'post' do %>
@@ -22,10 +16,13 @@
       <%= hidden_field_tag :client_id, @client.id %>
       <%= submit_tag "Submit" %>
     <% end %>
+
     <ul>
-      <% @client.notes.each do |note| %>
+      <% @client.notes.reverse.each do |note| %>
         <li><%= note.content %><span><%= note.created_at.strftime("%B %d, %Y") %></span></li>
       <% end %>
     </ul>
-  </div>
+
+  </div> <!-- note-container -->
+
 </div>

@@ -15,6 +15,8 @@ class ClientsController < ApplicationController
   # GET /clients/1.json
   def show
     @client_chart = @client.sessions.group_by { |t| t.created_at }
+    @exercise = Exercise.find(params[:exercise]) if params[:exercise]
+    @exercises = @client.exercise_executions.map { |s| s.exercise  }.uniq
   end
 
   # GET /clients/new

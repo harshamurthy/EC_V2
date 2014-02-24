@@ -1,0 +1,13 @@
+<h2>Weight chart</h2>
+<%= form_tag client_url(@client.id), method: 'get' do %>
+  <%= select_tag 'exercise', options_from_collection_for_select(@exercises, 'id', 'name'), include_blank: true %>
+  <%= submit_tag "Submit" %>
+<% end %>
+or
+<%= link_to "All", client_url(@client.id) %>
+
+<% if params[:exercise] %>
+  <%= content_tag :div, "", id: "client_chart", data: {exercises: one_weight_session_graph_data(client, exercise.name)} %>
+<% else %>
+  <%= content_tag :div, "", id: "client_chart", data: {exercises: weight_session_graph_data(client)} %>
+<% end %>

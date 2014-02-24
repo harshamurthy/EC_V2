@@ -31,7 +31,6 @@ class SessionsController < ApplicationController
   # GET /sessions/new
   def new
     @session = Session.new
-    @exercises = current_gym.exercises
     @client = Client.find(params[:client_id])
     @routines = Routine.where(gym_id: current_gym.id)
     @routine = Routine.find(params[:routine_id]) if params[:routine_id]

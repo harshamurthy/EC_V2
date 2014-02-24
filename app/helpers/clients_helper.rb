@@ -26,4 +26,14 @@ module ClientsHelper
       }
     end
   end
+
+  def one_weight_session_graph_data(client, exercise)
+    dates = client.exercise_executions.map{ |ee| ee.session.date.to_date }.uniq
+    (dates).map do |date|
+      {
+        updated_at: date,
+        exercise: client.get_weight_for_exercise_and_day(exercise, date),
+      }
+    end
+  end
 end
