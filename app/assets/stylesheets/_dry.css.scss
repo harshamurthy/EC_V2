@@ -2,9 +2,12 @@ input[type=submit] {
   -webkit-appearance: none;
 }
 
+::-webkit-input-placeholder {
+  color: $concrete;
+}
+
 body {
-  color: $dark_gray;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto' sans-serif;
 }
 
 a {
@@ -12,9 +15,36 @@ a {
   font-size: 14px;
 }
 
-.input-field-tool-tips {
+.site-brand {
+  padding-top: 5%;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 50px;
+  color: $midnight_blue;
+}
+
+.highlight {
+    color: $green_sea;
+}
+
+.input-field-tooltip {
   font-size: 14px;
-  color: $orange;
+  color: $alizarin;
+  text-align: left;
+  margin-left: 20%;
+}
+
+.input-error {
+  padding: 8px !important;
+  background-color: white !important;
+  border: 2px solid $alizarin !important;
+}
+
+.input-field-error-message {
+  font-size: 16px;
+  text-align: left;
+  margin-left: 20%;
+  color: $alizarin;
 }
 
 %group:after {
@@ -24,9 +54,9 @@ a {
 }
 
 %header-text-styles {
-  font-size: $head-text-size;
-  font-weight: bold;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  font-size: $main-font-size;
+  color: $midnight_blue;
 }
 
 %containers {
@@ -37,25 +67,22 @@ a {
 }
 
 %forms {
-  max-width: 60%;
   margin: 0 auto;
   font-family: $main-font;
-  margin-top: 15%;
   text-align: center;
-  // background-color: lighten($grey, 80%);
-  // padding: 25px;
-  // border-radius: 10px;
 }
 
 %inputs {
-  border-bottom: solid 1px black;
-  outline-width: 0;
-  border-radius: 0;
-  font-size: $text-input-size;
+  font-family: $main-font;
   width: 60%;
-  margin: 10px 10px 10px 0px;
-  // padding: 10px;
-  // border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin: 5px 0px;
+  border-radius: 10px;
+  background-color: $clouds;
+  font-size: $main-font-size;
+  color: $green_sea;
 }
 
 %labels {
@@ -63,17 +90,18 @@ a {
 }
 
 %buttons {
-  background-color: $logo;
-  outline-width: 0;
-  padding: 10px;
+  width: 45%;
+  margin-top: 25px;
+  border: none;
+  outline: none;
+  padding: 5px;
   border-radius: 5px;
+  background-color: $green_sea;
+  font-size: $main-font-size;
   color: white;
-  width: 60%;
-  margin-top: 30px;
-  margin-bottom: 1%;
 
   &:hover {
-    background-color: lighten($logo, 5%);
+    background-color: $turquoise;
   }
 }
 

@@ -54,13 +54,30 @@ $(document).ready(function() {
 
   // Input Field Tool Tips
   var inputFieldToolTips = function() {
-    $('.have-tooltip').on('focusin', function() {
+    $('.has-tooltip').on('focusin', function() {
       var tooltip_text = $(this).attr('title');
-      $(this).after("<p class='input-field-tool-tips'>" + tooltip_text + "</p>");
+      $(this).after("<p class='input-field-tooltip'>" + tooltip_text + "</p>");
     });
 
-    $('.have-tooltip').on('focusout', function() {
+    $('.has-tooltip').on('focusout', function() {
       $(this).next().remove('p');
+    });
+  };
+
+  // Input Errors
+  var inputFieldErrors = function() {
+    $('.text-input').on('focusout', function() {
+      var error_message = $(this).attr('title');
+      if($(this).val() == '') {
+        $(this).addClass('input-error');
+        $(this).next().remove('p');
+        $(this).after("<p class='input-field-error-message'>" + error_message + "</p>");
+
+      }
+      else {
+        $(this).removeClass('input-error')
+        $(this).next().remove('p');
+      }
     });
   };
 
@@ -252,4 +269,5 @@ $(document).ready(function() {
   sessionExercisesHeight();
   seeMoreOrLessCal();
   clientGraph();
+  inputFieldErrors();
 });
