@@ -6,19 +6,15 @@
 // Client Index Page
 .client-index-page {
 
-  @extend %containers;
+  // @extend %containers;
   padding-top: 50px;
 
   .client-search-bar {
     text-align: center;
 
     .search-input {
-      width: 50%;
-      border-bottom: 1px solid black;
-      padding: 5px;
-      outline-width: 0;
-      border-radius: 0;
-      margin-right: 15px;
+      @extend %inputs;
+      margin-top: 5%;
     }
 
     .add-client-container {

@@ -67,9 +67,24 @@
       }
     }
 
-    .sign-in-button {
+    .sign-in-button-inactive {
       @extend %buttons;
       margin: 20px;
+      background-color: $concrete;
+
+      &:hover {
+       background-color: $concrete;
+      }
+
+      &:active {
+        background-color: $concrete;
+      }
+    }
+
+    .sign-in-button-active {
+      @extend %buttons;
+      margin: 20px;
+      // background-color: $concrete;
     }
   }
 }

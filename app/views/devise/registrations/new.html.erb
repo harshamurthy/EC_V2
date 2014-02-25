@@ -4,7 +4,7 @@
 
     <h2 class='sign-up-header'>Let's set up your gym's new account.</h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+      <%#= devise_error_messages! %>
 
       <div><%= f.label :location, class: 'sign-up-labels' %>
       <%= f.text_field :location, autofocus: true, placeholder: 'Gym location', title: 'Please enter a valid location.', class: 'sign-up-inputs text-input' %></div>
@@ -18,7 +18,7 @@
       <div><%= f.label :password_confirmation, class: 'sign-up-labels' %>
       <%= f.password_field :password_confirmation, placeholder: 'That password, again', title: 'Please confirm your password.', class: 'sign-up-inputs text-input' %></div>
 
-      <div><%= f.submit 'Sign up', class: 'sign-up-button submit-button' %></div>
+      <div><%= f.submit 'Sign up', class: 'sign-up-button' %></div>
     <% end %>
   </div>
 </div>

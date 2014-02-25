@@ -66,20 +66,42 @@ $(document).ready(function() {
 
   // Input Errors
   var inputFieldErrors = function() {
-    $('.text-input').on('focusout', function() {
-      var error_message = $(this).attr('title');
-      if($(this).val() == '') {
-        // console.log('TEST');
-        $(this).addClass('input-error');
-        $(this).next().remove('p');
-        $(this).after("<p class='input-field-error-message'>" + error_message + "</p>");
+    var password = {};
+    var location = {};
+    $('.text-input').on('keyup', function() {
+      password = $('#gym_password').val();
+      location = $('#gym_location').val();
+
+      if (location.length > 0 && password.length > 0) {
+        $('.submit-button input[type=submit]').removeClass('sign-in-button-inactive');
+        $('.submit-button input[type=submit]').addClass('sign-in-button-active');
       }
       else {
-        $(this).removeClass('input-error')
-        $(this).next().remove('p');
+        $('.submit-button input[type=submit]').addClass('sign-in-button-inactive');
+        $('.submit-button input[type=submit]').removeClass('sign-in-button-active');
+      }
+    });
+     $('.submit-button input[type=submit]').on('click', function(e) {
+      if (location.length == 0 || password.length == 0) {
+        alert("Make sure we get your location and password!");
+        e.preventDefault();
+      } else if (location.length == undefined || password.length == undefined) {
+        alert("Make sure we get your location and password!");
+        e.preventDefault();
       }
     });
   };
+      // var error_message = $(this).attr('title');
+      // if($(this).val() == '') {
+      //   // console.log('TEST');
+      //   $(this).addClass('input-error');
+      //   $(this).next().remove('p');
+      //   $(this).after("<p class='input-field-error-message'>" + error_message + "</p>");
+      // }
+      // else {
+      //   $(this).removeClass('input-error')
+      //   $(this).next().remove('p');
+      // }
 
   var sessionTimer = function() {
 
