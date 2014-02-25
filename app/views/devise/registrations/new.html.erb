@@ -7,18 +7,18 @@
       <%= devise_error_messages! %>
 
       <div><%= f.label :location, class: 'sign-up-labels' %>
-      <%= f.text_field :location, placeholder: 'Gym location', title: 'Please enter a valid location.', class: 'sign-up-inputs text-input' %></div>
+      <%= f.text_field :location, autofocus: true, placeholder: 'Gym location', title: 'Please enter a valid location.', class: 'sign-up-inputs text-input' %></div>
 
       <div><%= f.label :email, class: 'sign-up-labels' %>
-      <%= f.email_field :email, autofocus: true, placeholder: 'Your email', class: 'sign-up-inputs' %></div>
+      <%= f.email_field :email, placeholder: 'Your email', title: 'Please enter a valid email.', class: 'sign-up-inputs text-input' %></div>
 
       <div><%= f.label :password, class: 'sign-up-labels' %>
-      <%= f.password_field :password, placeholder: 'Create password', class: 'sign-up-inputs' %></div>
+      <%= f.password_field :password, placeholder: 'Create password', title: 'Please enter your password.', class: 'sign-up-inputs text-input' %></div>
 
       <div><%= f.label :password_confirmation, class: 'sign-up-labels' %>
-      <%= f.password_field :password_confirmation, placeholder: 'That password, again', class: 'sign-up-inputs' %></div>
+      <%= f.password_field :password_confirmation, placeholder: 'That password, again', title: 'Please confirm your password.', class: 'sign-up-inputs text-input' %></div>
 
-      <div><%= f.submit 'Sign up', class: 'sign-up-button' %></div>
+      <div><%= f.submit 'Sign up', class: 'sign-up-button submit-button' %></div>
     <% end %>
   </div>
 </div>

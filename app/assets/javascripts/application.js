@@ -65,21 +65,21 @@ $(document).ready(function() {
   };
 
   // Input Errors
-  // var inputFieldErrors = function() {
-  //   $('.sign-up-inputs').on('focusout', function() {
-  //     var error_message = $(this).attr('title');
-  //     // if $(this).val() == '' {
-  //     //   $(this).addClass('input-error');
-  //     //   $(this).next().remove('p');
-  //     //   $(this).after("<p class='input-field-error-message'>" + error_message + "</p>");
-
-  //     // }
-  //     // else {
-  //     //   $(this).removeClass('input-error')
-  //     //   $(this).next().remove('p');
-  //     // }
-  //   });
-  // };
+  var inputFieldErrors = function() {
+    $('.text-input').on('focusout', function() {
+      var error_message = $(this).attr('title');
+      if($(this).val() == '') {
+        // console.log('TEST');
+        $(this).addClass('input-error');
+        $(this).next().remove('p');
+        $(this).after("<p class='input-field-error-message'>" + error_message + "</p>");
+      }
+      else {
+        $(this).removeClass('input-error')
+        $(this).next().remove('p');
+      }
+    });
+  };
 
   var sessionTimer = function() {
 
@@ -260,7 +260,7 @@ $(document).ready(function() {
   setupWorkoutSession();
   setupClientsList();
   inputFieldToolTips();
-  // inputFieldErrors();
+  inputFieldErrors();
   sessionTimer();
   newSession();
   createNewRoutine();

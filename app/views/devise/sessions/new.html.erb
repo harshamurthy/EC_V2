@@ -5,12 +5,12 @@
     <%= form_for(resource, as: resource_name, url: new_gym_session_url) do |f| %>
       <div>
         <%= f.label :location, class: 'sign-in-labels' %>
-        <%= f.text_field :location, autofocus: true, placeholder: 'Gym location', class: 'sign-in-inputs' %>
+        <%= f.text_field :location, autofocus: true, placeholder: 'Gym location', title: 'Please enter a valid location.', class: 'sign-in-inputs text-input' %>
       </div>
 
       <div>
         <%= f.label :password, class: 'sign-in-labels' %>
-        <%= f.password_field :password, placeholder: 'Your password', class: 'sign-in-inputs' %>
+        <%= f.password_field :password, placeholder: 'Your password', title: 'Please enter your password.', class: 'sign-in-inputs text-input' %>
       </div>
 
       <% if devise_mapping.rememberable? -%>
