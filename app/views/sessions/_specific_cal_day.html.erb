@@ -1,0 +1,11 @@
+<h1>What's happening on <%= @specific_date.strftime("%B %d") %></h1>
+
+<ul>
+  <% specific_sessions.each do |session| %>
+    <li>
+      <%= session.client.name %>
+      <%= session.routine.description %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Back to my calendar", :back %>

@@ -12,7 +12,6 @@
       <span class="cal-session-count"><%= pluralize(sessions_by_date[date].count, "session") %></span>
       <ul class='cal-ul'>
         <% sessions_by_date[date].each_with_index do |session, index| %>
-
           <% if index > 1 %>
             <li class='hide cal-hidden'><%= link_to session.client.name, workout_session_url(session.id) %></li>
           <% else %>
@@ -21,7 +20,7 @@
         <% end %>
       </ul>
       <div class="see-more-or-less">
-        <span class="cal-see-all"><%= link_to "See all", "#" if sessions_by_date[date].count > 2 %></span>
+        <span class="cal-see-all"><%= link_to "See more", workout_sessions_url(specific_date: date) if sessions_by_date[date].count > 2 %></span>
       </div>
     <% end %>
   <% end %>

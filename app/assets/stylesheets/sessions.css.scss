@@ -530,6 +530,7 @@
 #sessions .calendar {
   border-collapse: collapse;
   width: 100%;
+  // margin-bottom: 50px;
 
   td, th {
     font-family: "Lucida Grande", arial, helvetica, sans-serif;
@@ -593,7 +594,7 @@
   a {
     text-decoration: none;
     padding: 0 10px;
-    color: $dark_gray;
+    color: $blue;
     font-size: $h2;
   }
 }

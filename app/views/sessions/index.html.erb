@@ -1,1 +1,5 @@
-<%= render 'sessions_calendar', date: @date, sessions_by_date: @sessions_by_date %>
+<% if params[:specific_date] %>
+  <%= render 'specific_cal_day', date: @date, specific_sessions: @specific_sessions %>
+<% else %>
+  <%= render 'sessions_calendar', date: @date, sessions_by_date: @sessions_by_date %>
+<% end %>

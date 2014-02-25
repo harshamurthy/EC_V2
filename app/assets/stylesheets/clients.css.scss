@@ -74,6 +74,7 @@
 
 //Cllient Show
 .client-container {
+  padding-top: 50px;
   @extend %containers;
 
   .client-name {
@@ -91,6 +92,10 @@
   // text-align: center;
   h2 {
     font-weight: bold;
+  }
+
+  .no-graph {
+    text-align: center;
   }
 }
 

@@ -1,5 +1,5 @@
 <div class='workout-session-page'>
-  <h1 class='workout-session-client-name'><%#= link_to @session.client.name, client_url(@session.client.id) %></h1>
+  <h1 class='workout-session-client-name'><%#= link_to "Edit", edit_workout_session_url(@session.id, client_id: @session.client.id) %><%#= link_to @session.client.name, client_url(@session.client.id) %></h1>
   <aside class='workout-session-exercise-list'>
     <ul>
       <% @session.exercises.each do |exercise| %>
