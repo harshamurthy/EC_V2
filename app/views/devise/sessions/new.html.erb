@@ -1,21 +1,21 @@
 <div class='sign-in-page'>
   <div class='sign-in-form'>
-    <h2 class='sign-in-header'>The <span class='sign-in-header-span'>Exercise</span> Assistant</h2>
+    <h2 class='site-brand'>The <span class='highlight'>Exercise</span> Assistant</h2>
 
     <%= form_for(resource, as: resource_name, url: new_gym_session_url) do |f| %>
       <div>
-        <%= f.label :location, class: 'sign-in-labels' %><br />
-        <%= f.text_field :location, autofocus: true, placeholder: 'Location', class: 'sign-in-inputs' %>
+        <%= f.label :location, class: 'sign-in-labels' %>
+        <%= f.text_field :location, autofocus: true, placeholder: 'Gym location', class: 'sign-in-inputs' %>
       </div>
 
       <div>
-        <%= f.label :password, class: 'sign-in-labels' %><br />
-        <%= f.password_field :password, placeholder: 'Password', class: 'sign-in-inputs' %>
+        <%= f.label :password, class: 'sign-in-labels' %>
+        <%= f.password_field :password, placeholder: 'Your password', class: 'sign-in-inputs' %>
       </div>
 
       <% if devise_mapping.rememberable? -%>
         <div class='sign-in-help'>
-          <%= f.check_box :remember_me %> <%= f.label :remember_me %> ·
+          <%= f.check_box :remember_me, class: 'remember-me-checkbox' %> <%= f.label :remember_me, class: 'remember-me-label' %> ·
           <%= link_to "Forgot password?", new_password_path(resource_name) %>
         </div>
       <% end %>

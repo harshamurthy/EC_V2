@@ -4,7 +4,6 @@
 
 // Sign Up Page
 .sign-up-page {
-  // @extend %containers;
 
   .sign-up-form {
     @extend %forms;
@@ -29,18 +28,10 @@
 
 // Sign In Page
 .sign-in-page {
-  @extend %containers;
-
-  .sign-in-header-span {
-   color: $logo;
-  }
+  // @extend %containers;
 
   .sign-in-form {
     @extend %forms;
-
-    .sign-in-header {
-      @extend %header-text-styles;
-    }
 
     .sign-in-labels {
       @extend %labels;
@@ -51,11 +42,28 @@
     }
 
     .sign-in-help {
-      font-size: 14px;
-      max-width: 65%;
+      font-size: 18px;
+      // max-width: 65%;
+      text-align: left;
       margin-left: 20%;
-      margin-right: 20%;
-      margin-top: 20px;
+      margin-top: 15px;
+
+      .remember-me-checkbox {
+        @extend %checkboxes;
+
+        &:checked + label {
+          background-color: $green_sea;
+          border: 1px solid white;
+          color: white;
+        }
+      }
+
+      .remember-me-label {
+        border: 1px dashed $green_sea;
+        padding: 5px;
+        border-radius: 5px;
+        color: $midnight_blue;
+      }
     }
 
     .sign-in-button {

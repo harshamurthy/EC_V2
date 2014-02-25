@@ -11,8 +11,8 @@ body {
 }
 
 a {
-  color: $blue;
-  font-size: 14px;
+  color: $peter_river;
+  font-size: 16px;
 }
 
 .site-brand {
@@ -102,6 +102,10 @@ a {
 
   &:hover {
     background-color: $turquoise;
+  }
+
+  &:active {
+    background-color: $green_sea;
   }
 }
 
