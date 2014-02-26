@@ -566,7 +566,9 @@
         padding-bottom: 25px;
         &.done {
           text-decoration: line-through;
-          color: #ccc;
+          a {
+            color: #ccc;
+          }
         }
       }
     }
@@ -605,7 +607,7 @@
 
 #sessions ul {
   font-size: 11px;
-  padding-left: 20px;
+  // padding-left: 20px;
 }
 
 .specific-cal-day-container {

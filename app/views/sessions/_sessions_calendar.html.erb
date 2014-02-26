@@ -13,13 +13,13 @@
       <ul class='cal-ul' id="<%= date %>">
         <% sessions_by_date[date].each_with_index do |session, index| %>
           <% if session.done? && index > 1 %>
-            <li class='hide cal-hidden done'><%= link_to session.client.name, workout_session_url(session.id) %></li>
+            <li class='hide cal-hidden done'><%= link_to "#{session.client.name} (#{session.routine.description})", workout_session_url(session.id) %></li>
           <% elsif session.done? && index < 2 %>
-            <li class='done'><%= link_to session.client.name, workout_session_url(session.id) %></li>
+            <li class='done'><%= link_to "#{session.client.name} (#{session.routine.description})", workout_session_url(session.id) %></li>
           <% elsif index > 1 %>
-            <li class='hide cal-hidden'><%= link_to session.client.name, workout_session_url(session.id) %></li>
+            <li class='hide cal-hidden'><%= link_to "#{session.client.name} (#{session.routine.description})", workout_session_url(session.id) %></li>
           <% else %>
-            <li><%= link_to session.client.name, workout_session_url(session.id) %></li>
+            <li><%= link_to "#{session.client.name} (#{session.routine.description})", workout_session_url(session.id) %></li>
           <% end %>
         <% end %>
       </ul>
@@ -34,7 +34,7 @@
   $('.cal-see-all a').on("click", function(e){
     e.preventDefault();
     var date = $(this).parent('span').data("date");
-    $('#' + date).children('.hide').fadeToggle('fast');
+    $('#' + date).children('.hide').slideToggle('slow');
     if ($(this).text() == "See more") {
       $(this).text("See less");
     } else {
