@@ -154,6 +154,11 @@
     font-size: $h1;
     font-family: "Roboto", sans-serif;
     margin-bottom: 15px;
+    span {
+      &.ready {
+
+      }
+    }
   }
   .new-client-form {
     @extend %containers;
@@ -162,9 +167,13 @@
       padding: 15px;
     }
     input[type=submit] {
-      color: white;
-      background-color: lighten($green, 5%);
       border-bottom: none;
+      background-color: $silver;
+      color: $midnight_blue;
+      &.ready {
+        color: white;
+        background-color: lighten($green, 5%);
+      }
     }
   }
 }
