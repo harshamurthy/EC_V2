@@ -10,20 +10,40 @@
     <%= date.day %>
     <% if sessions_by_date[date] %>
       <span class="cal-session-count"><%= pluralize(sessions_by_date[date].count, "session") %></span>
-      <ul class='cal-ul'>
+      <ul class='cal-ul' id="<%= date %>">
         <% sessions_by_date[date].each_with_index do |session, index| %>
-
-          <% if index > 1 %>
-            <li class='hide cal-hidden'><%= link_to session.client.name, workout_session_url(session.id) %></li>
+          <% if session.done? && index > 1 %>
+            <li class='hide cal-hidden done'><%= link_to "#{session.client.name} (#{session.routine.description})", workout_session_url(session.id) %></li>
+          <% elsif session.done? && index < 2 %>
+            <li class='done'><%= link_to "#{session.client.name} (#{session.routine.description})", workout_session_url(session.id) %></li>
+          <% elsif index > 1 %>
+            <li class='hide cal-hidden'><%= link_to "#{session.client.name} (#{session.routine.description})", workout_session_url(session.id) %></li>
           <% else %>
-            <li><%= link_to session.client.name, workout_session_url(session.id) %></li>
+            <li><%= link_to "#{session.client.name} (#{session.routine.description})", workout_session_url(session.id) %></li>
           <% end %>
         <% end %>
       </ul>
       <div class="see-more-or-less">
-        <span class="cal-see-all"><%= link_to "See all", "#" if sessions_by_date[date].count > 2 %></span>
+        <span class="cal-see-all <%= date %>" data-date="<%= date %>"><%= link_to "See more", "#" if sessions_by_date[date].count > 2 %></span>
       </div>
     <% end %>
   <% end %>
 </div>
+
+<script type="text/javascript">
+  $('.cal-see-all a').on("click", function(e){
+    e.preventDefault();
+    var date = $(this).parent('span').data("date");
+    $('#' + date).children('.hide').slideToggle('slow');
+    if ($(this).text() == "See more") {
+      $(this).text("See less");
+    } else {
+      $(this).text("See more");
+    }
+  });
+</script>
+
+
+
+
 

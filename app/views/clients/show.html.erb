@@ -4,9 +4,9 @@
 
   <div class="graph-container">
     <% if @client.sessions.present? %>
-      <%= render 'client_graph', client: @client, exercise: @exercise %>
+      <%= render 'client_graph', client: @client, exercise: @exercise, exercises: @exercises, type: @type %>
     <% else %>
-      <h3>Get your lazy ass up and workout so my cool ass graph can work.</h3>
+      <h3 class='no-graph'>Get your lazy ass up and workout so my cool ass graph can work.</h3>
     <% end %>
   </div>
 
@@ -16,13 +16,11 @@
       <%= hidden_field_tag :client_id, @client.id %>
       <%= submit_tag "Submit" %>
     <% end %>
-
     <ul>
       <% @client.notes.reverse.each do |note| %>
         <li><%= note.content %><span><%= note.created_at.strftime("%B %d, %Y") %></span></li>
       <% end %>
     </ul>
-
   </div> <!-- note-container -->
 
 </div>

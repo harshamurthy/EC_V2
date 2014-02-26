@@ -490,8 +490,8 @@
   }
 
   ul {
-    width: 50%;
-    margin: 0 auto;
+    // width: 50%;
+    // padding-left: 20%;
     li {
       font-size: 20px;
       color: $dark_gray;
@@ -509,7 +509,6 @@
     &:after {
       @extend %group:after;
     }
-    margin-top: 100px;
     text-align: center;
     input {
       @extend %inputs;
@@ -519,6 +518,8 @@
       @extend %buttons;
       background-color: $green;
       border-bottom: none;
+      display: inline-block;
+      width: 20%;
       &:hover {
         background-color: lighten($green, 10%);
       }
@@ -530,6 +531,7 @@
 #sessions .calendar {
   border-collapse: collapse;
   width: 100%;
+  // margin-bottom: 50px;
 
   td, th {
     font-family: "Lucida Grande", arial, helvetica, sans-serif;
@@ -563,6 +565,12 @@
       margin-top: 15px;
       li {
         padding-bottom: 25px;
+        &.done {
+          text-decoration: line-through;
+          a {
+            color: #ccc;
+          }
+        }
       }
     }
     .cal-see-all, .cal-see-less {
@@ -593,12 +601,37 @@
   a {
     text-decoration: none;
     padding: 0 10px;
-    color: $dark_gray;
+    color: $blue;
     font-size: $h2;
   }
 }
 
 #sessions ul {
   font-size: 11px;
-  padding-left: 20px;
+  // padding-left: 20px;
+}
+
+.specific-cal-day-container {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.8);
+  left: 30%;
+  top:30%;
+  width: 90%;
+
+  h1 {
+    text-align: center;
+    font-size: $h1;
+    padding-top: 75px;
+  }
+
+  ul {
+    text-align: center;
+    li {
+      padding: 20px;
+      font-size: $h2;
+      a {
+        font-size: $h2;
+      }
+    }
+  }
 }

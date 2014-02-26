@@ -70,6 +70,7 @@
 
 //Cllient Show
 .client-container {
+  padding-top: 50px;
   @extend %containers;
 
   .client-name {
@@ -87,6 +88,30 @@
   // text-align: center;
   h2 {
     font-weight: bold;
+  }
+
+  .no-graph {
+    text-align: center;
+  }
+}
+
+.graph-partial {
+  p {
+    display: inline-block;
+    font-size: $h3;
+  }
+  select {
+    color: $green;
+    background-color: white;
+    cursor: default;
+    display: inline-block;
+    margin: 0 10px;
+    font-size: $h3;
+  }
+  input[type=submit] {
+    @extend %buttons;
+    width: 25%;
+    margin-left: 15px;
   }
 }
 

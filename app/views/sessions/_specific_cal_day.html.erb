@@ -1,0 +1,14 @@
+<div class="specific-cal-day-container">
+  <h1>What's happening on <%= @specific_date.strftime("%B %d") %></h1>
+
+  <ul>
+    <% specific_sessions.each do |session| %>
+      <li>
+        <%= link_to session.client.name, client_url(session.client.id) %>
+        is doing
+        <%= link_to session.routine.description, workout_session_url(session.id) %>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to "Back to my calendar", :back %>
+</div>
