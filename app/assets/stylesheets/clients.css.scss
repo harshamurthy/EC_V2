@@ -99,6 +99,26 @@
   }
 }
 
+.graph-partial {
+  p {
+    display: inline-block;
+    font-size: $h3;
+  }
+  select {
+    color: $green;
+    background-color: white;
+    cursor: default;
+    display: inline-block;
+    margin: 0 10px;
+    font-size: $h3;
+  }
+  input[type=submit] {
+    @extend %buttons;
+    width: 25%;
+    margin-left: 15px;
+  }
+}
+
 .client-note-container {
   margin-top: 50px;
   form {

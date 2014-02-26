@@ -1,12 +1,12 @@
 <div class="graph-partial">
-  <h2>Weight chart</h2>
+  <h2>My Chart</h2>
   <%= form_tag client_url(client.id), method: 'get' do %>
-    <%= select_tag 'exercise', options_from_collection_for_select(exercises, 'id', 'name', params[:exercise]), include_blank: true %>
-    <%= select_tag 'type', options_for_select(%w[Weight Percentage Reps Time], params[:type]), include_blank: true %>
-    <%= submit_tag "Submit" %>
+  <p>Show</p>
+    <%= select_tag 'exercise', options_from_collection_for_select(exercises, 'id', 'name', params[:exercise]), prompt: "All my exercises" %>
+    <p>for</p>
+    <%= select_tag 'type', options_for_select(%w[Weight Percentage Reps Time], params[:type])%>
+    <%= submit_tag "See results" %>
   <% end %>
-  or
-  <%= link_to "All", client_url(client.id) %>
 
   <% if !params[:type].blank? && !params[:exercise].blank? %>
     <%= content_tag :div, "", id: "client_chart", data: {exercises: graph_by_other_y_axis(client, type, exercise.name)} %>

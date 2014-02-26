@@ -564,6 +564,10 @@
       margin-top: 15px;
       li {
         padding-bottom: 25px;
+        &.done {
+          text-decoration: line-through;
+          color: #ccc;
+        }
       }
     }
     .cal-see-all, .cal-see-less {
@@ -602,4 +606,29 @@
 #sessions ul {
   font-size: 11px;
   padding-left: 20px;
+}
+
+.specific-cal-day-container {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.8);
+  left: 30%;
+  top:30%;
+  width: 90%;
+
+  h1 {
+    text-align: center;
+    font-size: $h1;
+    padding-top: 75px;
+  }
+
+  ul {
+    text-align: center;
+    li {
+      padding: 20px;
+      font-size: $h2;
+      a {
+        font-size: $h2;
+      }
+    }
+  }
 }
