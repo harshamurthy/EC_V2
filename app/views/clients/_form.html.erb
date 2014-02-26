@@ -32,9 +32,18 @@
 </div>
 
 <script type="text/javascript">
+  var firstName = {};
   $('.new-client-first-name input').on("focusout", function(){
-    var firstName = $(this).val();
-    $('h1 .name').text(firstName).fadeIn("fast");
+    firstName = $(this).val();
+    $('h1 .name').text(firstName);
   });
+
+  $('.field input').on("keyup", function(){
+    var inputs = $('.field input')
+    $.each(inputs, function(key, value){
+      console.log(  $(value).val() );
+    });
+  });
+
 </script>
 
