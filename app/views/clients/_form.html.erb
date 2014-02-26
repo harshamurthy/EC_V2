@@ -12,8 +12,8 @@
       </div>
     <% end %>
 
-    <div class="field">
-      <%= f.text_field :first_name, placeholder: "First name" %>
+    <div class="field new-client-first-name">
+      <%= f.text_field :first_name, placeholder: "First name", autofocus: true %>
     </div>
     <div class="field">
       <%= f.text_field :last_name, placeholder: "Last name" %>
@@ -30,4 +30,11 @@
     </div>
   <% end %>
 </div>
+
+<script type="text/javascript">
+  $('.new-client-first-name input').on("focusout", function(){
+    var firstName = $(this).val();
+    $('h1 .name').text(firstName).fadeIn("fast");
+  });
+</script>
 
