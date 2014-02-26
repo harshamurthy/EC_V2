@@ -490,8 +490,8 @@
   }
 
   ul {
-    width: 50%;
-    margin: 0 auto;
+    // width: 50%;
+    // padding-left: 20%;
     li {
       font-size: 20px;
       color: $dark_gray;
@@ -509,7 +509,6 @@
     &:after {
       @extend %group:after;
     }
-    margin-top: 100px;
     text-align: center;
     input {
       @extend %inputs;
@@ -519,6 +518,8 @@
       @extend %buttons;
       background-color: $green;
       border-bottom: none;
+      display: inline-block;
+      width: 20%;
       &:hover {
         background-color: lighten($green, 10%);
       }
