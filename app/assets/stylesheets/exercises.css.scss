@@ -21,9 +21,9 @@
 .exercise-form-button {
   @extend %buttons;
   border-bottom: none;
-  background-color: $green;
+  background-color: $green_sea;
   &:hover {
-    background-color: lighten($green, 10%);
+    background-color: $turquoise;
   }
 }
 
