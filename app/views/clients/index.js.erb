@@ -1,3 +1,4 @@
+alert(@clients);
 $('.ul-client-list').remove();
 $('.client-list').append("<%= j render('client_search_results', clients: @clients) %>");
 
