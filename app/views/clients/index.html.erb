@@ -5,9 +5,10 @@
       <span class='add-client-container'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Add a client".html_safe, new_client_url, class: 'client-add-link' %></span>
     <% end %>
   </div>
-
-  <section class='client-list'>
-    <%= render 'client_search_results', clients: @clients %>
-  </section>
+  <% if @clients.present? %>
+    <section class='client-list'>
+      <%= render 'client_search_results', clients: @clients %>
+    </section>
+  <% end %>
 </div>
 
