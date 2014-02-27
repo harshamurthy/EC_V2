@@ -93,7 +93,7 @@
 
   <div class='category exercise-option'>
   <h3>Choose a category for <span>this exercise</span></h3>
-    <%= f.select :category, options_for_select(%w[Arms Legs Chest Abs Other]), include_blank: true %>
+    <%= f.select :category, options_for_select(%w[Arms Legs Chest Abs Back Shoulders Other]), include_blank: true %>
   </div>
 
   <%= hidden_field_tag :client_id, params[:client_id] %>
