@@ -6,7 +6,7 @@
     <% if @client.sessions.present? %>
       <%= render 'client_graph', client: @client, exercise: @exercise, exercises: @exercises, type: @type %>
     <% else %>
-      <h3 class='no-graph'>Get your lazy ass up and workout so my cool ass graph can work.</h3>
+      <h3 class='no-graph'>Log a workout session to start graphing results.</h3>
     <% end %>
   </div>
 
