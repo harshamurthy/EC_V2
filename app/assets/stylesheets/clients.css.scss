@@ -23,12 +23,20 @@
       text-align: left;
       margin-left: 20%;
       a {
-        color: $green_sea;
+        color: $green_sea !important;
         border-radius: 5px;
         font-size: 24px;
         padding: 15px 5px;
         i {
           text-decoration: underline;
+        }
+
+        &:hover {
+          color: $turquoise !important;
+        }
+
+        &:active {
+          color: $green_sea !important;
         }
       }
     }

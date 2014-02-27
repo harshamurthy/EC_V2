@@ -82,29 +82,17 @@ $(document).ready(function() {
       }
     });
      $('.submit-button input[type=submit]').on('click', function(e) {
-      if (location.length == 0 || password.length == 0) {
+      if(location.length == 0 || password.length == 0) {
         alert("Make sure we get your location and password!");
         e.preventDefault();
-      } else if (location.length == undefined || password.length == undefined) {
+      } else if(location.length == undefined || password.length == undefined) {
         alert("Make sure we get your location and password!");
         e.preventDefault();
       }
     });
   };
-      // var error_message = $(this).attr('title');
-      // if($(this).val() == '') {
-      //   // console.log('TEST');
-      //   $(this).addClass('input-error');
-      //   $(this).next().remove('p');
-      //   $(this).after("<p class='input-field-error-message'>" + error_message + "</p>");
-      // }
-      // else {
-      //   $(this).removeClass('input-error')
-      //   $(this).next().remove('p');
-      // }
 
   var sessionTimer = function() {
-
     $('#stop-stop-watch').hide();
     $('#reset-stop-watch').hide();
     $('#stop-watch').runner();
