@@ -5,9 +5,8 @@ class ClientsController < ApplicationController
   # GET /clients.json
   def index
     if params[:search]
-      @clients = Client.where("first_name || ' ' || last_name || ' ' LIKE :search", :search => "%#{params[:search].downcase}%" )
+      @clients = Client.where("first_name || ' ' || last_name || ' ' ILIKE :search", :search => "%#{params[:search].downcase}%" )
     else
-      # @clients = Client.where("gym_id IS ?", "#{current_gym.id}").sort_by{|x| x.first_name}.reverse
       @clients = Client.where(gym_id: current_gym.id).order(first_name: :desc)
     end
   end
