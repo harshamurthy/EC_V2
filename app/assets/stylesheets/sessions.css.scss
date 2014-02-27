@@ -169,6 +169,15 @@
           a {
             color: $green_sea !important;
             font-size: 24px;
+
+            &:hover {
+              color: $turquoise !important;
+            }
+
+            &:active {
+              color: $green_sea !important;
+            }
+
             i {
               text-decoration: underline;
             }
