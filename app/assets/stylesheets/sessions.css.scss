@@ -64,14 +64,14 @@
   .session-form-submit-button {
     @extend %buttons;
     width: 60%;
-    background-color: $green_sea !important;
+    background-color: $green_sea;
 
     &:hover {
-      background-color: $turquoise !important;
+      background-color: $turquoise;
     }
 
     &:active {
-      background-color: $green_sea !important;
+      background-color: $green_sea;
     }
   }
 }
