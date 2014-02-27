@@ -26,39 +26,8 @@
     </div>
     <%= f.hidden_field :gym_id, value: current_gym.id %>
     <div class="actions">
-      <%= f.submit "Welcome new client" %>
+      <%= f.submit "Get new client started" %>
     </div>
   <% end %>
 </div>
-
-<script type="text/javascript">
-  var firstName = {};
-  var isReady = {};
-  $('.new-client-first-name input').on("focusout", function(){
-    firstName = $(this).val();
-    $('h1 .name').text(firstName);
-    $('h1 .name').addClass('ready')
-  });
-
-  $('.field input').on("keyup", function(e){
-    var inputs = $('.field input');
-
-    inputs.each(function(index, input){
-      if ($(input).val().length == 0) {
-        isReady = false;
-      } else {
-        isReady = true;
-      }
-    });
-      if (isReady) {
-        $('.actions input[type=submit]').val("Get " + firstName + " started!");
-      }
-  });
-
-  $('.new-client-form form').on("submit", function(e){
-     if (isReady !== true) {
-      e.preventDefault();
-    }
-  });
-</script>
 

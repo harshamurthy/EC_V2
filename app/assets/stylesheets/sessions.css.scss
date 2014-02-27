@@ -14,6 +14,7 @@
 
   .session-form-labels {
     @extend %labels;
+
   }
 
   .session-form-inputs {
@@ -55,6 +56,9 @@
   .session-form-checkbox-labels {
     @extend %checkbox-labels;
     margin: 0;
+    &.not-ready {
+      border: 1px solid $alizarin;
+    }
   }
 
   .session-form-submit-button {
@@ -160,12 +164,20 @@
         .add-routine-name {
           color: $red;
         }
-        .add-exercise-li {
-          float: right;
+        .add-exercise-p {
+          margin-bottom: 15px;
+          a{
+            color: $green_sea;
+            font-size: 22px;
+            i {
+              text-decoration: underline;
+            }
+          }
         }
         li {
           display: inline-block;
           margin: 20px 10px;
+          margin-left: 0;
           a {
             color: $green_sea;
             font-size: 24px;
@@ -242,7 +254,7 @@
         float: right;
         font-style: italic;
         font-size: 30px;
-        color: $orange;
+        color: $alizarin;
       }
     }
   }
@@ -262,10 +274,10 @@
 
       &.onclick {
         border-right: 0px;
-        border-left: 10px solid $orange;
+        border-left: 10px solid $alizarin;
 
         .session-exercise-link {
-          color: $orange;
+          color: $alizarin;
         }
       }
 
@@ -296,7 +308,7 @@
     width: 70%;
     float: left;
     position: fixed;
-    top: 15%;
+    top: 8%;
     right: 0;
 
     .settings-and-executions {
@@ -307,7 +319,7 @@
 
     .session-saved {
       position: absolute;
-      top: 0px;
+      top: 20px;
       right: 40px;
       // text-align: center;
       color: #666;
@@ -333,8 +345,9 @@
         margin-top: 10px;
         font-size: 22px;
         line-height: 1.5;
+        padding-bottom: 30px;
       .previous-stats-number {
-        color: $orange;
+        color: $alizarin;
         font-weight: bold;
       }
 
@@ -513,8 +526,11 @@
   }
 
   ul {
-    // width: 50%;
-    // padding-left: 20%;
+    width: 75%;
+    margin: 0 auto;
+    &:after {
+      @extend %group:after;
+    }
     li {
       font-size: $text-input-size;
       color: $midnight_blue;
@@ -536,6 +552,12 @@
     input {
       @extend %inputs;
       padding: 12px;
+    }
+
+    ul {
+      width: 75%;
+      margin: 0 auto;
+
     }
 
     input[type=submit] {

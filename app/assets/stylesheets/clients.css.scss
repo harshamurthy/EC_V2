@@ -95,6 +95,9 @@
 }
 
 .graph-partial {
+  form {
+    text-align: center;
+  }
   p {
     display: inline-block;
     font-size: $h3;
@@ -154,7 +157,7 @@
     margin-bottom: 15px;
     span {
       &.ready {
-
+        color: $green_sea;
       }
     }
   }

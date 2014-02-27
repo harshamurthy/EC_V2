@@ -19,5 +19,8 @@
     </nav>
   <% end %>
   <%= yield %>
+  <% unless !gym_signed_in? || current_page?(workout_sessions_url) %>
+    <span class='happy-day-of-week'>Happy <%= Date.today.strftime("%A") %>.</span>
+  <% end %>
 </body>
 </html>
