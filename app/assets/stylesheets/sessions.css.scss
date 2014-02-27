@@ -110,7 +110,7 @@
         .datepicker-label {
           // display: block;
           &.onclick {
-            background-color: $blue;
+            background-color: $belize_hole;
             border: 1px solid black;
             color: white;
           }
@@ -137,16 +137,16 @@
         color: #666;
         text-decoration: none;
         &.tab {
-          border-left: 1px solid #ccc;
-          border-top: 1px solid #ccc;
-          border-right: 1px solid #ccc;
+          border-left: 1px solid $silver;
+          border-top: 1px solid $silver;
+          border-right: 1px solid $silver;
           border-bottom: 1px solid white;
           position: relative;
           top: 1px;
         }
       }
       .create-new, .choose-existing {
-        border: 1px solid #ccc;
+        border: 1px solid $silver;
         padding: 20px;
         &:after {
           @extend %group:after;
@@ -265,8 +265,8 @@
     padding-bottom: 40px;
 
     .session-exercise {
-      border-right: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
+      border-right: 1px solid $silver;
+      border-bottom: 1px solid $silver;
       text-align: left;
 
       &.onclick {
@@ -327,7 +327,7 @@
     .workout-session-execution-form {
       width: 85%;
       margin: 0 auto;
-      border: 1px solid #ccc;
+      border: 1px solid $silver;
       padding: 30px;
       border-radius: 5px;
       }
@@ -442,6 +442,7 @@
     .start-session-stop-watch {
         background-color: $emerald;
         font-size: $text-input-size;
+        color: white !important;
 
       &:hover {
         background-color: lighten($emerald, 5%);
@@ -456,6 +457,7 @@
     .stop-session-stop-watch {
       background-color: $alizarin;
       font-size: $text-input-size;
+      color: white !important;
 
       &:hover {
         background-color: lighten($alizarin, 5%);
@@ -469,6 +471,7 @@
     .reset-session-stop-watch {
       background-color: $asbestos;
       font-size: $text-input-size;
+      color: white !important;
 
       &:hover {
         background-color: $concrete;
