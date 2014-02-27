@@ -1,20 +1,11 @@
 source 'https://rubygems.org'
 ruby '2.1.0'
-
-
 #Pry
 group :development do
+  gem 'sqlite3'
   gem 'pry'
   gem 'pry-rails'
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
 end
-
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
-
 #Groupdate
 gem 'groupdate', github: 'mieko/groupdate', branch: 'sqlite3'
 #Bourbon
@@ -54,6 +45,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
