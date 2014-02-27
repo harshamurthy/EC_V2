@@ -88,10 +88,10 @@ $(document).ready(function() {
       }
     });
      $('.submit-button input[type=submit]').on('click', function(e) {
-      if (location.length == 0 || password.length == 0) {
+      if(location.length == 0 || password.length == 0) {
         alert("Make sure we get your location and password!");
         e.preventDefault();
-      } else if (location.length == undefined || password.length == undefined) {
+      } else if(location.length == undefined || password.length == undefined) {
         alert("Make sure we get your location and password!");
         e.preventDefault();
       }
@@ -99,7 +99,6 @@ $(document).ready(function() {
   };
 
   var sessionTimer = function() {
-
     $('#stop-stop-watch').hide();
     $('#reset-stop-watch').hide();
     $('#stop-watch').runner();
