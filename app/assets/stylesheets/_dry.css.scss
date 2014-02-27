@@ -12,15 +12,15 @@ body {
 }
 
 a {
-  color: $belize_hole !important;
+  color: $belize_hole;
   font-size: 18px;
 
   &:hover {
-    color: $peter_river !important;
+    color: $peter_river;
   }
 
   &:active {
-    color: $belize_hole !important;
+    color: $belize_hole;
   }
 }
 
