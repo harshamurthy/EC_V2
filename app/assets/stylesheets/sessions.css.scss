@@ -271,10 +271,10 @@
 
       &.onclick {
         border-right: 0px;
-        border-left: 10px solid $orange;
+        border-left: 10px solid $carrot;
 
         .session-exercise-link {
-          color: $orange;
+          color: $carrot !important;
         }
       }
 
@@ -289,11 +289,19 @@
     }
     .notebook {
       .notes {
-        color: $green_sea;
+        color: $green_sea !important;
+
+        &:hover {
+          color: $turquoise !important;
+        }
+
+        &:active {
+          color: $green_sea !important;
+        }
       }
       &.onclick {
         border-right: 0px;
-        border-left: 10px solid $dark_gray;
+        border-left: 10px solid $green_sea;
         .notes {
           color: $green_sea;
         }
