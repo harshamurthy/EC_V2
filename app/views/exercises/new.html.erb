@@ -1,9 +1,10 @@
 <div class='new-exercise-page'>
   <div class="new-exercise-form">
-    <h1 class='new-exercise-header'>Create New Exercise</h1>
+    <h1 class='new-exercise-header'>Create <span>a new exercise</span> for <%= current_gym.location.capitalize %></h1>
 
     <%= render 'form' %>
-
-    <%= link_to 'Back', :back %>
+    <div class='back-to-new-session'>
+      <%= link_to "Back to setting up for #{@client.name}", :back %>
+    </div>
   </div>
 </div>

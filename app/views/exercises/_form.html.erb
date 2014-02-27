@@ -1,8 +1,6 @@
 <%= form_for(@exercise) do |f| %>
   <% if @exercise.errors.any? %>
     <div id='error_explanation'>
-      <h2><%= pluralize(@exercise.errors.count, 'error') %> prohibited this exercise from being saved:</h2>
-
       <ul>
       <% @exercise.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -16,45 +14,85 @@
     <%= f.text_field :name, placeholder: 'Name of exercise', class: 'exercise-input' %>
   </div>
   <ul>
-    <h3>Check all the executions you'd like to track.</h3>
-    <li class='exercise-option'>
+    <h3 class='new-exercise-execution-header'>Select all the executions you'd like to track for <span>this exercise</span></h3>
+    <li class='exercise-option exercise'>
       <%= f.check_box :weight %>
       <%= f.label :weight%>
     </li>
-    <li class='exercise-option'>
+    <li class='exercise-option exercise'>
       <%= f.check_box :percentage %>
       <%= f.label :percentage %>
     </li>
-    <li class='exercise-option'>
+    <li class='exercise-option exercise'>
       <%= f.check_box :reps %>
       <%= f.label :reps %>
     </li>
-    <li class='exercise-option'>
+    <li class='exercise-option exercise'>
       <%= f.check_box :time %>
       <%= f.label :time %>
     </li>
   </br>
-  <h3>Check all the settings that apply to this exercise.</h3>
-    <li class='exercise-option'>
+  <h3 class='new-exercise-setting-header'>Select all the settings that apply to <span>this exercise</span></h3>
+    <li class='exercise-option setting'>
       <%= f.check_box :seat %>
       <%= f.label :seat %>
     </li>
-    <li class='exercise-option'>
+    <li class='exercise-option setting'>
       <%= f.check_box :foot %>
       <%= f.label :foot %>
     </li>
-    <li class='exercise-option'>
+    <li class='exercise-option setting'>
       <%= f.check_box :degrees %>
       <%= f.label :degrees %>
     </li>
-    <li class='exercise-option'>
+    <li class='exercise-option setting'>
       <%= f.check_box :back %>
       <%= f.label :back %>
     </li>
+    <li class='exercise-option setting'>
+      <%= f.check_box :foot_stool %>
+      <%= f.label :foot_stool %>
+    </li>
+    <li class='exercise-option setting'>
+      <%= f.check_box :pin %>
+      <%= f.label :pin %>
+    </li>
+    <li class='exercise-option setting'>
+      <%= f.check_box :arm %>
+      <%= f.label :arm %>
+    </li>
+    <li class='exercise-option setting'>
+      <%= f.check_box :seatbelt %>
+      <%= f.label :seatbelt %>
+    </li>
+    <li class='exercise-option setting'>
+      <%= f.check_box :backpad %>
+      <%= f.label :backpad %>
+    </li>
+    <li class='exercise-option setting'>
+      <%= f.check_box :knee %>
+      <%= f.label :knee %>
+    </li>
+    <li class='exercise-option setting'>
+      <%= f.check_box :seatpad %>
+      <%= f.label :seatpad %>
+    </li>
+    <li class='exercise-option setting'>
+      <%= f.check_box :chestpad %>
+      <%= f.label :chestpad %>
+    </li>
+    <li class='exercise-option setting'>
+      <%= f.check_box :hips %>
+      <%= f.label :hips %>
+    </li>
+    <li class='exercise-option setting'>
+      <%= f.check_box :leg %>
+      <%= f.label :leg %>
+    </li>
   </ul>
 
-  <div class='category'>
-    <%= f.label "Pick a category for your exercise" %>
+  <div class='category exercise-option'>
+  <h3>Choose a category for <span>this exercise</span></h3>
     <%= f.select :category, options_for_select(%w[Arms Legs Chest Abs Other]), include_blank: true %>
   </div>
 
@@ -64,3 +102,5 @@
     <%= f.submit 'Create exercise', class: 'exercise-form-button' %>
   </div>
 <% end %>
+
+

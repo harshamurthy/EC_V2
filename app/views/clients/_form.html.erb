@@ -26,24 +26,8 @@
     </div>
     <%= f.hidden_field :gym_id, value: current_gym.id %>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit "Get new client started" %>
     </div>
   <% end %>
 </div>
-
-<script type="text/javascript">
-  var firstName = {};
-  $('.new-client-first-name input').on("focusout", function(){
-    firstName = $(this).val();
-    $('h1 .name').text(firstName);
-  });
-
-  $('.field input').on("keyup", function(){
-    var inputs = $('.field input')
-    $.each(inputs, function(key, value){
-      console.log(  $(value).val() );
-    });
-  });
-
-</script>
 

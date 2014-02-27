@@ -17,58 +17,76 @@
   padding: 20px;
 }
 
-
-.exercise-form-button {
-  @extend %buttons;
-  border-bottom: none;
-  background-color: $green_sea;
-  &:hover {
-    background-color: $turquoise;
-  }
-}
-
 // New Exercise Page
 .new-exercise-page {
   @extend %containers;
   text-align: center;
 
   .new-exercise-form {
-    // @extend %forms;
+    .setting, .exercise{
+      label {
+        @extend %checkbox-labels;
+        width: 100%;
+      }
+      input[type=checkbox] {
+        @extend %checkboxes;
+      }
+    }
+    .exercise-option {
+      display: inline-block;
+      vertical-align: top;
+    }
+    h3 {
+      margin-top: 60px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      span {
+        &.ready {
+          color: $green_sea;
+        }
+      }
+    }
   }
-
-  h3 {
-    margin-top: 60px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-size: 18px;
+  .category {
+    h3 {
+      display: inline-block;
+      margin-right: 10px;
+      margin: 15px 0;
+    }
   }
-
   .new-exercise-header {
     @extend %header-text-styles;
     padding-top: 70px;
+    span {
+      &.ready {
+        color: $green_sea;
+      }
+    }
   }
-}
-
-//Library
-.library-container {
-  .library-title {
-    font-size: $h2;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  @extend %containers;
-  padding-top: 60px;
-  .library-form-checkbox {
-    @extend %checkboxes;
-  }
-
-  .library-form-checkbox-labels {
-    @extend %checkbox-labels;
-    margin: 0;
-  }
-  .submit {
-    .library-submit {
+  .exercise-form-button {
+    @extend %buttons;
+    border-bottom: none;
+    background-color: $silver;
+    color: $midnight_blue;
+    &:hover {
+      background-color: $silver;
+    }
+    &.ready {
       @extend %buttons;
+      border-bottom: none;
+      background-color: $green_sea;
+      &:hover {
+        background-color: $turquoise;
+      }
+    }
+  }
+  .back-to-new-session {
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    a {
+      color: $pomegranate;
     }
   }
 }

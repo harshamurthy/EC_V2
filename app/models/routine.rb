@@ -4,6 +4,7 @@ class Routine < ActiveRecord::Base
   belongs_to :gym
 
   validates_presence_of :description
+  validates_presence_of :exercise_ids
 
   def self.find_or_initialize_by_exercise_ids(exercise_ids)
     Routine.all.select{|r| r == exercise_ids}.first || Routine.new(exercise_ids: exercise_ids)

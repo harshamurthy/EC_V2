@@ -73,12 +73,18 @@ $(document).ready(function() {
       location = $('#gym_location').val();
 
       if (location.length > 0 && password.length > 0) {
+        var name = $("#gym_location").val();
         $('.submit-button input[type=submit]').removeClass('sign-in-button-inactive');
         $('.submit-button input[type=submit]').addClass('sign-in-button-active');
+        $('.submit-button input[type=submit]').val("Let's get started " + name);
+        $('.welcome-back').remove();
+        // $('.submit-button').append("<p class='welcome-back'>Welcome back " + name + "</p>");
       }
       else {
         $('.submit-button input[type=submit]').addClass('sign-in-button-inactive');
         $('.submit-button input[type=submit]').removeClass('sign-in-button-active');
+        $('.submit-button input[type=submit]').val("Sign in");
+        $('.welcome-back').remove();
       }
     });
      $('.submit-button input[type=submit]').on('click', function(e) {
@@ -154,7 +160,10 @@ $(document).ready(function() {
 
       hideHover: true,
       xLabels: "day"
-      // Hide hover
+      // dateFormat: function (created_at) {
+      //   var d = new Date(created_at);
+      //   return d.getYear() + '/' + (d.getMonth() + 1) + '/' + d.getDay();
+      // }
     });
   };
 
@@ -230,6 +239,12 @@ $(document).ready(function() {
       var description = $('#session_routine_description').val();
       var otherEx = $("#session_routine_id").val();
 
+    if ($('.new-routine-exercises').children('li').find('input:checked').length == 0 && otherEx == ""){
+      e.preventDefault();
+      alert("You need some exercises to work out!");
+      $('.session-form-checkbox-labels').addClass("not-ready");
+    }
+
       if (otherEx == "" && description == "") {
         e.preventDefault();
         alert("You need to add a name to your routine!");
@@ -245,23 +260,93 @@ $(document).ready(function() {
     $('.workout-session-exercise-list').css("height", mainHeight);
   };
 
-  // var seeMoreOrLessCal = function() {
-  //   $('.see-more-or-less').on("click", '.cal-see-all a', function(e){
-  //     e.preventDefault();
-  //     $('.cal-hidden').fadeIn("fast");
-  //     $(this).text("See less");
-  //     $(this).parent('span').removeClass('cal-see-all');
-  //     $(this).parent('span').addClass('cal-see-less');
-  //  });
+  var seeMoreOrLessCal = function() {
+    $('.cal-see-all a').on("click", function(e){
+      e.preventDefault();
+      var date = $(this).parent('span').data("date");
+      $('#' + date).children('.hide').slideToggle('slow');
+      if ($(this).text() == "See more") {
+        $(this).text("See less");
+      } else {
+        $(this).text("See more");
+      }
+    });
+  };
 
-  //   $('.see-more-or-less').on("click", '.cal-see-less a', function(e){
-  //     $('.cal-hidden').fadeOut("fast");
-  //     $(this).text("See all");
-  //     $(this).parent('span').removeClass('cal-see-less');
-  //     $(this).parent('span').addClass('cal-see-all');
-  //  });
+  var customNewClient = function() {
+    var firstName = {};
+    var isReady = {};
+    $('.new-client-first-name input').on("focusout", function(){
+      firstName = $(this).val();
+      if(firstName.length > 0){
+        $('h1 .name').text(firstName).addClass('ready');
+      }
+    });
 
-  // };
+    $('.field input').on("keyup", function(e){
+      var inputs = $('.field input');
+
+      inputs.each(function(index, input){
+      if ($(input).val().length == 0) {
+        isReady = false;
+      } else {
+        isReady = true;
+      }
+      });
+      if (isReady) {
+        $('.actions input[type=submit]').val("Get " + firstName + " started!");
+        $('.actions input[type=submit]').addClass("ready");
+      } else {
+        $('.actions input[type=submit]').val("Get new client started");
+        $('.actions input[type=submit]').removeClass("ready");
+      }
+    });
+
+    $('.new-client-form form').on("submit", function(e){
+      if (isReady !== true) {
+        e.preventDefault();
+      }
+    });
+  };
+
+  var customNewExercise = function() {
+    $(".exercise-option input[type=text]").on("focusout", function(){
+    var exerciseName = $(this).val();
+
+    if(exerciseName.length > 0) {
+        $(".new-exercise-header span").text(exerciseName).addClass("ready");
+        $('h3 span').text(exerciseName).addClass("ready");
+        $('.exercise-form-button').val("Create " + exerciseName);
+        $('.category span').text(exerciseName);
+      } else {
+        $(".new-exercise-header span").text("new exercise").removeClass("ready");
+        $('h3 span').text("this exercise").removeClass("ready");
+        $('.exercise-form-button').val("Create exercise");
+        $('.category span').text("this exercise");
+      }
+    });
+
+    var isReady = false;
+    $('.exercise-option').on("change", function(){
+      if ($('.exercise input[type=checkbox]:checked').length > 0 && $('.exercise-option input[type=text]').val().length > 0 && $('.category select').val().length > 0) {
+        isReady = true;
+      } else {
+        isReady = false;
+      }
+      if (isReady) {
+        $('.exercise-form-button').addClass("ready");
+      } else {
+        $('.exercise-form-button').removeClass("ready");
+      }
+    });
+
+    $('.new-exercise-page form').on("submit", function(e){
+        if (isReady !== true) {
+          e.preventDefault();
+          alert("Make sure you tell us the name, executions, and category of the exercise!");
+        }
+      });
+  };
 
 
   //Calling functions
@@ -270,14 +355,16 @@ $(document).ready(function() {
   setupWorkoutSession();
   setupClientsList();
   inputFieldToolTips();
-  inputFieldErrors();
   sessionTimer();
   newSession();
   createNewRoutine();
+  inputFieldErrors();
   chooseExistingRoutine();
   newSessionDate();
   ensureNameForRoutine();
   sessionExercisesHeight();
-  // seeMoreOrLessCal();
+  customNewClient();
+  customNewExercise();
+  seeMoreOrLessCal();
   clientGraph();
 });

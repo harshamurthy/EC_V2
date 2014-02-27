@@ -103,6 +103,9 @@
 }
 
 .graph-partial {
+  form {
+    text-align: center;
+  }
   p {
     display: inline-block;
     font-size: $h3;
@@ -160,6 +163,11 @@
     font-size: $h1;
     font-family: "Roboto", sans-serif;
     margin-bottom: 15px;
+    span {
+      &.ready {
+        color: $green_sea;
+      }
+    }
   }
   .new-client-form {
     @extend %containers;
@@ -168,9 +176,13 @@
       padding: 15px;
     }
     input[type=submit] {
-      color: white;
-      background-color: $green_sea;
       border-bottom: none;
+      background-color: $silver;
+      color: $midnight_blue;
+      &.ready {
+        color: white;
+        background-color: lighten($green, 5%);
+      }
     }
   }
 }

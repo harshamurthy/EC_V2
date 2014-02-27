@@ -51,16 +51,14 @@
                 <%= r.label :description, class: 'session-form-labels' %><br>
                 <%= r.text_field :description, placeholder: 'Name the routine', class: 'session-form-inputs', autofocus: true %>
                 <span class="hide add-routine-name"><i class="fa fa-arrow-circle-o-left"></i> Add a name</span>
-
+                <p class='add-exercise-p'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Create a new exercise".html_safe, new_exercise_url(client_id: @client.id) %></p>
                 <ul class='new-routine-exercises'>
                   <% current_gym.exercises.each do |exercise| %>
-                  <li>
-                    <input id="<%= exercise.id %>", name='session[routine[exercise_ids]][]', value="<%= exercise.id %>", type='checkbox',  class='session-form-checkbox'>
-                    <%= label_tag "#{exercise.id}", exercise.name, class: 'session-form-checkbox-labels' %>
-                  </li>
-                <% end %>
-                <!-- <li class='add-exercise-li'><%#= link_to "<i class=\"fa fa-book\"></i> Add an exercise from our library".html_safe, library_exercise_url(current_gym.id, client_id: @client.id) %></li> -->
-                <li class='add-exercise-li'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Create a new exercise".html_safe, new_exercise_url(client_id: @client.id) %></li>
+                    <li>
+                      <input id="<%= exercise.id %>", name='session[routine[exercise_ids]][]', value="<%= exercise.id %>", type='checkbox',  class='session-form-checkbox'>
+                      <%= label_tag "#{exercise.id}", exercise.name, class: 'session-form-checkbox-labels' %>
+                    </li>
+                  <% end %>
                 </ul>
 
               <% end %>
@@ -85,4 +83,5 @@
       <%= f.hidden_field :gym_id, value: current_gym.id %>
   <% end %>
 </div>
+
 
