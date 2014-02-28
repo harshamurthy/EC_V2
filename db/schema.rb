@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140224183650) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "clients", force: true do |t|
     t.integer  "gym_id"
     t.string   "first_name"
@@ -86,8 +89,8 @@ ActiveRecord::Schema.define(version: 20140224183650) do
     t.string   "location"
   end
 
-  add_index "gyms", ["email"], name: "index_gyms_on_email", unique: true
-  add_index "gyms", ["reset_password_token"], name: "index_gyms_on_reset_password_token", unique: true
+  add_index "gyms", ["email"], name: "index_gyms_on_email", unique: true, using: :btree
+  add_index "gyms", ["reset_password_token"], name: "index_gyms_on_reset_password_token", unique: true, using: :btree
 
   create_table "notes", force: true do |t|
     t.integer  "client_id"

@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 ruby '2.1.0'
-
 #Groupdate
 gem 'groupdate', github: 'mieko/groupdate', branch: 'sqlite3'
 #Bourbon
@@ -41,7 +40,7 @@ group :doc do
 end
 
 group :development do
-  gem 'sqlite3'
+  gem 'pg'
   gem 'pry'
   gem 'pry-rails'
 end
