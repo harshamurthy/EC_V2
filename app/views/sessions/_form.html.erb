@@ -19,19 +19,19 @@
           <div class="h2-and-labels">
 
 
-            <%= f.text_field :date, class: "session-datepicker-text-field hide" %>
+            <%= f.text_field :date, class: "session-datepicker-text-field hide new-session-date" %>
             <%= f.label :date, "Other date", class: "datepicker-label session-form-radio-button-label" %>
 
             <span class="dateor"><i class="fa fa-minus"></i></span>
 
-            <input type='radio' name='session[date]' value=<%= Date.today %> checked="checked" class='session-form-radio-button' id="today">
+            <input type='radio' name='session[date]' value=<%= Date.today %> checked="checked" class='session-form-radio-button new-session-date' id="today">
             <label class='session-form-radio-button-label' for="today">
             Today
             </label>
 
             <span class='date-or'><i class="fa fa-minus"></i></span>
 
-            <input type='radio' name='session[date]' value=<%= Date.tomorrow %> class='session-form-radio-button' id="tomorrow">
+            <input type='radio' name='session[date]' value=<%= Date.tomorrow %> class='session-form-radio-button new-session-date' id="tomorrow">
             <label class='session-form-radio-button-label' for="tomorrow" >
             Tomorrow
             </label>

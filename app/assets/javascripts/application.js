@@ -232,6 +232,21 @@ $(document).ready(function() {
       $('.datepicker-label').text(date);
       $(this).hide();
     });
+
+    $('.new-session-date').on("change", function(){
+      var d = new Date();
+      var curr_date = d.getDate();
+      var curr_month = d.getMonth() + 1; //Months are zero based
+      if (curr_month != 10 || curr_month != 11 || curr_month != 12) {
+        curr_month = "0" + curr_month
+      }
+      var curr_year = d.getFullYear();
+      if(curr_year + "-" + curr_month + "-" + curr_date == $(this).val()) {
+        $('.submit-session input[type=submit]').val("Start Workout");
+      } else {
+        $('.submit-session input[type=submit]').val("Save Workout");
+      }
+    });
   };
 
   var ensureNameForRoutine = function() {
