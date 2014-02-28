@@ -1,9 +1,3 @@
-<style type="text/css">
-  .client_name {
-    color: black;
-    font-size: 20px;
-  }
-</style>
 <ul class='ul-client-list'>
   <% unless params[:search].nil? || params[:search] == "" %>
     <p class='search-results-stats'>Showing <%= pluralize(clients.count, 'result') %> for "<%= params[:search] %>"</p>
@@ -22,6 +16,4 @@
     </section>
   <% end %>
 </ul>
-
-
 
