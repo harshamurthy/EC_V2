@@ -165,6 +165,10 @@ $(document).ready(function() {
       //   return d.getYear() + '/' + (d.getMonth() + 1) + '/' + d.getDay();
       // }
     });
+
+    $("select").on("change", function(){
+      $(this).parent('form').submit();
+    });
   };
 
   var newSession = function() {
@@ -271,8 +275,28 @@ $(document).ready(function() {
   };
 
   var sessionExercisesHeight = function() {
-    var mainHeight = $(window).height();
-    $('.workout-session-exercise-list').css("height", mainHeight);
+    function doOnOrientationChange()
+    {
+      switch(window.orientation)
+      {
+        case -90:
+        case 90:
+          var landscapeHeight = $(window).height();
+          // alert(landscapeHeight);
+          $('.workout-session-exercise-list').css("height", landscapeHeight);
+          break;
+        default:
+          var portraitHeight = $(window).height();
+          // alert(portraitHeight);
+          $('.workout-session-exercise-list').css("height", portraitHeight);
+          break;
+      }
+    }
+
+    window.addEventListener('orientationchange', doOnOrientationChange);
+
+    // Initial execution if needed
+    doOnOrientationChange();
   };
 
   var seeMoreOrLessCal = function() {
