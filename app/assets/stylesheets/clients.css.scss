@@ -51,15 +51,31 @@
         text-align: center;
         color: $silver;
       }
+      .client-wrapper {
+        border-bottom: 1px solid $clouds;
+        padding: 15px;
+        padding-bottom: 0;
+        .client-buttons {
+          display: block;
+          padding: 20px;
+          padding-left: 0;
+          .client-start-workout {
+            margin-right: 40px;
+          }
+          a {
+            i {
+              text-decoration: underline;
+            }
+          }
+        }
       .client {
         font-size: 22px;
         text-align: left;
-        border-bottom: 1px solid $clouds;
-        padding: 15px;
         margin-top: 30px;
         .client_name {
            color: $midnight_blue;
            font-size: 20px;
+           text-decoration: none;
            &:hover {
             color: $wet_asphalt;
            }
@@ -67,14 +83,9 @@
             color: $wet_asphalt;
            }
         }
-        .client-buttons {
-          display: inline-block;
+        .down-icon {
           float: right;
-          a {
-            i {
-              text-decoration: underline;
-            }
-          }
+        }
 
           .client-start-workout {
 

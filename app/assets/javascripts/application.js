@@ -363,6 +363,20 @@ $(document).ready(function() {
       });
   };
 
+  var clientSnapChat = function(){
+    $(".client").on("click", function(e){
+      e.preventDefault();
+      $('.' + $(this).children('.client_name').data("id")).slideToggle("5000");
+
+      if ($(this).children('span').hasClass("fa fa-chevron-down")) {
+        $(this).children('span').removeClass("fa fa-chevron-down").addClass("fa fa-chevron-up");
+      } else {
+        $(this).children('span').removeClass("fa fa-chevron-up").addClass("fa fa-chevron-down");
+      }
+
+      });
+  };
+
 
   //Calling functions
   automaticClientSearchBar();
@@ -381,5 +395,6 @@ $(document).ready(function() {
   customNewClient();
   customNewExercise();
   seeMoreOrLessCal();
+  clientSnapChat();
   clientGraph();
 });
