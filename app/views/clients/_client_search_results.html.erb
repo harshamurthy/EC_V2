@@ -7,7 +7,7 @@
     <section class='client-wrapper'>
       <li class='client'>
         <%= link_to client.name, client_url(client.id), class: "client_name", data: {id: client.id} %>
-        <span class='down-icon fa fa-chevron-down'></span>
+        <span class='down-icon fa fa-chevron-down down-arrow'></span>
       </li>
       <aside class='client-buttons hide <%= client.id %>'>
         <%= link_to "<i class=\"fa fa-plus-square-o\"></i> Create workout".html_safe, new_workout_session_url(client_id: client.id), class: 'client-start-workout' %>
