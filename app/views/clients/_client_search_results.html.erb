@@ -1,3 +1,9 @@
+<style type="text/css">
+  .client_name {
+    color: black;
+    font-size: 20px;
+  }
+</style>
 <ul class='ul-client-list'>
   <% unless params[:search].nil? || params[:search] == "" %>
     <p class='search-results-stats'>Showing <%= pluralize(clients.count, 'result') %> for "<%= params[:search] %>"</p>
@@ -5,10 +11,10 @@
 
   <% clients.reverse.each do |client| %>
     <li class='client'>
-      <%= client.name %>
+      <%= link_to client.name, client_url(client.id), class: "client_name" %>
       <aside class='client-buttons'>
-        <%= link_to 'Create workout', new_workout_session_url(client_id: client.id), class: 'client-start-workout' %>
-        <%= link_to 'See profile', client_url(client.id), class: 'client-manage-account' %>
+        <%= link_to "<i class=\"fa fa-plus-square-o\"></i> Create workout".html_safe, new_workout_session_url(client_id: client.id), class: 'client-start-workout' %>
+        <%#= link_to 'See profile', client_url(client.id), class: 'client-manage-account' %>
       </aside>
     </li>
   <% end %>

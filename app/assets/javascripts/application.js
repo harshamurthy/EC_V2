@@ -76,14 +76,14 @@ $(document).ready(function() {
         var name = $("#gym_location").val();
         $('.submit-button input[type=submit]').removeClass('sign-in-button-inactive');
         $('.submit-button input[type=submit]').addClass('sign-in-button-active');
-        $('.submit-button input[type=submit]').val("Let's get started " + name);
+        // $('.submit-button input[type=submit]').val("Sign in");
         $('.welcome-back').remove();
         // $('.submit-button').append("<p class='welcome-back'>Welcome back " + name + "</p>");
       }
       else {
         $('.submit-button input[type=submit]').addClass('sign-in-button-inactive');
         $('.submit-button input[type=submit]').removeClass('sign-in-button-active');
-        $('.submit-button input[type=submit]').val("Sign in");
+        // $('.submit-button input[type=submit]').val("Sign in");
         $('.welcome-back').remove();
       }
     });

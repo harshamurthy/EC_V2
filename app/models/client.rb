@@ -25,36 +25,13 @@ class Client < ActiveRecord::Base
       executions.first.time if executions.count > 0
     end
 
-    # if type == "Weight"
-    #   executions.first.weight if executions.count > 0
-    # elsif type == "Percentage"
-    #   executions.first.percentage if executions.count > 0
-    # elsif type == "Reps"
-    #   executions.first.reps if executions.count > 0
-    # elsif type == "Time"
-    #   executions.first.time if executions.count > 0
-    # end
-
-    # if type == "Weight"
-    #   if self.exercise_executions.where(exercise_id: exercise.id).select {|ee| ee.created_at.to_date == date}.count > 0
-    #     self.exercise_executions.where(exercise_id: exercise.id).select {|ee| ee.created_at.to_date == date}.first.weight
-    #   end
-    # elsif type == "Percentage"
-    #   if self.exercise_executions.where(exercise_id: exercise.id).select {|ee| ee.created_at.to_date == date}.count > 0
-    #     self.exercise_executions.where(exercise_id: exercise.id).select {|ee| ee.created_at.to_date == date}.first.percentage
-    #   end
-    # elsif type == "Reps"
-    #   if self.exercise_executions.where(exercise_id: exercise.id).select {|ee| ee.created_at.to_date == date}.count > 0
-    #     self.exercise_executions.where(exercise_id: exercise.id).select {|ee| ee.created_at.to_date == date}.first.reps
-    #   end
-    # elsif type == "Time"
-    #   if self.exercise_executions.where(exercise_id: exercise.id).select {|ee| ee.created_at.to_date == date}.count > 0
-    #     self.exercise_executions.where(exercise_id: exercise.id).select {|ee| ee.created_at.to_date == date}.first.time
-    #   end
-    # end
   end
 
   def get_previous_exercise_result(exercise_id)
     self.exercise_executions.where(exercise_id: exercise_id).last
+  end
+
+  def has_current_session?
+
   end
 end
