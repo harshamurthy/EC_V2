@@ -4,6 +4,29 @@
 
 
 // Client Index Page
+.current-sessions {
+  padding-top: 10px;
+  padding-left: 20px;
+  li {
+    padding: 10px 0;
+    span {
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+}
+
+.current-sessions-count {
+  color: $alizarin;
+  text-decoration: underline;
+  font-size: 20px;
+  line-height: 3;
+  margin-left: 20px;
+  .arrow {
+    margin-left: 10px;
+  }
+}
+
 .client-index-page {
 
   // @extend %containers;
