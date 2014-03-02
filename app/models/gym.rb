@@ -6,4 +6,14 @@ class Gym < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def sessions
+    array = []
+    self.clients.each do |c|
+      c.sessions.each do |s|
+        array << s
+      end
+    end
+    return array
+  end
 end
