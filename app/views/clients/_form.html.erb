@@ -21,9 +21,11 @@
     <div class="field">
       <%= f.text_field :email, placeholder: "Email" %>
     </div>
-    <div class="field">
-      <%= f.text_field :machine_code, placeholder: "Machine Code" %>
-    </div>
+    <% if current_gym.location != "test" %>
+      <div class="field">
+        <%= f.text_field :machine_code, placeholder: "Machine Code" %>
+      </div>
+    <% end %>
     <%= f.hidden_field :gym_id, value: current_gym.id %>
     <div class="actions">
       <%= f.submit "Get new client started" %>
