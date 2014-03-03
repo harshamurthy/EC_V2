@@ -231,7 +231,15 @@
       color: $midnight_blue;
       &.ready {
         color: white;
-        background-color: lighten($green, 5%);
+        background-color: $green_sea;
+
+        &:hover {
+          background-color: $turquoise;
+        }
+
+        &:active {
+          background-color: $green_sea;
+        }
       }
     }
   }

@@ -43,7 +43,7 @@
   .session-form-radio-button {
     @extend %checkboxes;
     &:checked + label {
-      background-color: $blue;
+      background-color: $peter_river;
     }
   }
 
@@ -114,7 +114,7 @@
         .datepicker-label {
           // display: block;
           &.onclick {
-            background-color: $belize_hole;
+            background-color: $peter_river;
             border: 1px solid black;
             color: white;
           }
@@ -166,9 +166,17 @@
         }
         .add-exercise-p {
           margin-bottom: 15px;
-          a{
+          a {
             color: $green_sea;
             font-size: 22px;
+
+            &:hover {
+              color: $turquoise;
+            }
+
+            &:active {
+              color: $green_sea;
+            }
             i {
               text-decoration: underline;
             }
@@ -179,15 +187,15 @@
           margin: 20px 10px;
           margin-left: 0;
           a {
-            color: $green_sea !important;
+            color: $green_sea;
             font-size: 24px;
 
             &:hover {
-              color: $turquoise !important;
+              color: $turquoise;
             }
 
             &:active {
-              color: $green_sea !important;
+              color: $green_sea;
             }
 
             i {
