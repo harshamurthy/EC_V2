@@ -28,7 +28,7 @@
         <% end %>
       </ul>
       <div class="see-more-or-less">
-        <span class="cal-see-all <%= date %>" data-date="<%= date %>"><%= link_to "See more", "#" if sessions_by_date[date].count > 2 %></span>
+        <span class="cal-see-all <%= date %>" data-date="<%= date %>"><%= link_to "See more", specific_date: date if sessions_by_date[date].count > 2 %></span>
       </div>
     <% end %>
   <% end %>

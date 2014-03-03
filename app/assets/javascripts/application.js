@@ -299,18 +299,18 @@ $(document).ready(function() {
     doOnOrientationChange();
   };
 
-  var seeMoreOrLessCal = function() {
-    $('.cal-see-all a').on("click", function(e){
-      e.preventDefault();
-      var date = $(this).parent('span').data("date");
-      $('#' + date).children('.hide').slideToggle('slow');
-      if ($(this).text() == "See more") {
-        $(this).text("See less");
-      } else {
-        $(this).text("See more");
-      }
-    });
-  };
+  // var seeMoreOrLessCal = function() {
+  //   $('.cal-see-all a').on("click", function(e){
+  //     e.preventDefault();
+  //     var date = $(this).parent('span').data("date");
+  //     $('#' + date).children('.hide').slideToggle('slow');
+  //     if ($(this).text() == "See more") {
+  //       $(this).text("See less");
+  //     } else {
+  //       $(this).text("See more");
+  //     }
+  //   });
+  // };
 
   var customNewClient = function() {
     var firstName = {};
@@ -431,7 +431,7 @@ $(document).ready(function() {
   sessionExercisesHeight();
   customNewClient();
   customNewExercise();
-  seeMoreOrLessCal();
+  // seeMoreOrLessCal();
   clientSnapChat();
   currentSession();
   clientGraph();

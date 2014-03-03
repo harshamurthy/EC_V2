@@ -1,14 +1,25 @@
 <div class="specific-cal-day-container">
-  <h1>What's happening on <%= @specific_date.strftime("%B %d") %></h1>
+  <%= link_to "", workout_sessions_url, class: "fa fa-external-link fa-2x exit-link" %>
+  <div class="inner-wrap">
+    <h1><%= @specific_date.strftime("%B %d, %Y") %></h1>
 
-  <ul>
-    <% specific_sessions.each do |session| %>
-      <li>
-        <%= link_to session.client.name, client_url(session.client.id) %>
-        is doing
-        <%= link_to session.routine.description, workout_session_url(session.id) %>
-      </li>
-    <% end %>
-  </ul>
-  <%= link_to "Back to my calendar", :back %>
+    <ul>
+      <% specific_sessions.each do |session| %>
+        <li>
+          <%= link_to session.client.name, client_url(session.client.id) %>
+          is doing
+          <%= link_to session.routine.description, workout_session_url(session.id) %>
+        </li>
+      <% end %>
+    </ul>
+
+    <table>
+      <tr>Name
+
+      </tr>
+      <tr>Routine</tr>
+      <tr></tr>
+    </table>
+    <%= link_to "Back to my calendar", workout_sessions_url %>
+  </div>
 </div>
