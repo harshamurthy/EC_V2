@@ -19,7 +19,7 @@
       <%= f.text_field :last_name, placeholder: "Last name" %>
     </div>
     <div class="field">
-      <%= f.text_field :email, placeholder: "Email" %>
+      <%= f.email_field :email, placeholder: "Email" %>
     </div>
     <% unless current_gym.location == "evanston" %>
       <div class="field">

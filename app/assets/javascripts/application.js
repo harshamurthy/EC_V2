@@ -401,6 +401,19 @@ $(document).ready(function() {
       });
   };
 
+  var currentSession = function() {
+    $(".current-sessions-count").on("click", function(){
+    $(".current-sessions").slideToggle("5000");
+
+      var arrow = $("span.arrow");
+      if(arrow.hasClass("fa-chevron-down")) {
+        arrow.removeClass("fa-chevron-down").addClass("fa-chevron-up");
+      } else {
+        arrow.removeClass("fa-chevron-up").addClass("fa-chevron-down");
+      }
+    });
+  };
+
 
   //Calling functions
   automaticClientSearchBar();
@@ -420,5 +433,6 @@ $(document).ready(function() {
   customNewExercise();
   seeMoreOrLessCal();
   clientSnapChat();
+  currentSession();
   clientGraph();
 });
