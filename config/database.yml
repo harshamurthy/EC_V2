@@ -3,7 +3,7 @@ development:
   encoding: unicode
   database: ECV2_development
   pool: 5
-  username: Harsha
+  username: JackMallers
   password:
 
 test:
@@ -11,5 +11,5 @@ test:
   encoding: unicode
   database: ECV2_test
   pool: 5
-  username: Harsha
+  username: JackMallers
   password:
