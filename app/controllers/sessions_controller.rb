@@ -49,6 +49,7 @@ class SessionsController < ApplicationController
     if @session.routine.nil?
       @session.routine = Routine.find_or_initialize_by_exercise_ids(routine_params[:exercise_ids])
       @session.routine.description = routine_params[:description]
+      @session.routine.gym_id = current_gym.id
     end
       @session.routine.save!
 

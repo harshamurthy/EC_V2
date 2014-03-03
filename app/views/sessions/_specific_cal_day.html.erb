@@ -3,23 +3,36 @@
   <div class="inner-wrap">
     <h1><%= @specific_date.strftime("%B %d, %Y") %></h1>
 
-    <ul>
-      <% specific_sessions.each do |session| %>
+    <!-- <ul>
+      <%# specific_sessions.each do |session| %>
         <li>
-          <%= link_to session.client.name, client_url(session.client.id) %>
+          <%#= link_to session.client.name, client_url(session.client.id) %>
           is doing
-          <%= link_to session.routine.description, workout_session_url(session.id) %>
+          <%#= link_to session.routine.description, workout_session_url(session.id) %>
         </li>
-      <% end %>
-    </ul>
+      <%# end %>
+    </ul> -->
 
     <table>
-      <tr>Name
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th></th>
+          <th>Routine</th>
+        </tr>
+      </thead>
 
-      </tr>
-      <tr>Routine</tr>
-      <tr></tr>
+      <tbody>
+        <% specific_sessions.each do |specific_session| %>
+          <tr>
+            <td><%= link_to specific_session.client.name, workout_session_url(specific_session.id) %></td>
+            <td></td>
+            <td><%= specific_session.routine.description %></td>
+          </tr>
+        <% end %>
+      </tbody>
     </table>
+
     <%= link_to "Back to my calendar", workout_sessions_url %>
   </div>
 </div>

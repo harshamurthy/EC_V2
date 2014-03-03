@@ -1,10 +1,12 @@
 <div class='workout-session-page'>
-  <h1 class='workout-session-client-name'><%#= link_to "Edit", edit_workout_session_url(@session.id, client_id: @session.client.id) %><%#= link_to @session.client.name, client_url(@session.client.id) %></h1>
+  <section class='session-show-header'>
+    <h1 class='workout-session-client-name'><%= link_to @session.client.name, client_url(@session.client.id) %> <span>(<%= @session.client.machine_code %>)</span></h1>
+  </section>
   <aside class='workout-session-exercise-list'>
     <ul>
       <% @session.exercises.each do |exercise| %>
       <% if @session.exercises.first.id == exercise.id %>
-        <li class='onclick session-exercise'>
+        <li class='onclick session-exercise first'>
           <%= link_to exercise.name, workout_session_url(@session.id, exercise_id: exercise.id), :class=> 'session-exercise-link', remote: true %>
         </li>
         <% else %>
