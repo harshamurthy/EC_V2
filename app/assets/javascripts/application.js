@@ -417,6 +417,67 @@ $(document).ready(function() {
     });
   };
 
+  var newSessionFormValidation = function() {
+    var textVal = false;
+    var selectVal = false;
+    var checkedVal = false;
+    $('.form-validator').on('keyup', function() {
+      textVal = $(this).val();
+      // console.log(checkedVal);
+      // console.log(selectVal);
+    });
+    $('.choose-existing select').on('change', function() {
+      selectVal = $(this).val();
+      // console.log(selectVal);
+    });
+    $('.session-form-checkbox').on('change', function() {
+      checkedVal = $('.session-form-checkbox:checked').length;
+      // console.log(checkedVal);
+    });
+
+    // $('.create-routine-link').on("click", function(){
+    //   isReady = false;
+
+    //   if(isReady) {
+    //     $('.submit-session input').addClass("ready");
+    //   } else {
+    //     $('.submit-session input').removeClass("ready");
+    //   }
+    // });
+
+    $(document).change(function(){
+      var isReady = false;
+      // console.log(textVal);
+      // console.log(checkedVal);
+      // console.log(selectVal);
+
+      if(textVal != '' || textVal) {
+        textVal = true;
+        console.log(textVal);
+      }
+      if (checkedVal > 0) {
+        checkedVal = true;
+        console.log(checkedVal);
+      }
+      if (selectVal > 1 ) {
+        selectVal = true;
+        console.log(selectVal);
+      }
+
+      if(textVal && checkedVal) {
+        isReady = true;
+      } else if (selectVal) {
+        isReady = true;
+      }
+
+      if(isReady) {
+        $('.submit-session input').addClass("ready");
+      } else {
+        $('.submit-session input').removeClass("ready");
+      }
+    });
+  };
+
 
   //Calling functions
   automaticClientSearchBar();
@@ -437,5 +498,6 @@ $(document).ready(function() {
   // seeMoreOrLessCal();
   clientSnapChat();
   currentSession();
+  newSessionFormValidation();
   clientGraph();
 });

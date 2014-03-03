@@ -224,8 +224,14 @@
       .submit-session {
         text-align: center;
         input {
-          background-color: $green_sea;
+          background-color: $silver;
+          color: $midnight_blue;
           border-bottom: none;
+          &.ready {
+            background-color: $green_sea;
+            color: white;
+            border-bottom: none;
+          }
         }
       }
     }
