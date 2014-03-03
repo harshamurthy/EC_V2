@@ -244,6 +244,9 @@ $(document).ready(function() {
       if (curr_month != 10 || curr_month != 11 || curr_month != 12) {
         curr_month = "0" + curr_month
       }
+      if (curr_date != 10 || curr_month != 11 || curr_month != 12) {
+        curr_date = "0" + curr_date
+      }
       var curr_year = d.getFullYear();
       if(curr_year + "-" + curr_month + "-" + curr_date == $(this).val()) {
         $('.submit-session input[type=submit]').val("Start Workout");
