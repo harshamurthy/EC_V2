@@ -403,7 +403,7 @@ $(document).ready(function() {
 
   var currentSession = function() {
     $(".current-sessions-count").on("click", function(){
-    $(".current-sessions").slideToggle("slow");
+    $(".current-sessions").slideToggle("5000");
 
       var arrow = $("span.arrow");
       if(arrow.hasClass("fa-chevron-down")) {

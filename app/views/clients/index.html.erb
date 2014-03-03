@@ -8,7 +8,10 @@
     <% end %>
   </ul>
 </section>
-<span class='current-sessions-count absolute'><%= pluralize(current_sessions.count, "current session") %><span class='fa fa-chevron-down arrow'></span></span>
+
+<% if current_sessions.count > 0 %>
+  <span class='current-sessions-count absolute'><%= pluralize(current_sessions.count, "current session") %><span class='fa fa-chevron-down arrow'></span></span>
+<% end %>
 
 <div class='client-index-page'>
   <div class='client-search-bar'>
@@ -23,7 +26,3 @@
     </section>
   <% end %>
 </div>
-
-<script type="text/javascript">
-
-</script>
