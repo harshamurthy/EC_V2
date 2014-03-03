@@ -68,7 +68,7 @@
             <div class="choose-existing hide">
               <h2>Choose pre-existing workout:</h2>
               <%= f.label :routine_id, :class => 'hide', data: {client: @client.id} %>
-              <%= f.select :routine_id, options_for_select(Routine.all.collect{ |u| [u.description, u.id] }), include_blank: true %>
+              <%= f.select :routine_id, options_for_select(current_gym.routines.collect{ |u| [u.description, u.id]}), include_blank: true %>
             </div> <!-- choose-exisiting -->
 
 
