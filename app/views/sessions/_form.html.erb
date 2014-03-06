@@ -13,6 +13,10 @@
       </div>
     <% end %>
 
+      <section class='session-coach'>
+        <h2><%= f.select :coach, options_for_select(["Bruno Streich", "Alexis Delaney", "Nicole Taylor", "Pam Beaty", "Maureen Slott", "Steve Boon"]), include_blank: true %> is training <%= @client.name %>.</h2>
+      </section>
+
       <div class="datepicker-container">
         <section class="session-datepicker">
           <h2>This workout is for...</h2>
