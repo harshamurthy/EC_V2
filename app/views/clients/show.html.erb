@@ -2,6 +2,12 @@
   <h1 class='client-name'><%= @client.name %></h1>
   <p class='client-email'><%= @client.email %></p>
 
+  <% if @client.photos %>
+    <% @client.photos.each do |photo| %>
+      <%= image_tag photo.avatar.url(:medium) %>
+    <% end %>
+  <% end %>
+
   <div class="graph-container">
     <% if @client.sessions.present? %>
       <%= render 'client_graph', client: @client, exercise: @exercise, exercises: @exercises, type: @type %>

@@ -3,7 +3,13 @@ class Client < ActiveRecord::Base
   has_many :sessions
   has_many :notes
   has_many :setting_executions
+
+  has_many :photos
+  accepts_nested_attributes_for :photos
+
   has_many :exercise_executions, through: :sessions
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   def name
     self.first_name + " " + self.last_name

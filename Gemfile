@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.0'
+#Paperclip
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 #Groupdate
 gem 'groupdate', github: 'mieko/groupdate', branch: 'sqlite3'
 #Bourbon

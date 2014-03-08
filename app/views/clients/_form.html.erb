@@ -21,6 +21,12 @@
     <div class="field">
       <%= f.email_field :email, placeholder: "Email" %>
     </div>
+    <%= f.fields_for :photos, Photo.new do |build| %>
+      <fieldset>
+        <%= build.file_field :avatar %>
+      </fieldset>
+    <% end %>
+
     <% unless current_gym.location == "evanston" %>
       <div class="field">
         <%= f.text_field :machine_code, placeholder: "Machine Code" %>
