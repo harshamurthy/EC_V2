@@ -3,17 +3,19 @@ class Client < ActiveRecord::Base
   has_many :sessions
   has_many :notes
   has_many :setting_executions
+  has_many :client_stats
 
   has_many :photos
   accepts_nested_attributes_for :photos
 
   has_many :exercise_executions, through: :sessions
   has_attached_file :avatar,
-                    :styles => { :medium => "300x300>", :thumb => "100x100>" }
-                    # :storage => :s3,
-                    # :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
+                    :styles => { :medium => "300x300>", :thumb => "100x100>" },
+                    :storage => :s3,
+                    :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
 
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
   def s3_credentials
     {:bucket => ENV["S3_BUCKET_NAME"], :access_key_id => ENV["AWS_ACCESS_KEY_ID"], :secret_access_key => ENV["AWS_SECRET_ACCESS_KEY"]}
   end

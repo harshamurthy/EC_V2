@@ -1,5 +1,11 @@
 ECV2::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  # config = YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
+  # config.merge! config.fetch(Rails.env, {})
+  # config.each do |key, value|
+  #   ENV[key] = value unless value.kind_of? Hash
+  # end
+
   #   config.paperclip_defaults = {
   #   :storage => :s3,
   #   :s3_credentials => {

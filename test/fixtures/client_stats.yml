@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weight: 1.5
+  skeletal_muscle_mass: 1.5
+  body_fat_mass: 1.5
+  percent_body_fat: 1.5
+  right_arm: 1.5
+  left_arm: 1.5
+  trunk: 1.5
+  right_leg: 1.5
+  left_leg: 1.5
+  basal_metabolic_rate: 1
+  fat_to_lose: 1.5
+  muscle_to_gain: 1.5
+
+two:
+  weight: 1.5
+  skeletal_muscle_mass: 1.5
+  body_fat_mass: 1.5
+  percent_body_fat: 1.5
+  right_arm: 1.5
+  left_arm: 1.5
+  trunk: 1.5
+  right_leg: 1.5
+  left_leg: 1.5
+  basal_metabolic_rate: 1
+  fat_to_lose: 1.5
+  muscle_to_gain: 1.5

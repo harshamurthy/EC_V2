@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140308175331) do
+ActiveRecord::Schema.define(version: 20140310154531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "client_stats", force: true do |t|
+    t.float    "weight"
+    t.float    "skeletal_muscle_mass"
+    t.float    "body_fat_mass"
+    t.float    "percent_body_fat"
+    t.float    "right_arm"
+    t.float    "left_arm"
+    t.float    "trunk"
+    t.float    "right_leg"
+    t.float    "left_leg"
+    t.integer  "basal_metabolic_rate"
+    t.float    "fat_to_lose"
+    t.float    "muscle_to_gain"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "client_id"
+  end
 
   create_table "clients", force: true do |t|
     t.integer  "gym_id"
