@@ -1,14 +1,6 @@
 ECV2::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   #AamazonS3
-#   config.paperclip_defaults = {
-#   :storage => :s3,
-#   :s3_credentials => {
-#     :bucket => 'helptrainme',
-#     :access_key_id => 'AKIAIRM7XPSODXWF252Q',
-#     :secret_access_key => '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'
-#   }
-# }
   config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
