@@ -82,8 +82,8 @@
           display: block;
           padding: 20px;
           padding-left: 0;
-          .client-start-workout {
-            margin-right: 40px;
+          .client-start-workout, .client-strength-account {
+            margin-right: 20px;
           }
           a {
             i {
@@ -112,12 +112,11 @@
         }
 
           .client-start-workout {
-
             margin-right: 5px;
           }
 
           .client-manage-account {
-            margin-left: 5px;
+            margin-right: 5px;
           }
         }
       }

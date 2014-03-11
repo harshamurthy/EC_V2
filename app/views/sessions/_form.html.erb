@@ -56,14 +56,84 @@
                 <%= r.text_field :description, placeholder: 'Name the routine', class: 'session-form-inputs form-validator', autofocus: true %>
                 <span class="hide add-routine-name"><i class="fa fa-arrow-circle-o-left"></i> Add a name</span>
                 <p class='add-exercise-p'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Create a new exercise".html_safe, new_exercise_url(client_id: @client.id) %></p>
-                <ul class='new-routine-exercises'>
-                  <% current_gym.exercises.each do |exercise| %>
+
+
+                <div class='new-routine-exercises'>
+                  <h3>Arms</h3>
+                  <% @arms.each do |exercise| %>
                     <li>
                       <input id="<%= exercise.id %>", name='session[routine[exercise_ids]][]', value="<%= exercise.id %>", type='checkbox',  class='session-form-checkbox'>
                       <%= label_tag "#{exercise.id}", exercise.name, class: 'session-form-checkbox-labels' %>
                     </li>
                   <% end %>
-                </ul>
+                </div>
+
+                <div class='new-routine-exercises'>
+                  <h3>Legs</h3>
+                  <% @legs.each do |exercise| %>
+                    <li>
+                      <input id="<%= exercise.id %>", name='session[routine[exercise_ids]][]', value="<%= exercise.id %>", type='checkbox',  class='session-form-checkbox'>
+                      <%= label_tag "#{exercise.id}", exercise.name, class: 'session-form-checkbox-labels' %>
+                    </li>
+                  <% end %>
+                </div>
+
+
+                <div class='new-routine-exercises'>
+                  <h3>Back</h3>
+                  <% @back.each do |exercise| %>
+                    <li>
+                      <input id="<%= exercise.id %>", name='session[routine[exercise_ids]][]', value="<%= exercise.id %>", type='checkbox',  class='session-form-checkbox'>
+                      <%= label_tag "#{exercise.id}", exercise.name, class: 'session-form-checkbox-labels' %>
+                    </li>
+                  <% end %>
+                </div>
+
+                <div class='new-routine-exercises'>
+                  <h3>Chest</h3>
+                  <% @chest.each do |exercise| %>
+                    <li>
+                      <input id="<%= exercise.id %>", name='session[routine[exercise_ids]][]', value="<%= exercise.id %>", type='checkbox',  class='session-form-checkbox'>
+                      <%= label_tag "#{exercise.id}", exercise.name, class: 'session-form-checkbox-labels' %>
+                    </li>
+                  <% end %>
+                </div>
+
+                <div class='new-routine-exercises'>
+                  <h3>Abs</h3>
+                  <% @abs.each do |exercise| %>
+                    <li>
+                      <input id="<%= exercise.id %>", name='session[routine[exercise_ids]][]', value="<%= exercise.id %>", type='checkbox',  class='session-form-checkbox'>
+                      <%= label_tag "#{exercise.id}", exercise.name, class: 'session-form-checkbox-labels' %>
+                    </li>
+                  <% end %>
+                </div>
+
+
+                <div class='new-routine-exercises'>
+                  <h3>Shoulders</h3>
+                  <% @shoulders.each do |exercise| %>
+                    <li>
+                      <input id="<%= exercise.id %>", name='session[routine[exercise_ids]][]', value="<%= exercise.id %>", type='checkbox',  class='session-form-checkbox'>
+                      <%= label_tag "#{exercise.id}", exercise.name, class: 'session-form-checkbox-labels' %>
+                    </li>
+                  <% end %>
+                </div>
+
+
+                <div class='new-routine-exercises'>
+                  <h3>Other</h3>
+                  <% @other.each do |exercise| %>
+                    <li>
+                      <input id="<%= exercise.id %>", name='session[routine[exercise_ids]][]', value="<%= exercise.id %>", type='checkbox',  class='session-form-checkbox'>
+                      <%= label_tag "#{exercise.id}", exercise.name, class: 'session-form-checkbox-labels' %>
+                    </li>
+                  <% end %>
+                </div>
+
+
+
+
 
               <% end %>
               </div>

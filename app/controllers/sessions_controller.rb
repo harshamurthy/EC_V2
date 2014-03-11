@@ -34,6 +34,14 @@ class SessionsController < ApplicationController
     @client = Client.find(params[:client_id])
     @routines = Routine.where(gym_id: current_gym.id)
     @routine = Routine.find(params[:routine_id]) if params[:routine_id]
+
+    @arms = Exercise.where(category: "Arms")
+    @legs = Exercise.where(category: "Legs")
+    @chest = Exercise.where(category: "Chest")
+    @abs = Exercise.where(category: "Abs")
+    @back = Exercise.where(category: "Back")
+    @shoulders = Exercise.where(category: "Shoulders")
+    @other = Exercise.where(category: "Other")
   end
 
   # GET /sessions/1/edit

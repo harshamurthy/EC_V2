@@ -176,7 +176,7 @@
           color: $alizarin;
         }
         .add-exercise-p {
-          margin-bottom: 15px;
+          margin-bottom: 30px;
           a {
             color: $green_sea;
             font-size: 22px;
@@ -192,6 +192,11 @@
               text-decoration: underline;
             }
           }
+        }
+        h3 {
+          font-size: $h3;
+          padding-top: 20px;
+          font-weight: bold;
         }
         li {
           display: inline-block;
@@ -775,5 +780,55 @@
     //     }
     //   }
     // }
+  }
+}
+
+.new-stat-form-container {
+  @extend %containers;
+  padding: 75px 0;
+  label {
+    display: none;
+  }
+
+  fieldset {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .stat-weight, .client-metabolic-rate {
+    display: block;
+    text-align: center;
+    input {
+      @extend %inputs;
+      text-align: center;
+      width: 90%;
+    }
+  }
+  .left-muscle-container, .left-fat-container {
+    width: 50%;
+    margin: 30px 0;
+    // margin: 0 5%;
+    input {
+      @extend %inputs;
+      width: 80%;
+      // padding: 10px 0;
+      // display: block;
+    }
+  }
+  .left-muscle-container {
+    float: left;
+  }
+  .left-fat-container {
+    float: left;
+    input {
+      margin-left: 20%;
+    }
+  }
+  .client-stats-submit {
+    text-align: center;
+    margin-bottom: 50px;
+    input[type=submit] {
+      @extend %buttons;
+    }
   }
 }

@@ -6,7 +6,9 @@ class Client < ActiveRecord::Base
   has_many :client_stats
 
   has_many :photos
+
   accepts_nested_attributes_for :photos
+  accepts_nested_attributes_for :client_stats
 
   has_many :exercise_executions, through: :sessions
   has_attached_file :avatar,

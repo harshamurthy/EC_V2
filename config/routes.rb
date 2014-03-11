@@ -12,6 +12,9 @@ ECV2::Application.routes.draw do
   resources :routines
   resources :clients do
     member { post :note }
+    member { get :new_stat }
+    member { post :stat }
+    member { get :stat_show }
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
