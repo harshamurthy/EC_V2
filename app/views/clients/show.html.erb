@@ -3,12 +3,10 @@
   <p class='client-email'><%= @client.email %></p>
   <p><%= link_to "Body Comp.", new_stat_client_url(@client.id) %></p>
 
-  <% if @client.photos %>
-    <% @client.photos.each do |photo| %>
+  <% if @client.photos.count > 0 %>
     <div class='img-container'>
-      <%= image_tag photo.avatar.url(:thumb) %>
+      <%= image_tag @client.photos.last.avatar.url(:thumb) %>
     </div>
-    <% end %>
   <% end %>
 
   <div class="graph-container">

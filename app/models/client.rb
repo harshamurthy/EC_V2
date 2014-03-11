@@ -11,10 +11,12 @@ class Client < ActiveRecord::Base
   accepts_nested_attributes_for :client_stats
 
   has_many :exercise_executions, through: :sessions
+
   has_attached_file :avatar,
                     :styles => { :medium => "300x300>", :thumb => "100x100>" },
                     :storage => :s3,
-                    :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
+                    :s3_credentials => Proc.new{|a| a.instance.s3_credentials },
+                    :s3_host_name   => "s3-eu-west-2.amazonaws.com"
 
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
