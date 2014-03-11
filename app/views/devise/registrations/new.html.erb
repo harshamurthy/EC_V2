@@ -1,13 +1,13 @@
 <div class='sign-up-page'>
-  <h1 class='site-brand'>The <span class='highlight'>Exercise</span> Assistant</h1>
+  <h1 class='site-brand'>The <span class='highlight'>Exercise</span> Coach</h1>
   <div class='sign-up-form'>
 
-    <h2 class='sign-up-header'>Let's set up your gym's new account.</h2>
+    <h2 class='sign-up-header'>Let's set up your studio's new account.</h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%#= devise_error_messages! %>
 
       <div><%= f.label :location, class: 'sign-up-labels' %>
-      <%= f.text_field :location, autofocus: true, placeholder: 'Gym location', title: 'Please enter a valid location.', class: 'sign-up-inputs text-input' %></div>
+      <%= f.text_field :location, autofocus: true, placeholder: 'Studio location', title: 'Please enter a valid location.', class: 'sign-up-inputs text-input' %></div>
 
       <div><%= f.label :email, class: 'sign-up-labels' %>
       <%= f.email_field :email, placeholder: 'Your email', title: 'Please enter a valid email.', class: 'sign-up-inputs text-input' %></div>

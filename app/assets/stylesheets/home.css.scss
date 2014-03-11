@@ -1,0 +1,29 @@
+.home-container {
+  @extend %containers;
+  padding: 50px 0;
+  header{
+    .location {
+      text-align: center;
+      padding-top: 0;
+      font-size: 40px;
+    }
+  }
+  .links {
+    text-align: center;
+    margin-top: 40px;
+    .create, .manage {
+      display: inline-block;
+      // width: 350px;
+      margin: 40px 10px;
+      padding: 15px 0;
+      @extend %buttons;
+      a {
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        font-size: $main-font-size;
+        // padding: 5%;
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-  before_action :set_client, only: [:show, :edit, :update, :destroy, :new_stat]
+  before_action :set_client, only: [:show, :edit, :update, :destroy, :new_stat, :stat_show]
 
   # GET /clients
   # GET /clients.json
@@ -102,7 +102,7 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:gym_id, :first_name, :last_name, :email, :machine_code, :avatar, :photos_attributes => [:avatar, :id], :client_stats_attributes => [:id, :weight, :skeletal_muscle_mass, :body_fat_mass, :percent_body_fat, :right_arm, :left_arm, :trunk, :right_leg, :basal_metabolic_rate, :fat_to_lose, :muscle_to_gain])
+      params.require(:client).permit(:gym_id, :first_name, :last_name, :email, :machine_code, :avatar, :photos_attributes => [:avatar, :id], :client_stats_attributes => [:id, :weight, :skeletal_muscle_mass, :body_fat_mass, :percent_body_fat, :right_arm, :left_arm, :trunk, :right_leg, :basal_metabolic_rate, :fat_to_lose, :muscle_to_gain], :goals_attributes => [:content, :id])
     end
 
     def stat_params

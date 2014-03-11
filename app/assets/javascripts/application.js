@@ -317,7 +317,8 @@ $(document).ready(function() {
 
   var customNewClient = function() {
     var firstName = {};
-    var isReady = {};
+    var isReady = false;
+    var gender = false;
     $('.new-client-first-name input').on("focusout", function(){
       firstName = $(this).val();
       if(firstName.length > 0){
@@ -325,17 +326,12 @@ $(document).ready(function() {
       }
     });
 
-    $('.field input').on("keyup", function(e){
-      var inputs = $('.field input');
-
-      inputs.each(function(index, input){
-      if ($(input).val().length == 0) {
-        isReady = false;
-      } else {
-        isReady = true;
+    $("input[type=radio]").on("change", function(){
+      var gender = $(this).val();
+      if (gender) {
+        gender = true;
       }
-      });
-      if (isReady) {
+      if (isReady && gender) {
         $('.actions input[type=submit]').val("Get " + firstName + " started!");
         $('.actions input[type=submit]').addClass("ready");
       } else {
@@ -344,9 +340,32 @@ $(document).ready(function() {
       }
     });
 
+    $('.field input[type=text]').on("keyup", function(e){
+      var inputs = $('.field input[type=text]');
+
+      inputs.each(function(index, input){
+      if ($(input).val().length == 0) {
+        isReady = false;
+      } else {
+        isReady = true;
+      }
+      });
+      if (isReady && gender) {
+        $('.actions input[type=submit]').val("Get " + firstName + " started!");
+        $('.actions input[type=submit]').addClass("ready");
+      } else {
+        $('.actions input[type=submit]').val("Get new client started");
+        $('.actions input[type=submit]').removeClass("ready");
+      }
+    });
+
+
     $('.new-client-form form').on("submit", function(e){
-      if (isReady !== true) {
+      if (isReady == true & gender == true) {
+        alert("yay!");
+      } else {
         e.preventDefault();
+        alert("Make sure we get all the information!")
       }
     });
   };

@@ -1,1 +1,14 @@
-yo
+<div class="client-stats-show">
+  <div class="name-wrap">
+    <% if @client.photos.count > 0 %>
+      <div class='img-container'>
+        <%= image_tag @client.photos.last.avatar.url(:thumb) %>
+      </div>
+    <% end %>
+    <header>
+      <h1 class='client-name'><%= @client.name %></h1>
+      <p class='client-email'><%= @client.email %></p>
+    </header>
+  </div>
+  <p class='new-body-comp'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Body Composition".html_safe, new_stat_client_url(@client.id) %></p>
+</div>

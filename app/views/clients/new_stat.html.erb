@@ -12,46 +12,54 @@
         <%= build.label :weight %>
         <%= build.number_field :weight, placeholder: "Weight" %>
       </div>
+      <div class="float-container">
+        <div class="left-muscle-container">
+          <%= build.label :skeletal_muscle_mass %>
+          <%= build.number_field :skeletal_muscle_mass, placeholder: "Muscle" %>
 
-      <div class="left-muscle-container">
-        <%= build.label :skeletal_muscle_mass %>
-        <%= build.number_field :skeletal_muscle_mass, placeholder: "Muscle" %>
+          <%= build.label :left_arm %>
+          <%= build.number_field :left_arm, placeholder: "Left Arm" %>
 
-        <%= build.label :left_arm %>
-        <%= build.number_field :left_arm, placeholder: "Left Arm" %>
+          <%= build.label :right_arm %>
+          <%= build.number_field :right_arm, placeholder: "Right Arm" %>
 
-        <%= build.label :right_arm %>
-        <%= build.number_field :right_arm, placeholder: "Right Arm" %>
+          <%= build.label :trunk %>
+          <%= build.number_field :trunk, placeholder: "Trunk" %>
 
-        <%= build.label :trunk %>
-        <%= build.number_field :trunk, placeholder: "Trunk" %>
+          <%= build.label :left_leg %>
+          <%= build.number_field :left_leg, placeholder: "Left Leg" %>
 
-        <%= build.label :left_leg %>
-        <%= build.number_field :left_leg, placeholder: "Left Leg" %>
+          <%= build.label :right_leg %>
+          <%= build.number_field :right_leg, placeholder: "Right Leg" %>
 
-        <%= build.label :right_leg %>
-        <%= build.number_field :right_leg, placeholder: "Right Leg" %>
+          <%= build.label :muscle_to_gain %>
+          <%= build.number_field :muscle_to_gain, placeholder: "Muscle To Gain" %>
+        </div>
 
-        <%= build.label :muscle_to_gain %>
-        <%= build.number_field :muscle_to_gain, placeholder: "Muscle To Gain" %>
-      </div>
+        <div class="left-fat-container">
+          <%= build.label :body_fat_mass  %>
+          <%= build.number_field :body_fat_mass, placeholder: "Body Fat Mass" %>
 
-      <div class="left-fat-container">
-        <%= build.label :body_fat_mass  %>
-        <%= build.number_field :body_fat_mass, placeholder: "Body Fat Mass" %>
+          <%= build.label :percent_body_fat %>
+          <%= build.number_field :percent_body_fat, placeholder: "Percent Body Fat" %>
 
-        <%= build.label :percent_body_fat %>
-        <%= build.number_field :percent_body_fat, placeholder: "Percent Body Fat" %>
+          <%= build.label :fat_to_lose %>
+          <%= build.number_field :fat_to_lose, placeholder: "Fat To Lose" %>
 
-        <%= build.label :fat_to_lose %>
-        <%= build.number_field :fat_to_lose, placeholder: "Fat To Lose" %>
-      </div>
-
-      <div class="client-metabolic-rate">
-        <%= build.label :basal_metabolic_rate %>
-        <%= build.number_field :basal_metabolic_rate, placeholder: "Basal Metabolic Rate" %>
+          <%= build.label :basal_metabolic_rate %>
+          <%= build.number_field :basal_metabolic_rate, placeholder: "Basal Metabolic Rate" %>
+        </div>
       </div>
     <% end %>
+
+    <div class="client-goal">
+      <%= f.fields_for :goals, Goal.new do |build| %>
+        <fieldset>
+          <%= build.text_field :content, placeholder: "Goals" %>
+        </fieldset>
+      <% end %>
+    </div>
+
     <div class="client-stats-submit">
       <%= f.submit "Save Stats" %>
     </div>

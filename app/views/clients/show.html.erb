@@ -1,13 +1,16 @@
 <div class="client-container">
-  <h1 class='client-name'><%= @client.name %></h1>
-  <p class='client-email'><%= @client.email %></p>
-  <p><%= link_to "Body Comp.", new_stat_client_url(@client.id) %></p>
+  <div class="name-wrap">
+    <% if @client.photos.count > 0 %>
+      <div class='img-container'>
+        <%= image_tag @client.photos.last.avatar.url(:thumb) %>
+      </div>
+    <% end %>
+    <header>
+      <h1 class='client-name'><%= @client.name %></h1>
+      <p class='client-email'><%= @client.email %></p>
+    </header>
+  </div>
 
-  <% if @client.photos.count > 0 %>
-    <div class='img-container'>
-      <%= image_tag @client.photos.last.avatar.url(:thumb) %>
-    </div>
-  <% end %>
 
   <div class="graph-container">
     <% if @client.sessions.present? %>

@@ -1,0 +1,22 @@
+<div class="home-container">
+  <header>
+    <h2 class='site-brand'>The <span class='highlight'>Exercise </span>Coach</h2>
+    <h3 class='site-brand location'><%= current_gym.location.capitalize %></h3>
+  </header>
+
+  <div class="links">
+    <div class='create link'>
+      <%= link_to "Create", new_client_url %>
+    </div>
+    <div class="manage link">
+      <%= link_to "Measure & Manage", clients_url %>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(".link").on("click", function(){
+    var loc = $(this).children("a").attr("href");
+    window.location = loc;
+  });
+</script>

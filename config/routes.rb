@@ -2,7 +2,7 @@ ECV2::Application.routes.draw do
   resources :setting_executions
 
   devise_for :gyms
-  root to: "clients#index"
+  root to: "pages#home"
   resources :exercise_executions
   resources :exercises do
     # member { get :library }
@@ -15,6 +15,7 @@ ECV2::Application.routes.draw do
     member { get :new_stat }
     member { post :stat }
     member { get :stat_show }
+    member { post :goal }
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

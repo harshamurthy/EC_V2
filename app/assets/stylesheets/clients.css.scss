@@ -46,7 +46,7 @@
       text-align: left;
       margin-left: 20%;
       a {
-        color: $green_sea !important;
+        color: $carrot;
         border-radius: 5px;
         font-size: 24px;
         padding: 15px 5px;
@@ -55,11 +55,11 @@
         }
 
         &:hover {
-          color: $turquoise !important;
+          color: $pumpkin;
         }
 
         &:active {
-          color: $green_sea !important;
+          color: $carrot;
         }
       }
     }
@@ -128,14 +128,26 @@
 .client-container {
   padding-top: 50px;
   @extend %containers;
-
-  .client-name {
-    font-size: $h1;
+  .name-wrap {
+    .client-name {
+      font-size: $h1;
+    }
+    .img-container {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    header {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    img {
+      border-radius: 50%;
+    }
   }
 
   .client-email {
-    margin-top: 10px;
-    color: #aaa;
+    margin-top: 5px;
+    color: $asbestos;
   }
 }
 
@@ -160,7 +172,7 @@
     font-size: $h3;
   }
   select {
-    color: $green_sea;
+    color: $midnight_blue;
     background-color: white;
     cursor: default;
     display: inline-block;
@@ -182,10 +194,16 @@
       @extend %inputs;
     }
     input[type=submit] {
-      background-color: $green_sea;
+      background-color: $carrot;
       color: white;
       padding: 10px 20px;
       border-radius: 5px;
+      &:hover {
+        background-color: $pumpkin;
+      }
+      &:active {
+        background-color: $carrot;
+      }
     }
   }
   ul {
@@ -214,15 +232,41 @@
     margin-bottom: 15px;
     span {
       &.ready {
-        color: $green_sea;
+        color: $carrot;
       }
     }
   }
   .new-client-form {
     @extend %containers;
-    input {
+    input[type=text], input[type=submit], input[type=email], input[type=date] {
       @extend %inputs;
       padding: 15px;
+    }
+    input[type=date] {
+      -webkit-min-logical-width: 40%;
+      width: 40%;
+    }
+    .birthday-label {
+      font-size: 30px;
+      vertical-align: middle;
+    }
+    input[type=radio] {
+      @extend %checkboxes;
+    }
+    .gender-container {
+      margin: 0 auto;
+      margin: 20px 5px;
+      span {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .client-gender {
+        @extend %checkbox-labels;
+        float: none;
+        padding: 10px 75px;
+        margin-right: 5px;
+        margin-left: 5px;
+      }
     }
     input[type=submit] {
       border-bottom: none;
@@ -230,16 +274,110 @@
       color: $midnight_blue;
       &.ready {
         color: white;
-        background-color: $green_sea;
+        background-color: $carrot;
 
         &:hover {
-          background-color: $turquoise;
+          background-color: $pumpkin;
         }
 
         &:active {
-          background-color: $green_sea;
+          background-color: $carrot;
         }
       }
     }
   }
 }
+
+.new-stat-form-container {
+  @extend %containers;
+  padding: 75px 0;
+  label {
+    display: none;
+  }
+
+  fieldset {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .float-container {
+    &:after {
+      @extend %group:after;
+    }
+  }
+
+  .stat-weight, .client-goal {
+    display: block;
+    text-align: center;
+    input {
+      @extend %inputs;
+      text-align: center;
+      width: 90%;
+    }
+  }
+  .left-muscle-container, .left-fat-container {
+    width: 50%;
+    margin: 30px 0;
+    // margin: 0 5%;
+    input {
+      @extend %inputs;
+      width: 80%;
+      // padding: 10px 0;
+      // display: block;
+    }
+  }
+  .left-muscle-container {
+    float: left;
+  }
+  .left-fat-container {
+   float: left;
+    input {
+      margin-left: 20%;
+    }
+  }
+  .client-stats-submit {
+    text-align: center;
+    margin-bottom: 50px;
+    input[type=submit] {
+      @extend %buttons;
+    }
+  }
+}
+
+.client-stats-show {
+  @extend %containers;
+  padding: 50px 0;
+  .client-name {
+      font-size: $h1;
+    }
+    .img-container {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    header {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    img {
+      border-radius: 50%;
+    }
+  .client-email {
+    margin-top: 5px;
+    color: $asbestos;
+  }
+
+  .new-body-comp {
+    a {
+      color: $carrot;
+      &:hover {
+        color: $pumpkin;
+      }
+      &:active {
+        color: $carrot;
+      }
+      i {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140310154531) do
+ActiveRecord::Schema.define(version: 20140311175614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20140310154531) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "gender"
+    t.date     "birthday"
   end
 
   create_table "exercise_executions", force: true do |t|
@@ -93,6 +95,13 @@ ActiveRecord::Schema.define(version: 20140310154531) do
   create_table "exercises_routines", id: false, force: true do |t|
     t.integer "exercise_id", null: false
     t.integer "routine_id",  null: false
+  end
+
+  create_table "goals", force: true do |t|
+    t.text     "content"
+    t.integer  "client_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "gyms", force: true do |t|

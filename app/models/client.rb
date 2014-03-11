@@ -4,11 +4,13 @@ class Client < ActiveRecord::Base
   has_many :notes
   has_many :setting_executions
   has_many :client_stats
+  has_many :goals
 
   has_many :photos
 
   accepts_nested_attributes_for :photos
   accepts_nested_attributes_for :client_stats
+  accepts_nested_attributes_for :goals
 
   has_many :exercise_executions, through: :sessions
 

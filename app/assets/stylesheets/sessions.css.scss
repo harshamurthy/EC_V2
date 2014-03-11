@@ -43,7 +43,7 @@
   .session-form-radio-button {
     @extend %checkboxes;
     &:checked + label {
-      background-color: $peter_river;
+      background-color: $wet_asphalt;
     }
   }
 
@@ -64,14 +64,14 @@
   .session-form-submit-button {
     @extend %buttons;
     width: 60%;
-    background-color: $green_sea;
+    background-color: $carrot;
 
     &:hover {
-      background-color: $turquoise;
+      background-color: $orange;
     }
 
     &:active {
-      background-color: $green_sea;
+      background-color: $carrot;
     }
   }
 }
@@ -125,7 +125,7 @@
         .datepicker-label {
           // display: block;
           &.onclick {
-            background-color: $peter_river;
+            background-color: $wet_asphalt;
             border: 1px solid black;
             color: white;
           }
@@ -178,15 +178,15 @@
         .add-exercise-p {
           margin-bottom: 30px;
           a {
-            color: $green_sea;
+            color: $carrot;
             font-size: 22px;
 
             &:hover {
-              color: $turquoise;
+              color: $pumpkin;
             }
 
             &:active {
-              color: $green_sea;
+              color: $carrot;
             }
             i {
               text-decoration: underline;
@@ -244,9 +244,17 @@
           color: $midnight_blue;
           border-bottom: none;
           &.ready {
-            background-color: $green_sea;
+            background-color: $carrot;
             color: white;
             border-bottom: none;
+
+            &:hover {
+              background-color: $pumpkin;
+            }
+
+            &:active {
+              background-color: $carrot;
+            }
           }
         }
       }
@@ -323,10 +331,10 @@
 
       &.onclick {
         border-right: 0px;
-        border-left: 10px solid $alizarin;
+        border-left: 10px solid $carrot;
 
         .session-exercise-link {
-          color: $alizarin !important;
+          color: $carrot !important;
         }
       }
 
@@ -341,21 +349,13 @@
     }
     .notebook {
       .notes {
-        color: $green_sea !important;
-
-        &:hover {
-          color: $turquoise !important;
-        }
-
-        &:active {
-          color: $green_sea !important;
-        }
+        color: $wet_asphalt;
       }
       &.onclick {
         border-right: 0px;
-        border-left: 10px solid $green_sea;
+        border-left: 10px solid $wet_asphalt;
         .notes {
-          color: $green_sea;
+          color: $wet_asphalt;
         }
       }
     }
@@ -404,7 +404,7 @@
         line-height: 1.5;
         padding-bottom: 30px;
       .previous-stats-number {
-        color: $alizarin;
+        color: $carrot;
         font-weight: bold;
       }
 
@@ -624,17 +624,18 @@
 
     input[type=submit] {
       @extend %buttons;
-      background-color: $green_sea;
+      background-color: $orange;
       border-bottom: none;
       display: inline-block;
       width: 20%;
+      font-size: 24px;
 
       &:hover {
-        background-color: $turquoise;
+        background-color: $carrot;
       }
 
       &:active {
-        background-color: $green_sea;
+        background-color: $orange;
       }
 
     }
@@ -783,52 +784,3 @@
   }
 }
 
-.new-stat-form-container {
-  @extend %containers;
-  padding: 75px 0;
-  label {
-    display: none;
-  }
-
-  fieldset {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-
-  .stat-weight, .client-metabolic-rate {
-    display: block;
-    text-align: center;
-    input {
-      @extend %inputs;
-      text-align: center;
-      width: 90%;
-    }
-  }
-  .left-muscle-container, .left-fat-container {
-    width: 50%;
-    margin: 30px 0;
-    // margin: 0 5%;
-    input {
-      @extend %inputs;
-      width: 80%;
-      // padding: 10px 0;
-      // display: block;
-    }
-  }
-  .left-muscle-container {
-    float: left;
-  }
-  .left-fat-container {
-    float: left;
-    input {
-      margin-left: 20%;
-    }
-  }
-  .client-stats-submit {
-    text-align: center;
-    margin-bottom: 50px;
-    input[type=submit] {
-      @extend %buttons;
-    }
-  }
-}

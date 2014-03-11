@@ -12,7 +12,7 @@
       </div>
     <% end %>
 
-    <div class="field new-client-first-name">
+    <div class="new-client-first-name">
       <%= f.text_field :first_name, placeholder: "First name", autofocus: true %>
     </div>
     <div class="field">
@@ -21,12 +21,28 @@
     <div class="field">
       <%= f.email_field :email, placeholder: "Email" %>
     </div>
-
     <% unless current_gym.location == "evanston" %>
       <div class="field">
         <%= f.text_field :machine_code, placeholder: "Machine Code" %>
       </div>
     <% end %>
+
+    <div class="field date">
+      <%= f.label :birthday, class: "birthday-label" %>
+      <%= f.date_field :birthday %>
+    </div>
+
+    <div class="field gender-container">
+      <input type='radio' name='client[gender]' value="Male" id="male">
+      <label for="male" class='client-gender'>
+        Male
+      </label>
+      <!-- <span>or</span> -->
+      <input type='radio' name='client[gender]' value="Female" id="female">
+      <label for="female" class='client-gender'>
+        Female
+      </label>
+    </div>
     <%= f.hidden_field :gym_id, value: current_gym.id %>
     <div class="actions">
       <%= f.submit "Get new client started" %>
