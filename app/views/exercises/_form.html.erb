@@ -96,7 +96,8 @@
     <%= f.select :category, options_for_select(%w[Arms Legs Chest Abs Back Shoulders Other]), include_blank: true %>
   </div>
 
-  <%= hidden_field_tag :client_id, params[:client_id] %>
+  <%= hidden_field_tag :client_id, value: params[:client_id] %>
+  <%= f.hidden_field :gym_id, value: current_gym.id %>
 
   <div class='actions'>
     <%= f.submit 'Create exercise', class: 'exercise-form-button' %>
