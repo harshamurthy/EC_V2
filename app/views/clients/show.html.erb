@@ -6,7 +6,7 @@
       </div>
     <% end %>
     <header>
-      <h1 class='client-name'><%= @client.name %></h1>
+      <h1 class='client-name-show'><%= @client.name %><span> (<%= @client.machine_code %>)</span></h1>
       <p class='client-email'><%= @client.email %></p>
     </header>
   </div>

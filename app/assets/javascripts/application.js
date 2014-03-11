@@ -327,10 +327,7 @@ $(document).ready(function() {
     });
 
     $("input[type=radio]").on("change", function(){
-      var gender = $(this).val();
-      if (gender) {
-        gender = true;
-      }
+      gender = true;
       if (isReady && gender) {
         $('.actions input[type=submit]').val("Get " + firstName + " started!");
         $('.actions input[type=submit]').addClass("ready");
@@ -361,11 +358,10 @@ $(document).ready(function() {
 
 
     $('.new-client-form form').on("submit", function(e){
-      if (isReady == true & gender == true) {
-        alert("yay!");
-      } else {
-        e.preventDefault();
+      if (isReady != true || gender != true) {
         alert("Make sure we get all the information!")
+        e.preventDefault();
+      } else {
       }
     });
   };

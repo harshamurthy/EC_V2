@@ -129,8 +129,15 @@
   padding-top: 50px;
   @extend %containers;
   .name-wrap {
-    .client-name {
+    .client-name-show {
       font-size: $h1;
+      vertical-align: middle;
+      span {
+        color: $concrete;
+        font-size: 24px;
+        display: inline-block;
+        margin-left: 10px;
+      }
     }
     .img-container {
       display: inline-block;
