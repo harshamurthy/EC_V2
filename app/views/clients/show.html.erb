@@ -2,7 +2,7 @@
   <div class="name-wrap">
     <% if @client.photos.count > 0 %>
       <div class='img-container'>
-        <%= image_tag @client.photos.last.avatar.url(:thumb) %>
+        <%= link_to image_tag(@client.photos.last.avatar.url(:thumb)), @client.photos.last.avatar.url(:medium), :target => "_blank" %>
       </div>
     <% end %>
     <header>
