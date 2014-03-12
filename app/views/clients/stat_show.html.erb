@@ -6,8 +6,13 @@
       </div>
     <% end %>
     <header>
-      <h1 class='client-name'><%= @client.name %></h1>
+      <h1 class='client-name'><%= @client.name %><span> (<%= @client.machine_code %>)</span></h1>
       <p class='client-email'><%= @client.email %></p>
+      <div class="client-show-links">
+        <p><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Create workout".html_safe, new_workout_session_url(client_id: @client.id) %></p>
+        <p><%= link_to "<i class=\"fa fa-align-justify\"></i> Strength profile".html_safe, client_url(@client.id),
+        class: 'client-stat-show' %></p>
+      </div>
     </header>
   </div>
   <p class='new-body-comp'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Body Composition".html_safe, new_stat_client_url(@client.id) %></p>
