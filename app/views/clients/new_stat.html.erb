@@ -2,8 +2,9 @@
   <%= form_for(@client) do |f| %>
 
     <%= f.fields_for :photos, Photo.new do |build| %>
-      <fieldset>
+      <fieldset class='avatar-container'>
         <%= build.label :avatar, "Upload photo", class: "avatar-label" %>
+        <span class='avatar-check hide'><i class="fa fa-check-square-o fa-3x"></i></span>
         <%= build.file_field :avatar, class: "avatar-input" %>
       </fieldset>
     <% end %>
@@ -66,3 +67,10 @@
     </div>
   <% end %>
 </div>
+
+<script type="text/javascript">
+  $(".avatar-input").on("change", function(){
+    $('.avatar-check').fadeIn("slow");
+    $('.avatar-label').text("Uploaded!");
+  });
+</script>

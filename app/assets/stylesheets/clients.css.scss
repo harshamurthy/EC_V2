@@ -301,16 +301,29 @@
   label {
     display: none;
   }
-  .avatar-label {
-    display: inline-block;
-    padding: 15px 30px;
-    font-size: 20px;
-    color: white;
-    background-color: $midnight_blue;
-    border-radius: 5px;
-  }
-  .avatar-input {
-    display: none;
+  .avatar-container {
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 5px;
+      color: green;
+      // display: none;
+
+      &.uploaded {
+        // display: inline-block;
+      }
+    }
+    .avatar-label {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 20px;
+      color: white;
+      background-color: $midnight_blue;
+      border-radius: 5px;
+    }
+    .avatar-input {
+      display: none;
+    }
   }
   fieldset {
     text-align: center;
