@@ -140,9 +140,13 @@
             </div> <!-- create-new -->
 
             <div class="choose-existing hide">
-              <h2>Choose pre-existing workout:</h2>
-              <%= f.label :routine_id, :class => 'hide', data: {client: @client.id} %>
-              <%= f.select :routine_id, options_for_select(current_gym.routines.collect{ |u| [u.description, u.id]}), include_blank: true %>
+              <% if current_gym.routines.count > 0 %>
+                <h2>Choose pre-existing workout:</h2>
+                <%= f.label :routine_id, :class => 'hide', data: {client: @client.id} %>
+                <%= f.select :routine_id, options_for_select(current_gym.routines.collect{ |u| [u.description, u.id]}), include_blank: true %>
+              <% else %>
+                <p class='no-routine-message'>You guys don't have any routines yet! Once you create a session we will save it to your routines.</p>
+              <% end %>
             </div> <!-- choose-exisiting -->
 
 

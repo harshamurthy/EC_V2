@@ -16,6 +16,8 @@ class Client < ActiveRecord::Base
 
   has_attached_file :avatar,
                     :styles => { :medium => "300x300>", :thumb => "100x100>" },
+                    :default_style => :thumb,
+                    :default_url => '/images/default_profile_pic.jpg',
                     :storage => :s3,
                     :s3_credentials => Proc.new{|a| a.instance.s3_credentials },
                     :s3_host_name   => "s3-eu-west-2.amazonaws.com"

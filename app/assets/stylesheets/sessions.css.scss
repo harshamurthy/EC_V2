@@ -87,7 +87,7 @@
     font-family: "Roboto", sans-serif;
     font-size: $h1;
     padding-bottom: 60px;
-    padding-top: 40px;
+    padding-top: 60px;
     a {
       font-size: $h1;
     }
@@ -230,6 +230,9 @@
       .choose-existing {
         h2 {
           font-size: $h2;
+          padding: 20px 0;
+        }
+        .no-routine-message {
           padding: 20px 0;
         }
         .routine-exercises {
