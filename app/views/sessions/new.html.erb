@@ -1,4 +1,4 @@
 <div class='new-session-page'>
-  <h1>Create a new workout for <%= @client.name %></h1>
+  <h1>Create a new workout for <%= link_to @client.name, client_url(@client.id) %></h1>
   <%= render 'form' %>
 </div>
