@@ -148,7 +148,7 @@
       vertical-align: middle;
     }
     img {
-      border-radius: 50%;
+      border-radius: 10%;
     }
   }
 
@@ -301,7 +301,17 @@
   label {
     display: none;
   }
-
+  .avatar-label {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    background-color: $midnight_blue;
+    border-radius: 5px;
+  }
+  .avatar-input {
+    display: none;
+  }
   fieldset {
     text-align: center;
     margin-bottom: 50px;
@@ -365,7 +375,7 @@
       vertical-align: middle;
     }
     img {
-      border-radius: 50%;
+      border-radius: 10%;
     }
   .client-email {
     margin-top: 5px;

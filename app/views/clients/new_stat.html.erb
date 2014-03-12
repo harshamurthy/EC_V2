@@ -3,7 +3,8 @@
 
     <%= f.fields_for :photos, Photo.new do |build| %>
       <fieldset>
-        <%= build.file_field :avatar %>
+        <%= build.label :avatar, "Upload photo", class: "avatar-label" %>
+        <%= build.file_field :avatar, class: "avatar-input" %>
       </fieldset>
     <% end %>
 
