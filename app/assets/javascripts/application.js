@@ -18,7 +18,7 @@
 //= require jquery.ui.autocomplete
 //= require jquery.ui.datepicker
 //= require_tree .
-
+s
 $(document).ready(function() {
   $('.hide').hide();
 
@@ -317,8 +317,7 @@ $(document).ready(function() {
 
   var customNewClient = function() {
     var firstName = {};
-    var isReady = false;
-    var gender = false;
+    var isReady = {};
     $('.new-client-first-name input').on("focusout", function(){
       firstName = $(this).val();
       if(firstName.length > 0){
@@ -326,19 +325,8 @@ $(document).ready(function() {
       }
     });
 
-    $("input[type=radio]").on("change", function(){
-      gender = true;
-      if (isReady && gender) {
-        $('.actions input[type=submit]').val("Get " + firstName + " started!");
-        $('.actions input[type=submit]').addClass("ready");
-      } else {
-        $('.actions input[type=submit]').val("Get new client started");
-        $('.actions input[type=submit]').removeClass("ready");
-      }
-    });
-
-    $('.field input[type=text]').on("keyup", function(e){
-      var inputs = $('.field input[type=text]');
+    $('.field input').on("keyup", function(e){
+      var inputs = $('.field input');
 
       inputs.each(function(index, input){
       if ($(input).val().length == 0) {
@@ -347,7 +335,7 @@ $(document).ready(function() {
         isReady = true;
       }
       });
-      if (isReady && gender) {
+      if (isReady) {
         $('.actions input[type=submit]').val("Get " + firstName + " started!");
         $('.actions input[type=submit]').addClass("ready");
       } else {
@@ -356,12 +344,9 @@ $(document).ready(function() {
       }
     });
 
-
     $('.new-client-form form').on("submit", function(e){
-      if (isReady != true || gender != true) {
-        alert("Make sure we get all the information!")
+      if (isReady !== true) {
         e.preventDefault();
-      } else {
       }
     });
   };
@@ -493,13 +478,6 @@ $(document).ready(function() {
     });
   };
 
-  var avatarUpload = function() {
-    $(".avatar-input").on("change", function(){
-      $('.avatar-check').fadeIn("slow");
-      $('.avatar-label').text("Uploaded!");
-    });
-  };
-
 
   //Calling functions
   automaticClientSearchBar();
@@ -521,6 +499,5 @@ $(document).ready(function() {
   clientSnapChat();
   currentSession();
   newSessionFormValidation();
-  avatarUpload();
   clientGraph();
 });
