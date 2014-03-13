@@ -21,7 +21,6 @@
 
 $(document).ready(function() {
   $('.hide').hide();
-  s
 
   var mainHeight = $(window).height();
 
