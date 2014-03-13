@@ -18,7 +18,7 @@
 //= require jquery.ui.autocomplete
 //= require jquery.ui.datepicker
 //= require_tree .
-s
+
 $(document).ready(function() {
   $('.hide').hide();
 
