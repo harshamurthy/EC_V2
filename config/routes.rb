@@ -14,6 +14,7 @@ ECV2::Application.routes.draw do
     member { post :note }
     member { get :new_stat }
     member { post :stat }
+    member { get :stat_index }
     member { get :stat_show }
     member { post :goal }
   end

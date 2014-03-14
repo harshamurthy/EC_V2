@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-  before_action :set_client, only: [:show, :edit, :update, :destroy, :new_stat, :stat_show]
+  before_action :set_client, only: [:show, :edit, :update, :destroy, :new_stat, :stat_index]
 
   # GET /clients
   # GET /clients.json
@@ -36,7 +36,7 @@ class ClientsController < ApplicationController
 
     respond_to do |format|
       if @client.save
-        format.html { redirect_to client_url(@client.id), notice: 'Client was successfully created.' }
+        format.html { redirect_to stat_index_client_url(@client.id), notice: 'Client was successfully created.' }
         format.json { render action: 'show', status: :created, location: @client }
       else
         format.html { render action: 'new' }
@@ -90,8 +90,14 @@ class ClientsController < ApplicationController
     @stat.new(stat_params)
   end
 
-  def stat_show
+  def stat_index
 
+  end
+
+  def stat_show
+    @client_stat = ClientStat.find(params[:client_stat_id])
+    @client = Client.find(params[:id])
+    @photo = @client.photos.stats_photo(@client_stat.created_at).first
   end
 
   private

@@ -441,5 +441,72 @@
       }
     }
   }
+  .client-stats-index {
+    margin-top: 50px;
+    .client-index-header {
+      display: block;
+      margin-left: 0;
+      h2 {
+        font-size: $h2;
+        // text-align: center;
+        display: inline-block;
+      }
+      p {
+        float: right;
+        display: inline-block;
+        margin-top: 5px;
+      }
+    }
+    ul {
+      margin-top: 20px;
+      li {
+        padding: 15px 0;
+        border-bottom: 1px solid $silver;
+        span {
+          float: right;
+          color: #666;
+        }
+        a {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+.client_stat_show_page_container {
+  @extend %containers;
+  padding: 75px 0;
+  .client-stat-show-page-header {
+    img {
+      display: inline-block;
+      border-radius: 10%;
+      vertical-align: middle;
+    }
+    h1 {
+      display: inline-block;
+      font-size: $h1;
+      margin-left: 5px;
+      a {
+        font-size: $h1;
+      }
+    }
+      p {
+        font-size: 24px;
+        color: $pumpkin;
+        display: inline-block;
+      }
+  }
+  ul {
+    margin-top: 35px;
+    li {
+      font-size: 24px;
+      padding: 25px 0;
+      border-bottom: 1px solid $silver;
+      span {
+        font-weight: bold;
+      }
+    }
+  }
 }
 
