@@ -4,7 +4,7 @@
   </section>
   <aside class='workout-session-exercise-list'>
     <ul>
-      <% @session.exercises.each do |exercise| %>
+      <% @exercises.each do |exercise| %>
       <% if @session.exercises.first.id == exercise.id %>
         <li class='onclick session-exercise first'>
           <%= link_to exercise.name, workout_session_url(@session.id, exercise_id: exercise.id), :class=> "session-exercise-link", remote: true %>

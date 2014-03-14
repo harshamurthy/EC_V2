@@ -14,7 +14,11 @@ class SessionsController < ApplicationController
   # GET /sessions/1
   # GET /sessions/1.json
   def show
-    @exercise_executions = @session.exercise_executions.order(count: :desc)
+    if @session.exercise_executions.count > 0
+      @exercises = @session.exercises.find(:all, :include => :exercise_executions, :order => "exercise_executions.count")
+    else
+      @exercises = @session.exercises
+    end
     if params[:exercise_id].present?
       @setting_execution = SettingExecution.where(exercise_id: params[:exercise_id], client_id: @session.client.id).first || SettingExecution.new
       @exercise_execution = ExerciseExecution.where(exercise_id: params[:exercise_id], session_id: params[:id]).first || ExerciseExecution.new
