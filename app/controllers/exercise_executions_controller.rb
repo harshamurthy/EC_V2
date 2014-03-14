@@ -25,6 +25,7 @@ class ExerciseExecutionsController < ApplicationController
   # POST /exercise_executions.json
   def create
     @exercise_execution = ExerciseExecution.new(exercise_execution_params)
+    @exercise_execution.count = @exercise_execution.session.exercise_executions.count.to_i + 1
 
     respond_to do |format|
       if @exercise_execution.save
@@ -47,6 +48,8 @@ class ExerciseExecutionsController < ApplicationController
   def update
     respond_to do |format|
       if @exercise_execution.update(exercise_execution_params)
+        @exercise = @exercise_execution.exercise
+        @session = @exercise_execution.session
         format.html { redirect_to @exercise_execution, notice: 'Exercise execution was successfully updated.' }
         format.js
         format.json { head :no_content }

@@ -6,6 +6,8 @@ class Exercise < ActiveRecord::Base
 
   # validates_uniqueness_of :name
 
+  scope :for_exercise_execution, lambda { |session_id| where(session_id: session_id) }
+
   def settings?
     array = []
     array << self.seat

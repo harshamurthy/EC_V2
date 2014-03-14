@@ -345,12 +345,19 @@
       }
 
       .session-exercise-link {
-        display: block;
+        display: inline-block;
         text-decoration: none;
         font-size: 22px;
         padding: $height/2.75;
-        width: 100%;
+        width: 90%;
         color: black;
+      }
+      .order-count {
+        display: inline-block;
+        padding: 5px;
+        background-color: $midnight_blue;
+        border-radius: 15px;
+        color: white;
       }
     }
     .notebook {

@@ -14,6 +14,8 @@ $('.workout-session-execution-form input').focusout(function(){
 $('.workout-session-setting-form input[type=text]').focusout(function() {
   $('.session-setting-execution-form').submit();
 });
+
+// $(".<%= @exercise.name.downcase.tr(" ", "_") %>").append(<%= @session.exercise_executions.count %>);
 // autoSaveSessionForm();
 // Setting Timer
 $('#stop-stop-watch').hide();
@@ -52,3 +54,5 @@ $('#stop-stop-watch').hide();
       $('#reset-stop-watch').hide();
       $('#start-stop-watch').show();
     });
+
+$(".<%= @exercise.name.downcase.tr(" ", "_") %>").append(<%= @session.exercise_executions.count %>);

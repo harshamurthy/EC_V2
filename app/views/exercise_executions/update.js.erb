@@ -7,3 +7,4 @@ $("<p class='session-saved'> Saved. </p>").hide().prependTo('.workout-session-ex
   $(this).delay(500).fadeOut("slow");
 });
 
+$(".<%= @exercise.name.downcase.tr(" ", "_") %>").append(<%= @session.exercise_executions.count %>);

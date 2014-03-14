@@ -7,11 +7,13 @@
       <% @session.exercises.each do |exercise| %>
       <% if @session.exercises.first.id == exercise.id %>
         <li class='onclick session-exercise first'>
-          <%= link_to exercise.name, workout_session_url(@session.id, exercise_id: exercise.id), :class=> 'session-exercise-link', remote: true %>
+          <%= link_to exercise.name, workout_session_url(@session.id, exercise_id: exercise.id), :class=> "session-exercise-link", remote: true %>
+          <span class="order-count <%= exercise.name.downcase.tr(' ', '_') %>"><%= exercise.exercise_executions.last.count if exercise.exercise_executions.where(session_id: @session.id).count > 0 %></span>
         </li>
         <% else %>
         <li class='session-exercise'>
-          <%= link_to exercise.name, workout_session_url(@session.id, exercise_id: exercise.id), :class=> 'session-exercise-link', remote: true %>
+          <%= link_to exercise.name, workout_session_url(@session.id, exercise_id: exercise.id), :class=> "session-exercise-link", remote: true %>
+          <span class="order-count <%= exercise.name.downcase.tr(' ', '_') %>"><%= exercise.exercise_executions.last.count if exercise.exercise_executions.where(session_id: @session.id).count > 0 %></span>
         </li>
         <% end %>
       <% end %>
