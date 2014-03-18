@@ -15,7 +15,11 @@ class SessionsController < ApplicationController
   # GET /sessions/1.json
   def show
     if @session.exercise_executions.count > 0
-      @exercises = @session.exercises.find(:all, :include => :exercise_executions, :order => "exercise_executions.count")
+      executions = @session.exercise_executions.order(:count)
+      @exercises = executions.map(&:exercise)
+      @exercises_remaining = @session.routine.exercises - @exercises
+      # @exercises = @session.exercises.find(:all, :include => :exercise_executions, :order => "exercise_executions.count")
+      # @exercises_remaining = []
     else
       @exercises = @session.exercises
     end

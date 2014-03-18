@@ -25,12 +25,13 @@ class ExerciseExecutionsController < ApplicationController
   # POST /exercise_executions.json
   def create
     @exercise_execution = ExerciseExecution.new(exercise_execution_params)
-    @exercise_execution.count = @exercise_execution.session.exercise_executions.count.to_i + 1
 
     respond_to do |format|
       if @exercise_execution.save
          @exercise = @exercise_execution.exercise
          @session = @exercise_execution.session
+         # @exercise_execution.assign_attributes({:count => @exercise_execution.session.exercise_executions.count.to_i})
+         @exercise_execution.update_count(@exercise_execution, @exercise_execution.session.exercise_executions.count.to_i)
          @setting_execution = SettingExecution.where(exercise_id: @exercise_execution.exercise.id, client_id: @session.client.id).first || SettingExecution.new
 
         format.html { redirect_to @exercise_execution, notice: 'Exercise execution was successfully created.' }

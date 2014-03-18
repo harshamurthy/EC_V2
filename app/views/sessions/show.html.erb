@@ -17,6 +17,14 @@
         </li>
         <% end %>
       <% end %>
+
+      <% @exercises_remaining.each do |exercise| %>
+        <li class='session-exercise'>
+          <%= link_to exercise.name, workout_session_url(@session.id, exercise_id: exercise.id), :class=> "session-exercise-link", remote: true %>
+          <span class="order-count <%= exercise.name.downcase.tr(' ', '_') %>"><%= exercise.exercise_executions.last.count if exercise.exercise_executions.where(session_id: @session.id).count > 0 %></span>
+        </li>
+      <% end %>
+
       <li class='session-exercise notebook'><%= link_to "Notes", workout_session_url(notes: true), :class => "session-exercise-link notes", remote: true %></li>
     </ul>
   </aside>
