@@ -478,6 +478,14 @@ $(document).ready(function() {
     });
   };
 
+  var avatarUpload = function() {
+    $(".avatar-input").on("change", function(){
+      $('.avatar-check').fadeIn("slow");
+      $('.avatar-label').text("Uploaded!");
+    });
+  };
+
+
 
   //Calling functions
   automaticClientSearchBar();
@@ -499,5 +507,6 @@ $(document).ready(function() {
   clientSnapChat();
   currentSession();
   newSessionFormValidation();
+  avatarUpload();
   clientGraph();
 });
