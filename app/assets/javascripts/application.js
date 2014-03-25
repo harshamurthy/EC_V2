@@ -485,6 +485,13 @@ $(document).ready(function() {
     });
   };
 
+  var clickableDiv = function() {
+    $(".link").on("click", function(){
+      var loc = $(this).children("a").attr("href");
+      window.location = loc;
+    });
+  };
+
 
 
   //Calling functions
@@ -508,5 +515,6 @@ $(document).ready(function() {
   currentSession();
   newSessionFormValidation();
   avatarUpload();
+  clickableDiv();
   clientGraph();
 });
