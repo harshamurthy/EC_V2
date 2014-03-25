@@ -1,7 +1,7 @@
 <div class="home-container">
   <header>
     <h2 class='site-brand'>The <span class='highlight'>Exercise </span>Coach</h2>
-    <h3 class='site-brand location'><%= current_gym.location.capitalize %></h3>
+    <h3 class='site-brand location'><%= current_gym.location.split.map(&:capitalize).join(' ') %></h3>
   </header>
 
   <div class="links">
