@@ -16,7 +16,7 @@ ECV2::Application.routes.draw do
     member { post :goal }
   end
   #FitBit
-  get '/oauth/callback', to: "sessions#create"
+  get '/auth/:provider/callback', to: "fitbit#create"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

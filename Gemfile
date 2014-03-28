@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.0'
+#Omniauth FitBit
+gem 'omniauth-fitbit'
 #Amazon
 gem 'aws-sdk'
 #Paperclip
