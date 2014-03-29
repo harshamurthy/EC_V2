@@ -2,7 +2,13 @@ ECV2::Application.routes.draw do
   resources :setting_executions
 
   devise_for :gyms
+
+  # Un-comment the 2 lines below when landing page is ready and designed
+  # root to: "pages#landing"
+  # get '/home', to: "pages#home"
+
   root to: "pages#home"
+
   resources :exercise_executions
   resources :exercises
   resources :sessions, :as => 'workout_sessions'
