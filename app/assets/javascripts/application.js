@@ -47,6 +47,9 @@ $(document).ready(function() {
     $('.workout-session-execution-form input[type=number]').focusout(function() {
       $('.session-exercise-execution-form').submit();
     });
+    $('.workout-session-execution-form select').on("change", function() {
+      $('.session-exercise-execution-form').submit();
+    });
     $('.workout-session-setting-form input[type=text]').focusout(function() {
       $('.session-setting-execution-form').submit();
     });

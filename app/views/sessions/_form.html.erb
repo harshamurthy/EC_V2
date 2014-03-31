@@ -53,7 +53,7 @@
                 <%= f.fields_for Routine.new do |r| %>
 
                 <%= r.label :description, class: 'session-form-labels' %><br>
-                <%= r.text_field :description, placeholder: 'Name the routine', class: 'session-form-inputs form-validator', autofocus: true %>
+                <%= r.text_field :description, placeholder: 'Name the routine', class: 'session-form-inputs form-validator' %>
                 <span class="hide add-routine-name"><i class="fa fa-arrow-circle-o-left"></i> Add a name</span>
                 <p class='add-exercise-p'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Create a new exercise".html_safe, new_exercise_url(client_id: @client.id) %></p>
 

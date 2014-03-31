@@ -6,8 +6,8 @@ ECV2::Application.routes.draw do
   # Un-comment below when landing page is ready and designed
   # root to: "pages#landing"
 
-  root to: "pages#home"
-  get '/home', to: "pages#home"
+  root to: "clients#index"
+  # get '/home', to: "pages#home"
 
   resources :exercise_executions
   resources :exercises

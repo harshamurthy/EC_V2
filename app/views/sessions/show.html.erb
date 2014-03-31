@@ -4,9 +4,12 @@
   </section>
   <aside class='workout-session-exercise-list'>
     <ul>
+      <li class='session-exercise notebook onclick first'>
+        <%= link_to "Notes", workout_session_url(notes: true), :class => "session-exercise-link notes", remote: true %>
+      </li>
       <% @exercises.each do |exercise| %>
       <% if @session.exercises.first.id == exercise.id %>
-        <li class='onclick session-exercise first'>
+        <li class='session-exercise'>
           <%= link_to exercise.name, workout_session_url(@session.id, exercise_id: exercise.id), :class=> "session-exercise-link", remote: true %>
           <span class="order-count <%= exercise.name.downcase.tr(' ', '_') %>"><%= exercise.exercise_executions.last.count if exercise.exercise_executions.where(session_id: @session.id).count > 0 %></span>
         </li>
@@ -26,18 +29,13 @@
           </li>
         <% end %>
       <% end %>
-
-      <li class='session-exercise notebook'><%= link_to "Notes", workout_session_url(notes: true), :class => "session-exercise-link notes", remote: true %></li>
     </ul>
   </aside>
 
   <div class='workout-session-execution-data'>
     <section class="settings-and-executions">
-      <%= render 'setting_execution_form', exercise: @session.exercises.first, setting_execution: @setting_execution, client: @session.client, session: @session %>
-
-      <%= render 'exercise_execution_form', exercise: @session.exercises.first, exercise_execution: @exercise_execution, session: @session %>
+      <%= render 'notes', client: @session.client %>
     </section>
-    <%= render 'previous_stats', session: @session, exercise: @session.exercises.first %>
   </div>
 </div>
 

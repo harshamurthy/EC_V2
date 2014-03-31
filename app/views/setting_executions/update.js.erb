@@ -2,6 +2,11 @@ $('.workout-session-setting-form input[type=text]').focusout(function(){
   $('.session-setting-execution-form').submit();
 });
 
+$('.workout-session-execution-form select').on("change", function() {
+  alert('yo');
+  $('.session-setting-execution-form').submit();
+});
+
 $('.session-saved').remove();
 $("<p class='session-saved'> Saved. </p>").hide().prependTo('.workout-session-setting-form').fadeIn("fast", function(){
   $(this).delay(500).fadeOut("slow");

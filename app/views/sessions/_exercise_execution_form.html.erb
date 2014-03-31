@@ -4,26 +4,28 @@
     <fieldset class='fieldset'>
       <% if exercise.weight? %>
         <div class='field'>
-          <%= f.number_field :weight, placeholder: "Weight", class: 'exercise-execution-performance-text' %>
+          <%= f.select :weight, (1..500).to_a.each_slice(5).map(&:last), placeholder: "Weight", class: 'exercise-execution-performance-text' %>
+          <%#= f.number_field :weight, placeholder: "Weight", class: 'exercise-execution-performance-text' %>
           <%= f.label :weight %>
         </div>
       <% end %>
 
       <% if exercise.percentage? %>
         <div class='field'>
-          <%= f.number_field :percentage, placeholder: 'Percentage', class: 'exercise-execution-performance-text' %>
+          <%#= f.number_field :percentage, placeholder: 'Percentage', class: 'exercise-execution-performance-text' %>
+          <%= f.select :percentage, (1..100).to_a.reverse, placeholder: 'Percentage', class: 'exercise-execution-performance-text' %>
           <%= f.label :percentage %>
         </div>
       <% end %>
 
       <% if exercise.reps? && exercise.percentage? %>
         <div class='field'>
-          <%= f.number_field :reps, placeholder: 'Reps', class: 'exercise-execution-performance-text' %>
+          <%= f.select :reps, (1..20).to_a, placeholder: 'Reps', class: 'exercise-execution-performance-text' %>
           <%= f.label :reps %>
         </div>
         <% elsif exercise.reps? %>
          <div class='field'>
-          <%= f.number_field :reps, placeholder: 'Reps', class: 'exercise-execution-performance-text' %>
+          <%= f.select :reps, (1..20).to_a, placeholder: 'Reps', class: 'exercise-execution-performance-text' %>
           <%= f.label :reps %>
         </div>
       <% end %>

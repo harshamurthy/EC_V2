@@ -15,6 +15,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(gym=nil)
-    home_url
+    clients_url
   end
 end

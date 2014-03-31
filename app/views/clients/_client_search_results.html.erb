@@ -11,8 +11,7 @@
       </li>
       <aside class='client-buttons hide <%= client.id %>'>
         <%= link_to "<i class=\"fa fa-plus-square-o\"></i> Create workout".html_safe, new_workout_session_url(client_id: client.id), class: 'client-start-workout' %>
-        <%= link_to "<i class=\"fa fa-align-justify\"></i> Strength profile".html_safe, client_url(client.id), class: 'client-strength-account' %>
-        <%= link_to "<i class=\'fa fa-user\'></i> Body profile".html_safe, stat_index_client_url(client.id), class: 'client-manage-account' %>
+        <%= link_to "<i class=\'fa fa-user\'></i> Client Profile".html_safe, client_url(client.id), class: 'client-manage-account' %>
       </aside>
     </section>
   <% end %>
