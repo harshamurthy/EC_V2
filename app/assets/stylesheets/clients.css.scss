@@ -128,25 +128,52 @@
 .client-container {
   padding-top: 50px;
   @extend %containers;
+  width: 650px;
   .name-wrap {
     .client-name-show {
       font-size: $h1;
       vertical-align: middle;
-      span {
-        color: $concrete;
-        font-size: 24px;
-        display: inline-block;
-        margin-left: 10px;
+      display: inline-block;
+
+    }
+    .create-workout {
+      display: inline-block;
+      vertical-align: middle;
+      float: right;
+      margin-top: 15px;
+      a {
+        i {
+          text-decoration: underline;
+        }
       }
     }
+    .goal-parent {
+      color: $midnight_blue;
+      font-size: $h3;
+      display: block;
+      font-weight: bold;
+
+
+      .current-goal {
+        color: $alizarin;
+        font-weight: none;
+      }
+    }
+    // .current-goal {
+    //   display: inline-block;
+    //   vertical-align: middle;
+    //   font-size: $h3;
+    // }
     .img-container {
       display: inline-block;
       vertical-align: middle;
+      width: 15%;
     }
     header {
       display: inline-block;
       vertical-align: top;
       margin-left: 5px;
+      width: 83%;
       .client-show-links {
         .client-show-manage {
           margin-left: 15px;
@@ -163,6 +190,34 @@
     img {
       border-radius: 10%;
     }
+  }
+  .tab-links {
+    margin-top: 50px;
+    li {
+      display: inline-block;
+      // margin: 0 10px;
+      position: relative;
+
+
+      a {
+        text-decoration: none;
+        padding: 20px;
+        top: 1px;
+
+        &.active {
+          border: 1px solid #ccc;
+          border-bottom: 1px solid white;
+        }
+      }
+    }
+  }
+
+  .graph-tab-container, .client-note-container, .client-stats-show {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    min-height: 400px;
+    max-height: 500px;
   }
 
   .client-email {
@@ -207,7 +262,7 @@
 }
 
 .client-note-container {
-  margin-top: 50px;
+  // margin-top: 50px;
   form {
     text-align: center;
     input[type=text] {
@@ -229,6 +284,8 @@
   ul {
     padding: 40px;
     margin-bottom: 50px;
+    max-height: 300px;
+    overflow-y: scroll;
     li {
       border-bottom: 1px solid #ccc;
       padding: 20px;
@@ -458,10 +515,11 @@
       }
     }
     ul {
+      max-height: 300px;
+      overflow-y: scroll;
       margin-top: 20px;
       li {
         padding: 15px 0;
-        border-bottom: 1px solid $silver;
         span {
           float: right;
           color: #666;

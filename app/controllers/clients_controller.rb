@@ -7,7 +7,8 @@ class ClientsController < ApplicationController
     if params[:search]
       @clients = current_gym.clients.where("first_name || ' ' || last_name || ' ' ILIKE :search", :search => "%#{params[:search].downcase}%" ).order(first_name: :desc)
     else
-      @clients = Client.where(gym_id: current_gym.id).order(first_name: :desc)
+      # @clients = Client.where(gym_id: current_gym.id).order(first_name: :desc)
+      @clients = Client.all
     end
   end
 
@@ -36,7 +37,7 @@ class ClientsController < ApplicationController
 
     respond_to do |format|
       if @client.save
-        format.html { redirect_to stat_index_client_url(@client.id), notice: 'Client was successfully created.' }
+        format.html { redirect_to client_url(@client.id), notice: 'Client was successfully created.' }
         format.json { render action: 'show', status: :created, location: @client }
       else
         format.html { render action: 'new' }

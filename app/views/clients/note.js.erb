@@ -1,3 +1,14 @@
-$('.session-notes ul').prepend("<%= j render('note', note: @n) %>");
-$('.session-note-form input[type=text]').val("");
-$('.workout-session-execution-data').css("position", "absolute");
+<% if @n.client.notes.present? %>
+  $('.no-notes-yet').remove();
+  $('.client-note-container').append("<ul></ul>");
+<% end %>
+
+
+<% if params[:client_page] %>
+  $('.client-note-container ul').prepend("<%= j render('note', note: @n) %>");
+  $('.client-note-container input[type=text]').val("");
+<% else %>
+  $('.session-notes ul').prepend("<%= j render('note', note: @n) %>");
+  $('.session-note-form input[type=text]').val("");
+  $('.workout-session-execution-data').css("position", "absolute");
+<% end %>

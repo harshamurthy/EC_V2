@@ -1,0 +1,15 @@
+<div class="client-stats-show">
+  <section class='client-stats-index'>
+    <header class='client-index-header'>
+      <h2>Previous Body Compistions</h2>
+      <p class='new-body-comp'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> New Body Composition".html_safe, new_stat_client_url(client.id) %></p>
+    </header>
+    <ul>
+      <% client.client_stats.each do |stat| %>
+        <li><%= link_to stat.created_at.strftime("%B %d, %Y"), stat_show_client_url(client_stat_id: stat.id, client_id: client.id)  %>
+          <span><%= time_ago_in_words(stat.created_at) %></span>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+</div>

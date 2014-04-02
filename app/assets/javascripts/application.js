@@ -495,6 +495,36 @@ $(document).ready(function() {
     });
   };
 
+  var clientPageTabs = function() {
+      $('#graph-tab').on('click', function() {
+        $('.note-tab').removeClass('active');
+        $('.body-profile-tab-link').removeClass('active');
+        $(this).addClass('active');
+
+        $('.graph-tab-container').show();
+        $('.client-note-container').hide();
+        $('.body-profile-tab').hide();
+      });
+
+      $('#body-profile-tab').on('click', function() {
+        $('.note-tab').removeClass('active');
+        $('.graph-tab').removeClass('active');
+        $(this).addClass('active');
+        $('.graph-tab-container').hide();
+        $('.client-note-container').hide();
+        $('.body-profile-tab').show();
+      });
+
+      $('#note-tab').on('click', function() {
+        $('.body-profile-tab-link').removeClass('active');
+        $('.graph-tab').removeClass('active');
+        $(this).addClass('active');
+        $('.graph-tab-container').hide();
+        $('.client-note-container').show();
+        $('.body-profile-tab').hide();
+      });
+  };
+
 
 
   //Calling functions
@@ -519,5 +549,6 @@ $(document).ready(function() {
   newSessionFormValidation();
   avatarUpload();
   clickableDiv();
+  clientPageTabs();
   clientGraph();
 });

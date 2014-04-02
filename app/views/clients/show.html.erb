@@ -10,35 +10,57 @@
       </div>
     <% end %>
     <header>
-      <h1 class='client-name-show'><%= @client.name %><span> (<%= @client.machine_code %>)</span></h1>
+      <h1 class='client-name-show'><%= @client.name %></h1>
+      <p class='create-workout'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Create workout".html_safe, new_workout_session_url(client_id: @client.id) %></p>
       <p class='client-email'><%= @client.email %></p>
-      <div class="client-show-links">
-        <p><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Create workout".html_safe, new_workout_session_url(client_id: @client.id) %></p>
-        <p><%= link_to "<i class=\'fa fa-user\'></i> Body profile".html_safe, stat_index_client_url(@client.id), class: 'client-show-manage' %></p>
-      </div>
+      <% if @client.goals.present? %>
+        <p class='goal-parent'>Current goal: <span class='current-goal'>“<%= @client.goals.last.content %>”</span></p>
+      <% end %>
     </header>
   </div>
 
+  <ul class="tab-links">
+    <li>
+      <%= link_to "<i class=\"fa fa-pencil-square-o\"></i> Notes".html_safe, "#", class: 'note-tab', id: 'note-tab' %>
+    </li>
+    <li>
+      <%= link_to "<i class=\'fa fa-user\'></i> Body profile".html_safe, "#", class: 'body-profile-tab-link', id: 'body-profile-tab' %>
+    </li>
+    <li>
+      <%= link_to "<i class=\"fa fa-align-left\"></i> Graph".html_safe, "#", class: 'graph-tab active', id: 'graph-tab' %>
+    </li>
+  </ul>
 
-  <div class="graph-container">
-    <% if @client.sessions.present? %>
-      <%= render 'client_graph', client: @client, exercise: @exercise, exercises: @exercises, type: @type %>
-    <% else %>
-      <h3 class='no-graph'>Log a workout session to start graphing results.</h3>
-    <% end %>
-  </div>
-
-  <div class="client-note-container">
-    <%= form_tag note_client_url, method: 'post' do %>
-      <%= text_field_tag :content, nil, placeholder: "Write a note about #{@client.first_name}" %>
-      <%= hidden_field_tag :client_id, @client.id %>
-      <%= submit_tag "Submit" %>
-    <% end %>
-    <ul>
-      <% @client.notes.reverse.each do |note| %>
-        <li><%= note.content %><span><%= note.created_at.strftime("%B %d, %Y") %></span></li>
+  <div class="graph-tab-container">
+    <div class="graph-container">
+      <% if @client.sessions.present? %>
+        <%= render 'client_graph', client: @client, exercise: @exercise, exercises: @exercises, type: @type %>
+      <% else %>
+        <h3 class='no-graph'>Log a workout session to start graphing results.</h3>
       <% end %>
-    </ul>
-  </div> <!-- note-container -->
+    </div>
+  </div> <!-- tab-container -->
+
+    <div class="client-note-container hide">
+      <%= form_tag note_client_url, method: 'post', remote: true do %>
+        <%= text_field_tag :content, nil, placeholder: "Write a note about #{@client.first_name}" %>
+        <%= hidden_field_tag :client_id, @client.id %>
+        <%= hidden_field_tag :client_page, true %>
+        <%= submit_tag "Submit" %>
+      <% end %>
+
+      <% if @client.notes.present? %>
+        <ul>
+          <% @client.notes.reverse.each do |note| %>
+            <li><%= note.content %><span><%= note.created_at.strftime("%B %d, %Y") %></span></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <h2 class='no-notes-yet'>Write the first note to help <%= @client.first_name %>.</h2>
+      <% end %>
+    </div> <!-- note-container -->
+    <div class="body-profile-tab hide">
+      <%= render 'stat_index', client: @client %>
+    </div>
 </div>
 

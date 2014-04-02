@@ -1,5 +1,4 @@
 <div class="graph-partial">
-  <h2>My Chart</h2>
   <%= form_tag client_url(client.id), method: 'get' do %>
   <p>Show</p>
     <%= select_tag 'exercise', options_from_collection_for_select(exercises, 'id', 'name', params[:exercise]), prompt: "All my exercises" %>
