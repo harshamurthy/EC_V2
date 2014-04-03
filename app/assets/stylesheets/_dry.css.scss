@@ -33,7 +33,7 @@ a {
 }
 
 .highlight {
-    color: $carrot;
+    color: $green_sea;
 }
 
 .input-field-tooltip {
@@ -105,16 +105,16 @@ a {
   outline: none;
   padding: 5px;
   border-radius: 5px;
-  background-color: $carrot;
+  background-color: $green_sea;
   font-size: $main-font-size;
   color: white;
 
   &:hover {
-    background-color: $pumpkin;
+    background-color: $turquoise;
   }
 
   &:active {
-    background-color: $carrot;
+    background-color: $green_sea;
   }
 }
 

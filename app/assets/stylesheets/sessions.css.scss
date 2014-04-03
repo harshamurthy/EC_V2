@@ -64,14 +64,14 @@
   .session-form-submit-button {
     @extend %buttons;
     width: 60%;
-    background-color: $carrot;
+    background-color: $green_sea;
 
     &:hover {
       background-color: $orange;
     }
 
     &:active {
-      background-color: $carrot;
+      background-color: $green_sea;
     }
   }
 }
@@ -181,15 +181,15 @@
         .add-exercise-p {
           margin-bottom: 30px;
           a {
-            color: $carrot;
+            color: $green_sea;
             font-size: 22px;
 
             &:hover {
-              color: $pumpkin;
+              color: $turquoise;
             }
 
             &:active {
-              color: $carrot;
+              color: $green_sea;
             }
             i {
               text-decoration: underline;
@@ -250,16 +250,16 @@
           color: $midnight_blue;
           border-bottom: none;
           &.ready {
-            background-color: $carrot;
+            background-color: $green_sea;
             color: white;
             border-bottom: none;
 
             &:hover {
-              background-color: $pumpkin;
+              background-color: $turquoise;
             }
 
             &:active {
-              background-color: $carrot;
+              background-color: $green_sea;
             }
           }
         }
@@ -337,10 +337,10 @@
 
       &.onclick {
         border-right: 0px;
-        border-left: 10px solid $carrot;
+        border-left: 10px solid $green_sea;
 
         .session-exercise-link {
-          color: $carrot !important;
+          color: $green_sea !important;
         }
       }
 
@@ -417,7 +417,7 @@
         line-height: 1.5;
         padding-bottom: 30px;
       .previous-stats-number {
-        color: $carrot;
+        color: $green_sea;
         font-weight: bold;
       }
 
@@ -582,7 +582,7 @@
       input {
         font-size: 32px;
         font-weight: bold;
-        color: $carrot;
+        color: $green_sea;
         width: 50%;
         text-align: center;
         font-family: 'Roboto', sans-serif;
@@ -647,7 +647,7 @@
       font-size: 24px;
 
       &:hover {
-        background-color: $carrot;
+        background-color: $green_sea;
       }
 
       &:active {

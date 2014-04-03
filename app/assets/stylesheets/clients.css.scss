@@ -46,7 +46,7 @@
       text-align: left;
       margin-left: 20%;
       a {
-        color: $carrot;
+        color: $green_sea;
         border-radius: 5px;
         font-size: 24px;
         padding: 15px 5px;
@@ -55,11 +55,11 @@
         }
 
         &:hover {
-          color: $pumpkin;
+          color: $turquoise;
         }
 
         &:active {
-          color: $carrot;
+          color: $green_sea;
         }
       }
     }
@@ -269,15 +269,15 @@
       @extend %inputs;
     }
     input[type=submit] {
-      background-color: $carrot;
+      background-color: $green_sea;
       color: white;
       padding: 10px 20px;
       border-radius: 5px;
       &:hover {
-        background-color: $pumpkin;
+        background-color: $turquoise;
       }
       &:active {
-        background-color: $carrot;
+        background-color: $green_sea;
       }
     }
   }
@@ -309,7 +309,7 @@
     margin-bottom: 15px;
     span {
       &.ready {
-        color: $carrot;
+        color: $green_sea;
       }
     }
   }
@@ -351,14 +351,14 @@
       color: $midnight_blue;
       &.ready {
         color: white;
-        background-color: $carrot;
+        background-color: $green_sea;
 
         &:hover {
-          background-color: $pumpkin;
+          background-color: $turquoise;
         }
 
         &:active {
-          background-color: $carrot;
+          background-color: $green_sea;
         }
       }
     }
@@ -486,12 +486,12 @@
 
   .new-body-comp {
     a {
-      color: $carrot;
+      color: $green_sea;
       &:hover {
-        color: $pumpkin;
+        color: $turquoise;
       }
       &:active {
-        color: $carrot;
+        color: $green_sea;
       }
       i {
         text-decoration: underline;
@@ -551,7 +551,7 @@
     }
       p {
         font-size: 24px;
-        color: $pumpkin;
+        color: $turquoise;
         display: inline-block;
       }
   }

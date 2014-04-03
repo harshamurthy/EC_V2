@@ -43,7 +43,7 @@
       font-size: 18px;
       span {
         &.ready {
-          color: $carrot;
+          color: $green_sea;
         }
       }
     }
@@ -60,7 +60,7 @@
     padding-top: 70px;
     span {
       &.ready {
-        color: $carrot;
+        color: $green_sea;
       }
     }
   }
@@ -75,12 +75,12 @@
     &.ready {
       @extend %buttons;
       border-bottom: none;
-      background-color: $carrot;
+      background-color: $green_sea;
       &:hover {
-        background-color: $pumpkin;
+        background-color: $turquoise;
       }
       &:active {
-        background-color: $pumpkin;
+        background-color: $turquoise;
       }
     }
   }
