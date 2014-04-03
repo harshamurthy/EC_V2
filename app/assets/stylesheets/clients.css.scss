@@ -142,6 +142,7 @@
       float: right;
       margin-top: 15px;
       a {
+        color: $green_sea;
         i {
           text-decoration: underline;
         }
@@ -227,13 +228,16 @@
 }
 
 .graph-container {
-  margin-top: 50px;
+  // margin-top: 50px;
   // text-align: center;
   h2 {
     font-weight: bold;
   }
 
   .no-graph {
+    text-align: center;
+  }
+  .img {
     text-align: center;
   }
 }
