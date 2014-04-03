@@ -36,7 +36,7 @@
       <% if @client.exercise_executions.present? %>
         <%= render 'client_graph', client: @client, exercise: @exercise, exercises: @exercises, type: @type %>
       <% else %>
-        <!-- <h3 class='no-graph'>Log a workout session to start graphing results.</h3> -->
+        <div class='no-graph-message'><h3><%= @client.name %> has no workouts yet! Get him working out so you can see his progress!</h3></div>
         <%= image_tag('graph-filler-image.png', width: '500', height: '500') %>
       <% end %>
     </div>

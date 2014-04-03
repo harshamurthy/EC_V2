@@ -7,8 +7,8 @@ class ClientsController < ApplicationController
     if params[:search]
       @clients = current_gym.clients.where("first_name || ' ' || last_name || ' ' ILIKE :search", :search => "%#{params[:search].downcase}%" ).order(first_name: :desc)
     else
-      # @clients = Client.where(gym_id: current_gym.id).order(first_name: :desc)
-      @clients = Client.all
+      @clients = Client.where(gym_id: current_gym.id).order(first_name: :desc)
+      # @clients = Client.all
     end
   end
 
