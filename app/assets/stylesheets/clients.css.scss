@@ -484,8 +484,8 @@
 }
 
 .client-stats-show {
-  @extend %containers;
-  padding: 50px 0;
+  // @extend %containers;
+  // padding: 50px 0;
   .client-name {
       font-size: $h1;
       span {
