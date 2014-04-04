@@ -10,14 +10,14 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require raphael
-//= require morris
-//= require jquery.runner-min
-//= require jquery_ujs
-//= require jquery.ui.autocomplete
-//= require jquery.ui.datepicker
-//= require_tree .
+
+
+
+
+
+
+
+
 
 $(document).ready(function() {
   $('.hide').hide();
@@ -542,11 +542,11 @@ $(document).ready(function() {
     mainHeight = $(window).height();
     mainWidth = $(window).width();
     // alert(mainWidth);
-    // if (mainWidth > 830) {
+    if (mainWidth > 830) {
       // alert("hey");
       $('.first-section').css({"height": mainHeight});
       $('.second-section').css({"height": mainHeight});
-    // }
+    }
 
         $('#first_learn_more').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
