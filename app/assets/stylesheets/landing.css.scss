@@ -1,0 +1,151 @@
+.first-section {
+    @extend %containers;
+    width: 900px;
+    section {
+        margin-top: 15px;
+        .logo {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 24px;
+            span {
+                color: $green_sea;
+            }
+        }
+        ul {
+            float: right;
+            display: inline-block;
+
+            li {
+                a {
+                    padding: 5px 15px;
+                    border-radius: 5px;
+                    background-color: $midnight_blue;
+                    color: white;
+                    text-decoration: none;
+                    font-size: 15px;
+
+                    &:hover {
+                        background-color: $wet_asphalt;
+                    }
+
+                    &:active {
+                        background-color: $midnight_blue;
+                    }
+                }
+            }
+        }
+    }
+    header {
+        margin-top: 30px;
+
+        h1 {
+            text-align: center;
+            font-size: $h1;
+            font-weight: bold;
+        }
+        h3 {
+            font-size: 18px;
+            text-align: center;
+            margin-top: 15px;
+            line-height: 1.5;
+            span {
+                color: $green_sea;
+            }
+        }
+    }
+    #slideshow {
+        margin:15px auto;
+        position: relative;
+        text-align: center;
+        display: block;
+        // width: 240px;
+        // height: 240px;
+        // padding: 10px;
+        // box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    #slideshow > div {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .get-me-started-container {
+        margin-top: 430px;
+        text-align: center;
+        margin-bottom: 20px;
+        a {
+            text-decoration: none;
+            padding: 10px 50px;
+            border-radius: 5px;
+            background-color: $green_sea;
+            color: white;
+
+            &:hover {
+                background-color: $turquoise;
+            }
+
+            &:active {
+                background-color: $green_sea;
+            }
+        }
+    }
+
+    .first-learn-more-container {
+        display: block;
+        position: relative;
+
+
+        #first_learn_more {
+            position: absolute;
+            bottom: -30px;
+            text-align: center;
+            width: 100%;
+            text-decoration: none;
+            // position: absolute;
+            // width: 100%;
+            // bottom: 25px;
+            // text-align: center;
+            // display: block;
+        }
+    }
+}
+.second-container {
+    background-color: $clouds;
+    .second-section {
+        @extend %containers;
+        width: 900px;
+        h2 {
+            font-size: $h2;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 20px;
+
+            span {
+                color: $green_sea;
+            }
+        }
+        .benifit-statements {
+
+            .one, .two, .three, .four {
+                display: inline-block;
+                width: 45%;
+                padding: 30px;
+                vertical-align: top;
+            }
+            h3 {
+                text-align: center;
+                font-size: $h3;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            p {
+                line-height: 1.5;
+            }
+        }
+    }
+}
+

@@ -525,6 +525,40 @@ $(document).ready(function() {
       });
   };
 
+  var landingPageSlideshow = function() {
+    $("#slideshow > div:gt(0)").hide();
+
+    setInterval(function() {
+      $('#slideshow > div:first')
+        .fadeOut(1000)
+        .next()
+        .fadeIn(1000)
+        .end()
+        .appendTo('#slideshow');
+    },  5000);
+  };
+
+  var landingNavigation = function() {
+    mainHeight = $(window).height();
+    $('.first-section').css({"height": mainHeight});
+    $('.second-section').css({"height": mainHeight});
+
+      $('#first_learn_more').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+          || location.hostname == this.hostname) {
+        var target = $(this.hash);
+        console.log(target)
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  };
+
 
 
   //Calling functions
@@ -550,5 +584,7 @@ $(document).ready(function() {
   avatarUpload();
   clickableDiv();
   clientPageTabs();
+  landingPageSlideshow();
+  landingNavigation();
   clientGraph();
 });
