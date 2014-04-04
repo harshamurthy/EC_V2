@@ -214,6 +214,25 @@
     }
 }
 
+.footer {
+    ul {
+        padding: 20px;
+
+        .copyright {
+            float: right;
+            // margin-top: 10px;
+        }
+        li {
+            display: inline-block;
+            font-size: 20px;
+
+            span {
+                color: $green_sea;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 830px) {
     .first-section {
         // height: auto;
