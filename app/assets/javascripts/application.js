@@ -542,11 +542,11 @@ $(document).ready(function() {
     mainHeight = $(window).height();
     mainWidth = $(window).width();
     // alert(mainWidth);
-    // if (mainWidth > 830) {
+    if (mainWidth > 830) {
       // alert("hey");
       $('.first-section').css({"height": mainHeight});
       $('.second-section').css({"height": mainHeight});
-    // }
+    }
 
         $('#first_learn_more').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
