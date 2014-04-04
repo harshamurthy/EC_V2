@@ -11,7 +11,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if gym_signed_in? %>
+  <% if gym_signed_in? && !current_page?(root_url) %>
     <nav class='app-nav absolute'>
       <%= link_to "<i class=\"fa fa-home\"></i>".html_safe, clients_url %>
       <%= link_to "<i class=\"fa fa-calendar-o\"></i>".html_safe, workout_sessions_url %>
