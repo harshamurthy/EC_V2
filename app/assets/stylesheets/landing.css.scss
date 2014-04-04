@@ -62,15 +62,20 @@
         // height: 240px;
         // padding: 10px;
         // box-shadow: 0 0 20px rgba(0,0,0,0.4);
+        div {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+
+            img {
+                width: 600px;
+                height: 400px;
+            }
+        }
     }
 
-    #slideshow > div {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        right: 10px;
-        bottom: 10px;
-    }
 
     .get-me-started-container {
         margin-top: 430px;
@@ -132,18 +137,210 @@
             .one, .two, .three, .four {
                 display: inline-block;
                 width: 45%;
-                padding: 30px;
+                padding: 3% 30px 0;
                 vertical-align: top;
             }
             h3 {
                 text-align: center;
                 font-size: $h3;
                 font-weight: bold;
-                margin-bottom: 10px;
+                margin-bottom: 20px;
             }
 
             p {
+                line-height: 2;
+            }
+        }
+    }
+    .second-get-me-started-container {
+        margin-top: 100px;
+        text-align: center;
+        margin-bottom: 20px;
+        a {
+            text-decoration: none;
+            padding: 10px 50px;
+            border-radius: 5px;
+            background-color: $green_sea;
+            color: white;
+
+            &:hover {
+                background-color: $turquoise;
+            }
+
+            &:active {
+                background-color: $green_sea;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .first-section {
+        width: auto;
+
+        section {
+            .logo {
+                margin-left: 10px;
+            }
+
+            ul {
+                margin-right: 10px;
+            }
+        }
+
+        .first-learn-more-container {
+            #first_learn_more {
+
+            }
+        }
+    }
+    .second-container {
+        background-color: white;
+        border-top: 1px solid $midnight_blue;
+        .second-section {
+            width: auto;
+
+            h2 {
+                margin-bottom: 20px;
+            }
+            .benifit-statements {
+                .one, .two, .three, .four {
+                    display: block;
+                    width: 60%;
+                    padding: 3% 30px 0;
+                    vertical-align: top;
+                    margin: 0 auto;
+                    margin-bottom: 50px;
+                    // display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .first-section {
+        header {
+            h1 {
+                text-align: center;
+                font-size: $h2;
+                font-weight: bold;
+            }
+            h3 {
+                font-size: 14px;
+                text-align: center;
+                margin-top: 15px;
                 line-height: 1.5;
+                span {
+                    color: $green_sea;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 665px) {
+    .first-section {
+        header {
+            h1 {
+                text-align: center;
+                font-size: $h3;
+                font-weight: bold;
+            }
+            h3 {
+                font-size: 12px;
+                text-align: center;
+                margin-top: 15px;
+                line-height: 1.5;
+                span {
+                    color: $green_sea;
+                }
+            }
+        }
+
+
+        .get-me-started-container {
+            margin-top: 220px;
+            text-align: center;
+            margin-bottom: 20px;
+            a {
+                text-decoration: none;
+                padding: 10px 50px;
+                border-radius: 5px;
+                background-color: $green_sea;
+                color: white;
+                // display: none;
+
+                &:hover {
+                    background-color: $turquoise;
+                }
+
+                &:active {
+                    background-color: $green_sea;
+                }
+            }
+        }
+
+            #slideshow {
+            margin: 0 auto;
+            position: relative;
+            text-align: center;
+            display: block;
+            // width: 240px;
+            // height: 240px;
+            // padding: 10px;
+            // box-shadow: 0 0 20px rgba(0,0,0,0.4);
+            div {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+
+                img {
+                    width: 300px;
+                    height: 200px;
+                    // display: none;
+                }
+            }
+        }
+        .first-learn-more-container {
+        // display: block;
+        // position: relative;
+        display: none;
+
+
+        #first_learn_more {
+            // position: absolute;
+            // bottom: -30px;
+            // text-align: center;
+            // width: 100%;
+            // text-decoration: none;
+            // position: absolute;
+            // width: 100%;
+            // bottom: 25px;
+            // text-align: center;
+            // display: block;
+        }
+    }
+    }
+
+    .second-container {
+        .second-section {
+            h2 {
+                font-size: 20px;
+            }
+            .benifit-statements {
+                .one, .two, .three, .four {
+                    display: block;
+                    width: 100%;
+                    padding: 3% 30px 0;
+                    vertical-align: top;
+                    margin: 0 auto;
+                    margin-bottom: 50px;
+                    // display: none;
+                }
             }
         }
     }
