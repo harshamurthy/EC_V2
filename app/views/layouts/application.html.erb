@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HelpTrainMe</title>
+  <title>HelpTrainMe - Improve the way your gym does fitness.</title>
 
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Duru+Sans|Exo+2' %>
@@ -11,7 +11,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if gym_signed_in? %>
+  <% if gym_signed_in? && !current_page?(root_url) %>
     <nav class='app-nav absolute'>
       <%= link_to "<i class=\"fa fa-home\"></i>".html_safe, clients_url %>
       <%= link_to "<i class=\"fa fa-calendar-o\"></i>".html_safe, workout_sessions_url %>

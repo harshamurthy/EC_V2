@@ -1,4 +1,4 @@
-<% if @n.client.notes.present? %>
+<% if @n.client.notes.first == @n %>
   $('.no-notes-yet').remove();
   $('.client-note-container').append("<ul></ul>");
 <% end %>

@@ -1,1 +1,66 @@
-hey
+<!-- <div class="landing-container"> -->
+  <div class="first-section">
+    <section class="top-nav">
+      <div class="logo">
+        <p>HelpTrain<span>Me</span></p>
+      </div>
+      <ul>
+          <li><%= link_to "Sign in", new_gym_session_url %></li>
+      </ul>
+    </section>
+    <header>
+      <h1>Improve the way your gym does fitness.</h1>
+      <h3>
+        HelpTrain<span>Me</span> tracks a client's workout performance and uses that data to provide meaningful feedback. </br>
+        Your trainers will get more clients, keep them longer, and better ensure they reach their goals.
+      </h3>
+    </header>
+    <div id="slideshow">
+     <div>
+       <%= image_tag("landing_image_1.png", width: '600px', height: '400px') %>
+     </div>
+     <div>
+       <%= image_tag("landing_image_2.png", width: '600px', height: '400px') %>
+     </div>
+     <div>
+       <%= image_tag("landing_image_3.png", width: '600px', height: '400px') %>
+     </div>
+    </div> <!-- slideshow -->
+      <div class="get-me-started-container">
+        <%= link_to "Get me started", "#" %>
+      </div>
+      <div class="first-learn-more-container">
+        <%= link_to "Learn more", "#second-section", id: "first_learn_more" %>
+      </div>
+  </div> <!-- first-section -->
+  <!-- </div> -->
+<div class="second-container">
+  <div class="second-section" id="second-section">
+    <h2>Here's how HelpTrain<span>Me</span> will help your gym.</h2>
+    <section class="benifit-statements">
+      <div class="one">
+        <h3>Save time and focus on what matters.</h3>
+        <p>No more fumbling with clipboards, papers, and pencils. Trainers can plan a client's workout, and seamlessly track progress during a session. HelpTrainMe puts the focus back on the client.</p>
+      </div>
+      <div class="two">
+        <h3>No learning curve to get started.</h3>
+        <p>Designed with fitness trainers in mind, HelpTrainMe is simple and intuitive. Trainers can guide clients towards their goals quicly and effectively. No spending time figuring out where things are or how they work.</p>
+      </div>
+      <div class="three">
+        <h3>Keep clients coming back for more.</h3>
+        <p>Using HelpTrainMe, clients will be able to track their progress over time by viewing concrete data. Trainers can measure and manage their clients' progress and help them reach their goals. A successful client is a sastisfied client, and that's better for everyone's bottom/waist line.</p>
+      </div>
+      <div class="four">
+        <h3>It's no longer just about the facilities.</h3>
+        <p>Now days, fitness centers differentiate themselves mainly on the number of facilities they offer, but a gym is not just the sum of its resources. It is a place to promote and pursue wellness. HelpTrainMe will create a more personal connection between gyms and their members. Members will come to associate gyms not just with exercise, but with a healthy lifestyle.</p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="footer">
+  <ul>
+    <li>HelpTrain<span>Me</span></li>
+    <li class='copyright'>&copy; 2014</li>
+  </ul>
+</div>

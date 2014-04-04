@@ -1,7 +1,7 @@
 <div class="client_stat_show_page_container">
   <header class="client-stat-show-page-header">
     <%= image_tag(@photo.avatar.url(:thumb)) %>
-    <h1><%= link_to @client.name, stat_index_client_url(@client.id) %> -- Body Compisition</h1>
+    <h1><%= link_to @client.name, client_url(@client.id) %> -- Body Compisition</h1>
     <p>(<%= @client_stat.created_at.strftime("%B %d, %Y") %>)</p>
   </header>
   <ul>

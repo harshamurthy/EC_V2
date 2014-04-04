@@ -33,10 +33,17 @@
 
   <div class="graph-tab-container">
     <div class="graph-container">
-      <% if @client.sessions.present? %>
+      <% if @client.exercise_executions.present? %>
         <%= render 'client_graph', client: @client, exercise: @exercise, exercises: @exercises, type: @type %>
       <% else %>
-        <h3 class='no-graph'>Log a workout session to start graphing results.</h3>
+        <div class="no-graph-note-container">
+          <div class='no-graph-message'>
+            <h3>As soon as <%= @client.first_name %> starts working out, we'll graph it!</h3>
+          </div>
+        </div>
+        <div class="no-graph-img-container">
+          <%= image_tag('graph-filler-image.png', width: '500', height: '500') %>
+        </div>
       <% end %>
     </div>
   </div> <!-- tab-container -->
@@ -56,7 +63,14 @@
           <% end %>
         </ul>
       <% else %>
-        <h2 class='no-notes-yet'>Write the first note to help <%= @client.first_name %>.</h2>
+      <div class="no-notes-note-container">
+        <div class='no-note-message'>
+          <h3>Write the first note to make sure you're staying on top of <%= @client.first_name %>!</h3>
+        </div>
+      </div>
+      <div class="no-note-img-container">
+        <%= image_tag('notes-filler-image.png', width: '500px', height: '500px') %>
+      </div>
       <% end %>
     </div> <!-- note-container -->
     <div class="body-profile-tab hide">

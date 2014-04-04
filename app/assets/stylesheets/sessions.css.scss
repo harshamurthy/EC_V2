@@ -640,18 +640,18 @@
 
     input[type=submit] {
       @extend %buttons;
-      background-color: $orange;
+      background-color: $green_sea;
       border-bottom: none;
       display: inline-block;
       width: 20%;
       font-size: 24px;
 
       &:hover {
-        background-color: $green_sea;
+        background-color: $turquoise;
       }
 
       &:active {
-        background-color: $orange;
+        background-color: $turquoise;
       }
 
     }

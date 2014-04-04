@@ -7,8 +7,8 @@ class ClientsController < ApplicationController
     if params[:search]
       @clients = current_gym.clients.where("first_name || ' ' || last_name || ' ' ILIKE :search", :search => "%#{params[:search].downcase}%" ).order(first_name: :desc)
     else
-      # @clients = Client.where(gym_id: current_gym.id).order(first_name: :desc)
-      @clients = Client.all
+      @clients = Client.where(gym_id: current_gym.id).order(first_name: :desc)
+      # @clients = Client.all
     end
   end
 
@@ -109,7 +109,7 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:gym_id, :first_name, :last_name, :email, :machine_code, :avatar, :photos_attributes => [:avatar, :id], :client_stats_attributes => [:id, :weight, :skeletal_muscle_mass, :body_fat_mass, :percent_body_fat, :right_arm, :left_arm, :trunk, :right_leg, :basal_metabolic_rate, :fat_to_lose, :muscle_to_gain], :goals_attributes => [:content, :id])
+      params.require(:client).permit(:gym_id, :first_name, :last_name, :email, :machine_code, :avatar, :gender, :photos_attributes => [:avatar, :id], :client_stats_attributes => [:id, :weight, :skeletal_muscle_mass, :body_fat_mass, :percent_body_fat, :right_arm, :left_arm, :trunk, :right_leg, :basal_metabolic_rate, :fat_to_lose, :muscle_to_gain], :goals_attributes => [:content, :id])
     end
 
     def stat_params
