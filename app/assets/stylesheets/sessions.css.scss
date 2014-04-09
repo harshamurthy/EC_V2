@@ -684,13 +684,18 @@
     height: 120px;
     vertical-align: top;
     font-size: 16px;
-    .cal-session-count {
-      float: right;
-      padding: 3px;
-      background-color: $alizarin;
-      color: white;
-      border-radius: 5px;
-      font-size: 12px;
+    // text-align: center;
+    .cal-count-wrap {
+      text-align: center;
+      .cal-session-count {
+        text-decoration: none;
+        font-size: 12px;
+        padding: 5px 10px;
+        background-color: $alizarin;
+        color: white;
+        border-radius: 5px;
+
+      }
     }
     ul {
       margin-top: 15px;

@@ -13,20 +13,10 @@
   <%= calendar date do |date| %>
     <%= date.day %>
     <% if sessions_by_date[date] %>
-      <span class="cal-session-count"><%= pluralize(sessions_by_date[date].count, "session") %></span>
-      <ul class='cal-ul' id="<%= date %>">
-        <% sessions_by_date[date].each_with_index do |session, index| %>
-          <% if session.done? && index > 1 %>
-            <li class='hide cal-hidden done'><%= link_to "#{session.client.name} (#{session.routine.description})", workout_session_url(session.id) %></li>
-          <% elsif session.done? && index < 2 %>
-            <li class='done'><%= link_to "#{session.client.name} (#{session.routine.description})", workout_session_url(session.id) %></li>
-          <% elsif index > 1 %>
-            <li class='hide cal-hidden'><%= link_to "#{session.client.name} (#{session.routine.description})", workout_session_url(session.id) %></li>
-          <% else %>
-            <li><%= link_to "#{session.client.name} (#{session.routine.description})", workout_session_url(session.id) %></li>
-          <% end %>
-        <% end %>
-      </ul>
+      <div class="cal-count-wrap">
+
+        <%= link_to(pluralize(sessions_by_date[date].count, "session"), workout_sessions_url(specific_date: date), class: 'cal-session-count') %>
+      </div>
       <div class="see-more-or-less">
         <span class="cal-see-all <%= date %>" data-date="<%= date %>"><%= link_to "See more", specific_date: date if sessions_by_date[date].count > 2 %></span>
       </div>
