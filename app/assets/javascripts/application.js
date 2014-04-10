@@ -496,32 +496,52 @@ $(document).ready(function() {
   };
 
   var clientPageTabs = function() {
-      $('#graph-tab').on('click', function() {
+      $('#schedule-tab').on('click', function() {
+        $(this).addClass('active');
         $('.note-tab').removeClass('active');
         $('.body-profile-tab-link').removeClass('active');
-        $(this).addClass('active');
+        $('.graph-tab').removeClass('active');
 
-        $('.graph-tab-container').show();
+        $('.schedule-tab-container').show();
         $('.client-note-container').hide();
+        $('.body-profile-tab').hide();
+        $('.graph-tab-container').hide();
+      });
+
+      $('#note-tab').on('click', function() {
+        $('.schedule-tab').removeClass('active');
+        $(this).addClass('active');
+        $('.body-profile-tab-link').removeClass('active');
+        $('.graph-tab').removeClass('active');
+
+        $('.schedule-tab-container').hide();
+        $('.client-note-container').show();
+        $('.graph-tab-container').hide();
         $('.body-profile-tab').hide();
       });
 
       $('#body-profile-tab').on('click', function() {
+        $('.schedule-tab').removeClass('active');
         $('.note-tab').removeClass('active');
-        $('.graph-tab').removeClass('active');
         $(this).addClass('active');
+        $('.graph-tab').removeClass('active');
+
+        $('.schedule-tab-container').hide();
         $('.graph-tab-container').hide();
-        $('.client-note-container').hide();
         $('.body-profile-tab').show();
+        $('.client-note-container').hide();
       });
 
-      $('#note-tab').on('click', function() {
+      $('#graph-tab').on('click', function() {
+        $('.schedule-tab').removeClass('active');
+        $('.note-tab').removeClass('active');
         $('.body-profile-tab-link').removeClass('active');
-        $('.graph-tab').removeClass('active');
         $(this).addClass('active');
-        $('.graph-tab-container').hide();
-        $('.client-note-container').show();
+
+        $('.schedule-tab-container').hide();
+        $('.client-note-container').hide();
         $('.body-profile-tab').hide();
+        $('.graph-tab-container').show();
       });
   };
 

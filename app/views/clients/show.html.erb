@@ -21,17 +21,56 @@
 
   <ul class="tab-links">
     <li>
+      <%= link_to "<i class=\"fa fa-align-left\"></i> Schedule".html_safe, "#", class: 'schedule-tab active', id: 'schedule-tab' %>
+    </li>
+    <li>
       <%= link_to "<i class=\"fa fa-pencil-square-o\"></i> Notes".html_safe, "#", class: 'note-tab', id: 'note-tab' %>
     </li>
     <li>
       <%= link_to "<i class=\'fa fa-user\'></i> Body profile".html_safe, "#", class: 'body-profile-tab-link', id: 'body-profile-tab' %>
     </li>
     <li>
-      <%= link_to "<i class=\"fa fa-align-left\"></i> Graph".html_safe, "#", class: 'graph-tab active', id: 'graph-tab' %>
+      <%= link_to "<i class=\"fa fa-align-left\"></i> Graph".html_safe, "#", class: 'graph-tab', id: 'graph-tab' %>
     </li>
   </ul>
 
-  <div class="graph-tab-container">
+  <div class="schedule-tab-container">
+    <h2>Upcomming Sessions</h2>
+
+    <h2>Previous Sessions</h2>
+  </div>
+
+  <div class="client-note-container hide">
+    <%= form_tag note_client_url, method: 'post', remote: true do %>
+      <%= text_field_tag :content, nil, placeholder: "Write a note about #{@client.first_name}" %>
+      <%= hidden_field_tag :client_id, @client.id %>
+      <%= hidden_field_tag :client_page, true %>
+      <%= submit_tag "Submit" %>
+    <% end %>
+
+    <% if @client.notes.present? %>
+      <ul>
+        <% @client.notes.reverse.each do |note| %>
+          <li><%= note.content %><span><%= note.created_at.strftime("%B %d, %Y") %></span></li>
+        <% end %>
+      </ul>
+    <% else %>
+    <div class="no-notes-note-container">
+      <div class='no-note-message'>
+        <h3>Write the first note to make sure you're staying on top of <%= @client.first_name %>!</h3>
+      </div>
+    </div>
+    <div class="no-note-img-container">
+      <%= image_tag('notes-filler-image.png', width: '500px', height: '500px') %>
+    </div>
+    <% end %>
+  </div> <!-- note-container -->
+
+  <div class="body-profile-tab hide">
+    <%= render 'stat_index', client: @client %>
+  </div>
+
+  <div class="graph-tab-container hide">
     <div class="graph-container">
       <% if @client.exercise_executions.present? %>
         <%= render 'client_graph', client: @client, exercise: @exercise, exercises: @exercises, type: @type %>
@@ -47,34 +86,5 @@
       <% end %>
     </div>
   </div> <!-- tab-container -->
-
-    <div class="client-note-container hide">
-      <%= form_tag note_client_url, method: 'post', remote: true do %>
-        <%= text_field_tag :content, nil, placeholder: "Write a note about #{@client.first_name}" %>
-        <%= hidden_field_tag :client_id, @client.id %>
-        <%= hidden_field_tag :client_page, true %>
-        <%= submit_tag "Submit" %>
-      <% end %>
-
-      <% if @client.notes.present? %>
-        <ul>
-          <% @client.notes.reverse.each do |note| %>
-            <li><%= note.content %><span><%= note.created_at.strftime("%B %d, %Y") %></span></li>
-          <% end %>
-        </ul>
-      <% else %>
-      <div class="no-notes-note-container">
-        <div class='no-note-message'>
-          <h3>Write the first note to make sure you're staying on top of <%= @client.first_name %>!</h3>
-        </div>
-      </div>
-      <div class="no-note-img-container">
-        <%= image_tag('notes-filler-image.png', width: '500px', height: '500px') %>
-      </div>
-      <% end %>
-    </div> <!-- note-container -->
-    <div class="body-profile-tab hide">
-      <%= render 'stat_index', client: @client %>
-    </div>
 </div>
 
