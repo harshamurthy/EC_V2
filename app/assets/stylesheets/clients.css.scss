@@ -221,6 +221,30 @@
     max-height: 500px;
   }
 
+  .schedule-tab-container {
+    h2 {
+      font-weight: bold;
+      color: $green_sea;
+      margin: 15px 0px;
+    }
+    table {
+      tr {
+        th {
+          font-weight: bold;
+          padding: 5px 150px 5px 0px;
+        }
+        td {
+          padding: 5px 0px;
+        }
+      }
+    }
+
+    .schedule-container {
+      overflow-y: scroll;
+      max-height: 300px;
+    }
+  }
+
   .client-email {
     // margin-top: 5px;
     color: $asbestos;

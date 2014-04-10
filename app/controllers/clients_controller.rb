@@ -20,7 +20,7 @@ class ClientsController < ApplicationController
     @type = params[:type] if params[:type].present?
     @exercises = @client.exercise_executions.map { |s| s.exercise  }.uniq
     @upcoming_sessions = @client.sessions.where("date > ?", Date.yesterday)
-    @old_sessions = @client.sessions.where("date < ?", Date.today)
+    @previous_sessions = @client.sessions.where("date < ?", Date.today)
   end
 
   # GET /clients/new

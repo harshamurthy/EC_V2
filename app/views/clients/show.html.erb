@@ -35,9 +35,39 @@
   </ul>
 
   <div class="schedule-tab-container">
-    <h2>Upcomming Sessions</h2>
+    <div class='schedule-container'>
+    <h2><%= pluralize(@upcoming_sessions.count, "Upcoming Session") %></h2>
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Routine</th>
+        <th>Coach</th>
+      </tr>
+      <% @upcoming_sessions.each do |session| %>
+        <tr>
+          <td><%= session.date.strftime('%b %d, %Y') %></td>
+          <td><%= link_to(session.routine.description, workout_session_url(session.id)) %></td>
+          <td><%= session.coach %></td>
+        </tr>
+      <% end %>
+    </table>
 
-    <h2>Previous Sessions</h2>
+<h2><%= pluralize(@upcoming_sessions.count, "Previous Session") %></h2>
+    <table>
+       <tr>
+        <th>Date</th>
+        <th>Routine</th>
+        <th>Coach</th>
+      </tr>
+      <% @previous_sessions.each do |session| %>
+        <tr>
+          <td><%= session.date.strftime('%b %d, %Y') %></td>
+          <td><%= link_to(session.routine.description, workout_session_url(session.id)) %></td>
+          <td><%= session.coach %></td>
+        </tr>
+      <% end %>
+    </table>
+    </div>
   </div>
 
   <div class="client-note-container hide">
