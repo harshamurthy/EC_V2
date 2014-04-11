@@ -14,7 +14,7 @@
         <div class='field'>
           <%#= f.number_field :percentage, placeholder: 'Percentage', class: 'exercise-execution-performance-text' %>
           <%= f.select :percentage, (1..100).to_a.reverse, placeholder: 'Percentage', class: 'exercise-execution-performance-text' %>
-          <%= f.label :percentage %>
+          <%= f.label :target_achieved %>
         </div>
       <% end %>
 
