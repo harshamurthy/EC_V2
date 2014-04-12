@@ -1,17 +1,17 @@
-<section class='hide current-sessions'>
+<!-- <section class='hide current-sessions'>
   <ul>
-    <% current_sessions.each do |session| %>
+    <%# current_sessions.each do |session| %>
       <li>
-        <%= link_to "#{session.client.name} (#{session.routine.description})", workout_session_url(session.id) %>
-        <span><%= pluralize(session.exercise_executions.count, "exercise") %> completed</span>
+        <%#= link_to "#{session.client.name} (#{session.routine.description})", workout_session_url(session.id) %>
+        <span><%#= pluralize(session.exercise_executions.count, "exercise") %> completed</span>
       </li>
-    <% end %>
+    <%# end %>
   </ul>
-</section>
+</section> -->
 
-<% if current_sessions.count > 0 %>
-  <span class='current-sessions-count absolute'><%= pluralize(current_sessions.count, "current session") %><span class='fa fa-chevron-down arrow'></span></span>
-<% end %>
+<%# if current_sessions.count > 0 %>
+  <!-- <span class='current-sessions-count absolute'><%#= pluralize(current_sessions.count, "current session") %><span class='fa fa-chevron-down arrow'></span></span> -->
+<%# end %>
 
 <div class='client-index-page'>
   <div class='client-search-bar'>
