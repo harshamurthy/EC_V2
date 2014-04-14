@@ -5,6 +5,7 @@ class Client < ActiveRecord::Base
   has_many :setting_executions
   has_many :client_stats
   has_many :goals
+  has_many :cards
 
   has_many :photos
 
