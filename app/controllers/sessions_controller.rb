@@ -61,10 +61,18 @@ class SessionsController < ApplicationController
   # POST /sessions
   # POST /sessions.json
   def create
-    8.times do |i|
+    @client = Client.find(params[:session][:client_id])
+    if @client.sessions.map{|s| s.done?}.include?(false)
+      @card = @client.cards.last
+    else
+      @card = Card.create(client_id: params[:session][:client_id])
+    end
+    8.times do
       @session = Session.new(session_params)
       @session.name = "#{@session.client.first_name} ##{@session.client.sessions.count + 1}"
+      @session.card_id = @card.id
       @session.routine = Routine.find_or_initialize_by_exercise_ids(routine_params[:exercise_ids])
+
       if @session.id.nil?
         @session.routine.description = "Routine ##{Routine.all.count + 1}"
         @session.routine.gym_id = current_gym.id
@@ -77,7 +85,7 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       # if @session.save
-        format.html { redirect_to client_url(@session.client.id) }
+        format.html { redirect_to new_workout_session_url(client_id: @session.client.id) }
         format.json { render action: 'show', status: :created, location: @session }
       # else
       #   format.html { render action: 'new' }

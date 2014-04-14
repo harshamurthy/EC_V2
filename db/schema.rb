@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140414180720) do
+ActiveRecord::Schema.define(version: 20140414205430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cards", force: true do |t|
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "client_id"
+  end
 
   create_table "client_stats", force: true do |t|
     t.float    "weight"
@@ -166,6 +173,7 @@ ActiveRecord::Schema.define(version: 20140414180720) do
     t.integer  "client_id"
     t.string   "coach"
     t.boolean  "done"
+    t.integer  "card_id"
   end
 
   create_table "setting_executions", force: true do |t|
