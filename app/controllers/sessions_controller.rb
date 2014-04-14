@@ -93,6 +93,7 @@ class SessionsController < ApplicationController
       if @session.update(session_params)
         format.html { redirect_to workout_session_url(@session), notice: 'Session was successfully updated.' }
         format.json { head :no_content }
+        format.js
       else
         format.html { render action: 'edit' }
         format.json { render json: @session.errors, status: :unprocessable_entity }

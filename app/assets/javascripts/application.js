@@ -596,7 +596,11 @@ $(document).ready(function() {
       });
   };
 
-
+  var sessionCoach = function() {
+    $('#sessionCoach').change(function(){
+      $(this).parent('form').submit();
+    });
+  };
 
   //Calling functions
   automaticClientSearchBar();
@@ -623,5 +627,6 @@ $(document).ready(function() {
   clientPageTabs();
   landingPageSlideshow();
   landingNavigation();
-  clientGraph();
+  sessionCoach();
+  // clientGraph();
 });
