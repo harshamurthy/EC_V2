@@ -11,7 +11,7 @@
     <% end %>
     <header>
       <h1 class='client-name-show'><%= @client.name %></h1>
-      <p class='create-workout'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Create workout".html_safe, new_workout_session_url(client_id: @client.id) %></p>
+      <p class='create-workout'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Create New Card".html_safe, new_workout_session_url(client_id: @client.id) %></p>
       <p class='client-email'><%= @client.email %></p>
       <% if @client.goals.present? %>
         <p class='goal-parent'>Current goal: <span class='current-goal'>“<%= @client.goals.last.content %>”</span></p>
@@ -43,7 +43,7 @@
       </tr>
       <% @upcoming_sessions.each do |session| %>
         <tr>
-          <td><%= link_to(session.name, workout_session_url(session.id)) %></td>
+          <td><%= link_to("Routine # #{session.id}", workout_session_url(session.id)) %></td>
         </tr>
       <% end %>
     </table>
@@ -55,11 +55,12 @@
         <th>Coach</th>
         <th>Date</th>
       </tr>
-      <% @previous_sessions.each do |session| %>
+
+      <% @previous_sessions.reverse.each do |session| %>
         <tr>
-          <!-- <td><%#= session.date.strftime('%b %d, %Y') %></td> -->
-          <td><%= link_to(session.name, workout_session_url(session.id)) %></td>
+          <td><%= link_to("Routine ##{session.id}", workout_session_url(session.id)) %></td>
           <td><%= session.coach %></td>
+          <td><%= session.date.strftime('%B %d, %Y') %></td>
         </tr>
       <% end %>
     </table>

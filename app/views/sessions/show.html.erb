@@ -2,7 +2,6 @@
   <section class='session-show-header'>
     <h1 class='workout-session-client-name'><%= @session.client.name %> <span>(<%= @session.client.machine_code %>)</span></h1>
     <%= link_to "<i class=\"fa fa-check-square\"></i> End Session".html_safe, done_workout_session_url(session_id: @session.id), method: 'post', class: 'end-session' %>
-  </section>
   <aside class='workout-session-exercise-list'>
     <ul>
       <li class='session-exercise notebook onclick first'>
