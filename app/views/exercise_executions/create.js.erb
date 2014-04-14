@@ -1,7 +1,6 @@
 $('.workout-session-execution-form').remove();
 $('.session-saved').remove();
 
-$('.settings-and-executions').append("<%= j render('sessions/exercise_execution_form', exercise: @exercise, exercise_execution: @exercise_execution, session: @session) %>");
 
 $("<p class='session-saved'> Saved. </p>").hide().prependTo('.workout-session-execution-form').fadeIn("fast", function(){
   $(this).delay(500).fadeOut("slow");
@@ -20,7 +19,7 @@ $('.workout-session-execution-form select').on("change", function() {
   $('.session-exercise-execution-form').submit();
 });
 
-// $(".<%= @exercise.name.downcase.tr(" ", "_") %>").append(<%= @session.exercise_executions.count %>);
+$('.settings-and-executions').append("<%= j render('sessions/exercise_execution_form', exercise: @exercise, exercise_execution: @exercise_execution, session: @session) %>");
 // autoSaveSessionForm();
 // Setting Timer
 $('#stop-stop-watch').hide();

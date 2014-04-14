@@ -421,21 +421,21 @@ $(document).ready(function() {
   };
 
   var newSessionFormValidation = function() {
-    var textVal = false;
+    // var textVal = false;
     var selectVal = false;
-    var checkedVal = false;
-    $('.form-validator').on('keyup', function() {
-      textVal = $(this).val();
-      // console.log(checkedVal);
-      // console.log(selectVal);
-    });
-    $('.choose-existing select').on('change', function() {
-      selectVal = $(this).val();
-      // console.log(selectVal);
-    });
+    // var checkedVal = false;
+    // $('.form-validator').on('keyup', function() {
+    //   textVal = $(this).val();
+    //   // console.log(checkedVal);
+    //   // console.log(selectVal);
+    // });
+    // $('.choose-existing select').on('change', function() {
+    //   selectVal = $(this).val();
+    //   // console.log(selectVal);
+    // });
     $('.session-form-checkbox').on('change', function() {
-      checkedVal = $('.session-form-checkbox:checked').length;
-      // console.log(checkedVal);
+      selectVal = $('.session-form-checkbox:checked').length;
+      console.log(selectVal);
     });
 
     // $('.create-routine-link').on("click", function(){
@@ -450,26 +450,30 @@ $(document).ready(function() {
 
     $(document).change(function(){
       var isReady = false;
-      // console.log(textVal);
+
       // console.log(checkedVal);
       // console.log(selectVal);
 
-      if(textVal != '' || textVal) {
-        textVal = true;
-        console.log(textVal);
-      }
-      if (checkedVal > 0) {
-        checkedVal = true;
-        console.log(checkedVal);
-      }
+      // if(textVal != '' || textVal) {
+      //   textVal = true;
+
+      // }
+
+      // if (checkedVal > 0) {
+      //   checkedVal = true;
+
+      // }
       if (selectVal > 1 ) {
         selectVal = true;
-        console.log(selectVal);
       }
 
-      if(textVal && checkedVal) {
-        isReady = true;
-      } else if (selectVal) {
+      // if(textVal && checkedVal) {
+      //   isReady = true;
+      // } else if (selectVal) {
+      //   isReady = true;
+      // }
+
+      if(selectVal) {
         isReady = true;
       }
 
@@ -506,6 +510,8 @@ $(document).ready(function() {
         $('.client-note-container').hide();
         $('.body-profile-tab').hide();
         $('.graph-tab-container').hide();
+
+        return false;
       });
 
       $('#note-tab').on('click', function() {
@@ -518,6 +524,8 @@ $(document).ready(function() {
         $('.client-note-container').show();
         $('.graph-tab-container').hide();
         $('.body-profile-tab').hide();
+
+        return false;
       });
 
       $('#body-profile-tab').on('click', function() {
@@ -530,6 +538,8 @@ $(document).ready(function() {
         $('.graph-tab-container').hide();
         $('.body-profile-tab').show();
         $('.client-note-container').hide();
+
+        return false;
       });
 
       $('#graph-tab').on('click', function() {
@@ -542,6 +552,8 @@ $(document).ready(function() {
         $('.client-note-container').hide();
         $('.body-profile-tab').hide();
         $('.graph-tab-container').show();
+
+        return false;
       });
   };
 
@@ -597,7 +609,7 @@ $(document).ready(function() {
   createNewRoutine();
   inputFieldErrors();
   chooseExistingRoutine();
-  newSessionDate();
+  // newSessionDate();
   ensureNameForRoutine();
   sessionExercisesHeight();
   customNewClient();

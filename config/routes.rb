@@ -11,7 +11,9 @@ ECV2::Application.routes.draw do
 
   resources :exercise_executions
   resources :exercises
-  resources :sessions, :as => 'workout_sessions'
+  resources :sessions, :as => 'workout_sessions' do
+    member { post :done }
+  end
   resources :routines
   resources :clients do
     member { post :note }

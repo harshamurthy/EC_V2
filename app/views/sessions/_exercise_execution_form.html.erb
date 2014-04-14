@@ -4,7 +4,7 @@
     <fieldset class='fieldset'>
       <% if exercise.weight? %>
         <div class='field'>
-          <%= f.select :weight, (1..500).to_a.each_slice(5).map(&:last), placeholder: "Weight", class: 'exercise-execution-performance-text' %>
+          <%= f.select :weight, (1..500).to_a.each_slice(5), placeholder: "Weight", class: 'exercise-execution-performance-text' %>
           <%#= f.number_field :weight, placeholder: "Weight", class: 'exercise-execution-performance-text' %>
           <%= f.label :weight %>
         </div>

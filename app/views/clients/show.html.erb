@@ -29,9 +29,9 @@
     <li>
       <%= link_to "<i class=\'fa fa-user\'></i> Body profile".html_safe, "#", class: 'body-profile-tab-link', id: 'body-profile-tab' %>
     </li>
-    <li>
-      <%= link_to "<i class=\"fa fa-align-left\"></i> Graph".html_safe, "#", class: 'graph-tab', id: 'graph-tab' %>
-    </li>
+    <!-- <li>
+      <%#= link_to "<i class=\"fa fa-align-left\"></i> Graph".html_safe, "#", class: 'graph-tab', id: 'graph-tab' %>
+    </li> -->
   </ul>
 
   <div class="schedule-tab-container">
@@ -39,30 +39,26 @@
     <h2><%= pluralize(@upcoming_sessions.count, "Upcoming Session") %></h2>
     <table>
       <tr>
-        <th>Date</th>
-        <th>Routine</th>
-        <th>Coach</th>
+        <th>Name</th>
       </tr>
       <% @upcoming_sessions.each do |session| %>
         <tr>
-          <td><%= session.date.strftime('%b %d, %Y') %></td>
-          <td><%= link_to(session.routine.description, workout_session_url(session.id)) %></td>
-          <td><%= session.coach %></td>
+          <td><%= link_to(session.name, workout_session_url(session.id)) %></td>
         </tr>
       <% end %>
     </table>
 
-<h2><%= pluralize(@upcoming_sessions.count, "Previous Session") %></h2>
+<h2><%= pluralize(@previous_sessions.count, "Previous Session") %></h2>
     <table>
        <tr>
-        <th>Date</th>
-        <th>Routine</th>
+        <th>Name</th>
         <th>Coach</th>
+        <th>Date</th>
       </tr>
       <% @previous_sessions.each do |session| %>
         <tr>
-          <td><%= session.date.strftime('%b %d, %Y') %></td>
-          <td><%= link_to(session.routine.description, workout_session_url(session.id)) %></td>
+          <!-- <td><%#= session.date.strftime('%b %d, %Y') %></td> -->
+          <td><%= link_to(session.name, workout_session_url(session.id)) %></td>
           <td><%= session.coach %></td>
         </tr>
       <% end %>
@@ -100,20 +96,20 @@
     <%= render 'stat_index', client: @client %>
   </div>
 
-  <div class="graph-tab-container hide">
+  <!-- <div class="graph-tab-container hide">
     <div class="graph-container">
-      <% if @client.exercise_executions.present? %>
-        <%= render 'client_graph', client: @client, exercise: @exercise, exercises: @exercises, type: @type %>
-      <% else %>
+      <%# if @client.exercise_executions.present? %>
+        <%#= render 'client_graph', client: @client, exercise: @exercise, exercises: @exercises, type: @type %>
+      <%# else %>
         <div class="no-graph-note-container">
           <div class='no-graph-message'>
-            <h3>As soon as <%= @client.first_name %> starts working out, we'll graph it!</h3>
+            <h3>As soon as <%#= @client.first_name %> starts working out, we'll graph it!</h3>
           </div>
         </div>
         <div class="no-graph-img-container">
-          <%= image_tag('graph-filler-image.png', width: '500', height: '500') %>
+          <%#= image_tag('graph-filler-image.png', width: '500', height: '500') %>
         </div>
-      <% end %>
+      <%# end %>
     </div>
   </div> <!-- tab-container -->
 </div>

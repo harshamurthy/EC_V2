@@ -61,28 +61,28 @@ class SessionsController < ApplicationController
   # POST /sessions
   # POST /sessions.json
   def create
-    @session = Session.new(session_params)
-
-    if @session.routine.nil?
+    8.times do |i|
+      @session = Session.new(session_params)
+      @session.name = "#{@session.client.first_name} ##{@session.client.sessions.count + 1}"
       @session.routine = Routine.find_or_initialize_by_exercise_ids(routine_params[:exercise_ids])
-      @session.routine.description = routine_params[:description]
-      @session.routine.gym_id = current_gym.id
+      if @session.id.nil?
+        @session.routine.description = "Routine ##{Routine.all.count + 1}"
+        @session.routine.gym_id = current_gym.id
+        @session.routine.save!
+      end
+
+      @session.save
     end
-      @session.routine.save!
 
 
     respond_to do |format|
-      if @session.save
-        if @session.date.to_date == Date.today
-          format.html { redirect_to workout_session_url(@session) }
-        else
-          format.html { redirect_to workout_sessions_url(date: @session.date) }
-        end
+      # if @session.save
+        format.html { redirect_to client_url(@session.client.id) }
         format.json { render action: 'show', status: :created, location: @session }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @session.errors, status: :unprocessable_entity }
-      end
+      # else
+      #   format.html { render action: 'new' }
+      #   format.json { render json: @session.errors, status: :unprocessable_entity }
+      # end
     end
   end
 
@@ -108,6 +108,15 @@ class SessionsController < ApplicationController
       format.html { redirect_to workout_sessions_url }
       format.json { head :no_content }
     end
+  end
+
+  def done
+    @session = Session.find_by_id(params[:session_id])
+    @session.done = true
+    @session.date = Date.today
+    @session.save
+
+    redirect_to client_url(@session.client.id)
   end
 
   private

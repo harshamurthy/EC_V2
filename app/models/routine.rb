@@ -7,6 +7,7 @@ class Routine < ActiveRecord::Base
   validates_presence_of :exercise_ids
 
   def self.find_or_initialize_by_exercise_ids(exercise_ids)
-    Routine.all.select{|r| r == exercise_ids}.first || Routine.new(exercise_ids: exercise_ids)
+    exercise_ids.map! { |id| id.to_i }
+    Routine.all.select{|r| r.exercise_ids == exercise_ids}.first || Routine.new(exercise_ids: exercise_ids)
   end
 end

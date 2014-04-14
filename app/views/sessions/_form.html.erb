@@ -13,48 +13,44 @@
       </div>
     <% end %>
 
-      <section class='session-coach'>
-        <h2><%= f.select :coach, options_for_select(["Bruno Streich", "Alexis Delaney", "Nicole Taylor", "Pam Beaty", "Maureen Slott", "Steve Boon"]), include_blank: true %> is training <%= @client.name %>.</h2>
-      </section>
-
-      <div class="datepicker-container">
+<!--       <div class="datepicker-container">
         <section class="session-datepicker">
           <h2>This workout is for...</h2>
           <div class="h2-and-labels">
 
 
-            <%= f.text_field :date, class: "session-datepicker-text-field hide new-session-date" %>
-            <%= f.label :date, "Other date", class: "datepicker-label session-form-radio-button-label" %>
+            <%#= f.text_field :date, class: "session-datepicker-text-field hide new-session-date" %>
+            <%#= f.label :date, "Other date", class: "datepicker-label session-form-radio-button-label" %>
 
             <span class="dateor"><i class="fa fa-minus"></i></span>
 
-            <input type='radio' name='session[date]' value=<%= Date.today %> checked="checked" class='session-form-radio-button new-session-date' id="today">
+            <input type='radio' name='session[date]' value=<%#= Date.today %> checked="checked" class='session-form-radio-button new-session-date' id="today">
             <label class='session-form-radio-button-label' for="today">
             Today
             </label>
 
             <span class='date-or'><i class="fa fa-minus"></i></span>
 
-            <input type='radio' name='session[date]' value=<%= Date.tomorrow %> class='session-form-radio-button new-session-date' id="tomorrow">
+            <input type='radio' name='session[date]' value=<%#= Date.tomorrow %> class='session-form-radio-button new-session-date' id="tomorrow">
             <label class='session-form-radio-button-label' for="tomorrow" >
             Tomorrow
             </label>
           </div>
         </section>
-      </div>
+      </div> -->
 
         <section class='session-workouts'>
           <div class="actual-content">
             <a href="#" class="create-routine-link tab">Create a new routine</a>
-            <a href="#" class="choose-existing-link">Choose existing routine</a>
+            <!-- <a href="#" class="choose-existing-link">Choose existing routine</a> -->
 
             <div class="create-new">
               <div class="new_routine_for_session_form">
                 <%= f.fields_for Routine.new do |r| %>
 
-                <%= r.label :description, class: 'session-form-labels' %><br>
-                <%= r.text_field :description, placeholder: 'Name the routine', class: 'session-form-inputs form-validator' %>
-                <span class="hide add-routine-name"><i class="fa fa-arrow-circle-o-left"></i> Add a name</span>
+                <%#= r.label :description, class: 'session-form-labels' %><br>
+                <%#= r.text_field :description, placeholder: 'Name the routine', class: 'session-form-inputs form-validator' %>
+                <!-- <span class="hide add-routine-name"><i class="fa fa-arrow-circle-o-left"></i> Add a name</span> -->
                 <p class='add-exercise-p'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Create a new exercise".html_safe, new_exercise_url(client_id: @client.id) %></p>
 
 
@@ -139,14 +135,14 @@
               </div>
             </div> <!-- create-new -->
 
-            <div class="choose-existing hide">
-              <% if current_gym.routines.count > 0 %>
+            <!-- <div class="choose-existing hide">
+              <%# if current_gym.routines.count > 0 %>
                 <h2>Choose pre-existing workout:</h2>
-                <%= f.label :routine_id, :class => 'hide', data: {client: @client.id} %>
-                <%= f.select :routine_id, options_for_select(current_gym.routines.collect{ |u| [u.description, u.id]}), include_blank: true %>
-              <% else %>
+                <%#= f.label :routine_id, :class => 'hide', data: {client: @client.id} %>
+                <%#= f.select :routine_id, options_for_select(current_gym.routines.collect{ |u| [u.description, u.id]}), include_blank: true %>
+              <%# else %>
                 <p class='no-routine-message'>You guys don't have any routines yet! Once you create a session we will save it to your routines.</p>
-              <% end %>
+              <%# end %>
             </div> <!-- choose-exisiting -->
 
 
@@ -156,7 +152,7 @@
           </div> <!-- actual-content -->
         </section> <!-- session-workouts -->
 
-      <%= f.hidden_field :name, value: "#{@client.name} ##{@client.sessions.count + 1}" %>
+      <%#= f.hidden_field :name, value: "#{@client.name} ##{@client.sessions.count + 1}" %>
       <%= f.hidden_field :client_id, value: @client.id %>
       <%= f.hidden_field :gym_id, value: current_gym.id %>
   <% end %>

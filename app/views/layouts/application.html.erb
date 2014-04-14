@@ -11,13 +11,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if gym_signed_in? && !current_page?(root_url) %>
-    <nav class='app-nav absolute'>
-      <%= link_to "<i class=\"fa fa-home\"></i>".html_safe, clients_url %>
-      <%= link_to "<i class=\"fa fa-calendar-o\"></i>".html_safe, workout_sessions_url %>
-      <%= link_to "<i class=\"fa fa-power-off\"></i>".html_safe, destroy_gym_session_url, method: 'delete' %>
-    </nav>
+
+  <% if gym_signed_in? %>
+    <% unless (params[:id] && current_page?(workout_session_url(params[:id]))) || current_page?(root_url) %>
+      <nav class='app-nav absolute'>
+        <%= link_to "<i class=\"fa fa-home\"></i>".html_safe, clients_url %>
+        <%= link_to "<i class=\"fa fa-calendar-o\"></i>".html_safe, workout_sessions_url %>
+        <%= link_to "<i class=\"fa fa-power-off\"></i>".html_safe, destroy_gym_session_url, method: 'delete' %>
+      </nav>
+    <% end %>
   <% end %>
+
   <%= yield %>
   <% unless !gym_signed_in? || current_page?(workout_sessions_url) %>
     <span class='happy-day-of-week'>Happy <%= Date.today.strftime("%A") %>.</span>
