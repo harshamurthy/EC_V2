@@ -1,10 +1,16 @@
 $('.workout-session-execution-form').remove();
 $('.session-saved').remove();
 
-
+$('.settings-and-executions').append("<%= j render('sessions/exercise_execution_form', exercise: @exercise, exercise_execution: @exercise_execution, session: @session) %>");
 $("<p class='session-saved'> Saved. </p>").hide().prependTo('.workout-session-execution-form').fadeIn("fast", function(){
   $(this).delay(500).fadeOut("slow");
 });
+
+var text1 = <%= @exercise_execution.weight.to_i %>;
+$(".workout-session-execution-form select option").filter(function() {
+    //may want to use $.trim in here
+    return $(this).text() == text1;
+}).prop('selected', true);
 
 $('.workout-session-execution-form input').focusout(function(){
   $('.session-exercise-execution-form').submit();
@@ -14,12 +20,10 @@ $('.workout-session-setting-form input[type=text]').focusout(function() {
   $('.session-setting-execution-form').submit();
 });
 
-$('.workout-session-execution-form select').on("change", function() {
-  // alert('yo');
+$('.workout-session-execution-form select').change(function() {
   $('.session-exercise-execution-form').submit();
 });
 
-$('.settings-and-executions').append("<%= j render('sessions/exercise_execution_form', exercise: @exercise, exercise_execution: @exercise_execution, session: @session) %>");
 // autoSaveSessionForm();
 // Setting Timer
 $('#stop-stop-watch').hide();

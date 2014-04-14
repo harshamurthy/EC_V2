@@ -19,6 +19,12 @@ $("<p class='session-saved'> Saved. </p>").hide().prependTo('.workout-session-ex
   $(this).delay(500).fadeOut("slow");
 });
 
+var text1 = <%= @exercise_execution.weight.to_i %>;
+$(".workout-session-execution-form select option").filter(function() {
+    //may want to use $.trim in here
+    return $(this).text() == text1;
+}).prop('selected', true);
+
 //---------------------------------------------
 
 $('.workout-session-execution-form input').focusout(function(){

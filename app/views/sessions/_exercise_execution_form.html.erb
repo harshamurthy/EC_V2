@@ -1,11 +1,9 @@
 <div class='workout-session-execution-form'>
-  <!-- <span class='session-saved hide'>Saved.</span> -->
   <%= form_for(exercise_execution, remote: true, :html => { class: 'session-exercise-execution-form' }) do |f| %>
     <fieldset class='fieldset'>
       <% if exercise.weight? %>
         <div class='field'>
-          <%= f.select :weight, (1..500).to_a.each_slice(5), placeholder: "Weight", class: 'exercise-execution-performance-text' %>
-          <%#= f.number_field :weight, placeholder: "Weight", class: 'exercise-execution-performance-text' %>
+          <%= f.select :weight, (1..500).to_a, placeholder: "Weight", class: 'exercise-execution-performance-text' %>
           <%= f.label :weight %>
         </div>
       <% end %>
