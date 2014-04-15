@@ -13,32 +13,6 @@
       </div>
     <% end %>
 
-<!--       <div class="datepicker-container">
-        <section class="session-datepicker">
-          <h2>This workout is for...</h2>
-          <div class="h2-and-labels">
-
-
-            <%#= f.text_field :date, class: "session-datepicker-text-field hide new-session-date" %>
-            <%#= f.label :date, "Other date", class: "datepicker-label session-form-radio-button-label" %>
-
-            <span class="dateor"><i class="fa fa-minus"></i></span>
-
-            <input type='radio' name='session[date]' value=<%#= Date.today %> checked="checked" class='session-form-radio-button new-session-date' id="today">
-            <label class='session-form-radio-button-label' for="today">
-            Today
-            </label>
-
-            <span class='date-or'><i class="fa fa-minus"></i></span>
-
-            <input type='radio' name='session[date]' value=<%#= Date.tomorrow %> class='session-form-radio-button new-session-date' id="tomorrow">
-            <label class='session-form-radio-button-label' for="tomorrow" >
-            Tomorrow
-            </label>
-          </div>
-        </section>
-      </div> -->
-
         <section class='session-workouts'>
           <div class="actual-content">
             <a href="#" class="create-routine-link tab">Create a new routine</a>
@@ -145,7 +119,6 @@
               <%# end %>
             </div> <!-- choose-exisiting -->
 
-
             <div class="submit-session">
               <%= f.submit 'Start workout', class: 'session-form-submit-button'%>
             </div>
@@ -153,6 +126,15 @@
         </section> <!-- session-workouts -->
 
       <%#= f.hidden_field :name, value: "#{@client.name} ##{@client.sessions.count + 1}" %>
+
+        <% if @client.cards.count < 1 || @client.cards.last.sessions.last.session_tag.nil? %>
+          <%= f.hidden_field :session_tag, value: 'A' %>
+        <% elsif @client.cards.last.sessions.last.session_tag == 'A' %>
+          <%= f.hidden_field :session_tag, value: 'B' %>
+        <% else %>
+          <%= f.hidden_field :session_tag, value: 'C' %>
+        <% end %>
+
       <%= f.hidden_field :client_id, value: @client.id %>
       <%= f.hidden_field :gym_id, value: current_gym.id %>
   <% end %>

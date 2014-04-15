@@ -39,13 +39,27 @@
     <h2><%= pluralize(@upcoming_sessions.count, "Upcoming Session") %></h2>
     <table>
       <tr>
-        <th>Name</th>
+        <th>A</th>
+        <th>B</th>
+        <th>C</th>
       </tr>
+      <tr>
       <% @upcoming_sessions.each do |session| %>
-        <tr>
-          <td><%= link_to("Routine # #{session.id}", workout_session_url(session.id)) %></td>
-        </tr>
+          <% if session.session_tag == 'A' %>
+          <td>
+            <%= link_to("Routine # #{session.id}", workout_session_url(session.id)) %>, <%= session.session_tag %>
+          </td>
+          <% elsif session.session_tag == 'B' %>
+          <td>
+            <%= link_to("Routine # #{session.id}", workout_session_url(session.id))  %>, <%= session.session_tag %>
+          </td>
+          <% else %>
+          <td>
+            <%= link_to("Routine # #{session.id}", workout_session_url(session.id)) %>
+          </td>
+          <% end %>
       <% end %>
+      </tr>
     </table>
 
 <h2><%= pluralize(@previous_sessions.count, "Previous Session") %></h2>

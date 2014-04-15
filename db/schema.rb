@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140414205430) do
+ActiveRecord::Schema.define(version: 20140414233413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -174,6 +174,7 @@ ActiveRecord::Schema.define(version: 20140414205430) do
     t.string   "coach"
     t.boolean  "done"
     t.integer  "card_id"
+    t.string   "session_tag"
   end
 
   create_table "setting_executions", force: true do |t|
