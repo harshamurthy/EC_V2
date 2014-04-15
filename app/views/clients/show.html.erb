@@ -43,41 +43,53 @@
 
   <div class="schedule-tab-container">
     <div class='schedule-container'>
-    <h2><%= pluralize(@upcoming_sessions_by_session_tag.count, "Upcoming Session") %></h2>
-    <table>
-      <tr>
-        <th>Sessions</th>
-        <th>Routine</th>
-      </tr>
-      <% @upcoming_sessions_by_session_tag.each do |session| %>
-        <tr>
-          <td>
-            <%= link_to "Session ##{session.id}", workout_session_url(session.id)  %>
-          </td>
-          <td><%= session.session_tag %></td>
-          <td></td>
-        </tr>
-      <% end %>
-    </table>
+      <% if @client.cards.present? %>
+        <h2><%= pluralize(@upcoming_sessions_by_session_tag.count, "Upcoming Session") %></h2>
+        <table>
+          <tr>
+            <th>Sessions</th>
+            <th>Routine</th>
+          </tr>
+          <% @upcoming_sessions_by_session_tag.each do |session| %>
+            <tr>
+              <td>
+                <%= link_to "Session ##{session.id}", workout_session_url(session.id)  %>
+              </td>
+              <td><%= session.session_tag %></td>
+              <td></td>
+            </tr>
+          <% end %>
+        </table>
 
-<h2><%= pluralize(@previous_sessions.count, "Previous Session") %></h2>
-    <table>
-       <tr>
-        <th>Sessions</th>
-        <th>Routine</th>
-        <th>Coach</th>
-        <th>Date</th>
-      </tr>
+        <h2><%= pluralize(@previous_sessions.count, "Previous Session") %></h2>
+        <table>
+           <tr>
+            <th>Sessions</th>
+            <th>Routine</th>
+            <th>Coach</th>
+            <th>Date</th>
+          </tr>
 
-      <% @previous_sessions.reverse.each do |session| %>
-        <tr>
-          <td><%= link_to("Session ##{session.id}", workout_session_url(session.id)) %></td>
-          <td><%= session.session_tag %></td>
-          <td><%= session.coach %></td>
-          <td><%= session.date.strftime('%B %d, %Y') %></td>
-        </tr>
+          <% @previous_sessions.reverse.each do |session| %>
+            <tr>
+              <td><%= link_to("Session ##{session.id}", workout_session_url(session.id)) %></td>
+              <td><%= session.session_tag %></td>
+              <td><%= session.coach %></td>
+              <td><%= session.date.strftime('%B %d, %Y') %></td>
+            </tr>
+          <% end %>
+        </table>
+      <% else %>
+        <div class="no-schedule-container">
+          <div class='no-schedule-message'>
+            <h3>Create a card for <%= @client.first_name %> to see the schedule!</h3>
+          </div>
+        </div>
+
+        <div class="no-schedule-img-container">
+          <%= image_tag('schedule-filler-image.png', width: '500px', height: '500px') %>
+        </div>
       <% end %>
-    </table>
     </div>
   </div>
 
