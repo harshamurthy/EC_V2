@@ -21,11 +21,11 @@ class ClientsController < ApplicationController
     @exercises = @client.exercise_executions.map { |s| s.exercise  }.uniq
     @previous_sessions = @client.sessions.where(done: true)
 
-    a = @client.sessions.where(done: nil).where(session_tag: 'A')
-    b = @client.sessions.where(done: nil).where(session_tag: 'B')
-    c = @client.sessions.where(done: nil).where(session_tag: 'C')
+    @a = @client.sessions.where(done: nil).where(session_tag: 'A')
+    @b = @client.sessions.where(done: nil).where(session_tag: 'B')
+    @c = @client.sessions.where(done: nil).where(session_tag: 'C')
 
-    @upcoming_sessions_by_session_tag = a.zip(b, c).flatten.compact
+    @upcoming_sessions_by_session_tag = @a.zip(@b, @c).flatten
   end
 
   # GET /clients/new

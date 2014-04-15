@@ -12,9 +12,9 @@
     <header>
       <h1 class='client-name-show'><%= @client.name %></h1>
 
-      <% if @client.cards.present? && @client.cards.last.sessions.count >= 16 %>
+      <% if @client.cards.present? && @upcoming_sessions_by_session_tag.count >= 16 %>
         <!-- <p class='create-workout'><%= @client.first_name %> has 3 routines on his card.</p> -->
-      <% elsif @client.cards.present? && @client.cards.last.sessions.count > 0 %>
+      <% elsif @client.cards.present? && @upcoming_sessions_by_session_tag.count > 0 %>
         <p class='create-workout'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Add routine".html_safe, new_workout_session_url(client_id: @client.id) %></p>
       <% else %>
         <p class='create-workout'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Create new card".html_safe, new_workout_session_url(client_id: @client.id) %></p>
