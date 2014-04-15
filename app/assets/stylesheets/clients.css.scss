@@ -242,6 +242,13 @@
     .schedule-container {
       overflow-y: scroll;
       max-height: 300px;
+
+      table {
+        td {
+          padding: 15px;
+          border-bottom: 1px solid $clouds;
+        }
+      }
     }
   }
 
