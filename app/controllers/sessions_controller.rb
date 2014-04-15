@@ -85,7 +85,11 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       # if @session.save
-        format.html { redirect_to new_workout_session_url(client_id: @session.client.id) }
+        if params[:session][:session_tag] == "C"
+          format.html { redirect_to client_url(@session.client.id) }
+        else
+          format.html { redirect_to new_workout_session_url(client_id: @session.client.id) }
+        end
         format.json { render action: 'show', status: :created, location: @session }
       # else
       #   format.html { render action: 'new' }

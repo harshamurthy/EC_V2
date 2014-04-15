@@ -20,7 +20,7 @@ class ClientsController < ApplicationController
     @type = params[:type] if params[:type].present?
     @exercises = @client.exercise_executions.map { |s| s.exercise  }.uniq
     @previous_sessions = @client.sessions.where(done: true)
-    # @upcoming_sessions = @client.sessions - @previous_sessions
+
     a = @client.sessions.where(done: nil).where(session_tag: 'A')
     b = @client.sessions.where(done: nil).where(session_tag: 'B')
     c = @client.sessions.where(done: nil).where(session_tag: 'C')
