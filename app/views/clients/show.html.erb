@@ -43,23 +43,33 @@
         <th>B</th>
         <th>C</th>
       </tr>
-      <tr>
-      <% @upcoming_sessions.each do |session| %>
-          <% if session.session_tag == 'A' %>
-          <td>
-            <%= link_to("Routine # #{session.id}", workout_session_url(session.id)) %>, <%= session.session_tag %>
-          </td>
-          <% elsif session.session_tag == 'B' %>
-          <td>
-            <%= link_to("Routine # #{session.id}", workout_session_url(session.id))  %>, <%= session.session_tag %>
-          </td>
-          <% else %>
+      <% @a.each do |session| %>
+        <tr>
           <td>
             <%= link_to("Routine # #{session.id}", workout_session_url(session.id)) %>
           </td>
-          <% end %>
+          <td></td>
+          <td></td>
+        </tr>
       <% end %>
-      </tr>
+      <% @b.each do |session| %>
+        <tr>
+          <td></td>
+          <td>
+            <%= link_to("Routine # #{session.id}", workout_session_url(session.id)) %>
+          </td>
+          <td></td>
+        </tr>
+      <% end %>
+       <% @c.each do |session| %>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>
+            <%= link_to("Routine # #{session.id}", workout_session_url(session.id)) %>
+          </td>
+        </tr>
+      <% end %>
     </table>
 
 <h2><%= pluralize(@previous_sessions.count, "Previous Session") %></h2>

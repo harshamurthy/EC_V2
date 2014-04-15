@@ -21,6 +21,9 @@ class ClientsController < ApplicationController
     @exercises = @client.exercise_executions.map { |s| s.exercise  }.uniq
     @previous_sessions = @client.sessions.where(done: true)
     @upcoming_sessions = @client.sessions - @previous_sessions
+    @a = Session.where(done: nil).where(session_tag: 'A')
+    @b = Session.where(done: nil).where(session_tag: 'B')
+    @c = Session.where(done: nil).where(session_tag: 'C')
   end
 
   # GET /clients/new
