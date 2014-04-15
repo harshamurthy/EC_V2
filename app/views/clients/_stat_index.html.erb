@@ -6,7 +6,7 @@
     </header>
     <% if client.client_stats.present? %>
     <ul>
-      <% client.client_stats.each do |stat| %>
+      <% client.client_stats.reverse.each do |stat| %>
         <li><%= link_to stat.created_at.strftime("%B %d, %Y"), stat_show_client_url(client_stat_id: stat.id, client_id: client.id)  %>
           <span><%= time_ago_in_words(stat.created_at) %></span>
         </li>
