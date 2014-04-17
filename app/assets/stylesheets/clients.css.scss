@@ -222,33 +222,68 @@
   }
 
   .schedule-tab-container {
+      overflow-y: scroll;
+      max-height: 375px;
     h2 {
       font-weight: bold;
       color: $green_sea;
       margin: 15px 0px;
     }
-    table {
-      tr {
-        th {
-          font-weight: bold;
-          padding: 5px 100px 5px 0px;
+    // table {
+    //   tr {
+    //     th {
+    //       font-weight: bold;
+    //       // padding: 5px 100px 5px 0px;
+    //     }
+    //     td {
+    //       padding: 5px 0px;
+    //     }
+    //   }
+    // }
+
+    .upcoming-container {
+      border-bottom: 1px solid $clouds;
+      .client-card-session-count {
+        font-weight: bold;
+        font-size: 18px;
+        text-align: right;
+        span {
+          color: $green_sea;
         }
-        td {
-          padding: 5px 0px;
+      }
+
+      h5 {
+        font-size: $h2;
+        text-align: center;
+        margin: 20px 0;
+        font-weight: bold;
+
+        a {
+          font-size: $h1;
+          font-weight: bold;
+        }
+      }
+
+      .last-time-sentence {
+        font-size: 22px;
+        text-align: center;
+        margin: 20px 0;
+
+        a {
+          font-size: 22px;
+          font-weight: bold;
+        }
+      }
+      .see-completed-container {
+        text-align: center;
+        .see-completed-sessions-link {
+
         }
       }
     }
 
-    .schedule-container {
-      overflow-y: scroll;
-      max-height: 300px;
+    .previous-sessions {
 
-      table {
-        td {
-          padding: 15px 0px;
-          border-bottom: 1px solid $clouds;
-        }
-      }
     }
   }
 

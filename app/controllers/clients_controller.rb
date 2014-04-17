@@ -20,12 +20,32 @@ class ClientsController < ApplicationController
     @type = params[:type] if params[:type].present?
     @exercises = @client.exercise_executions.map { |s| s.exercise  }.uniq
     @previous_sessions = @client.sessions.where(done: true)
+    @current_card = @client.cards.last
+
+    if @current_card.sessions.where(done: true).any? && @current_card.sessions.where(done: true).last.session_tag == 'A'
+      @next_session_tag = 'B'
+    elsif @current_card.sessions.where(done: true).any? && @current_card.sessions.where(done: true).last.session_tag == 'B'
+      @next_session_tag = 'C'
+    else
+      @next_session_tag = 'A'
+    end
+
+    @next_session = @current_card.next_session(@next_session_tag)
+    @last_session = @current_card.sessions.where(done: true).last
+
 
     @a = @client.sessions.where(done: nil).where(session_tag: 'A')
     @b = @client.sessions.where(done: nil).where(session_tag: 'B')
     @c = @client.sessions.where(done: nil).where(session_tag: 'C')
 
-    @upcoming_sessions_by_session_tag = @a.zip(@b, @c).flatten
+    if @b.empty? && @c.empty?
+      @upcoming_sessions_by_session_tag = @a
+    elsif @b && @c.empty?
+      @upcoming_sessions_by_session_tag = @a.zip(@b).flatten
+    else
+      @upcoming_sessions_by_session_tag = @a.zip(@b, @c).flatten
+    end
+
   end
 
   # GET /clients/new
