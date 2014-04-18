@@ -20,18 +20,24 @@ class ClientsController < ApplicationController
     @type = params[:type] if params[:type].present?
     @exercises = @client.exercise_executions.map { |s| s.exercise  }.uniq
     @previous_sessions = @client.sessions.where(done: true)
-    @current_card = @client.cards.last
+    @current_card = @client.cards.last if @client.cards.any?
 
-    if @current_card.sessions.where(done: true).any? && @current_card.sessions.where(done: true).last.session_tag == 'A'
-      @next_session_tag = 'B'
-    elsif @current_card.sessions.where(done: true).any? && @current_card.sessions.where(done: true).last.session_tag == 'B'
-      @next_session_tag = 'C'
-    else
-      @next_session_tag = 'A'
+    if @current_card
+      if @current_card.sessions.where(done: true).any? && @current_card.sessions.where(done: true).order('sessions.finished_at ASC').last.session_tag == 'A'
+        @next_session_tag = 'B'
+      elsif @current_card.sessions.where(done: true).any? && @current_card.sessions.where(done: true).order('sessions.finished_at ASC').last.session_tag == 'B'
+        if @current_card.sessions.where(session_tag: 'C').any?
+          @next_session_tag = 'C'
+        else
+          @next_session_tag = 'A'
+        end
+      else
+        @next_session_tag = 'A'
+      end
     end
 
-    @next_session = @current_card.next_session(@next_session_tag)
-    @last_session = @current_card.sessions.where(done: true).last
+    @next_session = @current_card.next_session(@next_session_tag) if @current_card
+    @last_session = @current_card.sessions.where(done: true).last if @current_card
 
 
     @a = @client.sessions.where(done: nil).where(session_tag: 'A')

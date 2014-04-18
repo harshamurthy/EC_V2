@@ -120,23 +120,25 @@
             </div> <!-- choose-exisiting -->
 
             <div class="submit-session">
-              <%= f.submit 'Start workout', class: 'session-form-submit-button'%>
+              <% if @client.cards.count < 1 || @client.cards.last.sessions.last.session_tag.nil? %>
+                <%= f.submit "Save A Routine", class: 'session-form-submit-button'%>
+                <%= f.hidden_field :session_tag, value: 'A' %>
+              <% elsif @client.cards.last.sessions.last.session_tag == 'A' %>
+                <%= f.submit "Save B Routine", class: 'session-form-submit-button'%>
+                <%= f.hidden_field :session_tag, value: 'B' %>
+              <% else %>
+                <%= f.submit "Save C Routine", class: 'session-form-submit-button'%>
+                <%= f.hidden_field :session_tag, value: 'C' %>
+              <% end %>
             </div>
+
+            <%= f.hidden_field :client_id, value: @client.id %>
+            <%= f.hidden_field :gym_id, value: current_gym.id %>
+
           </div> <!-- actual-content -->
         </section> <!-- session-workouts -->
 
       <%#= f.hidden_field :name, value: "#{@client.name} ##{@client.sessions.count + 1}" %>
-
-        <% if @client.cards.count < 1 || @client.cards.last.sessions.last.session_tag.nil? %>
-          <%= f.hidden_field :session_tag, value: 'A' %>
-        <% elsif @client.cards.last.sessions.last.session_tag == 'A' %>
-          <%= f.hidden_field :session_tag, value: 'B' %>
-        <% else %>
-          <%= f.hidden_field :session_tag, value: 'C' %>
-        <% end %>
-
-      <%= f.hidden_field :client_id, value: @client.id %>
-      <%= f.hidden_field :gym_id, value: current_gym.id %>
   <% end %>
 </div>
 

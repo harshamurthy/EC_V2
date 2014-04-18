@@ -7,7 +7,7 @@ class Card < ActiveRecord::Base
   end
 
   def next_session(session_tag)
-    self.sessions.where(session_tag: session_tag).where(done: nil).first
+    self.sessions.where(session_tag: session_tag, done: nil).first
   end
 
   def started?

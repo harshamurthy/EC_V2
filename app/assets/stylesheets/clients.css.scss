@@ -242,7 +242,7 @@
     // }
 
     .upcoming-container {
-      border-bottom: 1px solid $clouds;
+      position: relative;
       .client-card-session-count {
         font-weight: bold;
         font-size: 18px;
@@ -274,18 +274,70 @@
           font-weight: bold;
         }
       }
-      .see-completed-container {
-        text-align: center;
-        .see-completed-sessions-link {
 
-        }
+      .see-completed-sessions-link {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
       }
     }
 
     .previous-sessions {
+      position: relative;
 
+      .table-container {
+
+      }
+      h2 {
+        font-size: 22px;
+        font-weight: bold;
+      }
+      table {
+        .client-data {
+          border-bottom: 1px solid $clouds;
+        }
+        tr {
+
+          th {
+            font-weight: bold;
+            padding: 5px 100px 5px 0px;
+          }
+
+          td {
+            padding: 5px 0px;
+
+          }
+        }
+      }
+
+      .see-upcoming-sessions-link {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+      }
     }
-  }
+      .no-schedule-img-container {
+        opacity: 0.8;
+      }
+
+      .no-schedule-container {
+        position: relative;
+        .no-schedule-message {
+          position: absolute;
+          margin-top: 25%;
+          width: 100%;
+          border: 1px solid $midnight_blue;
+          background-color: rgba(255, 255, 255, 1);
+          z-index: 1;
+          h3 {
+            padding: 15px;
+            text-align: center;
+          }
+        }
+      }
+    }
 
   .client-email {
     // margin-top: 5px;

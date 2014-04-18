@@ -602,6 +602,32 @@ $(document).ready(function() {
     });
   };
 
+  var clientCardTabNavigation = function() {
+      var containerHeight = $('.schedule-tab-container').height();
+    console.log(containerHeight);
+    $('.set-parent-height').css({"height": containerHeight});
+
+    clickToScroll(".see-previous-sessions", '.schedule-tab-container');
+    clickToScroll(".see-upcoming-sessions", '.schedule-tab-container');
+
+    function clickToScroll(clicked, scrolled) {
+       $(clicked).click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+            || location.hostname == this.hostname) {
+          var target = $(this.hash);
+          console.log(target)
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $(scrolled).animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+        }
+      });
+    }
+  };
+
   //Calling functions
   automaticClientSearchBar();
   autoSaveSessionForm();
@@ -628,5 +654,6 @@ $(document).ready(function() {
   landingPageSlideshow();
   landingNavigation();
   sessionCoach();
+  clientCardTabNavigation();
   // clientGraph();
 });

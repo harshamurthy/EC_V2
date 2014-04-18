@@ -3,13 +3,13 @@ class SessionsController < ApplicationController
 
   # GET /sessions
   # GET /sessions.json
-  def index
-    @sessions = current_gym.sessions
-    @sessions_by_date = @sessions.group_by(&:date)
-    @date = params[:date] ? Date.parse(params[:date]) : Date.today
-    @specific_date = params[:specific_date].to_date if params[:specific_date]
-    @specific_sessions = Session.where(date: @specific_date)
-  end
+  # def index
+  #   @sessions = current_gym.sessions
+  #   @sessions_by_date = @sessions.group_by(&:date)
+  #   @date = params[:date] ? Date.parse(params[:date]) : Date.today
+  #   @specific_date = params[:specific_date].to_date if params[:specific_date]
+  #   @specific_sessions = Session.where(date: @specific_date)
+  # end
 
   # GET /sessions/1
   # GET /sessions/1.json
@@ -127,6 +127,7 @@ class SessionsController < ApplicationController
     @session = Session.find_by_id(params[:session_id])
     @session.done = true
     @session.date = Date.today
+    @session.finished_at = DateTime.now
     @session.save
 
     redirect_to client_url(@session.client.id)
@@ -140,7 +141,7 @@ class SessionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def session_params
-      params.require(:session).permit(:name, :date, :client_id, :routine_id, :coach, :session_tag)
+      params.require(:session).permit(:name, :date, :client_id, :routine_id, :coach, :session_tag, :finished_at)
     end
 
     def routine_params

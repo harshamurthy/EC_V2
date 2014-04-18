@@ -16,7 +16,7 @@
     <% unless (params[:id] && current_page?(workout_session_url(params[:id]))) || current_page?(root_url) %>
       <nav class='app-nav absolute'>
         <%= link_to "<i class=\"fa fa-home\"></i>".html_safe, clients_url %>
-        <%= link_to "<i class=\"fa fa-calendar-o\"></i>".html_safe, workout_sessions_url %>
+        <%#= link_to "<i class=\"fa fa-calendar-o\"></i>".html_safe, workout_sessions_url %>
         <%= link_to "<i class=\"fa fa-power-off\"></i>".html_safe, destroy_gym_session_url, method: 'delete' %>
       </nav>
     <% end %>
