@@ -1,7 +1,9 @@
 <div class='workout-session-page'>
   <section class='session-show-header'>
     <% if @session.done.nil? %>
-      <h1 class='workout-session-client-name'><%= @session.client.name %> <span>(<%= @session.client.machine_code %>)</span></h1>
+      <h1 class='workout-session-client-name'>
+        <%= @session.client.name %> <span>(<%= @session.client.machine_code %>)</span>
+      </h1>
       <%= link_to "Finish workout <i class=\"fa fa-sign-out\"></i>".html_safe, done_workout_session_url(session_id: @session.id), method: 'post', class: 'end-session' %>
 
         <div class="coach-select-container">
@@ -9,6 +11,7 @@
           <%= form_tag(workout_session_url(@session.id), method: 'patch', remote: true) do %>
             <%= select_tag "session[coach]", "<option>Bruno</option><option>Alexis</option><option>Nicole</option><option>Steve</option><option>Nathan</option>".html_safe, multiple: false, class: 'coach-dropdown', id: 'sessionCoach', prompt: "Select Coach"%>
           <% end %>
+          <i class="fa fa-arrow-circle-o-left hide pick-a-coach-please"></i>
         </div>
       <% else %>
         <h1 class='workout-session-client-name'><%= link_to @session.client.name, client_url(@session.client.id) %> <span>(<%= @session.client.machine_code %>)</span></h1>
@@ -51,6 +54,11 @@
     </section>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+</script>
 
 
 

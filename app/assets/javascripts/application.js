@@ -599,6 +599,7 @@ $(document).ready(function() {
   var sessionCoach = function() {
     $('#sessionCoach').change(function(){
       $(this).parent('form').submit();
+      $("#sessionCoach").css({"border": "none"});
     });
   };
 
@@ -626,6 +627,20 @@ $(document).ready(function() {
         }
       });
     }
+  };
+
+  var secureACoachForASession = function() {
+   var coachChosen = false;
+
+    $('.end-session').click(function(e) {
+      if (!coachChosen) {
+        alert('Please fill out a executions before you finish the session');
+        $('.pick-a-coach-please').fadeIn().next().delay(500).fadeOut();
+        $("#sessionCoach").css({"border": "1px solid red"});
+        return false;
+
+      }
+    });
   };
 
   //Calling functions
