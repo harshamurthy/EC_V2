@@ -33,7 +33,7 @@ class Client < ActiveRecord::Base
   # end
 
   has_attached_file :avatar, StorageConfiguration.for_attachments.merge(
-    styles: { thumb: "300x300#", tiny: '100x100#' }
+    styles: { thumb: "300x300#", tiny: '100x100#' },
     default_url: '/images/default_profile_pic.jpg'
   )
 
