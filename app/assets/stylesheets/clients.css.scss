@@ -397,11 +397,15 @@
       padding: 10px 20px;
       border-radius: 5px;
       vertical-align: middle;
+      border: 1px solid darken($green_sea, 15%);
+      border-bottom-width: 3px;
+      outline: none;
       &:hover {
         background-color: $turquoise;
       }
       &:active {
         background-color: $green_sea;
+        border: none;
       }
     }
   }
@@ -449,6 +453,7 @@
           margin-top: 20px;
           margin-bottom: 20px;
           vertical-align: middle;
+          font-style: normal;
         }
         .new-note-submit-button {
           vertical-align: middle;

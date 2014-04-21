@@ -64,7 +64,7 @@
         <%= text_field_tag :content, nil, placeholder: "Write a note about #{@client.first_name}" %>
         <%= hidden_field_tag :client_id, @client.id %>
         <%= hidden_field_tag :client_page, true %>
-        <%= submit_tag "Submit" %>
+        <%= submit_tag "Submit", class: 'new-note-submit-button' %>
       <% end %>
       <ul>
         <% @client.notes.reverse.each do |note| %>
