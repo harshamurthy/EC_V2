@@ -2,7 +2,7 @@
   <% if @client.cards.count < 1 || @client.cards.last.sessions.count < 1 %>
     <h1>Create an <span>A</span> routine for <%= link_to "#{@client.first_name}'s", client_url(@client.id) %> new card</h1>
   <% elsif @client.cards.last.sessions.count == 8 %>
-    <h1>Create a <span>B</span> routine for <%= link_to "#{@client.first_name}'s", client_url(@client.id) %> new card or <%= link_to "I'm done", client_url(params[:client_id]) %></h1>
+    <h1>Create a <span>B</span> routine for <%= link_to "#{@client.first_name}'s", client_url(@client.id) %> new card <i class='or'>or</i> <span class='save-card'><%= link_to "Save card", client_url(params[:client_id]) %></span></h1>
   <% elsif @client.cards.last.sessions.count > 8 %>
     <h1>Create a <span>C</span> routine for <%= link_to "#{@client.first_name}'s", client_url(@client.id) %> new card or <%= link_to "I'm done", client_url(params[:client_id]) %></h1>
 
