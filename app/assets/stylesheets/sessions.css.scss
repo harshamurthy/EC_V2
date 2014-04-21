@@ -284,6 +284,12 @@
       background-color: $clouds;
       width: 100%;
       padding: 10px 0;
+      .end-session-p {
+        display: inline-block;
+        float: right;
+        margin-right: 10px;
+        margin-top: 10px;
+      }
       .finish-and-coach-container {
           display: inline-block;
           width: 490px;

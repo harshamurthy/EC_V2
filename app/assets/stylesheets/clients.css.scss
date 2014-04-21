@@ -234,30 +234,33 @@
       color: $green_sea;
       margin: 15px 0px;
     }
-    // table {
-    //   tr {
-    //     th {
-    //       font-weight: bold;
-    //       // padding: 5px 100px 5px 0px;
-    //     }
-    //     td {
-    //       padding: 5px 0px;
-    //     }
-    //   }
-    // }
 
     .upcoming-container {
       position: relative;
       border-bottom: 1px solid $clouds;
       .card-sessions-container {
         .card-session {
-          padding: 50px 50px;
+          text-align: center;
+          width: 20%;
+          font-size: 0px;
+          height: 150px;
           margin: 20px 10px;
           background-color: $clouds;
           display: inline-block;
           border-radius: 5px;
-          border: 1px solid $midnight_blue;
-          border-bottom-width: 3px;
+
+          &.done {
+            background-color: lighten($emerald, 40%);
+          }
+
+          &.next {
+            background-color: lighten($alizarin, 30%);
+          }
+
+          .this-is-next {
+            font-weight: bold;
+          }
+
           .session_tag {
             font-weight: bold;
           }

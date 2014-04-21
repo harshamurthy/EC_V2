@@ -14,12 +14,39 @@ class Card < ActiveRecord::Base
     self.sessions.where(done: true).any?
   end
 
-  def stagger
-    a_routines = self.sessions.where(session_tag: "A")
-    b_routines = self.sessions.where(session_tag: "B")
-    c_routines = self.sessions.where(session_tag: "C")
+  def stagger_unfinished
+    a_routines = self.sessions.order('sessions.created_at ASC').where(session_tag: "A", done: nil)
+    b_routines = self.sessions.order('sessions.created_at ASC').where(session_tag: "B", done: nil)
+    c_routines = self.sessions.order('sessions.created_at ASC').where(session_tag: "C", done: nil)
 
-    arr = [a_routines] + [b_routines] + [c_routines]
+    if a_routines.length > b_routines.length && a_routines.length > c_routines.length
+      arr = [a_routines] + [b_routines] + [c_routines]
+    elsif b_routines.length > a_routines.length && b_routines.length > c_routines.length
+      arr = [b_routines] + [a_routines] + [c_routines]
+    elsif c_routines.length > a_routines.length && c_routines.length > b_routines.length
+      arr = [c_routines] + [b_routines] + [a_routines]
+    else
+      arr = [a_routines] + [b_routines] + [c_routines]
+    end
+
+    first, *rest = *arr;
+    return first.zip(*rest).flatten.compact
+  end
+
+  def stagger_finished
+    a_routines = self.sessions.order('sessions.finished_at ASC').where(session_tag: "A", done: true)
+    b_routines = self.sessions.order('sessions.finished_at ASC').where(session_tag: "B", done: true)
+    c_routines = self.sessions.order('sessions.finished_at ASC').where(session_tag: "C", done: true)
+
+    if a_routines.length > b_routines.length && a_routines.length > c_routines.length
+      arr = [a_routines] + [b_routines] + [c_routines]
+    elsif b_routines.length > a_routines.length && b_routines.length > c_routines.length
+      arr = [b_routines] + [a_routines] + [c_routines]
+    elsif c_routines.length > a_routines.length && c_routines.length > b_routines.length
+      arr = [c_routines] + [b_routines] + [a_routines]
+    else
+      arr = [a_routines] + [b_routines] + [c_routines]
+    end
 
     first, *rest = *arr;
     return first.zip(*rest).flatten.compact

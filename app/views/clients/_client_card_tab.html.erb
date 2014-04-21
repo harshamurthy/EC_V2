@@ -1,13 +1,23 @@
 <section class="upcoming-container set-parent-height" id="upcoming-session">
   <ul class="card-sessions-container">
-    <% @card_sessions.each do |session| %>
-      <li class='card-session'>
-        <h4 class='session_tag'><%= link_to session.session_tag, workout_session_url %></h4>
-        <% if session.done? %>
-          <p class="card-session-coach"><%= session.coach %></p>
-          <p class="card-session-date"><%= session.date %></p>
-        <% else %>
-        <% end %>
+    <% @not_finished_card_sessions.each_with_index do |session, index| %>
+      <% if index == 0 %>
+        <li class='card-session next'>
+          <p class="this-is-next">Next</p>
+      <% else %>
+        <li class='card-session'>
+      <% end %>
+          <h4 class='session_tag'>
+            <%= link_to session.session_tag, workout_session_url(session.id) %>
+          </h4>
+        </li>
+    <% end %>
+
+    <% @finished_card_sessions.each do |session| %>
+      <li class="card-session done">
+        <h4 class="session_tag">
+          <%= link_to session.session_tag, workout_session_url(session.id) %>
+        </h4>
       </li>
     <% end %>
   </ul>

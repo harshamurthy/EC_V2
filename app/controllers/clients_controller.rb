@@ -21,7 +21,8 @@ class ClientsController < ApplicationController
     @exercises = @client.exercise_executions.map { |s| s.exercise  }.uniq
     @previous_sessions = @client.sessions.where(done: true)
     @current_card = @client.cards.last if @client.cards.any?
-    @card_sessions = @current_card.stagger if @current_card
+    @not_finished_card_sessions = @current_card.stagger_unfinished if @current_card
+    @finished_card_sessions = @current_card.stagger_finished if @current_card
 
     if @current_card
       if @current_card.sessions.where(done: true).any? && @current_card.sessions.where(done: true).order('sessions.finished_at ASC').last.session_tag == 'A'

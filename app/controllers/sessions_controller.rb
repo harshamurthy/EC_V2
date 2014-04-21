@@ -62,7 +62,7 @@ class SessionsController < ApplicationController
   # POST /sessions.json
   def create
     @client = Client.find(params[:session][:client_id])
-    if @client.sessions.map{|s| s.done?}.include?(false)
+    if @client.sessions.map{|s| s.done?}.include?(nil)
       @card = @client.cards.last
     else
       @card = Card.create(client_id: params[:session][:client_id])
