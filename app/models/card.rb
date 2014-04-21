@@ -13,4 +13,8 @@ class Card < ActiveRecord::Base
   def started?
     self.sessions.where(done: true).any?
   end
+
+  def stagger
+
+  end
 end

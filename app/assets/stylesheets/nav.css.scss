@@ -15,11 +15,13 @@ html, body { min-height: 100%; }
   right: 0;
   padding: 10px;
   z-index: 2014;
+  font-size: 24px;
+  color: $silver;
 
   a {
     font-size: 24px;
     display: inline-block;
-    padding: 0 20px;
+    padding: 0 5px;
   }
 }
 

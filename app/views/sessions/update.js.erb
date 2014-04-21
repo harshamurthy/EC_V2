@@ -3,7 +3,7 @@ $('.coach-select-container i').remove();
 $('.coach-select-container').prepend("<i class=\"fa fa-check-square-o\"></i>");
 
 // Gives user feedback that no coach has been selected for the session
-if($('#sessionCoach').val() === '') {
+if (  $('#sessionCoach').val() === '' ) {
   $('.coach-select-container i').remove();
-  $('.coach-select-container').prepend("<i class=\"fa fa-exclamation-triangle choose-coach-label\"></i>")
+  $('.coach-select-container').prepend("<i class=\"fa fa-exclamation-triangle choose-coach-label\"></i>");
 }

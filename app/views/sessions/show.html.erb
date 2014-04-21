@@ -1,20 +1,27 @@
 <div class='workout-session-page'>
   <section class='session-show-header'>
     <% if @session.done.nil? %>
-      <h1 class='workout-session-client-name'>
-        <%= @session.client.name %> <span>(<%= @session.client.machine_code %>)</span>
-      </h1>
-      <%= link_to "Finish workout <i class=\"fa fa-sign-out\"></i>".html_safe, done_workout_session_url(session_id: @session.id), method: 'post', class: 'end-session' %>
-
-        <div class="coach-select-container">
-          <i class="fa fa-exclamation-triangle choose-coach-label"></i>
-          <%= form_tag(workout_session_url(@session.id), method: 'patch', remote: true) do %>
-            <%= select_tag "session[coach]", "<option>Bruno</option><option>Alexis</option><option>Nicole</option><option>Steve</option><option>Nathan</option>".html_safe, multiple: false, class: 'coach-dropdown', id: 'sessionCoach', prompt: "Select Coach"%>
-          <% end %>
-          <i class="fa fa-arrow-circle-o-left hide pick-a-coach-please"></i>
-        </div>
+      <header class="session-show-header">
+        <h1 class='workout-session-client-name'>
+          <%= @session.client.name %> <span>(<%= @session.client.machine_code %>)</span>
+        </h1>
+        <div class="finish-and-coach-container">
+            <div class="coach-select-container">
+              <i class="fa fa-exclamation-triangle choose-coach-label"></i>
+              <%= form_tag(workout_session_url(@session.id), method: 'patch', remote: true) do %>
+                <%= select_tag "session[coach]", "<option>Bruno</option><option>Alexis</option><option>Nicole</option><option>Steve</option><option>Nathan</option>".html_safe, multiple: false, class: 'coach-dropdown', id: 'sessionCoach', prompt: "Select Coach"%>
+              <% end %>
+              <i class="fa fa-arrow-circle-o-left hide pick-a-coach-please"></i>
+            </div>
+            <span class="coach-finish-and">and</span>
+            <%= link_to "Finish workout", done_workout_session_url(session_id: @session.id), method: 'post', class: 'end-session' %>
+          </div>
+        </header>
       <% else %>
-        <h1 class='workout-session-client-name'><%= link_to @session.client.name, client_url(@session.client.id) %> <span>(<%= @session.client.machine_code %>)</span></h1>
+        <h1 class='workout-session-client-name'>
+          <%= link_to @session.client.name, client_url(@session.client.id) %>
+          <span>(<%= @session.client.machine_code %>)</span>
+        </h1>
         <p class="end-session">Trained by: <span><%= @session.coach %></span> <%= time_ago_in_words(@session.date) %> ago</p>
       <% end %>
 
@@ -55,10 +62,6 @@
   </div>
 </div>
 
-<script type="text/javascript">
-  $(document).ready(function() {
-
-</script>
 
 
 

@@ -604,7 +604,7 @@ $(document).ready(function() {
   };
 
   var clientCardTabNavigation = function() {
-      var containerHeight = $('.schedule-tab-container').height();
+    var containerHeight = $('.schedule-tab-container').height();
     console.log(containerHeight);
     $('.set-parent-height').css({"height": containerHeight});
 
@@ -638,7 +638,6 @@ $(document).ready(function() {
         $('.pick-a-coach-please').fadeIn().next().delay(500).fadeOut();
         $("#sessionCoach").css({"border": "1px solid red"});
         return false;
-
       }
     });
   };
@@ -654,12 +653,10 @@ $(document).ready(function() {
   createNewRoutine();
   inputFieldErrors();
   chooseExistingRoutine();
-  // newSessionDate();
   ensureNameForRoutine();
   sessionExercisesHeight();
   customNewClient();
   customNewExercise();
-  // seeMoreOrLessCal();
   clientSnapChat();
   currentSession();
   newSessionFormValidation();
@@ -669,6 +666,4 @@ $(document).ready(function() {
   landingPageSlideshow();
   landingNavigation();
   sessionCoach();
-  clientCardTabNavigation();
-  // clientGraph();
 });

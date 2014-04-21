@@ -277,21 +277,57 @@
 // Show Session Page
 .workout-session-page {
   .session-show-header {
-    .end-session {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      font-size: 24px;
-      text-decoration: none;
-      // color: $alizarin;
 
-      i {
-        // text-decoration: underline;
+    .finish-and-coach-container {
+      .coach-select-container {
+        position: absolute;
+        top: 10px;
+        right: 20%;
+        font-size: 20px;
+
+        form {
+          display: inline-block;
+        }
+
+        i {
+          color: $green;
+          font-size: 28px;
+          vertical-align: middle;
+        }
+
+        .pick-a-coach-please {
+          color: $alizarin;
+        }
+
+        .choose-coach-label {
+          display: inline-block;
+          color: $alizarin;
+          font-weight: bold;
+          margin-right: 5px;
+          font-size: 28px;
+        }
       }
+      .coach-finish-and {
+      }
+      .end-session {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
+        text-decoration: none;
+        padding: 5px 10px;
+        background-color: $green_sea;
+        border-radius: 5px;
+        color: white;
 
-      span {
-        color: $green_sea;
-        font-weight: bold;
+        i {
+          // text-decoration: underline;
+        }
+
+        span {
+          color: $green_sea;
+          font-weight: bold;
+        }
       }
     }
 
@@ -348,7 +384,7 @@
   .workout-session-exercise-list {
     width: 30%;
     // float: left;
-    margin-top: 52px;
+    margin-top: 31px;
     overflow-y: scroll;
     position: fixed;
     padding-bottom: 40px;
@@ -816,45 +852,7 @@
         }
       }
     }
-    // ul {
-    //   text-align: center;
-    //   li {
-    //     padding: 20px;
-    //     font-size: $h2;
-    //     a {
-    //       font-size: $h2;
-    //     }
-    //   }
-    // }
   }
 }
 
-.coach-select-container {
-      position: absolute;
-      top: 10px;
-      right: 40%;
-      font-size: 20px;
-
-      form {
-        display: inline-block;
-      }
-
-      i {
-        color: $green;
-        font-size: 28px;
-        vertical-align: middle;
-      }
-
-      .pick-a-coach-please {
-        color: $alizarin;
-      }
-
-      .choose-coach-label {
-        display: inline-block;
-        color: $alizarin;
-        font-weight: bold;
-        margin-right: 5px;
-        font-size: 28px;
-      }
-}
 

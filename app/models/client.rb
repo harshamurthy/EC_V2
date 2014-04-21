@@ -19,7 +19,7 @@ class Client < ActiveRecord::Base
   # TIP: I usually prefer # instead of > for image styles, with > imagemagick shrink the image if it's bigger
   # than the given values distorting the image but with # it tries to shrink but it keeps the aspect ratio cutting
   # the edges if necessary.
-  
+
   # has_attached_file :avatar,
   #                   :styles => { :medium => "300x300>", :thumb => "100x100>" },
   #                   :default_style => :thumb,
