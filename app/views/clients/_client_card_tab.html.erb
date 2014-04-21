@@ -2,7 +2,11 @@
   <ul class="card-sessions-container">
     <% @card_sessions.each do |session| %>
       <li class='card-session'>
-        <%= session.session_tag %>
+        <% if session.done? %>
+          <%= session.session_tag %>
+        <% else %>
+
+        <% end %>
       </li>
     <% end %>
   </ul>
