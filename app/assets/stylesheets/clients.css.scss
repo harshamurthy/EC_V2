@@ -256,6 +256,11 @@
           background-color: $clouds;
           display: inline-block;
           border-radius: 5px;
+          border: 1px solid $midnight_blue;
+          border-bottom-width: 3px;
+          .session_tag {
+            font-weight: bold;
+          }
         }
       }
     }

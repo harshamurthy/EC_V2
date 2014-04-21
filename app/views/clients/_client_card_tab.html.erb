@@ -2,10 +2,11 @@
   <ul class="card-sessions-container">
     <% @card_sessions.each do |session| %>
       <li class='card-session'>
+        <h4 class='session_tag'><%= link_to session.session_tag, workout_session_url %></h4>
         <% if session.done? %>
-          <%= session.session_tag %>
+          <p class="card-session-coach"><%= session.coach %></p>
+          <p class="card-session-date"><%= session.date %></p>
         <% else %>
-
         <% end %>
       </li>
     <% end %>

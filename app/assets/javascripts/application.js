@@ -631,6 +631,11 @@ $(document).ready(function() {
 
   var secureACoachForASession = function() {
    var coachChosen = false;
+   $('#sessionCoach').change(function(){
+      if( $(this).val() != "") {
+        coachChosen = true;
+      }
+    });
 
     $('.end-session').click(function(e) {
       if (!coachChosen) {
