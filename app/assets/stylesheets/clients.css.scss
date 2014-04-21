@@ -54,17 +54,23 @@
         color: $green_sea;
         border-radius: 5px;
         font-size: 24px;
-        padding: 15px 5px;
+        padding: 5px 10px;
+        border: solid 1px darken($green_sea, 15%);
+        border-bottom-width: 3px;
+        background-color: $green_sea;
+        text-decoration: none;
+        color: white;
         i {
-          text-decoration: underline;
+          text-decoration: none;
         }
 
         &:hover {
-          color: $turquoise;
+         background-color: $turquoise;
         }
 
         &:active {
-          color: $green_sea;
+          background-color: $green_sea;
+          border: none;
         }
       }
     }

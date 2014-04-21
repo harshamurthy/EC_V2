@@ -17,7 +17,7 @@
   <div class='client-search-bar'>
     <%= form_tag clients_url, method: 'get', remote: true do %>
       <%= text_field_tag :search, nil, placeholder: "Search for one of your #{@clients.count} clients...", class: 'search-input' -%>
-      <span class='add-client-container'><%= link_to "<i class=\"fa fa-plus-square-o\"></i> Add a client".html_safe, new_client_url, class: 'client-add-link' %></span>
+      <span class='add-client-container'><%= link_to "Add a client".html_safe, new_client_url, class: 'client-add-link' %></span>
     <% end %>
   </div>
   <% if @clients.present? %>

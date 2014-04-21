@@ -108,6 +108,8 @@ a {
   background-color: $green_sea;
   font-size: $main-font-size;
   color: white;
+  border: 1px solid darken($green_sea, 15%);
+  border-bottom-width: 3px;
 
   &:hover {
     background-color: $turquoise;
@@ -115,6 +117,7 @@ a {
 
   &:active {
     background-color: $green_sea;
+    border: none;
   }
 }
 
