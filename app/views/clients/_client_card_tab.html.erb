@@ -1,50 +1,14 @@
 <section class="upcoming-container set-parent-height" id="upcoming-session">
-  <h4 class='client-card-session-count'>
-    <span><%= current_card.finished_sessions.count %>/<%= current_card.sessions.count %></span> sessions completed
-  </h4>
-
-  <h5><%= client.first_name %>'s next session is <%= link_to "#{next_session.name} (#{next_session.session_tag})", workout_session_url(next_session.id) %></h5>
-
-  <div class="last-time">
-    <% if current_card.started? %>
-      <p class='last-time-sentence'>
-        <% if last_session.exercise_executions.first.present? %>
-          <%= time_ago_in_words(last_session.exercise_executions.first.created_at).capitalize %> ago <%= client.first_name %> did <%= link_to "#{last_session.name} (#{last_session.session_tag})", workout_session_url(last_session.id) %> with <%= last_session.coach %>
-        <% else %>
-          <%= client.first_name %> completed no exercises last session.
-        <% end %>
-      </p>
+  <ul class="card-sessions-container">
+    <% @card_sessions.each do |session| %>
+      <li class='card-session'>
+        <%= session.session_tag %>
+      </li>
     <% end %>
-  </div>
-
-  <!-- <div class="see-completed-sessions-link">
-    <%#= link_to "See completed sessions from this card", "#previous-session", class: "see-previous-sessions" %>
-    <p><%#= link_to "<i class=\"fa fa-chevron-down\"></i>".html_safe, "#previous-session", class: "see-previous-sessions" %></p>
-  </div> -->
+  </ul>
 </section>
 
 <section class="previous-sessions set-parent-height" id="previous-session">
-  <h2><%= pluralize(previous_sessions.count, "Previous Session") %></h2>
-    <table>
-       <tr>
-        <th>Sessions</th>
-        <th>Routine</th>
-        <th>Coach</th>
-        <th>Date</th>
-      </tr>
 
-    <% previous_sessions.reverse.each do |session| %>
-      <tr class='client-data'>
-        <td><%= link_to("#{session.name}", workout_session_url(session.id)) %></td>
-        <td><%= session.session_tag %></td>
-        <td><%= session.coach %></td>
-        <td><%= session.date.strftime('%B %d, %Y') %></td>
-      </tr>
-    <% end %>
-    </table>
-    <!-- <div class="see-upcoming-sessions-link">
-      <%#= link_to "See upcoming session from this card", "#upcoming-session", class: "see-upcoming-sessions" %>
-      <p><%#= link_to "<i class=\"fa fa-chevron-up\"></i>".html_safe, "#upcoming-session", class: "see-upcoming-sessions" %></p>
-    </div> -->
 </section>
 

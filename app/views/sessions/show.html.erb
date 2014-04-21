@@ -1,7 +1,7 @@
 <div class='workout-session-page'>
   <section class='session-show-header'>
     <% if @session.done.nil? %>
-      <header class="session-show-header">
+      <header class="session-show-header-container">
         <h1 class='workout-session-client-name'>
           <%= @session.client.name %> <span>(<%= @session.client.machine_code %>)</span>
         </h1>

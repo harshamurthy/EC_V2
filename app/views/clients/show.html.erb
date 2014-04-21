@@ -79,7 +79,7 @@
       </div>
     </div>
     <div class="no-note-img-container">
-      <%#= image_tag('notes-filler-image.png', width: '500px', height: '500px') %>
+      <%= image_tag('notes-filler-image.png', width: '500px', height: '500px') %>
     </div>
     <% end %>
   </div> <!-- note-container -->
@@ -87,23 +87,6 @@
   <div class="body-profile-tab hide">
     <%= render 'stat_index', client: @client %>
   </div>
-
-  <!-- <div class="graph-tab-container hide">
-    <div class="graph-container">
-      <%# if @client.exercise_executions.present? %>
-        <%#= render 'client_graph', client: @client, exercise: @exercise, exercises: @exercises, type: @type %>
-      <%# else %>
-        <div class="no-graph-note-container">
-          <div class='no-graph-message'>
-            <h3>As soon as <%#= @client.first_name %> starts working out, we'll graph it!</h3>
-          </div>
-        </div>
-        <div class="no-graph-img-container">
-          <%#= image_tag('graph-filler-image.png', width: '500', height: '500') %>
-        </div>
-      <%# end %>
-    </div>
-  </div> <!-- tab-container -->
 </div>
 
 

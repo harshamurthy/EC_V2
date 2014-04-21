@@ -277,67 +277,73 @@
 // Show Session Page
 .workout-session-page {
   .session-show-header {
-
-    .finish-and-coach-container {
-      .coach-select-container {
-        position: absolute;
-        top: 10px;
-        right: 20%;
-        font-size: 20px;
-
-        form {
+    .session-show-header-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: $clouds;
+      width: 100%;
+      padding: 10px 0;
+      .finish-and-coach-container {
           display: inline-block;
-        }
-
-        i {
-          color: $green;
-          font-size: 28px;
-          vertical-align: middle;
-        }
-
-        .pick-a-coach-please {
-          color: $alizarin;
-        }
-
-        .choose-coach-label {
+          width: 490px;
+          float: right;
+          text-align: right;
+          margin-right: 10px;
+        .coach-select-container {
           display: inline-block;
-          color: $alizarin;
-          font-weight: bold;
-          margin-right: 5px;
-          font-size: 28px;
-        }
-      }
-      .coach-finish-and {
-      }
-      .end-session {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        font-size: 20px;
-        text-decoration: none;
-        padding: 5px 10px;
-        background-color: $green_sea;
-        border-radius: 5px;
-        color: white;
+          font-size: 20px;
 
-        i {
-          // text-decoration: underline;
-        }
+          form {
+            display: inline-block;
+          }
 
-        span {
-          color: $green_sea;
-          font-weight: bold;
+          i {
+            color: $green;
+            font-size: 28px;
+            vertical-align: middle;
+          }
+
+          .pick-a-coach-please {
+            color: $alizarin;
+          }
+
+          .choose-coach-label {
+            display: inline-block;
+            color: $alizarin;
+            font-weight: bold;
+            margin-right: 5px;
+            font-size: 28px;
+          }
+        }
+        .coach-finish-and {
+          color: $asbestos;
+          font-size: 18px;
+          padding: 0 5px;
+        }
+        .end-session {
+          font-size: 18px;
+          text-decoration: none;
+          padding: 5px 20px;
+          background-color: $green_sea;
+          border-radius: 5px;
+          color: white;
+
+          i {
+            // text-decoration: underline;
+          }
+
+          span {
+            color: $green_sea;
+            font-weight: bold;
+          }
         }
       }
     }
-
     .workout-session-client-name {
-      position: absolute;
       // left: 1%;
-      padding: 10px;
+      display: inline-block;
       padding-left: 10px;
-      width: 100%;
-      background-color: $clouds;
       font-size: 24px;
 
       a {
@@ -384,7 +390,7 @@
   .workout-session-exercise-list {
     width: 30%;
     // float: left;
-    margin-top: 31px;
+    margin-top: 51px;
     overflow-y: scroll;
     position: fixed;
     padding-bottom: 40px;
@@ -437,7 +443,7 @@
     width: 70%;
     float: left;
     position: fixed;
-    top: 8%;
+    top: 51px;
     right: 0;
 
     .settings-and-executions {

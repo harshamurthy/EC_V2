@@ -15,6 +15,13 @@ class Card < ActiveRecord::Base
   end
 
   def stagger
+    a_routines = self.sessions.where(session_tag: "A")
+    b_routines = self.sessions.where(session_tag: "B")
+    c_routines = self.sessions.where(session_tag: "C")
 
+    arr = [a_routines] + [b_routines] + [c_routines]
+
+    first, *rest = *arr;
+    return first.zip(*rest).flatten.compact
   end
 end

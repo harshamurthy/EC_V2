@@ -634,7 +634,7 @@ $(document).ready(function() {
 
     $('.end-session').click(function(e) {
       if (!coachChosen) {
-        alert('Please fill out a executions before you finish the session');
+        alert('Let us know who you are before you complete the workout!');
         $('.pick-a-coach-please').fadeIn().next().delay(500).fadeOut();
         $("#sessionCoach").css({"border": "1px solid red"});
         return false;
@@ -666,4 +666,5 @@ $(document).ready(function() {
   landingPageSlideshow();
   landingNavigation();
   sessionCoach();
+  secureACoachForASession();
 });

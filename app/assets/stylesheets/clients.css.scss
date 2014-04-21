@@ -249,80 +249,20 @@
     .upcoming-container {
       position: relative;
       border-bottom: 1px solid $clouds;
-      .client-card-session-count {
-        font-weight: bold;
-        font-size: 18px;
-        text-align: right;
-        span {
-          color: $green_sea;
+      .card-sessions-container {
+        .card-session {
+          padding: 50px 50px;
+          margin: 20px 10px;
+          background-color: $clouds;
+          display: inline-block;
+          border-radius: 5px;
         }
-      }
-
-      h5 {
-        font-size: $h2;
-        text-align: center;
-        margin: 20px 0;
-        font-weight: bold;
-
-        a {
-          font-size: $h1;
-          font-weight: bold;
-        }
-      }
-
-      .last-time-sentence {
-        font-size: 22px;
-        text-align: center;
-        margin: 20px 0;
-
-        a {
-          font-size: 22px;
-          font-weight: bold;
-        }
-      }
-
-      .see-completed-sessions-link {
-        position: absolute;
-        bottom: 10px;
-        width: 100%;
-        text-align: center;
       }
     }
 
     .previous-sessions {
       position: relative;
 
-      .table-container {
-
-      }
-      h2 {
-        font-size: 22px;
-        font-weight: bold;
-      }
-      table {
-        .client-data {
-          border-bottom: 1px solid $clouds;
-        }
-        tr {
-
-          th {
-            font-weight: bold;
-            padding: 5px 100px 5px 0px;
-          }
-
-          td {
-            padding: 5px 0px;
-
-          }
-        }
-      }
-
-      .see-upcoming-sessions-link {
-        position: absolute;
-        bottom: 10px;
-        width: 100%;
-        text-align: center;
-      }
     }
       .no-schedule-img-container {
         opacity: 0.8;
@@ -476,6 +416,9 @@
   }
   .no-note-img-container {
     opacity: 0.8;
+    img {
+      width: 100%;
+    }
   }
   .no-notes-note-container {
     position: relative;
