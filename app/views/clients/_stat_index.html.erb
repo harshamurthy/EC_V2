@@ -16,7 +16,11 @@
     <% else %>
       <div class="no-body-comp-note-container">
         <div class='no-body-comp-message'>
-          <h3>Record the first body composition to stay on top of <%= @client.first_name %>!</h3>
+          <h3><%= @client.first_name %> doesn't have any biometrics recorded.<br>Create his first body composition entry to start tracking his biometrics.
+            <div class="create-new-body-comp-container">
+            <%= link_to "Create a new entry", new_stat_client_url(@client.id) %>
+            </div>
+          </h3>
         </div>
       </div>
       <div class="no-body-comp-img-container">

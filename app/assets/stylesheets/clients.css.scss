@@ -336,7 +336,7 @@
         .no-schedule-message {
           text-align: center;
           position: absolute;
-          margin-top: 20%;
+          margin-top: 15%;
           width: 100%;
           border: 1px solid $clouds;
           background-color: white;
@@ -348,7 +348,7 @@
             font-style: italic;
             color: $asbestos;
             font-size: 18px;
-            .create-new-card-contrainer {
+            .create-new-card-container {
               margin-top: 40px;
               margin-bottom: 20px;
               a {
@@ -361,8 +361,14 @@
                 border: 1px solid darken($green_sea, 15%);
                 border-bottom-width: 3px;
 
+                &:hover {
+                  background-color: $turquoise;
+                }
+
                 &:active {
-                  background-color: darken($green_sea, 10%);                }
+                  background-color: $green_sea;
+                  border: none;
+                }
               }
             }
           }
@@ -541,6 +547,8 @@
       &.ready {
         color: white;
         background-color: $green_sea;
+        border: 1px solid darken($green_sea, 15%);
+        border-bottom-width: 3px;
 
         &:hover {
           background-color: $turquoise;
@@ -548,6 +556,7 @@
 
         &:active {
           background-color: $green_sea;
+          border: none;
         }
       }
     }
@@ -722,15 +731,43 @@
   .no-body-comp-note-container {
     position: relative;
     .no-body-comp-message {
+      text-align: center;
       position: absolute;
-      margin-top: 25%;
+      margin-top: 15%;
       width: 100%;
-      border: 1px solid $midnight_blue;
-      background-color: rgba(255, 255, 255, 1);
+      border: 1px solid $clouds;
+      background-color: white;
       z-index: 1;
+      box-shadow: 3px 2px $silver;
       h3 {
-        padding: 15px;
+        padding: 25px;
         text-align: center;
+        font-style: italic;
+        color: $asbestos;
+        font-size: 18px;
+        .create-new-body-comp-container {
+          margin-top: 40px;
+          margin-bottom: 20px;
+          a {
+            font-style: normal;
+            padding: 10px 15px;
+            background-color: $green_sea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid darken($green_sea, 15%);
+            border-bottom-width: 3px;
+
+            &:hover {
+              background-color: $turquoise;
+            }
+
+            &:active {
+              background-color: $green_sea;
+              border: none;
+            }
+          }
+        }
       }
     }
   }

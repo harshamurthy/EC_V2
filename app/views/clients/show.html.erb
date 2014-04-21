@@ -45,7 +45,7 @@
           <h3>
             <%= @client.first_name %> doesn't have anything on his schedule. </br>
             Create his first workout card and start tracking his progress. </br>
-            <div class="create-new-card-contrainer">
+            <div class="create-new-card-container">
               <%= link_to "Create a new workout card", new_workout_session_url(client_id: @client.id) %>
             </div>
           </h3>
