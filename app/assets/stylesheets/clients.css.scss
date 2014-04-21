@@ -384,12 +384,14 @@
     text-align: center;
     input[type=text] {
       @extend %inputs;
+      vertical-align: middle;
     }
     input[type=submit] {
       background-color: $green_sea;
       color: white;
       padding: 10px 20px;
       border-radius: 5px;
+      vertical-align: middle;
       &:hover {
         background-color: $turquoise;
       }
