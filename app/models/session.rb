@@ -7,7 +7,7 @@ class Session < ActiveRecord::Base
   belongs_to :card
 
   def done?
-    self.exercise_executions.count == self.exercises.count
+    self.done
   end
 
   scope :todays_sessions, lambda { |date| where(created_at: (date.to_datetime.beginning_of_day)..(date.to_datetime.end_of_day)) }
