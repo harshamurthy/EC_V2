@@ -59,14 +59,13 @@
   </div>
 
   <div class="client-note-container hide">
-    <%= form_tag note_client_url, method: 'post', remote: true do %>
-      <%= text_field_tag :content, nil, placeholder: "Write a note about #{@client.first_name}" %>
-      <%= hidden_field_tag :client_id, @client.id %>
-      <%= hidden_field_tag :client_page, true %>
-      <%= submit_tag "Submit" %>
-    <% end %>
-
     <% if @client.notes.present? %>
+      <%= form_tag note_client_url, method: 'post', remote: true do %>
+        <%= text_field_tag :content, nil, placeholder: "Write a note about #{@client.first_name}.<br>" %>
+        <%= hidden_field_tag :client_id, @client.id %>
+        <%= hidden_field_tag :client_page, true %>
+        <%= submit_tag "Submit" %>
+      <% end %>
       <ul>
         <% @client.notes.reverse.each do |note| %>
           <li><%= note.content %><span><%= note.created_at.strftime("%B %d, %Y") %></span></li>
@@ -75,7 +74,13 @@
     <% else %>
     <div class="no-notes-note-container">
       <div class='no-note-message'>
-        <h3>Write the first note to make sure you're staying on top of <%= @client.first_name %>!</h3>
+        <h3><%= @client.first_name %> doesn't have any notes.<br>All notes will be recorded here.<%= form_tag note_client_url, method: 'post', remote: true do %>
+      <%= text_field_tag :content, nil, placeholder: "Write a note about #{@client.first_name}", class: 'new-note' %>
+      <%= hidden_field_tag :client_id, @client.id %>
+      <%= hidden_field_tag :client_page, true %>
+      <%= submit_tag "Submit", class: 'new-note-submit-button' %>
+    <% end %>
+  </h3>
       </div>
     </div>
     <div class="no-note-img-container">
