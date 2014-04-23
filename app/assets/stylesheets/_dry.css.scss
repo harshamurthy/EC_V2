@@ -6,9 +6,16 @@ input[type=submit] {
   color: $concrete;
 }
 
+@-webkit-keyframes greenPulse {
+  from { background-color: $belize_hole; -webkit-box-shadow: 0 0 9px #ccc; }
+  50% { background-color: lighten($belize_hole, 10%); -webkit-box-shadow: 0 0 18px lighten($belize_hole, 5%); }
+  to { background-color: $belize_hole; -webkit-box-shadow: 0 0 9px #ccc; }
+}
+
 body {
   font-family: 'Roboto' sans-serif;
   color: $midnight_blue;
+  background-color: #f3ece0;
 }
 
 a {
@@ -89,7 +96,8 @@ a {
   padding: 10px;
   margin: 5px 0px;
   border-radius: 10px;
-  background-color: $clouds;
+  background-color: white;
+  border: 1px solid $silver;
   font-size: $text-input-size;
   color: $midnight_blue;
 }

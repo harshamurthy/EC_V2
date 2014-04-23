@@ -1,5 +1,8 @@
 <% if @n.client.notes.first == @n %>
-  $('.no-notes-yet').remove();
+  $('.no-notes-note-container').remove();
+  $('.no-note-img-container').remove();
+
+  $('.client-note-container').prepend("<%= j render('client_note_form', client: @n.client) %>");
   $('.client-note-container').append("<ul></ul>");
 <% end %>
 

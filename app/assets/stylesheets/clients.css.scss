@@ -29,8 +29,9 @@
 
 .client-index-page {
 
-  // @extend %containers;
+  @extend %containers;
   padding: 50px 0;
+  width: 90%;
 
   .client-search-bar {
     text-align: center;
@@ -46,7 +47,7 @@
       margin-top: 20px;
       text-align: left;
       width: 70%;
-      border-bottom: 1px solid $clouds;
+      // border-bottom: 1px solid $midnight_blue;
       padding: 15px;
       margin: 0 auto;
       margin-top: 30px;
@@ -86,7 +87,7 @@
         color: $silver;
       }
       .client-wrapper {
-        border-bottom: 1px solid $clouds;
+        border-bottom: 1px solid $silver;
         padding: 15px;
         // padding-bottom: 0;
         .client-buttons {
@@ -139,7 +140,7 @@
   padding-top: 50px;
   @extend %containers;
   width: 650px;
-  width: 80%;
+  width: 90%;
   .name-wrap {
     .client-name-show {
       font-size: $h1;
@@ -201,7 +202,6 @@
     margin-top: 50px;
     li {
       display: inline-block;
-      // margin: 0 10px;
       position: relative;
 
 
@@ -213,22 +213,26 @@
         &.active {
           border: 1px solid #ccc;
           border-bottom: 1px solid white;
+          background-color: white;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
         }
       }
     }
   }
 
   .schedule-tab-container, .client-note-container, .client-stats-show, .graph-tab-container {
-    border-top: 1px solid #ccc;
+    border: 1px solid #ccc;
     padding: 20px;
     margin: 20px 0;
+    background-color: white;
+    border-radius: 5px;
     // min-height: 400px;
     // max-height: 500px;
   }
 
   .schedule-tab-container {
-      // overflow-y: scroll;
-      // max-height: 375px;
+      border-top-left-radius: 0px;
     h2 {
       font-weight: bold;
       color: $green_sea;
@@ -237,32 +241,181 @@
 
     .upcoming-container {
       position: relative;
-      border-bottom: 1px solid $clouds;
-      .card-sessions-container {
-        .card-session {
-          text-align: center;
-          width: 20%;
-          font-size: 0px;
-          height: 150px;
-          margin: 20px 10px;
-          background-color: $clouds;
+      // border-bottom: 1px solid $clouds;
+      header {
+        h5 {
+          color: $silver;
           display: inline-block;
+          font-family: "ProximaNova", sans-serif;
+          font-weight: lighter;
+          letter-spacing: 0.075em;
+          font-size: 18px;
+          margin-left: 2%;
+          span {
+            color: black;
+          }
+        }
+      }
+      .new-card-container {
+        text-align: left;
+        vertical-align: top;
+        margin-top: 25px;
+        margin-left: 2%;
+
+        a {
+          font-size: 24px;
+          text-decoration: none;
+          background-color: $pomegranate;
+          padding: 5px 10px;
+          color: white;
+          border: 1px solid darken($pomegranate, 10%);
+          border-bottom-width: 3px;
           border-radius: 5px;
 
+          &:hover {
+            background-color: $alizarin;
+          }
+
+          &:active {
+            background-color: $pomegranate;
+            border: none;
+          }
+        }
+      }
+      .card-sessions-container {
+        // background-color: white;
+        // border-radius: 10px;
+        padding: 5px;
+        text-align: center;
+
+        .card-session {
+          text-align: center;
+          width: 23%;
+          height: 150px;
+          margin: 20px 5px;
+          background-color: rgba(255, 255, 255, 0.6);
+          display: inline-block;
+          border-radius: 5px;
+          vertical-align: top;
+
           &.done {
-            background-color: lighten($emerald, 40%);
+            background-color: rgba(44, 62, 80,.75);
+            color: $silver;
+
+            .card-session-link {
+              height: 150px;
+              display: block;
+              padding: 0;
+              margin: 0;
+              text-decoration: none;
+              color: $silver;
+            }
           }
 
           &.next {
-            background-color: lighten($alizarin, 30%);
+            -webkit-animation-name: greenPulse;
+            -webkit-animation-duration: 3s;
+            -webkit-animation-iteration-count: infinite;
+            position: relative;
+
+            .ribbon-wrapper {
+              width: 85px;
+              height: 88px;
+              overflow: hidden;
+              position: absolute;
+              top: -3px;
+              right: -3px;
+
+              .ribbon {
+                font: bold 11px Sans-Serif;
+                color: $midnight_blue;
+                text-align: center;
+                text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+                -webkit-transform: rotate(45deg);
+                -moz-transform:    rotate(45deg);
+                -ms-transform:     rotate(45deg);
+                -o-transform:      rotate(45deg);
+                position: relative;
+                padding: 7px 0;
+                left: -5px;
+                top: 15px;
+                width: 120px;
+                background-color: $clouds;
+                background-image: -webkit-gradient(linear, left top, left bottom, from(dakren($clouds, 10%)), to($clouds));
+                background-image: -webkit-linear-gradient(top, $clouds, darken($clouds, 10%));
+                background-image:    -moz-linear-gradient(top, $clouds, darken($clouds, 10%));
+                background-image:     -ms-linear-gradient(top, $clouds, darken($clouds, 10%));
+                background-image:      -o-linear-gradient(top, $clouds, darken($clouds, 10%));
+                color: #6a6340;
+                -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+                -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+                box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+
+                &:before, &:after {
+                  content: "";
+                  border-top:   3px solid $silver;
+                  border-left:  3px solid transparent;
+                  border-right: 3px solid transparent;
+                  position:absolute;
+                  bottom: -3px;
+                }
+
+                &:before {
+                  left: 0;
+                }
+
+                &:after {
+                  right: 0;
+                }
+
+              }
+            }
+
+          .card-session-link {
+            height: 150px;
+            display: block;
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+          }
+
+            h4.session_tag {
+              padding-top: 15%;
+              color: white;
+              font-size: 26px;
+              text-decoration: none;
+            }
+          }
+
+          &.not-done {
+            // background-color: rgba(255, 255, 255, 0.3);
+            background-color: white;
+            opacity: 0.5;
+            box-shadow: 0 0 6px;
+            // background-color: white;
+            color: lighten($silver, 5%);
+            h4.session_tag {
+              margin-top: 15%;
+              font-size: 26px;
+            }
+          }
+
+          .done-checkbox {
+            color: $emerald;
+            padding: 5px 0;
           }
 
           .this-is-next {
             font-weight: bold;
           }
 
+          .info {
+
+          }
+
           .session_tag {
             font-weight: bold;
+            padding: 5px 0;
           }
         }
       }
@@ -299,6 +452,7 @@
             .create-new-card-container {
               margin-top: 40px;
               margin-bottom: 20px;
+              display: inline-block;
               a {
                 font-style: normal;
                 padding: 10px 15px;

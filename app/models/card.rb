@@ -14,10 +14,10 @@ class Card < ActiveRecord::Base
     self.sessions.where(done: true).any?
   end
 
-  def stagger_unfinished
-    a_routines = self.sessions.order('sessions.created_at ASC').where(session_tag: "A", done: nil)
-    b_routines = self.sessions.order('sessions.created_at ASC').where(session_tag: "B", done: nil)
-    c_routines = self.sessions.order('sessions.created_at ASC').where(session_tag: "C", done: nil)
+  def stagger
+    a_routines = self.sessions.order('sessions.created_at ASC').where(session_tag: "A")
+    b_routines = self.sessions.order('sessions.created_at ASC').where(session_tag: "B")
+    c_routines = self.sessions.order('sessions.created_at ASC').where(session_tag: "C")
 
     if a_routines.length > b_routines.length && a_routines.length > c_routines.length
       arr = [a_routines] + [b_routines] + [c_routines]
