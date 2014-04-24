@@ -3,6 +3,8 @@ $('.workout-session-setting-form').remove();
 $('.previous-stats').remove();
 $('#new_exercise_execution').remove();
 $('.session-notes').remove();
+$('.workout-session-settings-header').remove();
+$('.settings-and-executions').removeClass('notes');
 //---------------------------------------------
 <% if @client %>
   $('.workout-session-execution-data').append("<%= j render('notes', client: @client) %>");
@@ -13,6 +15,9 @@ $('.session-notes').remove();
   $('.workout-session-execution-data').append("<%= j render('previous_stats', exercise: @exercise, session: @session) %>");
 <% end %>
 
+<% unless params[:notes] %>
+  $('.exercise-title').append("<h2 class='workout-session-settings-header'><%= @exercise.name %></h2>");
+<% end %>
 
 $('.session-saved').remove();
 $("<p class='session-saved'> Saved. </p>").hide().prependTo('.workout-session-execution-form').fadeIn("fast", function(){
