@@ -21,9 +21,10 @@ class ClientsController < ApplicationController
     @exercises = @client.exercise_executions.map { |s| s.exercise  }.uniq
     @previous_sessions = @client.sessions.where(done: true)
     @current_card = @client.cards.last if @client.cards.any?
-    @card_sessions = @current_card.stagger if @current_card
+    @not_finished_card_sessions = @current_card.stagger if @current_card
+    @finished_card_sessions = @current_card.stagger_finished if @current_card
 
-    if @current_card
+    if @current_card && @current_card.sessions.count > 8
       if @current_card.sessions.where(done: true).any? && @current_card.sessions.where(done: true).order('sessions.finished_at ASC').last.session_tag == 'A'
         @next_session_tag = 'B'
       elsif @current_card.sessions.where(done: true).any? && @current_card.sessions.where(done: true).order('sessions.finished_at ASC').last.session_tag == 'B'
@@ -35,6 +36,9 @@ class ClientsController < ApplicationController
       else
         @next_session_tag = 'A'
       end
+
+    else
+      @next_session_tag = 'A'
     end
 
     @next_session = @current_card.next_session(@next_session_tag) if @current_card

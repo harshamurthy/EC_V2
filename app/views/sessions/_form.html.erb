@@ -15,7 +15,7 @@
 
         <section class='session-workouts'>
           <div class="actual-content">
-            <a href="#" class="create-routine-link tab">Create a new routine</a>
+            <!-- <a href="#" class="create-routine-link tab">Create a new routine</a> -->
             <!-- <a href="#" class="choose-existing-link">Choose existing routine</a> -->
 
             <div class="create-new">
@@ -120,21 +120,28 @@
             </div> <!-- choose-exisiting -->
 
             <div class="submit-session">
-              <% if @client.cards.count < 1 || @client.cards.last.sessions.last.session_tag.nil? %>
+              <% if params[:new_card] %>
                 <%= f.submit "Save A Routine", class: 'session-form-submit-button'%>
                 <%= f.hidden_field :session_tag, value: 'A' %>
-              <% elsif @client.cards.last.sessions.last.session_tag == 'A' %>
-                <%= f.submit "Save B Routine", class: 'session-form-submit-button'%>
-                <%= f.hidden_field :session_tag, value: 'B' %>
               <% else %>
-                <%= f.submit "Save C Routine", class: 'session-form-submit-button'%>
-                <%= f.hidden_field :session_tag, value: 'C' %>
+                <% if @client.cards.count < 1 || @client.cards.last.sessions.last.session_tag.nil? %>
+                  <%= f.submit "Save A Routine", class: 'session-form-submit-button'%>
+                  <%= f.hidden_field :session_tag, value: 'A' %>
+                <% elsif @client.cards.last.sessions.last.session_tag == 'A' %>
+                  <%= f.submit "Save B Routine", class: 'session-form-submit-button'%>
+                  <%= f.hidden_field :session_tag, value: 'B' %>
+                <% else %>
+                  <%= f.submit "Save C Routine", class: 'session-form-submit-button'%>
+                  <%= f.hidden_field :session_tag, value: 'C' %>
+                <% end %>
               <% end %>
             </div>
 
             <%= f.hidden_field :client_id, value: @client.id %>
             <%= f.hidden_field :gym_id, value: current_gym.id %>
-
+            <% if params[:new_card] %>
+              <%= f.hidden_field :new_card, value: true %>
+            <% end %>
           </div> <!-- actual-content -->
         </section> <!-- session-workouts -->
 

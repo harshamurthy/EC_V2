@@ -23,7 +23,7 @@
 
   <ul class="tab-links">
     <li>
-      <%= link_to "<i class=\"fa fa-align-left\"></i> Schedule".html_safe, "#", class: 'schedule-tab active', id: 'schedule-tab' %>
+      <%= link_to "<i class=\"fa fa-table\"></i> Card".html_safe, "#", class: 'schedule-tab active', id: 'schedule-tab' %>
     </li>
     <li>
       <%= link_to "<i class=\"fa fa-pencil-square-o\"></i> Notes".html_safe, "#", class: 'note-tab', id: 'note-tab' %>
@@ -60,12 +60,7 @@
 
   <div class="client-note-container hide">
     <% if @client.notes.present? %>
-      <%= form_tag note_client_url, method: 'post', remote: true do %>
-        <%= text_field_tag :content, nil, placeholder: "Write a note about #{@client.first_name}" %>
-        <%= hidden_field_tag :client_id, @client.id %>
-        <%= hidden_field_tag :client_page, true %>
-        <%= submit_tag "Submit", class: 'new-note-submit-button' %>
-      <% end %>
+      <%= render 'client_note_form', client: @client %>
       <ul>
         <% @client.notes.reverse.each do |note| %>
           <li><%= note.content %><span><%= note.created_at.strftime("%B %d, %Y") %></span></li>
@@ -74,13 +69,16 @@
     <% else %>
     <div class="no-notes-note-container">
       <div class='no-note-message'>
-        <h3><%= @client.first_name %> doesn't have any notes.<br>All notes will be recorded here.<%= form_tag note_client_url, method: 'post', remote: true do %>
-      <%= text_field_tag :content, nil, placeholder: "Write a note about #{@client.first_name}", class: 'new-note' %>
-      <%= hidden_field_tag :client_id, @client.id %>
-      <%= hidden_field_tag :client_page, true %>
-      <%= submit_tag "Submit", class: 'new-note-submit-button' %>
-    <% end %>
-  </h3>
+        <h3>
+          <%= @client.first_name %> doesn't have any notes.
+          <br>All notes will be recorded here.
+          <%= form_tag note_client_url, method: 'post', remote: true do %>
+          <%= text_field_tag :content, nil, placeholder: "Write a note about #{@client.first_name}", class: 'new-note' %>
+          <%= hidden_field_tag :client_id, @client.id %>
+          <%= hidden_field_tag :client_page, true %>
+          <%= submit_tag "Submit", class: 'new-note-submit-button' %>
+          <% end %>
+        </h3>
       </div>
     </div>
     <div class="no-note-img-container">

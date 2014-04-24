@@ -62,7 +62,9 @@ class SessionsController < ApplicationController
   # POST /sessions.json
   def create
     @client = Client.find(params[:session][:client_id])
-    if @client.sessions.map{|s| s.done?}.include?(false)
+    if params[:session][:new_card]
+      @card = Card.create(client_id: params[:session][:client_id])
+    elsif @client.cards.any? && @client.cards.last.sessions.where(done: nil).any?
       @card = @client.cards.last
     else
       @card = Card.create(client_id: params[:session][:client_id])
@@ -72,9 +74,9 @@ class SessionsController < ApplicationController
       @session.name = "#{@session.client.first_name} ##{@session.client.sessions.count + 1}"
       @session.card_id = @card.id
       @session.routine = Routine.find_or_initialize_by_exercise_ids(routine_params[:exercise_ids])
+      @session.routine.description = "Routine ##{Routine.all.count + 1}"
 
-      if @session.id.nil?
-        @session.routine.description = "Routine ##{Routine.all.count + 1}"
+      if @session.routine.id.nil?
         @session.routine.gym_id = current_gym.id
         @session.routine.save!
       end

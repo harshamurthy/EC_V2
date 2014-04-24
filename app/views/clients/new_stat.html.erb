@@ -4,7 +4,7 @@
     <%= f.fields_for :photos, Photo.new do |build| %>
       <fieldset class='avatar-container'>
         <%= build.label :avatar, "Upload photo", class: "avatar-label" %>
-        <span class='avatar-check hide'><i class="fa fa-check-square-o fa-3x"></i></span>
+        <span class='avatar-check hide'><i class="fa fa-check-square fa-3x"></i></span>
         <%= build.file_field :avatar, class: "avatar-input" %>
       </fieldset>
     <% end %>

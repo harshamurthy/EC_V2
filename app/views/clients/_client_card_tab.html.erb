@@ -1,19 +1,45 @@
 <section class="upcoming-container set-parent-height" id="upcoming-session">
+  <header>
+    <h5>
+      <span><%= @finished_card_sessions.count %>/<%= @not_finished_card_sessions.count %></span>
+      sessions completed on this card
+    </h5>
+  </header>
   <ul class="card-sessions-container">
-    <% @card_sessions.each do |session| %>
-      <li class='card-session'>
-        <h4 class='session_tag'><%= link_to session.session_tag, workout_session_url %></h4>
-        <% if session.done? %>
-          <p class="card-session-coach"><%= session.coach %></p>
-          <p class="card-session-date"><%= session.date %></p>
-        <% else %>
+    <% @not_finished_card_sessions.each_with_index do |session, index| %>
+      <% if session.done? %>
+        <li class="card-session done">
+        <%= link_to workout_session_url(session.id), class: 'card-session-link' do %>
+          <h4 class="session_tag">
+            <%= "#{session.session_tag} Routine" %>
+          </h4>
+          <i class="fa fa-check-square fa-3x done-checkbox"></i>
+          <p class="info">Trained by <%= session.coach %> </br>
+          <%= time_ago_in_words(session.finished_at) %> ago</p>
         <% end %>
       </li>
+      <% elsif session == @next_session %>
+        <li class='card-session next'>
+         <div class="ribbon-wrapper">
+            <div class="ribbon">Next session</div>
+         </div>
+        <%= link_to workout_session_url(session.id), class: 'card-session-link' do %>
+            <h4 class='session_tag'>
+              <%= "#{session.session_tag} Routine" %>
+            </h4>
+        <% end %>
+        </li>
+      <% else %>
+        <li class='card-session not-done'>
+          <h4 class='session_tag'>
+            <%= "#{session.session_tag} Routine" %>
+          </h4>
+        </li>
+      <% end %>
     <% end %>
   </ul>
-</section>
-
-<section class="previous-sessions set-parent-height" id="previous-session">
-
+  <div class="new-card-container">
+      <%= link_to "End this card and start a new one", new_workout_session_url(client_id: @client.id, new_card: true) %>
+  </div>
 </section>
 

@@ -1,7 +1,7 @@
-<div class='workout-session-page'>
+  <div class='workout-session-page'>
   <section class='session-show-header'>
+    <header class="session-show-header-container">
     <% if @session.done.nil? %>
-      <header class="session-show-header-container">
         <h1 class='workout-session-client-name'>
           <%= @session.client.name %> <span>(<%= @session.client.machine_code %>)</span>
         </h1>
@@ -16,14 +16,14 @@
             <span class="coach-finish-and">and</span>
             <%= link_to "Finish workout", done_workout_session_url(session_id: @session.id), method: 'post', class: 'end-session' %>
           </div>
-        </header>
       <% else %>
         <h1 class='workout-session-client-name'>
           <%= link_to @session.client.name, client_url(@session.client.id) %>
           <span>(<%= @session.client.machine_code %>)</span>
         </h1>
-        <p class="end-session">Trained by: <span><%= @session.coach %></span> <%= time_ago_in_words(@session.date) %> ago</p>
+        <p class="end-session-p">Trained by: <span><%= @session.coach %></span> <%= time_ago_in_words(@session.date) %> ago</p>
       <% end %>
+      </header>
 
   <aside class='workout-session-exercise-list'>
     <ul>
@@ -56,7 +56,9 @@
   </aside>
 
   <div class='workout-session-execution-data'>
-    <section class="settings-and-executions">
+    <div class="exercise-title">
+    </div>
+    <section class="settings-and-executions notes">
       <%= render 'notes', client: @session.client %>
     </section>
   </div>

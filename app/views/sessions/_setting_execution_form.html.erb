@@ -1,7 +1,4 @@
 <div class="workout-session-setting-form">
-  <% if exercise.settings? %>
-    <h1 class='workout-session-settings-header'><%= session.client.first_name %>'s <%= exercise.name.downcase %> settings</h1>
-  <% end %>
   <%= form_for(setting_execution, remote: true, :html => { :class => 'session-setting-execution-form' }) do |f| %>
     <% if setting_execution.errors.any? %>
       <div id="error_explanation">
