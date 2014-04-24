@@ -65,7 +65,40 @@ class Client < ActiveRecord::Base
     self.exercise_executions.where(exercise_id: exercise_id).last
   end
 
-  def has_current_session?
-
+def next_session_tag
+  current_card = self.cards.last if self.cards.any?
+  if current_card && current_card.sessions.count > 8
+    if current_card.sessions.where(done: true).any? && current_card.sessions.where(done: true).order('sessions.finished_at ASC').last.session_tag == 'A'
+      return 'B'
+    elsif current_card.sessions.where(done: true).any? && current_card.sessions.where(done: true).order('sessions.finished_at ASC').last.session_tag == 'B'
+      if current_card.sessions.where(session_tag: 'C').any?
+        return 'C'
+      else
+        return 'A'
+      end
+    else
+      return 'A'
+    end
+    else
+      return 'A'
+    end
   end
+
+  def next_session
+    if self.cards.any?
+      current_card = self.cards.last
+      next_session = current_card.next_session(self.next_session_tag)
+      return next_session
+    else
+      return nil
+    end
+  end
+
+
+
+
+
+
+
+
 end

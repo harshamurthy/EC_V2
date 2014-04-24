@@ -662,7 +662,7 @@ $(document).ready(function() {
   sessionExercisesHeight();
   customNewClient();
   customNewExercise();
-  clientSnapChat();
+  // clientSnapChat();
   currentSession();
   newSessionFormValidation();
   avatarUpload();

@@ -109,8 +109,9 @@
         padding: 15px 0;
         .client_name {
            color: $midnight_blue;
-           font-size: 20px;
-           text-decoration: none;
+           font-size: 24px;
+           // font-weight: bold;
+           // text-decoration: none;
            &:hover {
             color: $wet_asphalt;
            }
@@ -120,6 +121,41 @@
         }
         .down-icon {
           float: right;
+          padding: 5px 10px;
+          color: $clouds;
+          text-decoration: none;
+          border-radius: 5px;
+          font-size: 14px;
+        }
+
+        .next-session {
+          background-color: $green_sea;
+          border: 1px solid darken($green_sea, 10%);
+          border-bottom-width: 3px;
+
+          &:hover {
+            background-color: $turquoise;
+          }
+
+          &:active {
+            background-color: $green_sea;
+            border: none;
+          }
+        }
+
+        .new-card {
+          background-color: $pomegranate;
+          border: 1px solid darken($pomegranate, 10%);
+          border-bottom-width: 3px;
+
+          &:hover {
+            background-color: $alizarin;
+          }
+
+          &:active {
+            background-color: $pomegranate;
+            border: none;
+          }
         }
 
           .client-start-workout {
@@ -392,11 +428,8 @@
           }
 
           &.not-done {
-            // background-color: rgba(255, 255, 255, 0.3);
             background-color: white;
-            opacity: 0.5;
             box-shadow: 0 0 6px;
-            // background-color: white;
             color: lighten($silver, 5%);
             h4.session_tag {
               margin-top: 15%;

@@ -25,7 +25,7 @@
                 <%#= r.label :description, class: 'session-form-labels' %><br>
                 <%#= r.text_field :description, placeholder: 'Name the routine', class: 'session-form-inputs form-validator' %>
                 <!-- <span class="hide add-routine-name"><i class="fa fa-arrow-circle-o-left"></i> Add a name</span> -->
-                <p class='add-exercise-p'><%= link_to "Create a new exercise".html_safe, new_exercise_url(client_id: @client.id) %></p>
+                <p class='add-exercise-p'>If you want to add an exercise click <%= link_to "here".html_safe, new_exercise_url(client_id: @client.id) %>.</p>
 
 
                 <div class='new-routine-exercises'>

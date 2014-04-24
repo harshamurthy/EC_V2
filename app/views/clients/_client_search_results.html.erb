@@ -7,12 +7,17 @@
     <section class='client-wrapper'>
       <li class='client'>
         <%= link_to client.name, client_url(client.id), class: "client_name", data: {id: client.id} %>
-        <span class='down-icon fa fa-chevron-down down-arrow'></span>
+        <%# if client.next_session %>
+          <%#= link_to "Train #{client.first_name}", workout_session_url(client.next_session.id), class: "down-icon next-session" %>
+        <%# else %>
+          <%#= link_to "Create a new card", new_workout_session_url(client_id: client.id), class: "down-icon new-card" %>
+        <%# end %>
+        <!-- <span class='down-icon fa fa-chevron-down down-arrow'></span> -->
       </li>
-      <aside class='client-buttons hide <%= client.id %>'>
+      <!-- <aside class='client-buttons hide <%#= client.id %>'> -->
         <%#= link_to "<i class=\"fa fa-plus-square-o\"></i> Create workout".html_safe, new_workout_session_url(client_id: client.id), class: 'client-start-workout' %>
-        <%= link_to "<i class=\'fa fa-user\'></i> Client Profile".html_safe, client_url(client.id), class: 'client-manage-account' %>
-      </aside>
+        <%#= link_to "<i class=\'fa fa-user\'></i> Client Profile".html_safe, client_url(client.id), class: 'client-manage-account' %>
+      <!-- </aside> -->
     </section>
   <% end %>
 </ul>

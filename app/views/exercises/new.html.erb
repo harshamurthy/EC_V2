@@ -4,7 +4,7 @@
 
     <%= render 'form' %>
     <div class='back-to-new-session'>
-      <%= link_to "Back to setting up for #{@client.name}", :back %>
+      <%= link_to "Back to setting up #{@client.first_name.possessive} card", :back %>
     </div>
   </div>
 </div>

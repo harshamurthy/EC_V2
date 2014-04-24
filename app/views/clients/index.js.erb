@@ -1,15 +1,15 @@
 $('.ul-client-list').remove();
 $('.client-list').append("<%= j render('client_search_results', clients: @clients) %>");
-$(".client").on("click", function(e){
-  e.preventDefault();
-  $('.' + $(this).children('.client_name').data("id")).slideToggle("5000");
+// $(".client").on("click", function(e){
+//   e.preventDefault();
+//   $('.' + $(this).children('.client_name').data("id")).slideToggle("5000");
 
-  if ($(this).children('span').hasClass("fa fa-chevron-down")) {
-    $(this).children('span').removeClass("fa fa-chevron-down").addClass("fa fa-chevron-up");
-  } else {
-    $(this).children('span').removeClass("fa fa-chevron-up").addClass("fa fa-chevron-down");
-  }
-});
+//   if ($(this).children('span').hasClass("fa fa-chevron-down")) {
+//     $(this).children('span').removeClass("fa fa-chevron-down").addClass("fa fa-chevron-up");
+//   } else {
+//     $(this).children('span').removeClass("fa fa-chevron-up").addClass("fa fa-chevron-down");
+//   }
+// });
 
 <% if params[:search] == "" %>
   $('.hide').hide();
