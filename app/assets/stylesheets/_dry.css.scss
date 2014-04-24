@@ -19,15 +19,15 @@ body {
 }
 
 a {
-  color: $belize_hole;
+  color: lighten($wet_asphalt, 5%);
   font-size: 18px;
 
   &:hover {
-    color: $peter_river;
+    color: lighten($wet_asphalt, 10%);
   }
 
   &:active {
-    color: $belize_hole;
+    color: lighten($wet_asphalt, 5%);
   }
 }
 

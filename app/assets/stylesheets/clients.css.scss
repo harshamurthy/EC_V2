@@ -84,7 +84,7 @@
     .ul-client-list {
       .search-results-stats {
         text-align: center;
-        color: $silver;
+        color: $asbestos;
       }
       .client-wrapper {
         border-bottom: 1px solid $silver;
@@ -209,6 +209,8 @@
         text-decoration: none;
         padding: 20px;
         top: 1px;
+        color: $basecamp_gray;
+        text-shadow: 0 0 2px $clouds;
 
         &.active {
           border: 1px solid #ccc;
@@ -216,6 +218,8 @@
           background-color: white;
           border-top-left-radius: 5px;
           border-top-right-radius: 5px;
+          color: $midnight_blue;
+          text-shadow: none;
         }
       }
     }

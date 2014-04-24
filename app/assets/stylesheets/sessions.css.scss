@@ -345,12 +345,15 @@
 
           form {
             display: inline-block;
+            vertical-align: middle;
           }
 
           i {
             color: $emerald;
-            font-size: 28px;
+            font-size: 32px;
+            display: inline-block;
             vertical-align: middle;
+            margin-right: 5px;
           }
 
           .pick-a-coach-please {
@@ -360,9 +363,9 @@
           .choose-coach-label {
             display: inline-block;
             color: $alizarin;
-            font-weight: bold;
             margin-right: 5px;
-            font-size: 28px;
+            font-size: 26px;
+            vertical-align: bottom;
           }
         }
         .coach-finish-and {
@@ -480,7 +483,7 @@
         font-size: 22px;
         padding: $height/2.75;
         width: 90%;
-        color: #7d7a75;
+        color: $basecamp_gray;
         text-shadow: 0 2px $clouds;
       }
       .order-count {
@@ -527,7 +530,7 @@
         background-color: white;
         border-radius: 5px;
         width: 85%;
-        margin: 0 auto;
+        margin: 1px auto;
 
         &.notes {
           background-color: #f3ece0;
