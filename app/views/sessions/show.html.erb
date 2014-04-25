@@ -10,7 +10,7 @@
             <div class="coach-select-container">
               <i class="fa fa-exclamation-triangle choose-coach-label"></i>
               <%= form_tag(workout_session_url(@session.id), method: 'patch', remote: true) do %>
-                <%= select_tag "session[coach]", "<option>Bruno</option><option>Alexis</option><option>Nicole</option><option>Steve</option><option>Nathan</option>".html_safe, multiple: false, class: 'coach-dropdown', id: 'sessionCoach', prompt: "Select Coach"%>
+                <%= select_tag "session[coach]", "<option>Dave</option><option>Andrea</option>".html_safe, multiple: false, class: 'coach-dropdown', id: 'sessionCoach', prompt: "Select Coach"%>
               <% end %>
               <i class="fa fa-arrow-circle-o-left hide pick-a-coach-please"></i>
             </div>
