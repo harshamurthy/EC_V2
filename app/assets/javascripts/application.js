@@ -261,8 +261,6 @@ $(document).ready(function() {
 
   var ensureNameForRoutine = function() {
     $('.submit-session input').on("click", function(e){
-      // var description = $('#session_routine_description').val();
-      // var otherEx = $("#session_routine_id").val();
 
     if ($('.new-routine-exercises').children('li').find('input:checked').length == 0){
       e.preventDefault();
@@ -270,12 +268,6 @@ $(document).ready(function() {
       $('.session-form-checkbox-labels').addClass("not-ready");
     }
 
-      // if (otherEx == "" && description == "") {
-      //   e.preventDefault();
-      //   alert("You need to add a name to your routine!");
-      //   $('.add-routine-name').show();
-      //   $('#session_routine_description').focus();
-      // }
 
     });
   };
