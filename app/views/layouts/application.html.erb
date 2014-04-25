@@ -2,7 +2,10 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HelpTrainMe - Improve the way your gym does fitness.</title>
+  <% unless current_page?(workout_session_url(params[:id] || 1)) %>
+    <% content_for :title, "HelpTrainMe" %>
+  <% end %>
+  <title><%= yield(:title) %></title>
 
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Duru+Sans|Exo+2' %>

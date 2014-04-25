@@ -5,6 +5,7 @@
 ActiveRecord::Base.transaction do
   Exercise.destroy_all
   Client.destroy_all
+  Gym.destroy_all
 
   golds_gym = Gym.create!(email: "admin@goldsgym.com", password: "12345678", location: "Venice Beach")
 

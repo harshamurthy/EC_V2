@@ -530,12 +530,14 @@
 
     .settings-and-executions {
         background-color: white;
+        border: 1px solid $silver;
         border-radius: 5px;
         width: 85%;
         margin: 1px auto;
 
         &.notes {
           background-color: #f3ece0;
+          border: none;
         }
 
       &:after {
