@@ -1,0 +1,24 @@
+<div class="add-exercises">
+  <%= form_tag routine_url(session.routine.id), method: 'patch', remote: true do %>
+    <ul class="exercises-ul">
+      <% exercises.each do |exercise| %>
+        <% if session.exercises.include?(exercise) %>
+          <li class='exercise'>
+            <input id="<%= exercise.id %>", name='routine[exercise_ids][]', value="<%= exercise.id %>", type='checkbox',  class='session-form-checkbox' checked>
+
+            <%= label_tag "#{exercise.id}", exercise.name, class: 'session-form-checkbox-labels' %>
+          </li>
+        <% else %>
+        <li class='exercise'>
+          <input id="<%= exercise.id %>", name='routine[exercise_ids][]', value="<%= exercise.id %>", type='checkbox',  class='session-form-checkbox'>
+
+          <%= label_tag "#{exercise.id}", exercise.name, class: 'session-form-checkbox-labels' %>
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
+
+    <%= hidden_field_tag :session_id, session.id %>
+    <%= submit_tag "Save these exercises" %>
+  <% end %>
+</div>

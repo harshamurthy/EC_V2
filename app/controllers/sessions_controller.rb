@@ -32,6 +32,9 @@ class SessionsController < ApplicationController
       @setting_execution = SettingExecution.where(exercise_id: @exercise = @session.exercises.first.id, client_id: @session.client.id).first || SettingExecution.new
       @exercise = @session.exercises.first
     end
+
+    @add_exercises = current_gym.exercises
+
     if params[:notes].present?
       @client = @session.client
     end

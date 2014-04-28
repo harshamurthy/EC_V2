@@ -407,6 +407,36 @@
         }
       }
     }
+    .add-exercises {
+      margin-top: 53px;
+      width: 100%;
+      margin: 0 auto;
+      ul {
+        li {
+          display: inline-block;
+          padding: 20px;
+
+          input {
+            display: none;
+
+            &:checked + label {
+              background-color: $wet_asphalt;
+              border: 1px solid white;
+              color: white;
+            }
+          }
+
+          label {
+            outline-width: 0;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+          }
+        }
+      }
+    }
     .workout-session-client-name {
       // left: 1%;
       display: inline-block;

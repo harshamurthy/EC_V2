@@ -1,0 +1,15 @@
+$('.workout-session-exercise-list').empty();
+
+$('.workout-session-exercise-list').append("<%= j render('sessions/session_exercise', exercises: @routine.exercises, session: @session) %>");
+
+$('.add-exercises').remove();
+$('.workout-session-execution-data').append("<%= j render('sessions/notes', client: @session.client) %>");
+// $('.workout-session-execution-data').css("position", "absolute");
+
+
+$('.workout-session-exercise-list .session-exercise-link').on('click', function() {
+    $(this).parent().siblings().removeClass('onclick');
+    $('.execution-data > div').hide();
+    $($(this).data('target')).show();
+    $(this).parent().addClass('onclick');
+});

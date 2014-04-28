@@ -1,6 +1,7 @@
 $('.workout-session-execution-form').remove();
 $('.workout-session-setting-form').remove();
 $('.previous-stats').remove();
+$('.add-exercises').remove();
 $('#new_exercise_execution').remove();
 $('.session-notes').remove();
 $('.workout-session-settings-header').remove();
@@ -9,13 +10,17 @@ $('.settings-and-executions').removeClass('notes');
 <% if @client %>
   $('.workout-session-execution-data').append("<%= j render('notes', client: @client) %>");
   $('.workout-session-execution-data').css("position", "absolute");
+
+<% elsif params[:add_exercise] %>
+  $('.workout-session-execution-data').append("<%= j render('add_exercises', exercises: @add_exercises, session: @session) %>");
+  $('.workout-session-exercise-list ul li').removeClass('onclick');
 <% else %>
   $('.settings-and-executions').prepend("<%= j render('setting_execution_form', exercise: @exercise, setting_execution: @setting_execution, client: @session.client, session: @session) %>");
   $('.settings-and-executions').append("<%= j render('exercise_execution_form', exercise: @exercise, exercise_execution: @exercise_execution, session: @session) %>");
   $('.workout-session-execution-data').append("<%= j render('previous_stats', exercise: @exercise, session: @session) %>");
 <% end %>
 
-<% unless params[:notes] %>
+<% unless params[:notes] || params[:add_exercise] %>
   $('.exercise-title').append("<h2 class='workout-session-settings-header'><%= @exercise.name %></h2>");
 <% end %>
 

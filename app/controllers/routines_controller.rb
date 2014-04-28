@@ -25,7 +25,6 @@ class RoutinesController < ApplicationController
   # POST /routines.json
   def create
     @routine = Routine.new(routine_params)
-
     respond_to do |format|
       if @routine.save
         format.html { redirect_to @routine, notice: 'Routine was successfully created.' }
@@ -40,10 +39,13 @@ class RoutinesController < ApplicationController
   # PATCH/PUT /routines/1
   # PATCH/PUT /routines/1.json
   def update
+    @exercises = Exercise.where(id: params[:routine][:exercise_ids])
+    @session = Session.find(params[:session_id])
     respond_to do |format|
       if @routine.update(routine_params)
         format.html { redirect_to @routine, notice: 'Routine was successfully updated.' }
         format.json { head :no_content }
+        format.js
       else
         format.html { render action: 'edit' }
         format.json { render json: @routine.errors, status: :unprocessable_entity }

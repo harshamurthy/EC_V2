@@ -1,0 +1,14 @@
+<ul>
+  <li class="session-exercise notebook onclick first">
+    <a class="session-exercise-link notes" data-remote="true" href="http://localhost:3000/sessions/2?notes=true">Notes</a>
+  </li>
+
+  <% exercises.each do |exercise| %>
+    <li class='session-exercise'>
+      <%= link_to exercise.name, workout_session_url(session.id, exercise_id: exercise.id), :class=> "session-exercise-link", remote: true %>
+      <span class="order-count <%= exercise.name.downcase.tr(' ', '_') %>">
+        <%= exercise.exercise_executions.last.count if exercise.exercise_executions.where(session_id: session.id).count > 0 %>
+      </span>
+    </li>
+  <% end %>
+</ul>
