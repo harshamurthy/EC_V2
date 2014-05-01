@@ -53,8 +53,19 @@ puts "Creating Wilmette Exercise Coach location"
 wilmette_exercise_coach = Gym.create!(email: "admin@exercisecoach.com", password: "12345678", location: "Wilmette")
 
 puts "Creating clients"
-Client.create!(gym: wilmette_exercise_coach, first_name: "Harsha", last_name: "Murthy", email: "harsha@example.com", machine_code: 72893)
-Client.create!(gym: wilmette_exercise_coach, first_name: "Dave", last_name: "Mauro", email: "dave@example.com", machine_code: 123456)
+Client.create!(gym: wilmette_exercise_coach, first_name: "Carol", last_name: "Coughlin", machine_code: 112446)
+Client.create!(gym: wilmette_exercise_coach, first_name: "Jerry", last_name: "Lichtfuss", machine_code: 71652)
+Client.create!(gym: wilmette_exercise_coach, first_name: "Jenny", last_name: "McCaleb", machine_code: 52113)
+Client.create!(gym: wilmette_exercise_coach, first_name: "Janice", last_name: "Manhoff", machine_code: 51546)
+Client.create!(gym: wilmette_exercise_coach, first_name: "Marilyn", last_name: "Urrutia", machine_code: 123)
+Client.create!(gym: wilmette_exercise_coach, first_name: "Jim", last_name: "Cox", machine_code: 5555)
+Client.create!(gym: wilmette_exercise_coach, first_name: "Sarah", last_name: "Yang", machine_code: 91551)
+Client.create!(gym: wilmette_exercise_coach, first_name: "Scott", last_name: "Small", machine_code: 41759)
+Client.create!(gym: wilmette_exercise_coach, first_name: "Gayle", last_name: "Galloway", machine_code: 110756)
+Client.create!(gym: wilmette_exercise_coach, first_name: "Ardel", last_name: "Fogel", machine_code: 32856)
+Client.create!(gym: wilmette_exercise_coach, first_name: "Louise", last_name: "Frederiksen", machine_code: 52852)
+Client.create!(gym: wilmette_exercise_coach, first_name: "Louise", last_name: "Frederiksen", machine_code: 52852)
+
 
 puts "Creating exercises"
 # Legs
