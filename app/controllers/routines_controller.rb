@@ -43,6 +43,7 @@ class RoutinesController < ApplicationController
     @session = Session.find(params[:session_id])
     @new_routine = Routine.find_or_initialize_by_exercise_ids(params[:routine][:exercise_ids])
 
+
     @new_routine.description = "Routine ##{Routine.all.count + 1}"
 
     if @new_routine.id.nil?
@@ -51,6 +52,8 @@ class RoutinesController < ApplicationController
 
     respond_to do |format|
       if @new_routine.save
+         @session.routine = @new_routine
+         @session.save
         format.html { redirect_to @routine, notice: 'Routine was successfully updated.' }
         format.json { head :no_content }
         format.js
