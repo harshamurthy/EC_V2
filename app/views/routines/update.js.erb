@@ -1,6 +1,6 @@
 $('.workout-session-exercise-list').empty();
 
-$('.workout-session-exercise-list').append("<%= j render('sessions/session_exercise', exercises: @routine.exercises, session: @session) %>");
+$('.workout-session-exercise-list').append("<%= j render('sessions/session_exercise', exercises: @new_routine.exercises, session: @session) %>");
 
 $('.add-exercises').remove();
 $('.workout-session-execution-data').append("<%= j render('sessions/notes', client: @session.client) %>");

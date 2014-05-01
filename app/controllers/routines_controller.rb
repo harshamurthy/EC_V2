@@ -41,8 +41,16 @@ class RoutinesController < ApplicationController
   def update
     @exercises = Exercise.where(id: params[:routine][:exercise_ids])
     @session = Session.find(params[:session_id])
+    @new_routine = Routine.find_or_initialize_by_exercise_ids(params[:routine][:exercise_ids])
+
+    @new_routine.description = "Routine ##{Routine.all.count + 1}"
+
+    if @new_routine.id.nil?
+      @new_routine.gym_id = current_gym.id
+    end
+
     respond_to do |format|
-      if @routine.update(routine_params)
+      if @new_routine.save
         format.html { redirect_to @routine, notice: 'Routine was successfully updated.' }
         format.json { head :no_content }
         format.js

@@ -12,7 +12,7 @@ $('.settings-and-executions').removeClass('notes');
   $('.workout-session-execution-data').css("position", "absolute");
 
 <% elsif params[:add_exercise] %>
-  $('.workout-session-execution-data').append("<%= j render('add_exercises', exercises: @add_exercises, session: @session) %>");
+  $('.workout-session-execution-data').append("<%= j render('add_exercises', exercises: @add_exercises, session: @session, arms: @arms, legs: @legs, chest: @chest, abs: @abs, back: @back, shoulders: @shoulders, other: @other) %>");
   $('.workout-session-exercise-list ul li').removeClass('onclick');
 <% else %>
   $('.settings-and-executions').prepend("<%= j render('setting_execution_form', exercise: @exercise, setting_execution: @setting_execution, client: @session.client, session: @session) %>");

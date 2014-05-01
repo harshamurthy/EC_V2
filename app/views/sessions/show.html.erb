@@ -6,7 +6,8 @@
         <h1 class='workout-session-client-name'>
           <%= @session.client.name %> <span>(<%= @session.client.machine_code %>)</span>
         </h1>
-        <%= link_to "Edit exercises", workout_session_url(@session.id, add_exercise: true), class: 'session-add-exercises', remote: true %>
+        <span class="dash">-</span>
+        <%= link_to "Change this routine", workout_session_url(@session.id, add_exercise: true), class: 'session-add-exercises', remote: true %>
         <div class="finish-and-coach-container">
             <div class="coach-select-container">
               <i class="fa fa-exclamation-triangle choose-coach-label"></i>

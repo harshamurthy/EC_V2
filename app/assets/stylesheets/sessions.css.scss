@@ -329,6 +329,16 @@
       background-color: $midnight_blue;
       width: 100%;
       padding: 10px 0;
+
+      .dash {
+        color: $silver;
+        font-size: 20px;
+        margin: 0 10px;
+      }
+
+      .session-add-exercises {
+        color: white;
+      }
       .end-session-p {
         display: inline-block;
         float: right;
@@ -409,30 +419,89 @@
     }
     .add-exercises {
       margin-top: 53px;
-      width: 100%;
+      width: 75%;
       margin: 0 auto;
-      ul {
-        li {
-          display: inline-block;
-          padding: 20px;
+      height: 100%;
+      overflow-y: scroll;
+      position: fixed;
+      .piece-of-paper-container {
+        background-color: white;
+        width: 90%;
+        margin: 10px 1.5%;
+        border-radius: 5px;
+        border: 1px solid $silver;
+        margin-bottom: 150px;
 
-          input {
-            display: none;
 
-            &:checked + label {
-              background-color: $wet_asphalt;
-              border: 1px solid white;
-              color: white;
+        .submit-container {
+          padding: 15px 30px;
+          // padding-top: 15px;
+          width: 100%;
+          h1 {
+            display: inline-block;
+            font-size: 28px;
+            font-weight: bold;
+          }
+          input[type=submit] {
+            float: right;
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: $pomegranate;
+            text-decoration: none;
+            color: white;
+            margin-left: 5px;
+            border-radius: 5px;
+            font-size: 24px;
+            border: 1px solid darken($pomegranate, 15%);
+            border-bottom-width: 3px;
+
+            &:hover {
+              background-color: $alizarin;
+            }
+
+            &:active {
+              background-color: $pomegranate;
+              border: none;
             }
           }
+        }
+        ul {
+          // background-color: white;
+          // width: 90%;
+          // margin: 10px 1.5%;
+          // border-radius: 5px;
+          // border: 1px solid $silver;
+          .label {
+            width: 90%;
+            margin: 0 auto;
+            padding: 15px 0;
+            font-weight: bold;
+            font-size: 20px;
+            color: $asbestos;
+            border-bottom: 1px solid $clouds;
+          }
+          li {
+            display: inline-block;
+            padding: 20px;
 
-          label {
-            outline-width: 0;
-            text-align: center;
-            border: 1px solid black;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px;
+            input {
+              display: none;
+
+              &:checked + label {
+                background-color: $wet_asphalt;
+                border: 1px solid white;
+                color: white;
+              }
+            }
+
+            label {
+              outline-width: 0;
+              text-align: center;
+              border: 1px solid black;
+              border-radius: 5px;
+              padding: 10px;
+              margin: 10px;
+            }
           }
         }
       }

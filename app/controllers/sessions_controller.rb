@@ -19,7 +19,6 @@ class SessionsController < ApplicationController
       @exercises = executions.map(&:exercise)
       @exercises_remaining = @session.routine.exercises - @exercises
       # @exercises = @session.exercises.find(:all, :include => :exercise_executions, :order => "exercise_executions.count")
-      # @exercises_remaining = []
     else
       @exercises = @session.exercises
     end
@@ -34,6 +33,14 @@ class SessionsController < ApplicationController
     end
 
     @add_exercises = current_gym.exercises
+
+    @arms = current_gym.exercises.where(category: "Arms")
+    @legs = current_gym.exercises.where(category: "Legs")
+    @chest = current_gym.exercises.where(category: "Chest")
+    @abs = current_gym.exercises.where(category: "Abs")
+    @back = current_gym.exercises.where(category: "Back")
+    @shoulders = current_gym.exercises.where(category: "Shoulders")
+    @other = current_gym.exercises.where(category: "Other")
 
     if params[:notes].present?
       @client = @session.client
