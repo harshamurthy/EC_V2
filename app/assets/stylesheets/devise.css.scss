@@ -117,16 +117,11 @@
     }
 
     .gym-edit-button {
-      @extend %buttons;
+      @include buttons($green_sea, $turquoise, $form_submit_type_size);
     }
 
     .gym-delete-button {
-      @extend %buttons;
-      background-color: $red;
-
-      &:hover {
-        background-color: lighten($red, 5%);
-      }
+      @include buttons($pomegranate, $alizarin, $form_submit_type_size);
     }
   }
 }
@@ -152,7 +147,7 @@
   }
 
   .password-reset-request-button {
-    @extend %buttons;
+    @include buttons($green_sea, $turquoise, $button_link_type_size);
   }
 }
 
@@ -177,6 +172,6 @@
   }
 
   .password-reset-button {
-    @extend %buttons;
+    @include buttons($green_sea, $turquoise, $form_submit_type_size);
   }
 }

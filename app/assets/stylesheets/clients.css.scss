@@ -513,10 +513,12 @@
   form {
     text-align: center;
   }
+
   p {
     display: inline-block;
     font-size: $h3;
   }
+
   select {
     color: $midnight_blue;
     background-color: white;
@@ -525,8 +527,9 @@
     margin: 0 10px;
     font-size: $h3;
   }
+
   input[type=submit] {
-    @extend %buttons;
+    @include buttons($green_sea, $turquoise, $form_submit_type_size);
     width: 25%;
     margin-left: 15px;
   }

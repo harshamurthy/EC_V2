@@ -63,6 +63,7 @@
   .new-exercise-header {
     @extend %header-text-styles;
     padding-top: 70px;
+
     span {
       &.ready {
         color: lighten($wet_asphalt, 10%);
@@ -70,24 +71,18 @@
     }
   }
   .exercise-form-button {
-    @extend %buttons;
+    @include buttons($silver, $silver, $form_submit_type_size);
     border-bottom: none;
-    background-color: $silver;
     color: $midnight_blue;
-    margin-bottom: 50px;
-    &:hover {
-      background-color: $silver;
+    margin-bottom: 20px;
+    width: 60%;
+
+    &:active {
+      margin-top: 0px;
     }
+
     &.ready {
-      @extend %buttons;
-      border-bottom: none;
-      background-color: $green_sea;
-      &:hover {
-        background-color: $turquoise;
-      }
-      &:active {
-        background-color: $turquoise;
-      }
+      @include buttons($green_sea, $turquoise, $form_submit_type_size);
     }
   }
   .back-to-new-session {

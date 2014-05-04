@@ -61,15 +61,15 @@ body {
 }
 
 a {
-  color: lighten($wet_asphalt, 5%);
+  color: $wet_asphalt;
   font-size: 18px;
 
   &:hover {
-    color: lighten($wet_asphalt, 10%);
+    color: lighten($wet_asphalt, 5%);
   }
 
   &:active {
-    color: lighten($wet_asphalt, 5%);
+    color: $wet_asphalt;
   }
 }
 
