@@ -19,6 +19,9 @@
 //= require jquery.ui.datepicker
 //= require_tree .
 
+// Applies CSS psuedo styles to elements in mobile browsers
+document.addEventListener("touchstart", function() {},false);
+
 $(document).ready(function() {
   $('.hide').hide();
 

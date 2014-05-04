@@ -37,8 +37,7 @@
     text-align: center;
 
     .search-input {
-      @extend %inputs;
-      width: 70%;
+      @include inputs(68%);
       margin-top: 2%;
     }
 
@@ -47,31 +46,14 @@
       margin-top: 20px;
       text-align: left;
       width: 70%;
-      // border-bottom: 1px solid $midnight_blue;
       padding: 15px;
       margin: 0 auto;
       margin-top: 30px;
       a {
-        color: $green_sea;
-        border-radius: 5px;
-        font-size: 24px;
-        padding: 5px 10px;
-        border: solid 1px darken($green_sea, 15%);
-        border-bottom-width: 3px;
-        background-color: $green_sea;
-        text-decoration: none;
-        color: white;
+        @include buttons($green_sea, $turquoise, $button_link_type_size);
+
         i {
           text-decoration: none;
-        }
-
-        &:hover {
-         background-color: $turquoise;
-        }
-
-        &:active {
-          background-color: $green_sea;
-          border: none;
         }
       }
     }
@@ -303,23 +285,7 @@
         margin-left: 2%;
 
         a {
-          font-size: 24px;
-          text-decoration: none;
-          background-color: $pomegranate;
-          padding: 5px 10px;
-          color: white;
-          border: 1px solid darken($pomegranate, 10%);
-          border-bottom-width: 3px;
-          border-radius: 5px;
-
-          &:hover {
-            background-color: $alizarin;
-          }
-
-          &:active {
-            background-color: $pomegranate;
-            border: none;
-          }
+          @include buttons($pomegranate, $alizarin, $button_link_type_size);
         }
       }
       .card-sessions-container {
@@ -353,7 +319,7 @@
           }
 
           &.next {
-            -webkit-animation-name: greenPulse;
+            -webkit-animation-name: nextSessionPulse;
             -webkit-animation-duration: 3s;
             -webkit-animation-iteration-count: infinite;
             position: relative;
@@ -460,17 +426,19 @@
 
     .previous-sessions {
       position: relative;
-
     }
-      .no-schedule-img-container {
-        opacity: 0.8;
-        img {
-          width: 100%;
-        }
+
+    .no-schedule-img-container {
+      opacity: 0.8;
+
+      img {
+        width: 100%;
       }
+    }
 
       .no-schedule-container {
         position: relative;
+
         .no-schedule-message {
           text-align: center;
           position: absolute;
@@ -480,6 +448,7 @@
           background-color: white;
           z-index: 1;
           box-shadow: 3px 2px $silver;
+
           h3 {
             padding: 25px;
             text-align: center;
@@ -490,24 +459,10 @@
               margin-top: 40px;
               margin-bottom: 20px;
               display: inline-block;
+
               a {
+                @include buttons($green_sea, $turquoise, $button_link_type_size);
                 font-style: normal;
-                padding: 10px 15px;
-                background-color: $green_sea;
-                color: white;
-                text-decoration: none;
-                border-radius: 5px;
-                border: 1px solid darken($green_sea, 15%);
-                border-bottom-width: 3px;
-
-                &:hover {
-                  background-color: $turquoise;
-                }
-
-                &:active {
-                  background-color: $green_sea;
-                  border: none;
-                }
               }
             }
           }
@@ -581,28 +536,18 @@
   // margin-top: 50px;
   form {
     text-align: center;
+
     input[type=text] {
-      @extend %inputs;
+      @include inputs;
       vertical-align: middle;
     }
+
     input[type=submit] {
-      background-color: $green_sea;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
+      @include buttons($green_sea, $turquoise, $button_link_type_size);
       vertical-align: middle;
-      border: 1px solid darken($green_sea, 15%);
-      border-bottom-width: 3px;
-      outline: none;
-      &:hover {
-        background-color: $turquoise;
-      }
-      &:active {
-        background-color: $green_sea;
-        border: none;
-      }
     }
   }
+
   ul {
     padding: 40px;
     margin-bottom: 50px;
@@ -650,19 +595,9 @@
           font-style: normal;
         }
         .new-note-submit-button {
+          @include buttons($green_sea, $turquoise, $button_link_type_size);
           vertical-align: middle;
-          background-color: $green_sea;
-          border: 1px solid darken($green_sea, 15%);
-          border-bottom-width: 3px;
-
-          &:hover {
-            background-color: $turquoise;
-          }
-
-          &:active {
-            background-color: $green_sea;
-            border: none;
-          }
+          font-style: normal;
         }
       }
     }
@@ -685,21 +620,25 @@
   }
   .new-client-form {
     @extend %containers;
+
     input[type=text], input[type=submit], input[type=email], input[type=date] {
-      @extend %inputs;
-      padding: 15px;
+      @include inputs;
     }
+
     input[type=date] {
       -webkit-min-logical-width: 40%;
       width: 40%;
     }
+
     .birthday-label {
       font-size: 30px;
       vertical-align: middle;
     }
+
     input[type=radio] {
       @extend %checkboxes;
     }
+
     .gender-container {
       margin: 0 auto;
       margin: 20px 5px;
@@ -707,6 +646,7 @@
         font-size: 16px;
         font-weight: bold;
       }
+
       .client-gender {
         @extend %checkbox-labels;
         float: none;
@@ -715,23 +655,21 @@
         margin-left: 5px;
       }
     }
-    input[type=submit] {
-      border-bottom: none;
-      background-color: $silver;
-      color: $midnight_blue;
-      &.ready {
-        color: white;
-        background-color: $green_sea;
-        border: 1px solid darken($green_sea, 15%);
-        border-bottom-width: 3px;
 
-        &:hover {
-          background-color: $turquoise;
-        }
+    input[type=submit] {
+      @include buttons($silver, $silver, $form_submit_type_size, $midnight_blue);
+      border: none;
+      margin: 20px;
+
+      &:active {
+        margin: 20px;
+      }
+
+      &.ready {
+        @include buttons($green_sea, $turquoise, $form_submit_type_size);
 
         &:active {
-          background-color: $green_sea;
-          border: none;
+          margin: 22px;
         }
       }
     }
@@ -757,22 +695,21 @@
       }
     }
     .avatar-label {
-      display: inline-block;
-      padding: 15px 30px;
-      font-size: 20px;
-      color: white;
-      background-color: $midnight_blue;
-      border-radius: 5px;
+      @include buttons($midnight_blue, $wet_asphalt, $button_link_type_size);
     }
+
     .avatar-input {
       display: none;
     }
   }
+
   fieldset {
     text-align: center;
     margin-bottom: 50px;
   }
+
   .float-container {
+
     &:after {
       @extend %group:after;
     }
@@ -781,21 +718,19 @@
   .stat-weight, .client-goal {
     display: block;
     text-align: center;
+
     input {
-      @extend %inputs;
+      @include inputs(90%);
       text-align: center;
-      width: 90%;
     }
   }
+
   .left-muscle-container, .left-fat-container {
     width: 50%;
     margin: 30px 0;
-    // margin: 0 5%;
+
     input {
-      @extend %inputs;
-      width: 80%;
-      // padding: 10px 0;
-      // display: block;
+      @include inputs(80%);
     }
   }
   .left-muscle-container {
@@ -811,7 +746,8 @@
     text-align: center;
     margin-bottom: 50px;
     input[type=submit] {
-      @extend %buttons;
+      @include buttons($green_sea, $turquoise, $form_submit_type_size);
+      width: 60%;
     }
   }
 }
@@ -924,23 +860,8 @@
           margin-top: 40px;
           margin-bottom: 20px;
           a {
+            @include buttons($green_sea, $turquoise, $button_link_type_size);
             font-style: normal;
-            padding: 10px 15px;
-            background-color: $green_sea;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            border: 1px solid darken($green_sea, 15%);
-            border-bottom-width: 3px;
-
-            &:hover {
-              background-color: $turquoise;
-            }
-
-            &:active {
-              background-color: $green_sea;
-              border: none;
-            }
           }
         }
       }

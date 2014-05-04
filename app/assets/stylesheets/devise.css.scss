@@ -18,11 +18,17 @@
   }
 
   .sign-up-inputs {
-    @extend %inputs;
+    @include inputs;
   }
 
   .sign-up-button {
-    @extend %buttons;
+    @include buttons($green_sea, $turquoise, $form_submit_type_size);
+    margin: 20px 0px;
+    width: 30%;
+
+    &:active {
+      margin-top: 22px;
+    }
   }
 }
 
@@ -38,7 +44,7 @@
     }
 
     .sign-in-inputs {
-      @extend %inputs;
+      @include inputs;
     }
 
     .sign-in-help {
@@ -69,25 +75,24 @@
     }
 
     .sign-in-button-inactive {
-      @extend %buttons;
+      @include buttons($silver, $silver, $form_submit_type_size, $midnight_blue);
+      width: 50%;
       margin: 20px;
-      background-color: $concrete;
-      color: $midnight_blue;
       border: none;
 
-      &:hover {
-       background-color: $concrete;
-      }
-
       &:active {
-        background-color: $concrete;
+        margin: 20px;
       }
     }
 
     .sign-in-button-active {
-      @extend %buttons;
+      @include buttons($green_sea, $turquoise, $form_submit_type_size);
+      width: 50%;
       margin: 20px;
-      // background-color: $concrete;
+
+      &:active {
+        margin: 22px;
+      }
     }
   }
 }
@@ -108,7 +113,7 @@
     }
 
     .gym-edit-inputs {
-      @extend %inputs;
+      @include inputs;
     }
 
     .gym-edit-button {
@@ -143,7 +148,7 @@
   }
 
   .password-reset-request-inputs {
-    @extend %inputs;
+    @include inputs;
   }
 
   .password-reset-request-button {
@@ -168,7 +173,7 @@
   }
 
   .password-reset-inputs {
-    @extend %inputs;
+    @include inputs;
   }
 
   .password-reset-button {

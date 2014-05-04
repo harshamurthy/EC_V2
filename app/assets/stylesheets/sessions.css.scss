@@ -8,8 +8,7 @@
   // @extend %forms;
 
   input {
-    @extend %inputs;
-    width: 100%;
+    @include inputs(100%);
   }
 
   .session-form-labels {
@@ -18,11 +17,10 @@
   }
 
   .session-form-inputs {
-    @extend %inputs;
+    @include inputs;
   }
 
   .session-form-routine-select-dropdown {
-    // @extend %inputs;
     font-size: $text-input-size;
     margin-right: 5%;
     border-bottom: none;
@@ -86,7 +84,6 @@
   }
   h1 {
     text-align: center;
-    vertical-align: bottom;
     font-family: "Roboto", sans-serif;
     font-size: $h1;
     padding-bottom: 60px;
@@ -99,27 +96,17 @@
     }
     .save-card {
       vertical-align: bottom;
-      a {
-        padding: 5px 10px;
-        background-color: $pomegranate;
-        text-decoration: none;
-        color: white;
-        margin-left: 5px;
-        border-radius: 5px;
-        font-size: 24px;
-        border: 1px solid darken($pomegranate, 15%);
-        border-bottom-width: 3px;
 
-        &:hover {
-          background-color: $alizarin;
-        }
+      a {
+        @include buttons($pomegranate, $alizarin, $button_link_type_size);
+        margin-left: 5px;
 
         &:active {
-          background-color: $pomegranate;
-          border: none;
+          margin-top: 2px;
         }
       }
     }
+
     a {
       font-size: $h1;
     }
@@ -291,23 +278,21 @@
       }
       .submit-session {
         text-align: center;
-        input {
-          background-color: $silver;
-          color: $midnight_blue;
-          border: none;
-          &.ready {
-            background-color: $green_sea;
-            color: white;
-            border: 1px solid darken($green_sea, 15%);
-            border-bottom-width: 3px;
 
-            &:hover {
-              background-color: $turquoise;
-            }
+        input {
+          @include buttons($silver, $silver, $form_submit_type_size, $midnight_blue);
+          margin: 20px;
+          border: none;
+
+          &:active {
+              margin: 20px;
+          }
+
+          &.ready {
+            @include buttons($green_sea, $turquoise, $form_submit_type_size);
 
             &:active {
-              background-color: $green_sea;
-              border: none;
+              margin: 22px;
             }
           }
         }
@@ -387,27 +372,13 @@
           padding: 0 5px;
         }
         .end-session {
+          @include buttons($green_sea, $turquoise, $button_link_type_size);
           font-size: 18px;
-          text-decoration: none;
-          padding: 5px 20px;
-          background-color: $green_sea;
-          border-radius: 5px;
-          color: $clouds;
-          border: 1px solid darken($green_sea, 10%);
-          border-bottom-width: 3px;
-
-          &:hover {
-            background-color: $turquoise;
-          }
 
           &:active {
-            background-color: $green_sea;
-            border: solid 1px $midnight_blue;
+            margin-top: 0px;
             border-bottom-width: 3px;
-          }
-
-          i {
-            // text-decoration: underline;
+            border-bottom-color: $midnight_blue;
           }
 
           span {
@@ -443,23 +414,22 @@
             font-weight: bold;
           }
           input[type=submit] {
-            float: right;
-            display: inline-block;
-            padding: 5px 10px;
             background-color: $pomegranate;
-            text-decoration: none;
             color: white;
-            margin-left: 5px;
+            float: right;
+            padding: 5px 10px;
             border-radius: 5px;
+            outline: none;
+            display: inline-block;
+            text-decoration: none;
+            margin-left: 5px;
             font-size: 24px;
             border: 1px solid darken($pomegranate, 15%);
             border-bottom-width: 3px;
-
             &:hover {
               background-color: $alizarin;
             }
-
-            &:active {
+            &:active, &:focus {
               background-color: $pomegranate;
               border: none;
             }
@@ -860,6 +830,7 @@
 .session-notes {
   @extend %containers;
   width: 90%;
+  margin-top: 2%;
   h1 {
     text-align: center;
     font-size: $h1;
@@ -891,11 +862,13 @@
     &:after {
       @extend %group:after;
     }
+
     text-align: center;
     margin-bottom: 20px;
+
     input {
-      @extend %inputs;
-      padding: 12px;
+      @include inputs;
+      vertical-align: middle;
     }
 
     ul {
@@ -905,23 +878,9 @@
     }
 
     input[type=submit] {
-      @extend %buttons;
-      background-color: $green_sea;
-      border: 1px solid darken($green_sea, 10%);
-      border-bottom-width: 3px;
-      display: inline-block;
-      width: 20%;
-      font-size: 24px;
-
-      &:hover {
-        background-color: $turquoise;
-      }
-
-      &:active {
-        background-color: $turquoise;
-        border: 1px solid #f3ece0;
-      }
-
+      vertical-align: middle;
+      @include buttons($green_sea, $turquoise, $button_link_type_size);
+      width: 15%;
     }
   }
 }

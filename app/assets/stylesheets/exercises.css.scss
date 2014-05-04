@@ -8,8 +8,7 @@
 }
 
 .exercise-input {
-  @extend %inputs;
-  width: 100%;
+  @include inputs(100%);
 }
 
 .exercise-option {
