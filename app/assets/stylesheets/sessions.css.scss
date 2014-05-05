@@ -60,19 +60,8 @@
   }
 
   .session-form-submit-button {
-    @extend %buttons;
+    @include buttons($green_sea, $turquoise, $form_submit_type_size);
     width: 60%;
-    background-color: $green_sea;
-    border: 1px solid darken($green_sea, 15%);
-    border-bottom-width: 3px;
-    &:hover {
-      background-color: $turquoise;
-    }
-
-    &:active {
-      background-color: $green_sea;
-      border: none;
-    }
   }
 }
 
@@ -729,68 +718,38 @@
     }
 
     .start-session-stop-watch, .stop-session-stop-watch, .reset-session-stop-watch {
-      @extend %buttons;
-      margin-top: 10px;
       text-decoration: none;
-      display: inline-block;
       width: 40%;
       margin-right: 10px;
-      // padding: 15px;
-      font-size: 15px;
     }
 
+    // Start Button
     .start-session-stop-watch {
-        background-color: $emerald;
-        border: 1px solid darken($emerald, 10%);
-        border-bottom-width: 3px;
-        font-size: $text-input-size;
-        color: white !important;
-
-      &:hover {
-        background-color: lighten($emerald, 5%);
-      }
+      @include buttons($emerald, $emerald, $button_link_type_size);
+      margin-top: 20px;
 
       &:active {
-        background-color: $emerald;
-        border: 1px solid white;
-        border-bottom-width: 3px;
+        margin-top: 22px;
       }
     }
 
-    // Stop Watch
+    // Stop Button
     .stop-session-stop-watch {
-      background-color: $alizarin;
-      border: 1px solid darken($alizarin, 10%);
-        border-bottom-width: 3px;
-      font-size: $text-input-size;
-      color: white !important;
-
-      &:hover {
-        background-color: lighten($alizarin, 5%);
-      }
+      @include buttons($alizarin, $alizarin, $button_link_type_size);
+      margin-top: 20px;
 
       &:active {
-        background-color: $alizarin;
-        border: 1px solid white;
-        border-bottom-width: 3px;
+        margin-top: 22px;
       }
     }
 
+    // Reset Button
     .reset-session-stop-watch {
-      background-color: $asbestos;
-      border: 1px solid darken($asbestos, 10%);
-      border-bottom-width: 3px;
-      font-size: $text-input-size;
-      color: white !important;
-
-      &:hover {
-        background-color: $concrete;
-      }
+      @include buttons($concrete, $concrete, $button_link_type_size);
+      margin-top: 20px;
 
       &:active {
-        background-color: $asbestos;
-        border: 1px solid white;
-        border-bottom-width: 3px;
+        margin-top: 22px;
       }
     }
   }
