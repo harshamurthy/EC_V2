@@ -384,10 +384,11 @@
       height: 100%;
       overflow-y: scroll;
       position: fixed;
+
       .piece-of-paper-container {
         background-color: white;
         width: 90%;
-        margin: 10px 1.5%;
+        margin: 5% 1.5%;
         border-radius: 5px;
         border: 1px solid $silver;
         margin-bottom: 150px;
@@ -395,43 +396,24 @@
 
         .submit-container {
           padding: 15px 30px;
-          // padding-top: 15px;
           width: 100%;
+
           h1 {
             display: inline-block;
             font-size: 28px;
             font-weight: bold;
           }
+
           input[type=submit] {
-            background-color: $pomegranate;
-            color: white;
+            @include buttons($pomegranate, $alizarin, $button_link_type_size);
             float: right;
-            padding: 5px 10px;
-            border-radius: 5px;
-            outline: none;
-            display: inline-block;
-            text-decoration: none;
-            margin-left: 5px;
-            font-size: 24px;
-            border: 1px solid darken($pomegranate, 15%);
-            border-bottom-width: 3px;
-            &:hover {
-              background-color: $alizarin;
-            }
-            &:active, &:focus {
-              background-color: $pomegranate;
-              border: none;
-            }
           }
         }
+
         ul {
-          // background-color: white;
-          // width: 90%;
-          // margin: 10px 1.5%;
-          // border-radius: 5px;
-          // border: 1px solid $silver;
+
           .label {
-            width: 90%;
+            width: 95%;
             margin: 0 auto;
             padding: 15px 0;
             font-weight: bold;
@@ -516,8 +498,7 @@
 
   .workout-session-exercise-list {
     width: 30%;
-    // float: left;
-    margin-top: 51px;
+    margin-top: 67px;
     overflow-y: scroll;
     position: fixed;
     padding-bottom: 40px;
@@ -572,7 +553,7 @@
     width: 70%;
     float: left;
     position: fixed;
-    top: 51px;
+    top: 65px;
     right: 0;
 
     .exercise-title {
