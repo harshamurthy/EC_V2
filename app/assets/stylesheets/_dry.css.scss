@@ -1,19 +1,7 @@
-input[type=submit] {
-  -webkit-appearance: none;
-}
-
-::-webkit-input-placeholder {
-  color: $concrete;
-}
-
 @-webkit-keyframes nextSessionPulse {
   from { background-color: $belize_hole; -webkit-box-shadow: 0 0 9px #ccc; }
   50% { background-color: lighten($belize_hole, 10%); -webkit-box-shadow: 0 0 18px lighten($belize_hole, 5%); }
   to { background-color: $belize_hole; -webkit-box-shadow: 0 0 9px #ccc; }
-}
-
-@mixin highlight($highlight_color: $green_sea) {
-  color: $highlight_color;
 }
 
 @mixin buttons($main_color, $secondary_color, $font_size, $font_color: white) {
@@ -73,6 +61,14 @@ a {
   }
 }
 
+input[type=submit] {
+  -webkit-appearance: none;
+}
+
+::-webkit-input-placeholder {
+  color: $concrete;
+}
+
 .site-brand {
   padding-top: 5%;
   margin-bottom: 15px;
@@ -84,26 +80,6 @@ a {
 .highlight {
     color: $green_sea;
 }
-
-.input-field-tooltip {
-  font-size: 14px;
-  color: $alizarin;
-  text-align: left;
-  margin-left: 20%;
-}
-
-// .input-error {
-//   padding: 8px !important;
-//   background-color: white !important;
-//   border: 2px solid $alizarin !important;
-// }
-
-// .input-field-error-message {
-//   font-size: 16px;
-//   text-align: left;
-//   margin-left: 20%;
-//   color: $alizarin;
-// }
 
 %group:after {
     display: table;
@@ -134,28 +110,6 @@ a {
   display: none;
 }
 
-%buttons {
-  border: none;
-  outline: none;
-  padding: 5px;
-  border-radius: 5px;
-  background-color: $green_sea;
-  font-size: $main-font-size;
-  color: white;
-  border-bottom: solid 3px darken($green_sea, 15%);
-  border-bottom-width: 3px;
-
-  &:hover {
-    background-color: $turquoise;
-  }
-
-  &:active, &:focus {
-    background-color: $green_sea;
-    border-bottom-width: 1px;
-    margin-top: 2px;
-  }
-}
-
 %checkboxes {
   display: none;
 
@@ -170,7 +124,6 @@ a {
   margin: 10%;
   outline-width: 0;
   text-align: center;
-  // display: inline-block;
   border: 1px solid black;
   border-radius: 5px;
   font-size: $h3;
