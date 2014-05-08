@@ -707,31 +707,16 @@
     // Start Button
     .start-session-stop-watch {
       @include buttons($emerald, $emerald, $button_link_type_size);
-      margin-top: 20px;
-
-      &:active {
-        margin-top: 22px;
-      }
     }
 
     // Stop Button
     .stop-session-stop-watch {
       @include buttons($alizarin, $alizarin, $button_link_type_size);
-      margin-top: 20px;
-
-      &:active {
-        margin-top: 22px;
-      }
     }
 
     // Reset Button
     .reset-session-stop-watch {
       @include buttons($concrete, $concrete, $button_link_type_size);
-      margin-top: 20px;
-
-      &:active {
-        margin-top: 22px;
-      }
     }
   }
 }
