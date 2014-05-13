@@ -50,7 +50,7 @@
       margin: 0 auto;
       margin-top: 30px;
       a {
-        @include buttons($green_sea, $turquoise, $button_link_type_size);
+        @include buttons($main_color, $main_color_hover, $button_link_type_size);
 
         i {
           text-decoration: none;
@@ -111,16 +111,16 @@
         }
 
         .next-session {
-          background-color: $green_sea;
-          border: 1px solid darken($green_sea, 10%);
+          background-color: $carrot;
+          border: 1px solid darken($carrot, 10%);
           border-bottom-width: 3px;
 
           &:hover {
-            background-color: $turquoise;
+            background-color: $main_color_hover;
           }
 
           &:active {
-            background-color: $green_sea;
+            background-color: $carrot;
             border: none;
           }
         }
@@ -170,7 +170,7 @@
       float: right;
       margin-top: 15px;
       a {
-        color: $green_sea;
+        color: $carrot;
         i {
           text-decoration: underline;
         }
@@ -257,7 +257,7 @@
       border-top-left-radius: 0px;
     h2 {
       font-weight: bold;
-      color: $green_sea;
+      color: $carrot;
       margin: 15px 0px;
     }
 
@@ -461,7 +461,7 @@
               display: inline-block;
 
               a {
-                @include buttons($green_sea, $turquoise, $button_link_type_size);
+                @include buttons($carrot, $main_color_hover, $button_link_type_size);
                 font-style: normal;
               }
             }
@@ -529,7 +529,7 @@
   }
 
   input[type=submit] {
-    @include buttons($green_sea, $turquoise, $form_submit_type_size);
+    @include buttons($carrot, $main_color_hover, $form_submit_type_size);
     width: 25%;
     margin-left: 15px;
   }
@@ -546,7 +546,7 @@
     }
 
     input[type=submit] {
-      @include buttons($green_sea, $turquoise, $button_link_type_size);
+      @include buttons($carrot, $main_color_hover, $button_link_type_size);
       vertical-align: middle;
     }
   }
@@ -598,7 +598,7 @@
           font-style: normal;
         }
         .new-note-submit-button {
-          @include buttons($green_sea, $turquoise, $button_link_type_size);
+          @include buttons($carrot, $main_color_hover, $button_link_type_size);
           vertical-align: middle;
           font-style: normal;
         }
@@ -617,7 +617,7 @@
     margin-bottom: 15px;
     span {
       &.ready {
-        color: $green_sea;
+        color: $carrot;
       }
     }
   }
@@ -669,7 +669,7 @@
       }
 
       &.ready {
-        @include buttons($green_sea, $turquoise, $form_submit_type_size);
+        @include buttons($carrot, $main_color_hover, $form_submit_type_size);
 
         &:active {
           margin: 22px;
@@ -749,7 +749,7 @@
     text-align: center;
     margin-bottom: 50px;
     input[type=submit] {
-      @include buttons($green_sea, $turquoise, $form_submit_type_size);
+      @include buttons($carrot, $main_color_hover, $form_submit_type_size);
       width: 60%;
     }
   }
@@ -798,12 +798,12 @@
 
   .new-body-comp {
     a {
-      color: $green_sea;
+      color: $carrot;
       &:hover {
-        color: $turquoise;
+        color: $main_color_hover;
       }
       &:active {
-        color: $green_sea;
+        color: $carrot;
       }
       i {
         text-decoration: underline;
@@ -863,7 +863,7 @@
           margin-top: 40px;
           margin-bottom: 20px;
           a {
-            @include buttons($green_sea, $turquoise, $button_link_type_size);
+            @include buttons($carrot, $main_color_hover, $button_link_type_size);
             font-style: normal;
           }
         }
@@ -898,7 +898,7 @@
     }
       p {
         font-size: 24px;
-        color: $turquoise;
+        color: $main_color_hover;
         display: inline-block;
       }
   }

@@ -1,10 +1,10 @@
 @-webkit-keyframes nextSessionPulse {
-  from { background-color: $belize_hole; -webkit-box-shadow: 0 0 9px #ccc; }
-  50% { background-color: lighten($belize_hole, 10%); -webkit-box-shadow: 0 0 18px lighten($belize_hole, 5%); }
-  to { background-color: $belize_hole; -webkit-box-shadow: 0 0 9px #ccc; }
+  from { background-color: $carrot; -webkit-box-shadow: 0 0 9px #ccc; }
+  50% { background-color: lighten($pumpkin, 10%); -webkit-box-shadow: 0 0 18px lighten($pumpkin, 5%); }
+  to { background-color: $carrot; -webkit-box-shadow: 0 0 9px #ccc; }
 }
 
-@mixin buttons($main_color, $secondary_color, $font_size, $font_color: white) {
+@mixin buttons($main_color, $main_color_hover, $font_size, $font_color: white) {
   display: inline-block;
   border: none;
   outline: none;
@@ -18,7 +18,7 @@
   text-decoration: none;
 
   &:hover {
-    background-color: $secondary_color;
+    background-color: $main_color_hover;
   }
 
   &:active {
@@ -45,7 +45,7 @@
 body {
   font-family: 'Roboto' sans-serif;
   color: $midnight_blue;
-  background-color: #f3ece0;
+  background-color: $basecamp_beige;
 }
 
 a {
@@ -78,7 +78,7 @@ input[type=submit] {
 }
 
 .highlight {
-    color: $green_sea;
+    color: $main_color;
 }
 
 %group:after {

@@ -82,7 +82,7 @@
     }
 
     &.ready {
-      @include buttons($green_sea, $turquoise, $form_submit_type_size);
+      @include buttons($main_color, $main_color_hover, $form_submit_type_size);
     }
   }
   .back-to-new-session {

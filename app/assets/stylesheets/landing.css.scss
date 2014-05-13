@@ -8,7 +8,7 @@
             font-weight: bold;
             font-size: 24px;
             span {
-                color: $green_sea;
+                color: $main_color;
             }
         }
         ul {
@@ -52,7 +52,7 @@
             margin-top: 15px;
             line-height: 1.5;
             span {
-                color: $green_sea;
+                color: $main_color;
             }
         }
     }
@@ -88,18 +88,18 @@
             text-decoration: none;
             padding: 10px 50px;
             border-radius: 5px;
-            background-color: $green_sea;
+            background-color: $main_color;
             color: white;
-            border: 1px solid darken($green_sea, 15%);
+            border: 1px solid darken($main_color, 15%);
             border-bottom-width: 3px;
 
             &:hover {
-                background-color: $turquoise;
+                background-color: $main_color_hover;
                 // border-bottom-width: 3px;
             }
 
             &:active {
-                background-color: $green_sea;
+                background-color: $main_color;
                 border: none;
             }
         }
@@ -131,7 +131,7 @@
             padding-top: 20px;
 
             span {
-                color: $green_sea;
+                color: $main_color;
             }
         }
         .benifit-statements {
@@ -162,15 +162,15 @@
             text-decoration: none;
             padding: 10px 50px;
             border-radius: 5px;
-            background-color: $green_sea;
+            background-color: $main_color;
             color: white;
 
             &:hover {
-                background-color: $turquoise;
+                background-color: $main_color_hover;
             }
 
             &:active {
-                background-color: $green_sea;
+                background-color: $main_color;
             }
         }
     }
@@ -234,7 +234,7 @@
             font-size: 20px;
 
             span {
-                color: $green_sea;
+                color: $main_color;
             }
         }
     }
@@ -255,7 +255,7 @@
                 margin-top: 15px;
                 line-height: 2;
                 span {
-                    color: $green_sea;
+                    color: $main_color;
                 }
             }
         }
@@ -290,16 +290,16 @@
                 text-decoration: none;
                 padding: 20px 50px;
                 border-radius: 5px;
-                background-color: $green_sea;
+                background-color: $main_color;
                 color: white;
                 font-size: 22px;
 
                 &:hover {
-                    background-color: $turquoise;
+                    background-color: $main_color_hover;
                 }
 
                 &:active {
-                    background-color: $green_sea;
+                    background-color: $main_color;
                 }
             }
         }
@@ -320,7 +320,7 @@
                 margin-top: 15px;
                 line-height: 1.5;
                 span {
-                    color: $green_sea;
+                    color: $main_color;
                 }
             }
         }
@@ -334,16 +334,16 @@
                 text-decoration: none;
                 padding: 10px 50px;
                 border-radius: 5px;
-                background-color: $green_sea;
+                background-color: $main_color;
                 color: white;
                 // display: none;
 
                 &:hover {
-                    background-color: $turquoise;
+                    background-color: $main_color_hover;
                 }
 
                 &:active {
-                    background-color: $green_sea;
+                    background-color: $main_color;
                 }
             }
         }

@@ -22,7 +22,7 @@
   }
 
   .sign-up-button {
-    @include buttons($green_sea, $turquoise, $form_submit_type_size);
+    @include buttons($main_color, $main_color_hover, $form_submit_type_size);
     margin: 20px 0px;
     width: 30%;
 
@@ -86,7 +86,7 @@
     }
 
     .sign-in-button-active {
-      @include buttons($green_sea, $turquoise, $form_submit_type_size);
+      @include buttons($main_color, $main_color_hover, $form_submit_type_size);
       width: 50%;
       margin: 20px;
 
@@ -117,7 +117,7 @@
     }
 
     .gym-edit-button {
-      @include buttons($green_sea, $turquoise, $form_submit_type_size);
+      @include buttons($main_color, $main_color_hover, $form_submit_type_size);
     }
 
     .gym-delete-button {
@@ -147,7 +147,7 @@
   }
 
   .password-reset-request-button {
-    @include buttons($green_sea, $turquoise, $button_link_type_size);
+    @include buttons($main_color, $main_color_hover, $button_link_type_size);
   }
 }
 
@@ -172,6 +172,6 @@
   }
 
   .password-reset-button {
-    @include buttons($green_sea, $turquoise, $form_submit_type_size);
+    @include buttons($main_color, $main_color_hover, $form_submit_type_size);
   }
 }

@@ -60,7 +60,7 @@
   }
 
   .session-form-submit-button {
-    @include buttons($green_sea, $turquoise, $form_submit_type_size);
+    @include buttons($main_color, $main_color_hover, $form_submit_type_size);
     width: 60%;
   }
 }
@@ -195,23 +195,23 @@
           margin-bottom: 30px;
           font-size: 20px;
           a {
-            color: $green_sea;
+            color: $main_color;
             font-size: 20px;
             font-weight: bold;
             // text-decoration: none;
             // font-size: 24px;
             // padding: 5px 10px;
             // border-radius: 5px;
-            // background-color: $green_sea;
-            // border: 1px solid darken($green_sea, 15%);
+            // background-color: $main_color;
+            // border: 1px solid darken($main_color, 15%);
             // border-bottom-width: 3px;
 
             &:hover {
-              color: $turquoise;
+              color: $main_color_hover;
             }
 
             &:active {
-              color: $green_sea;
+              color: $main_color;
             }
             i {
               text-decoration: underline;
@@ -228,15 +228,15 @@
           margin: 20px 10px;
           margin-left: 0;
           a {
-            color: $green_sea;
+            color: $main_color;
             font-size: 24px;
 
             &:hover {
-              color: $turquoise;
+              color: $main_color_hover;
             }
 
             &:active {
-              color: $green_sea;
+              color: $main_color;
             }
 
             i {
@@ -278,7 +278,7 @@
           }
 
           &.ready {
-            @include buttons($green_sea, $turquoise, $form_submit_type_size);
+            @include buttons($main_color, $main_color_hover, $form_submit_type_size);
 
             &:active {
               margin: 22px;
@@ -361,7 +361,7 @@
           padding: 0 5px;
         }
         .end-session {
-          @include buttons($green_sea, $turquoise, $button_link_type_size);
+          @include buttons($nephritis, $emerald, $button_link_type_size);
           font-size: 18px;
 
           &:active {
@@ -371,7 +371,7 @@
           }
 
           span {
-            color: $green_sea;
+            color: $main_color;
             font-weight: bold;
           }
         }
@@ -611,7 +611,7 @@
         line-height: 1.5;
         padding-bottom: 30px;
       .previous-stats-number {
-        color: $green_sea;
+        color: $main_color;
         font-weight: bold;
       }
 
@@ -742,7 +742,7 @@
       input {
         font-size: 32px;
         font-weight: bold;
-        color: $green_sea;
+        color: $main_color;
         width: 50%;
         text-align: center;
         font-family: 'Roboto', sans-serif;
@@ -804,7 +804,7 @@
 
     input[type=submit] {
       vertical-align: middle;
-      @include buttons($green_sea, $turquoise, $button_link_type_size);
+      @include buttons($main_color, $main_color_hover, $button_link_type_size);
       width: 15%;
     }
   }
