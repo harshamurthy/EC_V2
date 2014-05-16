@@ -26,6 +26,7 @@ end
 group :development do
   gem 'pry'
   gem 'pry-rails'
+  gem 'html_routes', '~> 1.0'
 end
 
 group :production do
